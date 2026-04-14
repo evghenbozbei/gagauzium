@@ -1,0 +1,2942 @@
+[
+  {
+    "id": 1,
+    "ru": "я",
+    "gag": "bän",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 2,
+    "ru": "ты",
+    "gag": "sän",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 3,
+    "ru": "он/она/оно",
+    "gag": "o",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 4,
+    "ru": "мы",
+    "gag": "biz",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 5,
+    "ru": "вы",
+    "gag": "siz",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 6,
+    "ru": "они",
+    "gag": "onnar",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 7,
+    "ru": "этот",
+    "gag": "bu",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 8,
+    "ru": "тот",
+    "gag": "o",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 9,
+    "ru": "что",
+    "gag": "ne",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 10,
+    "ru": "кто",
+    "gag": "kim",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 11,
+    "ru": "где",
+    "gag": "neredä",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 12,
+    "ru": "куда",
+    "gag": "näänı",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 13,
+    "ru": "откуда",
+    "gag": "neredän",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 14,
+    "ru": "почему",
+    "gag": "neçin",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 15,
+    "ru": "когда",
+    "gag": "nezaman",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 16,
+    "ru": "как",
+    "gag": "nasıl",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 17,
+    "ru": "сколько",
+    "gag": "kaç",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 18,
+    "ru": "да",
+    "gag": "ölä",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 19,
+    "ru": "нет",
+    "gag": "yok",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 20,
+    "ru": "спасибо",
+    "gag": "bodaprosti",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 21,
+    "ru": "пожалуйста",
+    "gag": "buyur",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 22,
+    "ru": "здравствуйте",
+    "gag": "säläm",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 23,
+    "ru": "хорошо",
+    "gag": "islää",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 24,
+    "ru": "плохо",
+    "gag": "bet",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 25,
+    "ru": "много",
+    "gag": "çok",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 26,
+    "ru": "мало",
+    "gag": "az",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 27,
+    "ru": "сейчас",
+    "gag": "şindi",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 28,
+    "ru": "вчера",
+    "gag": "dün",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 29,
+    "ru": "сегодня",
+    "gag": "büün",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 30,
+    "ru": "завтра",
+    "gag": "yaarın",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 31,
+    "ru": "утро",
+    "gag": "sabaa",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 32,
+    "ru": "день",
+    "gag": "gün",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 33,
+    "ru": "вечер",
+    "gag": "avşam",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 34,
+    "ru": "ночь",
+    "gag": "gecä",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 35,
+    "ru": "время",
+    "gag": "vakıt",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 36,
+    "ru": "один",
+    "gag": "bir",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 37,
+    "ru": "два",
+    "gag": "iki",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 38,
+    "ru": "три",
+    "gag": "üç",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 39,
+    "ru": "четыре",
+    "gag": "dört",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 40,
+    "ru": "пять",
+    "gag": "beş",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 41,
+    "ru": "шесть",
+    "gag": "altı",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 42,
+    "ru": "семь",
+    "gag": "edi",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 43,
+    "ru": "восемь",
+    "gag": "sekiz",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 44,
+    "ru": "девять",
+    "gag": "dokuz",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 45,
+    "ru": "десять",
+    "gag": "on",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 46,
+    "ru": "двадцать",
+    "gag": "yirmi",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 47,
+    "ru": "тридцать",
+    "gag": "otuz",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 48,
+    "ru": "сорок",
+    "gag": "kırk",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 49,
+    "ru": "пятьдесят",
+    "gag": "elli",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 50,
+    "ru": "шестьдесят",
+    "gag": "altmış",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 51,
+    "ru": "семьдесят",
+    "gag": "yetmiş",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 52,
+    "ru": "восемьдесят",
+    "gag": "seksän",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 53,
+    "ru": "девяносто",
+    "gag": "doksan",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 54,
+    "ru": "сто",
+    "gag": "üz",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 55,
+    "ru": "тысяча",
+    "gag": "bin",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 56,
+    "ru": "мать",
+    "gag": "ana",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 57,
+    "ru": "отец",
+    "gag": "boba",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 58,
+    "ru": "сын",
+    "gag": "ool",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 59,
+    "ru": "дочь/девочка",
+    "gag": "kız",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 60,
+    "ru": "мальчик",
+    "gag": "çocuk",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 61,
+    "ru": "ребенок",
+    "gag": "uşak",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 62,
+    "ru": "брат",
+    "gag": "kardaş",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 63,
+    "ru": "старший брат",
+    "gag": "aga",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 64,
+    "ru": "старшая сестра",
+    "gag": "kaku",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 65,
+    "ru": "дедушка",
+    "gag": "dädu",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 66,
+    "ru": "бабушка",
+    "gag": "babu",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 67,
+    "ru": "мужчина",
+    "gag": "adam",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 68,
+    "ru": "женщина",
+    "gag": "kadına",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 69,
+    "ru": "жена",
+    "gag": "karı",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 70,
+    "ru": "супруги",
+    "gag": "karı-koca",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 71,
+    "ru": "человек",
+    "gag": "insan",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 72,
+    "ru": "люди",
+    "gag": "aalem",
+    "category": "Семья",
+    "learned": false
+  },
+  {
+    "id": 73,
+    "ru": "вода",
+    "gag": "su",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 74,
+    "ru": "хлеб",
+    "gag": "ekmek",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 75,
+    "ru": "мясо",
+    "gag": "et",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 76,
+    "ru": "рыба",
+    "gag": "balık",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 77,
+    "ru": "молоко",
+    "gag": "süt",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 78,
+    "ru": "сыр",
+    "gag": "peynir",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 79,
+    "ru": "творог",
+    "gag": "iişimik",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 80,
+    "ru": "масло",
+    "gag": "oloy",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 81,
+    "ru": "мед",
+    "gag": "bal",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 82,
+    "ru": "соль",
+    "gag": "tuz",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 83,
+    "ru": "сахар",
+    "gag": "şeker",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 84,
+    "ru": "перец",
+    "gag": "biber",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 85,
+    "ru": "яблоко",
+    "gag": "alma",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 86,
+    "ru": "груша",
+    "gag": "armut",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 87,
+    "ru": "слива",
+    "gag": "erik",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 88,
+    "ru": "арбуз",
+    "gag": "karpuz",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 89,
+    "ru": "дыня",
+    "gag": "kaun",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 90,
+    "ru": "орех",
+    "gag": "ceviz",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 91,
+    "ru": "картофель",
+    "gag": "kartofi",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 92,
+    "ru": "лук",
+    "gag": "soan",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 93,
+    "ru": "чеснок",
+    "gag": "sarmısak",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 94,
+    "ru": "суп",
+    "gag": "çorba",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 95,
+    "ru": "каша",
+    "gag": "sütleş",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 96,
+    "ru": "яйцо",
+    "gag": "yımırta",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 97,
+    "ru": "чай",
+    "gag": "çay",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 98,
+    "ru": "кофе",
+    "gag": "kafä",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 99,
+    "ru": "вино",
+    "gag": "şarap",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 100,
+    "ru": "быть",
+    "gag": "olmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 101,
+    "ru": "делать",
+    "gag": "yapmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 102,
+    "ru": "говорить",
+    "gag": "demää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 103,
+    "ru": "знать",
+    "gag": "bilmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 104,
+    "ru": "понимать",
+    "gag": "annamaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 105,
+    "ru": "хотеть",
+    "gag": "istemää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 106,
+    "ru": "мочь (уметь)",
+    "gag": "becermää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 107,
+    "ru": "идти",
+    "gag": "gitmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 108,
+    "ru": "приходить",
+    "gag": "gelmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 109,
+    "ru": "брать",
+    "gag": "almaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 110,
+    "ru": "давать",
+    "gag": "vermää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 111,
+    "ru": "смотреть",
+    "gag": "bakmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 112,
+    "ru": "видеть",
+    "gag": "görmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 113,
+    "ru": "слышать",
+    "gag": "işitmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 114,
+    "ru": "кушать",
+    "gag": "imää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 115,
+    "ru": "пить",
+    "gag": "içmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 116,
+    "ru": "спать",
+    "gag": "uyumaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 117,
+    "ru": "вставать",
+    "gag": "kalkmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 118,
+    "ru": "сидеть",
+    "gag": "oturmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 119,
+    "ru": "работать",
+    "gag": "işlemää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 120,
+    "ru": "читать",
+    "gag": "okumaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 121,
+    "ru": "писать",
+    "gag": "yazmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 122,
+    "ru": "спрашивать",
+    "gag": "sormaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 123,
+    "ru": "отвечать",
+    "gag": "cuvap etmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 124,
+    "ru": "думать",
+    "gag": "düşünmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 125,
+    "ru": "любить",
+    "gag": "sevmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 126,
+    "ru": "начинать",
+    "gag": "başlamaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 127,
+    "ru": "заканчивать",
+    "gag": "bitirmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 128,
+    "ru": "искать",
+    "gag": "aaramaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 129,
+    "ru": "находить",
+    "gag": "bulmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 130,
+    "ru": "хороший",
+    "gag": "islää",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 131,
+    "ru": "плохой",
+    "gag": "bet",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 132,
+    "ru": "большой",
+    "gag": "büük",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 133,
+    "ru": "маленький",
+    "gag": "ufak",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 134,
+    "ru": "длинный",
+    "gag": "uzun",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 135,
+    "ru": "короткий",
+    "gag": "kısa",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 136,
+    "ru": "широкий",
+    "gag": "geniş",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 137,
+    "ru": "узкий",
+    "gag": "dar",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 138,
+    "ru": "толстый",
+    "gag": "kalın",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 139,
+    "ru": "тонкий",
+    "gag": "incä",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 140,
+    "ru": "тяжелый",
+    "gag": "aar",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 141,
+    "ru": "легкий",
+    "gag": "ilin",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 142,
+    "ru": "горячий",
+    "gag": "sıcak",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 143,
+    "ru": "холодный",
+    "gag": "suuk",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 144,
+    "ru": "чистый",
+    "gag": "pak",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 145,
+    "ru": "грязный",
+    "gag": "kirli",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 146,
+    "ru": "быстрый",
+    "gag": "çabuk",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 147,
+    "ru": "сильный",
+    "gag": "kaavi",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 148,
+    "ru": "слабый",
+    "gag": "yufka",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 149,
+    "ru": "умный",
+    "gag": "akıllı",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 150,
+    "ru": "глупый",
+    "gag": "akılsız",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 151,
+    "ru": "красивый",
+    "gag": "gözäl",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 152,
+    "ru": "молодой",
+    "gag": "genç",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 153,
+    "ru": "старый",
+    "gag": "eski",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 154,
+    "ru": "голова",
+    "gag": "kafa",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 155,
+    "ru": "глаз",
+    "gag": "göz",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 156,
+    "ru": "нос",
+    "gag": "burnu",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 157,
+    "ru": "рот",
+    "gag": "aaz",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 158,
+    "ru": "зуб",
+    "gag": "diş",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 159,
+    "ru": "рука",
+    "gag": "el",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 160,
+    "ru": "нога",
+    "gag": "ayak",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 161,
+    "ru": "спина",
+    "gag": "arka",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 162,
+    "ru": "живот",
+    "gag": "karnı",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 163,
+    "ru": "кровь",
+    "gag": "kan",
+    "category": "Анатомия",
+    "learned": false
+  },
+  {
+    "id": 164,
+    "ru": "солнце",
+    "gag": "güneş",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 165,
+    "ru": "луна",
+    "gag": "ay",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 166,
+    "ru": "небо",
+    "gag": "gök",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 167,
+    "ru": "земля",
+    "gag": "er",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 168,
+    "ru": "огонь",
+    "gag": "ateş",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 169,
+    "ru": "воздух",
+    "gag": "hava",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 170,
+    "ru": "ветер",
+    "gag": "rüzgär",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 171,
+    "ru": "дерево",
+    "gag": "aaç",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 172,
+    "ru": "трава",
+    "gag": "ot",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 173,
+    "ru": "цветок",
+    "gag": "çiçek",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 174,
+    "ru": "медведь",
+    "gag": "ayı",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 175,
+    "ru": "волк",
+    "gag": "canavar",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 176,
+    "ru": "лиса",
+    "gag": "tilki",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 177,
+    "ru": "заяц",
+    "gag": "tauşan",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 178,
+    "ru": "кошка",
+    "gag": "kedi",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 179,
+    "ru": "собака",
+    "gag": "köpek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 180,
+    "ru": "корова",
+    "gag": "inek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 181,
+    "ru": "лошадь",
+    "gag": "at",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 182,
+    "ru": "свинья",
+    "gag": "domuz",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 183,
+    "ru": "овца",
+    "gag": "koyun",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 184,
+    "ru": "коза",
+    "gag": "keçi",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 185,
+    "ru": "мышь",
+    "gag": "sıçan",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 186,
+    "ru": "лев",
+    "gag": "aslan",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 187,
+    "ru": "тигр",
+    "gag": "kaplan",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 188,
+    "ru": "олень",
+    "gag": "karaca",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 189,
+    "ru": "верблюд",
+    "gag": "devä",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 190,
+    "ru": "птица",
+    "gag": "kuş",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 191,
+    "ru": "петух",
+    "gag": "horoz",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 192,
+    "ru": "курица",
+    "gag": "tauk",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 193,
+    "ru": "гусь",
+    "gag": "kaaz",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 194,
+    "ru": "утка",
+    "gag": "ördek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 195,
+    "ru": "орел",
+    "gag": "kartal",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 196,
+    "ru": "ворона",
+    "gag": "garga",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 197,
+    "ru": "муравей",
+    "gag": "karımca",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 198,
+    "ru": "пчела",
+    "gag": "arı",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 199,
+    "ru": "муха",
+    "gag": "sinnek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 200,
+    "ru": "бабочка",
+    "gag": "kelebek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 201,
+    "ru": "змея",
+    "gag": "yılan",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 202,
+    "ru": "лягушка",
+    "gag": "kurbaa",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 203,
+    "ru": "рыба",
+    "gag": "balık",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 204,
+    "ru": "дом",
+    "gag": "ev",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 205,
+    "ru": "дверь",
+    "gag": "kapu",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 206,
+    "ru": "окно",
+    "gag": "pencerä",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 207,
+    "ru": "комната",
+    "gag": "içer",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 208,
+    "ru": "стена",
+    "gag": "duvar",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 209,
+    "ru": "крыша",
+    "gag": "örtü",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 210,
+    "ru": "пол",
+    "gag": "er",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 211,
+    "ru": "потолок",
+    "gag": "tavan",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 212,
+    "ru": "стол",
+    "gag": "masa",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 213,
+    "ru": "стул",
+    "gag": "skemnä",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 214,
+    "ru": "кровать",
+    "gag": "krevat",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 215,
+    "ru": "шкаф",
+    "gag": "dolap",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 216,
+    "ru": "печь",
+    "gag": "soba",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 217,
+    "ru": "зеркало",
+    "gag": "ayna",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 218,
+    "ru": "нож",
+    "gag": "bıçak",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 219,
+    "ru": "ложка",
+    "gag": "kaşık",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 220,
+    "ru": "вилка",
+    "gag": "furkuliţa",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 221,
+    "ru": "тарелка",
+    "gag": "çini",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 222,
+    "ru": "стакан",
+    "gag": "stakan",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 223,
+    "ru": "чашка",
+    "gag": "fincan",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 224,
+    "ru": "кастрюля",
+    "gag": "tencärä",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 225,
+    "ru": "ковер",
+    "gag": "kilim",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 226,
+    "ru": "подушка",
+    "gag": "yastık",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 227,
+    "ru": "одеяло",
+    "gag": "yorgan",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 228,
+    "ru": "мыло",
+    "gag": "sabun",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 229,
+    "ru": "ключ",
+    "gag": "anatar",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 230,
+    "ru": "часы",
+    "gag": "sahat",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 231,
+    "ru": "утюг",
+    "gag": "ütü",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 232,
+    "ru": "веник",
+    "gag": "süpürgä",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 233,
+    "ru": "ведро",
+    "gag": "kazan",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 234,
+    "ru": "учитель",
+    "gag": "üüredici",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 235,
+    "ru": "врач",
+    "gag": "doktor",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 236,
+    "ru": "повар",
+    "gag": "aşçı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 237,
+    "ru": "продавец",
+    "gag": "satıcı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 238,
+    "ru": "рабочий",
+    "gag": "işçi",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 239,
+    "ru": "водитель",
+    "gag": "şoför",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 240,
+    "ru": "крестьянин",
+    "gag": "çiftçi",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 241,
+    "ru": "пастух",
+    "gag": "çoban",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 242,
+    "ru": "рыбак",
+    "gag": "balıkçı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 243,
+    "ru": "охотник",
+    "gag": "avcı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 244,
+    "ru": "кузнец",
+    "gag": "çilingir",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 245,
+    "ru": "портной",
+    "gag": "terzi",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 246,
+    "ru": "сапожник",
+    "gag": "çizmeci",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 247,
+    "ru": "пекарь",
+    "gag": "fırıncı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 248,
+    "ru": "мясник",
+    "gag": "kasap",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 249,
+    "ru": "музыкант",
+    "gag": "çalgıcı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 250,
+    "ru": "певец",
+    "gag": "türkücü",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 251,
+    "ru": "писатель",
+    "gag": "yazıcı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 252,
+    "ru": "художник",
+    "gag": "resimci",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 253,
+    "ru": "солдат",
+    "gag": "asker",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 254,
+    "ru": "начальник",
+    "gag": "bakan",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 255,
+    "ru": "судья",
+    "gag": "daavacı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 256,
+    "ru": "ученый",
+    "gag": "bilimci",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 257,
+    "ru": "цвет",
+    "gag": "renk",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 258,
+    "ru": "белый",
+    "gag": "biyaz",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 259,
+    "ru": "черный",
+    "gag": "kara",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 260,
+    "ru": "красный",
+    "gag": "kırmızı",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 261,
+    "ru": "синий",
+    "gag": "maavi",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 262,
+    "ru": "зеленый",
+    "gag": "eşil",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 263,
+    "ru": "желтый",
+    "gag": "sarı",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 264,
+    "ru": "серый",
+    "gag": "boz",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 265,
+    "ru": "голубой",
+    "gag": "çakır",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 266,
+    "ru": "розовый",
+    "gag": "pembä",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 267,
+    "ru": "фиолетовый",
+    "gag": "mor",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 268,
+    "ru": "оранжевый",
+    "gag": "turuncu",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 269,
+    "ru": "пестрый",
+    "gag": "alaca",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 270,
+    "ru": "город",
+    "gag": "kasaba",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 271,
+    "ru": "село",
+    "gag": "küü",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 272,
+    "ru": "улица",
+    "gag": "sokak",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 273,
+    "ru": "дорога",
+    "gag": "yol",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 274,
+    "ru": "машина",
+    "gag": "maşina",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 275,
+    "ru": "автобус",
+    "gag": "avtobus",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 276,
+    "ru": "поезд",
+    "gag": "tren",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 277,
+    "ru": "самолет",
+    "gag": "uçak",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 278,
+    "ru": "корабль",
+    "gag": "gemi",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 279,
+    "ru": "лодка",
+    "gag": "kayık",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 280,
+    "ru": "велосипед",
+    "gag": "velosiped",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 281,
+    "ru": "мост",
+    "gag": "köprü",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 282,
+    "ru": "вокзал",
+    "gag": "gara",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 283,
+    "ru": "аэропорт",
+    "gag": "aeroport",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 284,
+    "ru": "магазин",
+    "gag": "tükän",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 285,
+    "ru": "школа",
+    "gag": "şkola",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 286,
+    "ru": "больница",
+    "gag": "bolniţa",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 287,
+    "ru": "аптека",
+    "gag": "apteka",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 288,
+    "ru": "церковь",
+    "gag": "klisä",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 289,
+    "ru": "площадь",
+    "gag": "meydan",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 290,
+    "ru": "остановка",
+    "gag": "durak",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 291,
+    "ru": "рынок",
+    "gag": "panayır",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 292,
+    "ru": "здание",
+    "gag": "bina",
+    "category": "Транспорт и Город",
+    "learned": false
+  },
+  {
+    "id": 293,
+    "ru": "одежда",
+    "gag": "giiyim",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 294,
+    "ru": "платье",
+    "gag": "fistan",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 295,
+    "ru": "рубашка",
+    "gag": "gölmek",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 296,
+    "ru": "брюки",
+    "gag": "pantalon",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 297,
+    "ru": "юбка",
+    "gag": "fısta",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 298,
+    "ru": "куртка",
+    "gag": "jaket",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 299,
+    "ru": "пальто",
+    "gag": "palto",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 300,
+    "ru": "шапка",
+    "gag": "şapka",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 301,
+    "ru": "обувь",
+    "gag": "ayak kabı",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 302,
+    "ru": "сапог",
+    "gag": "çizmä",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 303,
+    "ru": "носки",
+    "gag": "çorap",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 304,
+    "ru": "платок",
+    "gag": "çember",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 305,
+    "ru": "карман",
+    "gag": "cöp",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 306,
+    "ru": "пуговица",
+    "gag": "düüme",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 307,
+    "ru": "неделя",
+    "gag": "afta",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 308,
+    "ru": "понедельник",
+    "gag": "pazertesi",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 309,
+    "ru": "вторник",
+    "gag": "salı",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 310,
+    "ru": "среда",
+    "gag": "çarşamba",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 311,
+    "ru": "четверг",
+    "gag": "perşembä",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 312,
+    "ru": "пятница",
+    "gag": "cumaa",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 313,
+    "ru": "суббота",
+    "gag": "cumertesi",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 314,
+    "ru": "воскресенье",
+    "gag": "pazar",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 315,
+    "ru": "год",
+    "gag": "yıl",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 316,
+    "ru": "месяц",
+    "gag": "ay",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 317,
+    "ru": "весна",
+    "gag": "ilkyaz",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 318,
+    "ru": "лето",
+    "gag": "yaz",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 319,
+    "ru": "осень",
+    "gag": "güz",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 320,
+    "ru": "зима",
+    "gag": "kış",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 321,
+    "ru": "красный",
+    "gag": "kırmız",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 322,
+    "ru": "белый",
+    "gag": "biyaz",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 323,
+    "ru": "черный",
+    "gag": "kara",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 324,
+    "ru": "синий",
+    "gag": "mavy",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 325,
+    "ru": "зеленый",
+    "gag": "yeşil",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 326,
+    "ru": "желтый",
+    "gag": "sary",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 327,
+    "ru": "серый",
+    "gag": "bori",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 328,
+    "ru": "розовый",
+    "gag": "fink",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 329,
+    "ru": "солнце",
+    "gag": "güneş",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 330,
+    "ru": "луна",
+    "gag": "ay",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 331,
+    "ru": "звезда",
+    "gag": "yıldız",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 332,
+    "ru": "небо",
+    "gag": "gök",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 333,
+    "ru": "облако",
+    "gag": "bulut",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 334,
+    "ru": "дождь",
+    "gag": "yamur",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 335,
+    "ru": "снег",
+    "gag": "kar",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 336,
+    "ru": "ветер",
+    "gag": "rüzgar",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 337,
+    "ru": "море",
+    "gag": "deniz",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 338,
+    "ru": "река",
+    "gag": "dere",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 339,
+    "ru": "лес",
+    "gag": "daa",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 340,
+    "ru": "гора",
+    "gag": "bayır",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 341,
+    "ru": "цветок",
+    "gag": "çiçek",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 342,
+    "ru": "дерево",
+    "gag": "aaç",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 343,
+    "ru": "платье",
+    "gag": "fistan",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 344,
+    "ru": "брюки",
+    "gag": "pantol",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 345,
+    "ru": "рубашка",
+    "gag": "gömlek",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 346,
+    "ru": "шапка",
+    "gag": "şapka",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 347,
+    "ru": "обувь",
+    "gag": "papuç",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 348,
+    "ru": "носки",
+    "gag": "çorap",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 349,
+    "ru": "ремень",
+    "gag": "kemer",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 350,
+    "ru": "куртка",
+    "gag": "kofte",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 351,
+    "ru": "идти",
+    "gag": "gitmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 352,
+    "ru": "приходить",
+    "gag": "gelmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 353,
+    "ru": "смотреть",
+    "gag": "bakmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 354,
+    "ru": "видеть",
+    "gag": "görmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 355,
+    "ru": "слушать",
+    "gag": "işitmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 356,
+    "ru": "говорить",
+    "gag": "lafetmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 357,
+    "ru": "кушать",
+    "gag": "iyimää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 358,
+    "ru": "пить",
+    "gag": "içmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 359,
+    "ru": "спать",
+    "gag": "uyumaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 360,
+    "ru": "просыпаться",
+    "gag": "uyanmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 361,
+    "ru": "сидеть",
+    "gag": "oturmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 362,
+    "ru": "стоять",
+    "gag": "durmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 363,
+    "ru": "читать",
+    "gag": "okumaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 364,
+    "ru": "писать",
+    "gag": "yazmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 365,
+    "ru": "работать",
+    "gag": "işlemää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 366,
+    "ru": "играть",
+    "gag": "oynamaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 367,
+    "ru": "бежать",
+    "gag": "kaçmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 368,
+    "ru": "гулять",
+    "gag": "gezmää",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 369,
+    "ru": "покупать",
+    "gag": "satın almaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 370,
+    "ru": "продавать",
+    "gag": "satmaa",
+    "category": "Действия",
+    "learned": false
+  },
+  {
+    "id": 371,
+    "ru": "учитель",
+    "gag": "üretici",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 372,
+    "ru": "врач",
+    "gag": "hekim",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 373,
+    "ru": "водитель",
+    "gag": "şoför",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 374,
+    "ru": "продавец",
+    "gag": "satıcı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 375,
+    "ru": "хлеб",
+    "gag": "ekmek",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 376,
+    "ru": "вода",
+    "gag": "su",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 377,
+    "ru": "молоко",
+    "gag": "süt",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 378,
+    "ru": "соль",
+    "gag": "tuz",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 379,
+    "ru": "сахар",
+    "gag": "şeker",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 380,
+    "ru": "мясо",
+    "gag": "et",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 381,
+    "ru": "яйцо",
+    "gag": "yımırta",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 382,
+    "ru": "сыр",
+    "gag": "peynir",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 383,
+    "ru": "масло",
+    "gag": "maslo",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 384,
+    "ru": "яблоко",
+    "gag": "alma",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 385,
+    "ru": "большой",
+    "gag": "büyük",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 386,
+    "ru": "маленький",
+    "gag": "küçük",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 387,
+    "ru": "хороший",
+    "gag": "ey",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 388,
+    "ru": "плохой",
+    "gag": "fena",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 389,
+    "ru": "новый",
+    "gag": "yeni",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 390,
+    "ru": "старый",
+    "gag": "eskі",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 391,
+    "ru": "горячий",
+    "gag": "sıcak",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 392,
+    "ru": "холодный",
+    "gag": "suuk",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 393,
+    "ru": "высокий",
+    "gag": "üsek",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 394,
+    "ru": "низкий",
+    "gag": "alçak",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 395,
+    "ru": "быстрый",
+    "gag": "çabuk",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 396,
+    "ru": "медленный",
+    "gag": "yavaş",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 397,
+    "ru": "умный",
+    "gag": "akıllı",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 398,
+    "ru": "красивый",
+    "gag": "gözäl",
+    "category": "Качества",
+    "learned": false
+  },
+  {
+    "id": 399,
+    "ru": "стол",
+    "gag": "masa",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 400,
+    "ru": "стул",
+    "gag": "skemni",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 401,
+    "ru": "окно",
+    "gag": "pencerä",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 402,
+    "ru": "дверь",
+    "gag": "kapu",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 403,
+    "ru": "кровать",
+    "gag": "yataat",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 404,
+    "ru": "шкаф",
+    "gag": "dolap",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 405,
+    "ru": "тарелка",
+    "gag": "taaler",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 406,
+    "ru": "ложка",
+    "gag": "kaşık",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 407,
+    "ru": "вилка",
+    "gag": "vilka",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 408,
+    "ru": "нож",
+    "gag": "biçak",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 409,
+    "ru": "город",
+    "gag": "kasaba",
+    "category": "Места",
+    "learned": false
+  },
+  {
+    "id": 410,
+    "ru": "село",
+    "gag": "küü",
+    "category": "Места",
+    "learned": false
+  },
+  {
+    "id": 411,
+    "ru": "школа",
+    "gag": "şkola",
+    "category": "Места",
+    "learned": false
+  },
+  {
+    "id": 412,
+    "ru": "магазин",
+    "gag": "dükän",
+    "category": "Места",
+    "learned": false
+  },
+  {
+    "id": 413,
+    "ru": "дорога",
+    "gag": "yol",
+    "category": "Места",
+    "learned": false
+  },
+  {
+    "id": 414,
+    "ru": "сегодня",
+    "gag": "buün",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 415,
+    "ru": "вчера",
+    "gag": "dün",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 416,
+    "ru": "завтра",
+    "gag": "saaba",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 417,
+    "ru": "утро",
+    "gag": "saaba",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 418,
+    "ru": "день",
+    "gag": "gün",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 419,
+    "ru": "вечер",
+    "gag": "akşam",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 420,
+    "ru": "ночь",
+    "gag": "gece",
+    "category": "Время",
+    "learned": false
+  }
+]
