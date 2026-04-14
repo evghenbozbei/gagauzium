@@ -3,31 +3,72 @@ import json
 import random
 import asyncio
 
-# --- СЛОВАРЬ КАТЕГОРИЙ (RU / GAG) ---
-category_map = {
-    "Местоимения": "Adıllar",
-    "Вопросы": "Sormalar",
-    "Базовые": "Temel laflar",
-    "Время": "Vakıt",
-    "Цифры": "Sayılar",
-    "Семья": "Aylä",
-    "Еда": "İimäk",
-    "Глаголы": "İşliklär",
-    "Прилагательные": "Nışannar",
-    "Анатомия": "Anatomiya",
-    "Природа": "Tabiat",
-    "Животные": "Hayvannar",
-    "Дом и Предметы": "Ev hem nesnelär",
-    "Профессии": "Zanaatlar",
-    "Цвета": "Renklär",
-    "Транспорт и Город": "Transport hem Kasaba",
-    "Одежда": "Giiyim",
-    "Действия": "İşlär",
-    "Качества": "Kallitälär",
-    "Места": "Erler"
+# --- ПЕРЕВОДЫ ИНТЕРФЕЙСА ---
+UI_TEXT = {
+    "RU": {
+        "title": "Gagauzça üürenmää",
+        "learn": "Учить",
+        "review": "Повторить",
+        "view_all": "Просмотреть все слова",
+        "back": "< Назад",
+        "to_menu": "< В меню",
+        "reset": "Обнулить",
+        "global_title": "ОБЩИЙ ПРОГРЕСС",
+        "global_btn": "Глобальное повторение",
+        "remember": "ЗАПОМНИТЕ СЛОВО",
+        "next": "Понял, дальше",
+        "quiz_title": "ПРОВЕРКА ЗНАНИЙ",
+        "word_count": "Слово {0} из {1}",
+        "correct": "Верно! ✅",
+        "wrong": "Ошибка! ❌",
+        "finished": "Сессия завершена!",
+        "dictionary": "Словарь: "
+    },
+    "RO": {
+        "title": "Învățarea limbii găgăuze",
+        "learn": "Învață",
+        "review": "Repetă",
+        "view_all": "Vezi toate cuvintele",
+        "back": "< Înapoi",
+        "to_menu": "< La meniu",
+        "reset": "Resetează",
+        "global_title": "PROGRES TOTAL",
+        "global_btn": "Repetare globală",
+        "remember": "ȚINE MINTE CUVÂNTUL",
+        "next": "Am înțeles, mai departe",
+        "quiz_title": "VERIFICAREA CUNOȘTINȚELOR",
+        "word_count": "Cuvântul {0} din {1}",
+        "correct": "Corect! ✅",
+        "wrong": "Eroare! ❌",
+        "finished": "Sesiune finalizată!",
+        "dictionary": "Dicționar: "
+    }
 }
 
-# --- ЛОГИКА ДАННЫХ ---
+# --- СЛОВАРЬ КАТЕГОРИЙ ---
+category_map = {
+    "Местоимения": {"ro": "Pronume", "gag": "Adıllar"},
+    "Вопросы": {"ro": "Întrebări", "gag": "Sormalar"},
+    "Базовые": {"ro": "Cuvinte de bază", "gag": "Temel laflar"},
+    "Время": {"ro": "Timpul", "gag": "Vakıt"},
+    "Цифры": {"ro": "Numere", "gag": "Sayılar"},
+    "Семья": {"ro": "Familia", "gag": "Aylä"},
+    "Еда": {"ro": "Mâncare", "gag": "İimäk"},
+    "Глаголы": {"ro": "Verbe", "gag": "İşliklär"},
+    "Прилагательные": {"ro": "Adjective", "gag": "Nışannar"},
+    "Анатомия": {"ro": "Anatomia", "gag": "Anatomiya"},
+    "Природа": {"ro": "Natura", "gag": "Tabiat"},
+    "Животные": {"ro": "Animale", "gag": "Hayvannar"},
+    "Дом и Предметы": {"ro": "Casă și obiecte", "gag": "Ev hem nesnelär"},
+    "Профессии": {"ro": "Profesii", "gag": "Zanaatlar"},
+    "Цвета": {"ro": "Culori", "gag": "Renklär"},
+    "Транспорт и Город": {"ro": "Transport și oraș", "gag": "Transport hem Kasaba"},
+    "Одежда": {"ro": "Haine", "gag": "Giiyim"},
+    "Действия": {"ro": "Acțiuni", "gag": "İşlär"},
+    "Качества": {"ro": "Calități", "gag": "Kallitälär"},
+    "Места": {"ro": "Locuri", "gag": "Erler"}
+}
+
 def load_data():
     try:
         with open("words_data.json", "r", encoding="utf-8") as f:
@@ -39,17 +80,17 @@ def save_data(data):
     with open("words_data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-# --- ГЛАВНОЕ ПРИЛОЖЕНИЕ ---
 def main(page: ft.Page):
     page.title = "Gagauzium"
-    page.theme_mode = "light" 
+    page.theme_mode = ft.ThemeMode.LIGHT
     page.window_width = 450
     page.window_height = 800
-    page.horizontal_alignment = "center"
-    page.scroll = "auto" 
+    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.scroll = ft.ScrollMode.AUTO
     
     all_words = load_data()
     app_state = {
+        "lang": "RU",
         "current_batch": [],
         "index": 0,
         "is_quiz": False, 
@@ -59,135 +100,122 @@ def main(page: ft.Page):
         "last_word_id": None
     }
 
+    def show_language_selector():
+        page.clean()
+        page.bgcolor = "white"
+        page.add(
+            ft.Container(height=100),
+            ft.Text("Gagauzium", size=45, weight="bold", color="#00008B"),
+            ft.Text("Выберите язык / Alegeți limba", size=16, color="grey"),
+            ft.Container(height=40),
+            ft.ElevatedButton(
+                content=ft.Row([ft.Text("РУССКИЙ", size=20, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
+                width=300, height=70, on_click=lambda _: set_language("RU")
+            ),
+            ft.Container(height=20),
+            ft.ElevatedButton(
+                content=ft.Row([ft.Text("ROMÂNĂ", size=20, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
+                width=300, height=70, on_click=lambda _: set_language("RO")
+            )
+        )
+        page.update()
+
+    def set_language(lang):
+        app_state["lang"] = lang
+        show_main_menu()
+
     def show_main_menu():
         page.clean()
-        page.bgcolor = "#E0FFFF" # Фон меню
+        page.bgcolor = "#E0FFFF"
+        lang = app_state["lang"]
+        txt = UI_TEXT[lang]
         nonlocal all_words
         all_words = load_data()
         
         page.add(
-            ft.Container(height=20),
-            ft.Text("Gagauzça üürenmää", size=25, weight="bold", color="#00008B"),
+            ft.Container(height=15),
+            ft.Row([ft.TextButton("🌐 Сменить язык / Schimbă limba", on_click=lambda _: show_language_selector())], alignment=ft.MainAxisAlignment.END),
+            ft.Text(txt["title"], size=25, weight="bold", color="#00008B"),
             ft.Container(height=10)
         )
         
         categories = sorted(list(set(w["category"] for w in all_words)))
-        category_column = ft.Column(spacing=20, horizontal_alignment="center")
-        
+        category_column = ft.Column(spacing=20, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
         total_learned_count = len([w for w in all_words if w["learned"]])
 
         for cat in categories:
             unlearned = [w for w in all_words if w["category"] == cat and not w["learned"]]
             learned = [w for w in all_words if w["category"] == cat and w["learned"]]
             
-            gag_cat = category_map.get(cat, "")
-            display_name = f"{cat} / {gag_cat}" if gag_cat else cat
-
-            def reset_category(e, category_name=cat):
-                for w in all_words:
-                    if w["category"] == category_name:
-                        w["learned"] = False
-                save_data(all_words)
-                show_main_menu()
+            cat_info = category_map.get(cat, {})
+            base_name = cat_info.get(lang.lower(), cat)
+            gag_name = cat_info.get("gag", "")
+            display_name = f"{base_name} / {gag_name}" if gag_name else base_name
 
             cat_card = ft.Container(
                 content=ft.Column([
-                    # Заголовок категории
                     ft.Row([
                         ft.Text(display_name, size=18, weight="bold", color="black", expand=True),
-                        ft.TextButton(
-                            content=ft.Text("Обнулить", size=11, color="red"),
-                            on_click=reset_category
-                        )
-                    ], alignment="spaceBetween"),
-                    
-                    # Отступ между заголовком и кнопками
+                        ft.TextButton(content=ft.Text(txt["reset"], size=11, color="red"), on_click=lambda e, c=cat: reset_category(c))
+                    ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                     ft.Container(height=10),
-                    
-                    # Кнопки действий
                     ft.Row([
-                        ft.ElevatedButton(
-                            content=ft.Text("Учить", size=13, color="black"),
-                            on_click=lambda e, c=cat: start_session(c, "new"),
-                            disabled=len(unlearned) == 0,
-                            bgcolor="#FFD700",
-                            width=165
-                        ),
-                        ft.ElevatedButton(
-                            content=ft.Text("Повторить", size=13),
-                            on_click=lambda e, c=cat: start_session(c, "review"),
-                            disabled=len(learned) == 0,
-                            width=165
-                        ),
-                    ], alignment="center", spacing=10),
-                    
-                    ft.TextButton(
-                        content=ft.Text("Просмотреть все слова", size=14, color="blue"),
-                        on_click=lambda e, c=cat: show_word_list(c),
-                        width=340
-                    )
-                ], horizontal_alignment="center", spacing=5),
-                padding=15,
-                width=400,
-                bgcolor="#FFFFE0", # Блок категории
-                border=ft.border.all(1, "#dddddd"),
-                border_radius=15
+                        ft.ElevatedButton(content=ft.Text(txt["learn"], size=13, color="black"), on_click=lambda e, c=cat: start_session(c, "new"), disabled=len(unlearned) == 0, bgcolor="#FFD700", width=165),
+                        ft.ElevatedButton(content=ft.Text(txt["review"], size=13), on_click=lambda e, c=cat: start_session(c, "review"), disabled=len(learned) == 0, width=165),
+                    ], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
+                    ft.TextButton(content=ft.Text(txt["view_all"], size=14, color="blue"), on_click=lambda e, c=cat: show_word_list(c), width=340)
+                ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=5),
+                padding=15, width=400, bgcolor="#FFFFE0", border=ft.Border.all(1, "#dddddd"), border_radius=15
             )
             category_column.controls.append(cat_card)
         
         page.add(category_column)
-
         page.add(
-            ft.Container(height=30),
-            ft.Divider(height=1, color="#eeeeee"),
-            ft.Container(height=20),
-            ft.Text("ОБЩИЙ ПРОГРЕСС", size=18, weight="bold", color="black"),
-            ft.ElevatedButton(
-                content=ft.Text("Глобальное повторение", size=16, weight="bold"), # Убрали счетчик
-                bgcolor="#bbdefb",
-                color="black",
-                width=350,
-                height=60,
-                on_click=lambda _: start_session("ALL", "review"),
-                disabled=total_learned_count < 4
-            ),
+            ft.Container(height=30), ft.Divider(height=1, color="#eeeeee"), ft.Container(height=20),
+            ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
+            ft.ElevatedButton(content=ft.Text(txt["global_btn"], size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count < 4),
             ft.Container(height=40)
         )
         page.update()
 
+    def reset_category(category_name):
+        for w in all_words:
+            if w["category"] == category_name:
+                w["learned"] = False
+        save_data(all_words)
+        show_main_menu()
+
     def show_word_list(category):
         page.clean()
         page.bgcolor = "#E0FFFF"
+        lang = app_state["lang"]
+        txt = UI_TEXT[lang]
         words = [w for w in all_words if w["category"] == category]
-        
-        gag_cat = category_map.get(category, "")
-        display_name = f"{category} / {gag_cat}" if gag_cat else category
+        cat_info = category_map.get(category, {})
+        cat_display = cat_info.get(lang.lower(), category)
 
         page.add(
-            ft.Container(height=15), # Safe Area
-            ft.Row([ft.TextButton("< Назад", on_click=lambda _: show_main_menu())], alignment="start"),
+            ft.Container(height=15),
+            ft.Row([ft.TextButton(txt["back"], on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
             ft.Container(height=10),
-            ft.Text(f"Словарь: {display_name}", size=20, weight="bold", color="black"),
+            ft.Text(f"{txt['dictionary']}{cat_display}", size=20, weight="bold", color="black"),
             ft.Container(height=10)
         )
 
         word_list_column = ft.Column(spacing=0)
         for i, w in enumerate(words):
+            native_word = w.get(lang.lower(), w.get("ru", "---"))
             word_list_column.controls.append(
                 ft.Container(
                     content=ft.Row([
-                        ft.Container(content=ft.Text(w["ru"], size=16, weight="bold", color="black"), width=150),
+                        ft.Container(content=ft.Text(native_word, size=16, weight="bold", color="black"), width=150),
                         ft.Text(w["gag"], size=16, color="blue", italic=True, expand=True),
                         ft.Text("✅" if w["learned"] else "⭕", size=14)
-                    ], alignment="start"),
-                    padding=12,
-                    bgcolor="#ffffff" if i % 2 == 0 else "#f9f9f9",
-                    border=ft.border.only(bottom=ft.border.BorderSide(1, "#eeeeee"))
+                    ], alignment=ft.MainAxisAlignment.START),
+                    padding=12, bgcolor="#ffffff" if i % 2 == 0 else "#f9f9f9", border=ft.border.only(bottom=ft.border.BorderSide(1, "#eeeeee"))
                 )
             )
-        
         page.add(word_list_column)
-        page.add(ft.Container(height=30))
         page.update()
 
     def start_session(category, mode):
@@ -209,42 +237,35 @@ def main(page: ft.Page):
         if not app_state["current_batch"]:
             show_main_menu()
         else:
-            if app_state["is_quiz"]:
-                show_quiz_card()
-            else:
-                show_study_card()
+            if app_state["is_quiz"]: show_quiz_card()
+            else: show_study_card()
 
     def show_study_card():
         page.clean()
         page.bgcolor = "#F5DEB3"
+        lang = app_state["lang"]
+        txt = UI_TEXT[lang]
         if app_state["index"] >= len(app_state["current_batch"]):
             app_state["is_quiz"] = True
             app_state["index"] = 0
             show_quiz_card()
             return
-
         word = app_state["current_batch"][app_state["index"]]
-        back_btn = ft.TextButton("< В меню", on_click=lambda _: show_main_menu())
-
+        native_word = word.get(lang.lower(), word.get("ru", "---"))
         page.add(
-            ft.Container(height=15), # Safe Area
-            ft.Row([back_btn], alignment="start"),
+            ft.Container(height=15), ft.Row([ft.TextButton(txt["to_menu"], on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
             ft.Container(height=50),
             ft.Container(
                 content=ft.Column([
-                    ft.Text("ЗАПОМНИТЕ СЛОВО", size=16, color="grey"),
-                    ft.Text(word["ru"], size=35, weight="bold", color="black", text_align="center"),
+                    ft.Text(txt["remember"], size=16, color="grey"),
+                    ft.Text(native_word, size=35, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
                     ft.Divider(height=20, color="transparent"),
-                    ft.Text(word["gag"], size=30, color="blue", italic=True, text_align="center"),
-                ], horizontal_alignment="center"),
-                padding=40,
-                bgcolor="#B0E0E6", # Голубой блок
-                border=ft.border.all(2, "blue"),
-                border_radius=20,
-                width=380,
+                    ft.Text(word["gag"], size=30, color="blue", italic=True, text_align=ft.TextAlign.CENTER),
+                ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                padding=40, bgcolor="#B0E0E6", border=ft.Border.all(2, "blue"), border_radius=20, width=380,
             ),
             ft.Container(height=50),
-            ft.ElevatedButton("Понял, дальше", on_click=lambda _: next_study_word(), width=300, height=50)
+            ft.ElevatedButton(txt["next"], on_click=lambda _: next_study_word(), width=300, height=50)
         )
         page.update()
 
@@ -255,18 +276,19 @@ def main(page: ft.Page):
     def show_quiz_card():
         page.clean()
         page.bgcolor = "#FFE4B5"
+        lang = app_state["lang"]
+        txt = UI_TEXT[lang]
         if app_state["index"] >= len(app_state["current_batch"]):
             page.add(
-                ft.Container(height=100),
-                ft.Text("✅", size=80),
-                ft.Text("Сессия завершена!", size=25, weight="bold", color="black"),
-                ft.ElevatedButton("В меню", on_click=lambda _: show_main_menu(), width=200)
+                ft.Container(height=100), ft.Text("✅", size=80),
+                ft.Text(txt["finished"], size=25, weight="bold", color="black"),
+                ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
             )
             page.update()
             return
 
         word = app_state["current_batch"][app_state["index"]]
-        
+        native_word = word.get(lang.lower(), word.get("ru", "---"))
         if app_state["last_word_id"] != word["id"]:
             correct = word["gag"]
             others = [w["gag"] for w in all_words if w["gag"] != correct]
@@ -277,27 +299,22 @@ def main(page: ft.Page):
             app_state["last_word_id"] = word["id"]
             app_state["feedback_text"] = ""
 
-        btns_column = ft.Column(spacing=10, horizontal_alignment="center")
+        btns_column = ft.Column(spacing=10, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
         for opt in app_state["current_options"]:
-            btns_column.controls.append(
-                ft.ElevatedButton(opt, width=350, height=55, on_click=lambda e, s=opt: check_answer(e, s, word))
-            )
+            btns_column.controls.append(ft.ElevatedButton(opt, width=350, height=55, on_click=lambda e, s=opt: check_answer(e, s, word)))
 
         page.add(
-            ft.Container(height=15), # Safe Area
-            ft.Row([ft.TextButton("< В меню", on_click=lambda _: show_main_menu())], alignment="start"),
-            ft.Text("ПРОВЕРКА ЗНАНИЙ", size=16, color="grey"),
-            ft.Text(f"Слово {app_state['index']+1} из {len(app_state['current_batch'])}", color="black", weight="bold"),
-            ft.Container(height=20),
-            ft.Text(word["ru"], size=35, weight="bold", color="black"),
-            ft.Container(height=20),
-            btns_column,
-            ft.Container(height=20),
+            ft.Container(height=15), ft.Row([ft.TextButton(txt["to_menu"], on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Text(txt["quiz_title"], size=16, color="grey"),
+            ft.Text(txt["word_count"].format(app_state['index']+1, len(app_state['current_batch'])), color="black", weight="bold"),
+            ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
+            ft.Container(height=20), btns_column, ft.Container(height=20),
             ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
         )
         page.update()
 
     def check_answer(e, selected, correct_word):
+        lang = app_state["lang"]
         if selected == correct_word["gag"]:
             if app_state["mode"] == "new":
                 for w in all_words:
@@ -305,25 +322,22 @@ def main(page: ft.Page):
                         w["learned"] = True
                         break
                 save_data(all_words)
-            
             e.control.bgcolor = "green"
             e.control.color = "white"
-            app_state["feedback_text"] = "Верно! ✅"
+            app_state["feedback_text"] = UI_TEXT[lang]["correct"]
             page.update()
-            
             async def go_next():
                 await asyncio.sleep(1.0)
                 app_state["index"] += 1
                 show_quiz_card()
-            
             page.run_task(go_next)
         else:
             e.control.bgcolor = "red"
             e.control.color = "white"
-            app_state["feedback_text"] = "Ошибка! ❌"
+            app_state["feedback_text"] = UI_TEXT[lang]["wrong"]
             page.update()
 
-    show_main_menu()
+    show_language_selector()
 
 if __name__ == "__main__":
     ft.run(main)
