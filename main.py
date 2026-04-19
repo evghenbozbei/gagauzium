@@ -10,11 +10,11 @@ UI_TEXT = {
         "learn": "Учить",
         "review": "Повторить",
         "view_all": "Просмотреть все слова",
-        "back": "< Назад",
-        "to_menu": "< В меню",
+        "back": "< Назад ко всем категориям",
+        "to_menu": "< Назад ко всем категориям",
         "reset": "Обнулить",
         "global_title": "ОБЩИЙ ПРОГРЕСС",
-        "global_btn": "Глобальное повторение",
+        "global_btn": "Повторять слова всех категорий",
         "remember": "ЗАПОМНИТЕ СЛОВО",
         "next": "Понял, дальше",
         "quiz_title": "ПРОВЕРКА ЗНАНИЙ",
@@ -22,18 +22,18 @@ UI_TEXT = {
         "correct": "Верно! ✅",
         "wrong": "Ошибка! ❌",
         "finished": "Сессия завершена!",
-        "dictionary": "Словарь: "
+        "dictionary": "Категория: "
     },
     "RO": {
         "title": "Învățarea limbii găgăuze",
         "learn": "Învață",
         "review": "Repetă",
         "view_all": "Vezi toate cuvintele",
-        "back": "< Înapoi",
-        "to_menu": "< La meniu",
+        "back": "< Înapoi la toate categoriile",
+        "to_menu": "< Înapoi la toate categoriile",
         "reset": "Resetează",
         "global_title": "PROGRES TOTAL",
-        "global_btn": "Repetare globală",
+        "global_btn": "Repetați cuvintele din toate categoriile",
         "remember": "ȚINE MINTE CUVÂNTUL",
         "next": "Am înțeles, mai departe",
         "quiz_title": "VERIFICAREA CUNOȘTINȚELOR",
@@ -41,7 +41,7 @@ UI_TEXT = {
         "correct": "Corect! ✅",
         "wrong": "Eroare! ❌",
         "finished": "Sesiune finalizată!",
-        "dictionary": "Dicționar: "
+        "dictionary": "Categorie: "
     }
 }
 
@@ -86,7 +86,6 @@ def main(page: ft.Page):
     page.window_width = 450
     page.window_height = 800
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.scroll = ft.ScrollMode.AUTO
     
     all_words = load_data()
     app_state = {
@@ -102,6 +101,7 @@ def main(page: ft.Page):
 
     def show_language_selector():
         page.clean()
+        page.scroll = None
         page.bgcolor = "white"
         page.add(
             ft.Container(height=100),
@@ -126,6 +126,7 @@ def main(page: ft.Page):
 
     def show_main_menu():
         page.clean()
+        page.scroll = ft.ScrollMode.AUTO
         page.bgcolor = "#E0FFFF"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
@@ -133,7 +134,7 @@ def main(page: ft.Page):
         all_words = load_data()
         
         page.add(
-            ft.Container(height=15),
+            ft.Container(height=30),
             ft.Row([ft.TextButton("🌐 Сменить язык / Schimbă limba", on_click=lambda _: show_language_selector())], alignment=ft.MainAxisAlignment.END),
             ft.Text(txt["title"], size=25, weight="bold", color="#00008B"),
             ft.Container(height=10)
@@ -187,6 +188,7 @@ def main(page: ft.Page):
 
     def show_word_list(category):
         page.clean()
+        page.scroll = None
         page.bgcolor = "#E0FFFF"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
@@ -194,28 +196,31 @@ def main(page: ft.Page):
         cat_info = category_map.get(category, {})
         cat_display = cat_info.get(lang.lower(), category)
 
-        page.add(
-            ft.Container(height=15),
-            ft.Row([ft.TextButton(txt["back"], on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
-            ft.Container(height=10),
-            ft.Text(f"{txt['dictionary']}{cat_display}", size=20, weight="bold", color="black"),
-            ft.Container(height=10)
-        )
-
-        word_list_column = ft.Column(spacing=0)
+        rows = []
         for i, w in enumerate(words):
             native_word = w.get(lang.lower(), w.get("ru", "---"))
-            word_list_column.controls.append(
+            rows.append(
                 ft.Container(
                     content=ft.Row([
                         ft.Container(content=ft.Text(native_word, size=16, weight="bold", color="black"), width=150),
                         ft.Text(w["gag"], size=16, color="blue", italic=True, expand=True),
                         ft.Text("✅" if w["learned"] else "⭕", size=14)
                     ], alignment=ft.MainAxisAlignment.START),
-                    padding=12, bgcolor="#ffffff" if i % 2 == 0 else "#f9f9f9", border=ft.border.only(bottom=ft.border.BorderSide(1, "#eeeeee"))
+                    padding=12, bgcolor="#ffffff" if i % 2 == 0 else "#f9f9f9",
+                    border=ft.border.only(bottom=ft.border.BorderSide(1, "#eeeeee"))
                 )
             )
-        page.add(word_list_column)
+
+        list_view = ft.ListView(controls=rows, expand=True, spacing=0)
+
+        page.add(
+            ft.Container(height=30),
+            ft.Row([ft.TextButton(content=ft.Text(txt["back"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Container(height=10),
+            ft.Text(f"{txt['dictionary']}{cat_display}", size=20, weight="bold", color="black"),
+            ft.Container(height=10),
+            list_view,
+        )
         page.update()
 
     def start_session(category, mode):
@@ -242,6 +247,7 @@ def main(page: ft.Page):
 
     def show_study_card():
         page.clean()
+        page.scroll = None
         page.bgcolor = "#F5DEB3"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
@@ -253,7 +259,8 @@ def main(page: ft.Page):
         word = app_state["current_batch"][app_state["index"]]
         native_word = word.get(lang.lower(), word.get("ru", "---"))
         page.add(
-            ft.Container(height=15), ft.Row([ft.TextButton(txt["to_menu"], on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Container(height=30),
+            ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
             ft.Container(height=50),
             ft.Container(
                 content=ft.Column([
@@ -275,6 +282,7 @@ def main(page: ft.Page):
 
     def show_quiz_card():
         page.clean()
+        page.scroll = None
         page.bgcolor = "#FFE4B5"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
@@ -304,7 +312,8 @@ def main(page: ft.Page):
             btns_column.controls.append(ft.ElevatedButton(opt, width=350, height=55, on_click=lambda e, s=opt: check_answer(e, s, word)))
 
         page.add(
-            ft.Container(height=15), ft.Row([ft.TextButton(txt["to_menu"], on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Container(height=30),
+            ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
             ft.Text(txt["quiz_title"], size=16, color="grey"),
             ft.Text(txt["word_count"].format(app_state['index']+1, len(app_state['current_batch'])), color="black", weight="bold"),
             ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
@@ -315,6 +324,7 @@ def main(page: ft.Page):
 
     def check_answer(e, selected, correct_word):
         lang = app_state["lang"]
+        btn = e.control
         if selected == correct_word["gag"]:
             if app_state["mode"] == "new":
                 for w in all_words:
@@ -322,20 +332,29 @@ def main(page: ft.Page):
                         w["learned"] = True
                         break
                 save_data(all_words)
-            e.control.bgcolor = "green"
-            e.control.color = "white"
+            btn.bgcolor = "green"
+            btn.color = "white"
             app_state["feedback_text"] = UI_TEXT[lang]["correct"]
             page.update()
             async def go_next():
-                await asyncio.sleep(1.0)
+                await asyncio.sleep(0.8)
+                btn.bgcolor = None
+                btn.color = None
                 app_state["index"] += 1
                 show_quiz_card()
             page.run_task(go_next)
         else:
-            e.control.bgcolor = "red"
-            e.control.color = "white"
+            btn.bgcolor = "red"
+            btn.color = "white"
             app_state["feedback_text"] = UI_TEXT[lang]["wrong"]
             page.update()
+            async def reset_btn():
+                await asyncio.sleep(0.8)
+                btn.bgcolor = None
+                btn.color = None
+                app_state["feedback_text"] = ""
+                page.update()
+            page.run_task(reset_btn)
 
     show_language_selector()
 
