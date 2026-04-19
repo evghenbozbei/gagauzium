@@ -22,7 +22,8 @@ UI_TEXT = {
         "correct": "Верно! ✅",
         "wrong": "Ошибка! ❌",
         "finished": "Сессия завершена!",
-        "dictionary": "Категория: "
+        "dictionary": "Категория: ",
+        "reset_all": "Обнулить весь прогресс"
     },
     "RO": {
         "title": "Învățarea limbii găgăuze",
@@ -41,7 +42,8 @@ UI_TEXT = {
         "correct": "Corect! ✅",
         "wrong": "Eroare! ❌",
         "finished": "Sesiune finalizată!",
-        "dictionary": "Categorie: "
+        "dictionary": "Categorie: ",
+        "reset_all": "Resetează tot progresul"
     }
 }
 
@@ -175,6 +177,8 @@ def main(page: ft.Page):
             ft.Container(height=30), ft.Divider(height=1, color="#eeeeee"), ft.Container(height=20),
             ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
             ft.ElevatedButton(content=ft.Text(txt["global_btn"], size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count < 4),
+            ft.Container(height=20),
+            ft.TextButton(content=ft.Text(txt["reset_all"], size=15, color="red"), on_click=lambda _: reset_all_progress()),
             ft.Container(height=40)
         )
         page.update()
@@ -183,6 +187,12 @@ def main(page: ft.Page):
         for w in all_words:
             if w["category"] == category_name:
                 w["learned"] = False
+        save_data(all_words)
+        show_main_menu()
+
+    def reset_all_progress():
+        for w in all_words:
+            w["learned"] = False
         save_data(all_words)
         show_main_menu()
 

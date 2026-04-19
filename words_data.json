@@ -149,7 +149,7 @@
     "ro": "nu",
     "gag": "yok",
     "category": "Базовые",
-    "learned": true
+    "learned": false
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "ro": "mulțumesc",
     "gag": "bodaprosti",
     "category": "Базовые",
-    "learned": true
+    "learned": false
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "ro": "vă rog",
     "gag": "buyur",
     "category": "Базовые",
-    "learned": true
+    "learned": false
   },
   {
     "id": 22,
@@ -181,7 +181,7 @@
     "ro": "bine",
     "gag": "islää",
     "category": "Базовые",
-    "learned": true
+    "learned": false
   },
   {
     "id": 24,
@@ -197,7 +197,7 @@
     "ro": "mult",
     "gag": "çok",
     "category": "Базовые",
-    "learned": true
+    "learned": false
   },
   {
     "id": 26,
@@ -205,7 +205,7 @@
     "ro": "puțin",
     "gag": "az",
     "category": "Базовые",
-    "learned": true
+    "learned": false
   },
   {
     "id": 27,
@@ -301,7 +301,7 @@
     "ro": "trei",
     "gag": "üç",
     "category": "Цифры",
-    "learned": false
+    "learned": true
   },
   {
     "id": 39,
@@ -325,7 +325,7 @@
     "ro": "șase",
     "gag": "altı",
     "category": "Цифры",
-    "learned": false
+    "learned": true
   },
   {
     "id": 42,
@@ -365,7 +365,7 @@
     "ro": "douăzeci",
     "gag": "yirmi",
     "category": "Цифры",
-    "learned": false
+    "learned": true
   },
   {
     "id": 47,
@@ -373,7 +373,7 @@
     "ro": "treizeci",
     "gag": "otuz",
     "category": "Цифры",
-    "learned": false
+    "learned": true
   },
   {
     "id": 48,
@@ -405,7 +405,7 @@
     "ro": "șaptezeci",
     "gag": "yetmiş",
     "category": "Цифры",
-    "learned": false
+    "learned": true
   },
   {
     "id": 52,
@@ -413,7 +413,7 @@
     "ro": "optzeci",
     "gag": "seksän",
     "category": "Цифры",
-    "learned": false
+    "learned": true
   },
   {
     "id": 53,
