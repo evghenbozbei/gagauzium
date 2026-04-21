@@ -7,7 +7,7 @@ import asyncio
 UI_TEXT = {
     "RU": {
         "title": "Gagauzça üürenmää",
-        "learn": "Учить",
+        "learn": "Учить новые слова",
         "review": "Повторить",
         "view_all": "Просмотреть все слова",
         "back": "< Назад ко всем категориям",
@@ -23,11 +23,14 @@ UI_TEXT = {
         "wrong": "Ошибка! ❌",
         "finished": "Сессия завершена!",
         "dictionary": "Категория: ",
-        "reset_all": "Обнулить весь прогресс"
+        "reset_all": "Обнулить весь прогресс",
+        "fast_review_btn": "Быстрое повторение",
+        "fast_review_success": "Вы всё повторили, поздравляем!",
+        "fast_review_fail": "Закончились жизни, повторите слова и попробуйте ещё"
     },
     "RO": {
-        "title": "Învățarea limbii găgăuze",
-        "learn": "Învață",
+        "title": "Gagauzça üürenmää",
+        "learn": "Învață cuvinte noi",
         "review": "Repetă",
         "view_all": "Vezi toate cuvintele",
         "back": "< Înapoi la toate categoriile",
@@ -43,7 +46,10 @@ UI_TEXT = {
         "wrong": "Eroare! ❌",
         "finished": "Sesiune finalizată!",
         "dictionary": "Categorie: ",
-        "reset_all": "Resetează tot progresul"
+        "reset_all": "Resetează tot progresul",
+        "fast_review_btn": "Repetare rapidă",
+        "fast_review_success": "Ați repetat totul, felicitări!",
+        "fast_review_fail": "S-au terminat viețile, repetați cuvintele și încercați din nou"
     }
 }
 
@@ -135,16 +141,23 @@ def main(page: ft.Page):
         nonlocal all_words
         all_words = load_data()
         
+        categories = sorted(list(set(w["category"] for w in all_words)))
+        category_column = ft.Column(spacing=20, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
+        total_learned_count = len([w for w in all_words if w["learned"]])
+
         page.add(
             ft.Container(height=30),
             ft.Row([ft.TextButton("🌐 Сменить язык / Schimbă limba", on_click=lambda _: show_language_selector())], alignment=ft.MainAxisAlignment.END),
             ft.Text(txt["title"], size=25, weight="bold", color="#00008B"),
+            ft.Container(height=20),
+            ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
+            ft.ElevatedButton(content=ft.Text(txt["global_btn"], size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count < 4),
+            ft.Container(height=10),
+            ft.ElevatedButton(content=ft.Text(txt["fast_review_btn"], size=16, weight="bold"), bgcolor="#ffcdd2", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "fast"), disabled=total_learned_count < 4),
+            ft.Container(height=20),
+            ft.Divider(height=1, color="#eeeeee"),
             ft.Container(height=10)
         )
-        
-        categories = sorted(list(set(w["category"] for w in all_words)))
-        category_column = ft.Column(spacing=20, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
-        total_learned_count = len([w for w in all_words if w["learned"]])
 
         for cat in categories:
             unlearned = [w for w in all_words if w["category"] == cat and not w["learned"]]
@@ -175,9 +188,6 @@ def main(page: ft.Page):
         page.add(category_column)
         page.add(
             ft.Container(height=30), ft.Divider(height=1, color="#eeeeee"), ft.Container(height=20),
-            ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
-            ft.ElevatedButton(content=ft.Text(txt["global_btn"], size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count < 4),
-            ft.Container(height=20),
             ft.TextButton(content=ft.Text(txt["reset_all"], size=15, color="red"), on_click=lambda _: reset_all_progress()),
             ft.Container(height=40)
         )
@@ -235,9 +245,18 @@ def main(page: ft.Page):
 
     def start_session(category, mode):
         app_state["mode"] = mode
-        if category == "ALL":
+        batch_size = 6
+        if mode == "fast":
             words = [w for w in all_words if w["learned"]]
             app_state["is_quiz"] = True
+            app_state["lives"] = 3
+            app_state["score"] = 0
+            batch_size = len(words)
+            app_state["question_id"] = 0
+        elif category == "ALL":
+            words = [w for w in all_words if w["learned"]]
+            app_state["is_quiz"] = True
+            batch_size = 10
         elif mode == "new":
             words = [w for w in all_words if w["category"] == category and not w["learned"]]
             app_state["is_quiz"] = False
@@ -246,7 +265,7 @@ def main(page: ft.Page):
             app_state["is_quiz"] = True
 
         random.shuffle(words)
-        app_state["current_batch"] = words[:6]
+        app_state["current_batch"] = words[:batch_size]
         app_state["index"] = 0
         
         if not app_state["current_batch"]:
@@ -268,10 +287,13 @@ def main(page: ft.Page):
             return
         word = app_state["current_batch"][app_state["index"]]
         native_word = word.get(lang.lower(), word.get("ru", "---"))
+        progress_val = (app_state["index"] + 1) / len(app_state["current_batch"])
+
         page.add(
             ft.Container(height=30),
             ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
-            ft.Container(height=50),
+            ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=380),
+            ft.Container(height=30),
             ft.Container(
                 content=ft.Column([
                     ft.Text(txt["remember"], size=16, color="grey"),
@@ -296,10 +318,22 @@ def main(page: ft.Page):
         page.bgcolor = "#FFE4B5"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
+        is_fast = app_state["mode"] == "fast"
+
+        if is_fast and app_state.get("lives", 0) <= 0:
+            page.add(
+                ft.Container(height=100), ft.Text("💔", size=80),
+                ft.Text(txt["fast_review_fail"], size=20, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
+                ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+            )
+            page.update()
+            return
+
         if app_state["index"] >= len(app_state["current_batch"]):
+            msg = txt["fast_review_success"] if is_fast else txt["finished"]
             page.add(
                 ft.Container(height=100), ft.Text("✅", size=80),
-                ft.Text(txt["finished"], size=25, weight="bold", color="black"),
+                ft.Text(msg, size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
                 ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
             )
             page.update()
@@ -321,21 +355,69 @@ def main(page: ft.Page):
         for opt in app_state["current_options"]:
             btns_column.controls.append(ft.ElevatedButton(opt, width=350, height=55, on_click=lambda e, s=opt: check_answer(e, s, word)))
 
-        page.add(
-            ft.Container(height=30),
-            ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
-            ft.Text(txt["quiz_title"], size=16, color="grey"),
-            ft.Text(txt["word_count"].format(app_state['index']+1, len(app_state['current_batch'])), color="black", weight="bold"),
-            ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
-            ft.Container(height=20), btns_column, ft.Container(height=20),
-            ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
-        )
-        page.update()
+        if is_fast:
+            app_state["question_id"] = app_state.get("question_id", 0) + 1
+            current_q_id = app_state["question_id"]
+            progress_bar = ft.ProgressBar(value=1.0, color="red", bgcolor="#eeeeee", width=350)
+            lives_text = ft.Text("❤️" * app_state.get("lives", 3), size=20)
+            counter_text = ft.Text(str(app_state.get("score", 0)), size=24, weight="bold", color="black")
+            
+            page.add(
+                ft.Container(height=30),
+                ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+                lives_text,
+                progress_bar,
+                counter_text,
+                ft.Container(height=10),
+                ft.Text(txt["quiz_title"], size=16, color="grey"),
+                ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
+                ft.Container(height=20), btns_column, ft.Container(height=20),
+                ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
+            )
+            page.update()
+
+            async def run_timer():
+                steps = 100
+                for i in range(steps):
+                    await asyncio.sleep(0.1)
+                    if app_state.get("question_id") != current_q_id:
+                        return
+                    progress_bar.value = 1.0 - (i + 1) / steps
+                    page.update()
+                
+                if app_state.get("question_id") == current_q_id:
+                    app_state["lives"] -= 1
+                    app_state["index"] += 1
+                    app_state["feedback_text"] = UI_TEXT[lang]["wrong"]
+                    page.update()
+                    await asyncio.sleep(0.8)
+                    app_state["feedback_text"] = ""
+                    show_quiz_card()
+
+            page.run_task(run_timer)
+        else:
+            progress_val = (app_state["index"] + 1) / len(app_state["current_batch"])
+            page.add(
+                ft.Container(height=30),
+                ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+                ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=350),
+                ft.Container(height=10),
+                ft.Text(txt["quiz_title"], size=16, color="grey"),
+                ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
+                ft.Container(height=20), btns_column, ft.Container(height=20),
+                ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
+            )
+            page.update()
 
     def check_answer(e, selected, correct_word):
         lang = app_state["lang"]
         btn = e.control
+        if app_state["mode"] == "fast":
+            app_state["question_id"] += 1
+
         if selected == correct_word["gag"]:
+            if app_state["mode"] == "fast":
+                app_state["score"] = app_state.get("score", 0) + 1
             if app_state["mode"] == "new":
                 for w in all_words:
                     if w["id"] == correct_word["id"]:
@@ -354,6 +436,8 @@ def main(page: ft.Page):
                 show_quiz_card()
             page.run_task(go_next)
         else:
+            if app_state["mode"] == "fast":
+                app_state["lives"] -= 1
             btn.bgcolor = "red"
             btn.color = "white"
             app_state["feedback_text"] = UI_TEXT[lang]["wrong"]
@@ -363,7 +447,11 @@ def main(page: ft.Page):
                 btn.bgcolor = None
                 btn.color = None
                 app_state["feedback_text"] = ""
-                page.update()
+                if app_state["mode"] == "fast":
+                    app_state["index"] += 1
+                    show_quiz_card()
+                else:
+                    page.update()
             page.run_task(reset_btn)
 
     show_language_selector()

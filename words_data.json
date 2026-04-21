@@ -1237,7 +1237,7 @@
     "ro": "ochi",
     "gag": "göz",
     "category": "Анатомия",
-    "learned": false
+    "learned": true
   },
   {
     "id": 156,
@@ -1245,7 +1245,7 @@
     "ro": "nas",
     "gag": "burnu",
     "category": "Анатомия",
-    "learned": false
+    "learned": true
   },
   {
     "id": 157,
@@ -1253,7 +1253,7 @@
     "ro": "gură",
     "gag": "aaz",
     "category": "Анатомия",
-    "learned": false
+    "learned": true
   },
   {
     "id": 158,
@@ -1261,7 +1261,7 @@
     "ro": "dinte",
     "gag": "diş",
     "category": "Анатомия",
-    "learned": false
+    "learned": true
   },
   {
     "id": 159,
@@ -1285,7 +1285,7 @@
     "ro": "spate",
     "gag": "arka",
     "category": "Анатомия",
-    "learned": false
+    "learned": true
   },
   {
     "id": 162,
@@ -1293,7 +1293,7 @@
     "ro": "burtă",
     "gag": "karnı",
     "category": "Анатомия",
-    "learned": false
+    "learned": true
   },
   {
     "id": 163,
