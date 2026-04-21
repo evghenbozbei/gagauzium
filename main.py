@@ -94,6 +94,7 @@ def main(page: ft.Page):
     page.window_width = 450
     page.window_height = 800
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    page.assets_dir = "assets"
     
     all_words = load_data()
     app_state = {
@@ -153,7 +154,17 @@ def main(page: ft.Page):
             ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
             ft.ElevatedButton(content=ft.Text(txt["global_btn"], size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count < 4),
             ft.Container(height=10),
-            ft.ElevatedButton(content=ft.Text(txt["fast_review_btn"], size=16, weight="bold"), bgcolor="#ffcdd2", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "fast"), disabled=total_learned_count < 4),
+            ft.ElevatedButton(
+                content=ft.Row(
+                    [
+                        ft.Image(src="fast_check.png", width=24, height=24),
+                        ft.Text(txt["fast_review_btn"], size=16, weight="bold")
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    spacing=10
+                ),
+                bgcolor="#ffcdd2", color="black", width=350, height=60,
+                on_click=lambda _: start_session("ALL", "fast"), disabled=total_learned_count < 4),
             ft.Container(height=20),
             ft.Divider(height=1, color="#eeeeee"),
             ft.Container(height=10)
