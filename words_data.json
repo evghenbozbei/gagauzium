@@ -301,7 +301,7 @@
     "ro": "trei",
     "gag": "üç",
     "category": "Цифры",
-    "learned": true
+    "learned": false
   },
   {
     "id": 39,
@@ -325,7 +325,7 @@
     "ro": "șase",
     "gag": "altı",
     "category": "Цифры",
-    "learned": true
+    "learned": false
   },
   {
     "id": 42,
@@ -365,7 +365,7 @@
     "ro": "douăzeci",
     "gag": "yirmi",
     "category": "Цифры",
-    "learned": true
+    "learned": false
   },
   {
     "id": 47,
@@ -373,7 +373,7 @@
     "ro": "treizeci",
     "gag": "otuz",
     "category": "Цифры",
-    "learned": true
+    "learned": false
   },
   {
     "id": 48,
@@ -405,7 +405,7 @@
     "ro": "șaptezeci",
     "gag": "yetmiş",
     "category": "Цифры",
-    "learned": true
+    "learned": false
   },
   {
     "id": 52,
@@ -413,7 +413,7 @@
     "ro": "optzeci",
     "gag": "seksän",
     "category": "Цифры",
-    "learned": true
+    "learned": false
   },
   {
     "id": 53,
@@ -1237,7 +1237,7 @@
     "ro": "ochi",
     "gag": "göz",
     "category": "Анатомия",
-    "learned": true
+    "learned": false
   },
   {
     "id": 156,
@@ -1245,7 +1245,7 @@
     "ro": "nas",
     "gag": "burnu",
     "category": "Анатомия",
-    "learned": true
+    "learned": false
   },
   {
     "id": 157,
@@ -1253,7 +1253,7 @@
     "ro": "gură",
     "gag": "aaz",
     "category": "Анатомия",
-    "learned": true
+    "learned": false
   },
   {
     "id": 158,
@@ -1261,7 +1261,7 @@
     "ro": "dinte",
     "gag": "diş",
     "category": "Анатомия",
-    "learned": true
+    "learned": false
   },
   {
     "id": 159,
@@ -1285,7 +1285,7 @@
     "ro": "spate",
     "gag": "arka",
     "category": "Анатомия",
-    "learned": true
+    "learned": false
   },
   {
     "id": 162,
@@ -1293,7 +1293,7 @@
     "ro": "burtă",
     "gag": "karnı",
     "category": "Анатомия",
-    "learned": true
+    "learned": false
   },
   {
     "id": 163,
