@@ -660,18 +660,24 @@ def main(page: ft.Page):
             # SRS Обновление
             if app_state["mode"] == "review" or (app_state["mode"] == "new"):
                 word_stats = app_state["stats"]["words"][str(correct_word["id"])]
-                intervals = [1, 3, 7, 14, 30]
-                current_int = word_stats.get("interval", 0)
-                new_int = 1
-                for i in intervals:
-                    if i > current_int:
-                        new_int = i
-                        break
+                if app_state["mode"] == "new":
+                    # Для новых слов: interval=0, next_review=сегодня (чтобы можно было повторять сразу)
+                    word_stats["interval"] = 0
+                    word_stats["next_review"] = datetime.date.today().isoformat()
                 else:
-                    new_int = 30
-                
-                word_stats["interval"] = new_int
-                word_stats["next_review"] = (datetime.date.today() + datetime.timedelta(days=new_int)).isoformat()
+                    # Для review: стандартная SRS логика
+                    intervals = [1, 3, 7, 14, 30]
+                    current_int = word_stats.get("interval", 0)
+                    new_int = 1
+                    for i in intervals:
+                        if i > current_int:
+                            new_int = i
+                            break
+                    else:
+                        new_int = 30
+                    
+                    word_stats["interval"] = new_int
+                    word_stats["next_review"] = (datetime.date.today() + datetime.timedelta(days=new_int)).isoformat()
 
             if app_state["mode"] == "fast" or is_tf:
                 app_state["score"] = app_state.get("score", 0) + 1
