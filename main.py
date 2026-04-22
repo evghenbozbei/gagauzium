@@ -36,7 +36,10 @@ UI_TEXT = {
         "category_title": "Изучения и повторения по категориям",
         "true_false_btn": "Правда или Ложь",
         "true_btn": "✅ Правда",
-        "false_btn": "❌ Ложь"
+        "false_btn": "❌ Ложь",
+        "continue_question": "Продолжить изучение новых слов?",
+        "continue_yes": "Да",
+        "continue_no": "Нет"
     },
     "RO": {
         "title": "Gagauzça üürenmää",
@@ -67,7 +70,10 @@ UI_TEXT = {
         "category_title": "Studiu și repetare pe categorii",
         "true_false_btn": "Adevărat sau Fals",
         "true_btn": "✅ Adevărat",
-        "false_btn": "❌ Fals"
+        "false_btn": "❌ Fals",
+        "continue_question": "Continuați învățarea cuvintelor noi?",
+        "continue_yes": "Da",
+        "continue_no": "Nu"
     }
 }
 
@@ -477,6 +483,9 @@ def main(page: ft.Page):
             if app_state["is_quiz"]: show_quiz_card()
             else: show_study_card()
 
+    def continue_new_session():
+        start_session(app_state["last_category"], "new")
+
     def show_study_card():
         page.clean()
         page.scroll = None
@@ -534,12 +543,24 @@ def main(page: ft.Page):
             return
 
         if app_state["index"] >= len(app_state["current_batch"]):
-            msg = txt["fast_review_success"] if (is_fast or is_tf) else txt["finished"]
-            page.add(
-                ft.Container(height=100), ft.Text("✅", size=80),
-                ft.Text(msg, size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
-                ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
-            )
+            if app_state["mode"] == "new":
+                # Предложить продолжить изучение новых слов
+                page.add(
+                    ft.Container(height=100), ft.Text("✅", size=80),
+                    ft.Text(txt["finished"], size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
+                    ft.Text(txt["continue_question"], size=18, color="black", text_align=ft.TextAlign.CENTER),
+                    ft.Row([
+                        ft.ElevatedButton(txt["continue_yes"], on_click=lambda _: continue_new_session(), width=150),
+                        ft.ElevatedButton(txt["continue_no"], on_click=lambda _: show_main_menu(), width=150)
+                    ], alignment=ft.MainAxisAlignment.CENTER)
+                )
+            else:
+                msg = txt["fast_review_success"] if (is_fast or is_tf) else txt["finished"]
+                page.add(
+                    ft.Container(height=100), ft.Text("✅", size=80),
+                    ft.Text(msg, size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
+                    ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                )
             page.update()
             return
 
