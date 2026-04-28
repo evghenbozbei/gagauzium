@@ -1,6 +1,6 @@
 {
   "streak_days": 1,
-  "last_login": "2026-04-22",
+  "last_login": "2026-04-29",
   "words": {
     "1": {
       "learned": false,
@@ -122,67 +122,67 @@
       "next_review": "1970-01-01"
     },
     "18": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "19": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "20": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "21": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "22": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "23": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "24": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "25": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "26": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "27": {
       "learned": false,
@@ -248,18 +248,18 @@
       "next_review": "1970-01-01"
     },
     "36": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "37": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "38": {
       "learned": true,
@@ -284,7 +284,7 @@
     },
     "41": {
       "learned": true,
-      "correct_answers": 3,
+      "correct_answers": 4,
       "wrong_answers": 1,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -298,21 +298,21 @@
     },
     "43": {
       "learned": true,
-      "correct_answers": 1,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 1,
       "next_review": "2026-04-23"
     },
     "44": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "45": {
       "learned": true,
-      "correct_answers": 2,
+      "correct_answers": 3,
       "wrong_answers": 0,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -332,29 +332,29 @@
       "next_review": "2026-04-23"
     },
     "48": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "49": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "50": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "51": {
       "learned": true,
-      "correct_answers": 5,
+      "correct_answers": 6,
       "wrong_answers": 0,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -367,22 +367,22 @@
       "next_review": "2026-04-23"
     },
     "53": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "54": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 0,
-      "next_review": "1970-01-01"
+      "next_review": "2026-04-29"
     },
     "55": {
       "learned": true,
-      "correct_answers": 1,
+      "correct_answers": 2,
       "wrong_answers": 0,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -1089,7 +1089,7 @@
     },
     "156": {
       "learned": true,
-      "correct_answers": 3,
+      "correct_answers": 4,
       "wrong_answers": 1,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -1103,7 +1103,7 @@
     },
     "158": {
       "learned": true,
-      "correct_answers": 3,
+      "correct_answers": 4,
       "wrong_answers": 1,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -1131,7 +1131,7 @@
     },
     "162": {
       "learned": true,
-      "correct_answers": 4,
+      "correct_answers": 5,
       "wrong_answers": 2,
       "interval": 1,
       "next_review": "2026-04-23"
@@ -2160,7 +2160,7 @@
     },
     "309": {
       "learned": true,
-      "correct_answers": 3,
+      "correct_answers": 4,
       "wrong_answers": 0,
       "interval": 0,
       "next_review": "1970-01-01"
@@ -2902,7 +2902,7 @@
     },
     "415": {
       "learned": true,
-      "correct_answers": 2,
+      "correct_answers": 3,
       "wrong_answers": 0,
       "interval": 0,
       "next_review": "1970-01-01"

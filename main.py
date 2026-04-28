@@ -39,7 +39,8 @@ UI_TEXT = {
         "false_btn": "❌ Ложь",
         "continue_question": "Продолжить изучение новых слов?",
         "continue_yes": "Да",
-        "continue_no": "Нет"
+        "continue_no": "Нет",
+        "all_learned": "Все слова выучены! 🎉"
     },
     "RO": {
         "title": "Gagauzça üürenmää",
@@ -73,7 +74,8 @@ UI_TEXT = {
         "false_btn": "❌ Fals",
         "continue_question": "Continuați învățarea cuvintelor noi?",
         "continue_yes": "Da",
-        "continue_no": "Nu"
+        "continue_no": "Nu",
+        "all_learned": "Toate cuvintele învățate! 🎉"
     }
 }
 
@@ -353,7 +355,7 @@ def main(page: ft.Page):
                     ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                     ft.Container(height=10),
                     ft.Row([
-                        ft.ElevatedButton(content=ft.Text(txt["learn"], size=13, color="black", text_align=ft.TextAlign.CENTER), on_click=lambda e, c=cat: start_session(c, "new"), disabled=len(unlearned) == 0, bgcolor="#FFD700", width=165),
+                        ft.ElevatedButton(content=ft.Text(txt["learn"], size=13, color="black" if len(unlearned) > 0 else "grey", text_align=ft.TextAlign.CENTER), on_click=lambda e, c=cat: start_session(c, "new"), disabled=len(unlearned) == 0, bgcolor="#FFD700" if len(unlearned) > 0 else "#E0E0E0", width=165),
                         
                         ft.ElevatedButton(
                             content=ft.Text(f"{txt['review']} ({len([w for w in learned if app_state['stats']['words'][str(w['id'])].get('next_review', '1970-01-01') <= today])})", size=13, text_align=ft.TextAlign.CENTER), 
@@ -362,7 +364,8 @@ def main(page: ft.Page):
                             width=165
                         ),
                     ], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
-                    ft.TextButton(content=ft.Text(txt["view_all"], size=14, color="blue"), on_click=lambda e, c=cat: show_word_list(c), width=340)
+                    ft.TextButton(content=ft.Text(txt["view_all"], size=14, color="blue"), on_click=lambda e, c=cat: show_word_list(c), width=340),
+                    *( [ft.Text(txt["all_learned"], size=13, color="green", weight="bold")] if len(unlearned) == 0 and len(learned) > 0 else [] )
                 ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=5),
                 padding=15, width=400, bgcolor="#FFFFE0", border=ft.Border.all(1, "#dddddd"), border_radius=15,
                 key=cat
@@ -458,7 +461,7 @@ def main(page: ft.Page):
         elif mode == "true_false":
             words = [w for w in all_words if w["learned"]]
             app_state["is_quiz"] = True
-            batch_size = 10
+            batch_size = 15
             app_state["score"] = 0
         elif category == "ALL":
             # SRS mode for global review
@@ -544,16 +547,26 @@ def main(page: ft.Page):
 
         if app_state["index"] >= len(app_state["current_batch"]):
             if app_state["mode"] == "new":
-                # Предложить продолжить изучение новых слов
-                page.add(
-                    ft.Container(height=100), ft.Text("✅", size=80),
-                    ft.Text(txt["finished"], size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
-                    ft.Text(txt["continue_question"], size=18, color="black", text_align=ft.TextAlign.CENTER),
-                    ft.Row([
-                        ft.ElevatedButton(txt["continue_yes"], on_click=lambda _: continue_new_session(), width=150),
-                        ft.ElevatedButton(txt["continue_no"], on_click=lambda _: show_main_menu(), width=150)
-                    ], alignment=ft.MainAxisAlignment.CENTER)
-                )
+                unlearned_left = len([w for w in all_words if w["category"] == app_state["last_category"] and not w["learned"]])
+                if unlearned_left == 0:
+                    page.add(
+                        ft.Container(height=100), ft.Text("🎉", size=80),
+                        ft.Text(txt["finished"], size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
+                        ft.Text(txt["all_learned"], size=20, weight="bold", color="green", text_align=ft.TextAlign.CENTER),
+                        ft.Container(height=20),
+                        ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                    )
+                else:
+                    # Предложить продолжить изучение новых слов
+                    page.add(
+                        ft.Container(height=100), ft.Text("✅", size=80),
+                        ft.Text(txt["finished"], size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
+                        ft.Text(txt["continue_question"], size=18, color="black", text_align=ft.TextAlign.CENTER),
+                        ft.Row([
+                            ft.ElevatedButton(txt["continue_yes"], on_click=lambda _: continue_new_session(), width=150),
+                            ft.ElevatedButton(txt["continue_no"], on_click=lambda _: show_main_menu(), width=150)
+                        ], alignment=ft.MainAxisAlignment.CENTER)
+                    )
             else:
                 msg = txt["fast_review_success"] if (is_fast or is_tf) else txt["finished"]
                 page.add(
