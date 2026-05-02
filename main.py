@@ -3,7 +3,6 @@ import json
 import random
 import asyncio
 import datetime
-import os
 
 # --- ПЕРЕВОДЫ ИНТЕРФЕЙСА ---
 UI_TEXT = {
@@ -31,8 +30,8 @@ UI_TEXT = {
         "fast_review_fail": "Закончились жизни, повторите слова и попробуйте ещё",
         "statistics": "📊 Статистика",
         "stats_title": "СТАТИСТИКА ПРОФИЛЯ",
-        "streak": "Дней подряд: ",
         "hard_words": "Самые сложные слова (ошибок):",
+        "skip": "Пропустить →",
         "category_title": "Изучения и повторения по категориям",
         "true_false_btn": "Правда или Ложь",
         "true_btn": "✅ Правда",
@@ -45,7 +44,11 @@ UI_TEXT = {
         "daily_review_locked": "Возвращайся завтра 🌙",
         "daily_review_min": "Нужно ≥20 выученных слов",
         "daily_review_score": "Готово! {0}/{1} верно ({2}%)",
-        "daily_review_title": "ЕЖЕДНЕВНОЕ ПОВТОРЕНИЕ"
+        "daily_review_title": "ЕЖЕДНЕВНОЕ ПОВТОРЕНИЕ",
+        "confirm_yes": "Да, обнулить",
+        "confirm_no": "Отмена",
+        "confirm_reset_category": "Обнулить категорию «{0}»? Прогресс этой категории будет потерян.",
+        "confirm_reset_all": "Обнулить весь прогресс? Все выученные слова станут невыученными."
     },
     "RO": {
         "title": "Gagauzça üürenmää",
@@ -71,8 +74,8 @@ UI_TEXT = {
         "fast_review_fail": "S-au terminat viețile, repetați cuvintele și încercați din nou",
         "statistics": "📊 Statistici",
         "stats_title": "STATISTICI PROFIL",
-        "streak": "Zile la rând: ",
         "hard_words": "Cele mai grele cuvinte (erori):",
+        "skip": "Sari peste →",
         "category_title": "Studiu și repetare pe categorii",
         "true_false_btn": "Adevărat sau Fals",
         "true_btn": "✅ Adevărat",
@@ -85,7 +88,11 @@ UI_TEXT = {
         "daily_review_locked": "Revino mâine 🌙",
         "daily_review_min": "Aveți nevoie de ≥20 cuvinte învățate",
         "daily_review_score": "Gata! {0}/{1} corect ({2}%)",
-        "daily_review_title": "REPETARE ZILNICĂ"
+        "daily_review_title": "REPETARE ZILNICĂ",
+        "confirm_yes": "Da, resetează",
+        "confirm_no": "Anulează",
+        "confirm_reset_category": "Resetăm categoria «{0}»? Progresul acestei categorii va fi pierdut.",
+        "confirm_reset_all": "Resetăm tot progresul? Toate cuvintele învățate vor deveni neînvățate."
     }
 }
 
@@ -220,24 +227,10 @@ def main(page: ft.Page):
     
     raw_words = load_data()
     user_stats = load_stats()
-    
-    today_str = datetime.date.today().isoformat()
-    if user_stats.get("last_login") != today_str:
-        if user_stats.get("last_login"):
-            last_date = datetime.date.fromisoformat(user_stats["last_login"])
-            if (datetime.date.today() - last_date).days == 1:
-                user_stats["streak_days"] = user_stats.get("streak_days", 0) + 1
-            else:
-                user_stats["streak_days"] = 1
-        else:
-            user_stats["streak_days"] = 1
-        user_stats["last_login"] = today_str
-        save_stats(user_stats)
-
     all_words = merge_data_and_stats(raw_words, user_stats)
 
     app_state = {
-        "lang": "RU",
+        "lang": user_stats.get("lang", "RU"),
         "current_batch": [],
         "index": 0,
         "is_quiz": False, 
@@ -296,11 +289,6 @@ def main(page: ft.Page):
             ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
             ft.Text(txt["stats_title"], size=25, weight="bold", color="#4A148C"),
             ft.Container(height=20),
-            ft.Row([
-                ft.Text("🔥", size=40),
-                ft.Text(f"{txt['streak']}{app_state['stats'].get('streak_days', 0)}", size=20, weight="bold")
-            ], alignment=ft.MainAxisAlignment.CENTER),
-            ft.Container(height=20),
             ft.Text(f"Выучено: {learned_words} из {total_words}", size=18, weight="bold"),
             ft.ProgressBar(value=progress_val, color="#4A148C", bgcolor="#eeeeee", width=380, height=20),
             ft.Container(height=30),
@@ -334,6 +322,8 @@ def main(page: ft.Page):
 
     def set_language(lang):
         app_state["lang"] = lang
+        app_state["stats"]["lang"] = lang
+        save_stats(app_state["stats"])
         show_main_menu(reset_scroll=True)
 
     def show_main_menu(reset_scroll=False):
@@ -375,9 +365,8 @@ def main(page: ft.Page):
         page.add(
             ft.Container(height=30),
             ft.Row([
-                ft.Row([ft.Text("🔥", size=20, color="orange"), ft.Text(f"{app_state['stats'].get('streak_days', 0)}", size=20, weight="bold", color="orange")]),
                 ft.TextButton("🌐 Сменить язык / Schimbă limba", on_click=lambda _: show_language_selector())
-            ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+            ], alignment=ft.MainAxisAlignment.END),
             ft.Text(txt["title"], size=25, weight="bold", color="#00008B"),
             ft.Container(height=20),
             ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
@@ -469,20 +458,62 @@ def main(page: ft.Page):
         app_state["tracking_scroll"] = True
         app_state["last_category"] = None
 
+    def show_confirm_dialog(title, message, on_confirm):
+        txt = UI_TEXT[app_state["lang"]]
+
+        def close_dlg(_=None):
+            page.pop_dialog()
+
+        def confirm(_):
+            page.pop_dialog()
+            on_confirm()
+
+        dlg = ft.AlertDialog(
+            modal=True,
+            title=ft.Text(title, weight="bold"),
+            content=ft.Text(message),
+            actions=[
+                ft.TextButton(txt["confirm_no"], on_click=close_dlg),
+                ft.ElevatedButton(txt["confirm_yes"], on_click=confirm, bgcolor="red", color="white"),
+            ],
+            actions_alignment=ft.MainAxisAlignment.CENTER,
+        )
+        page.show_dialog(dlg)
+
     def reset_category(category_name):
-        for w in all_words:
-            if w["category"] == category_name:
-                w["learned"] = False
-                app_state["stats"]["words"][str(w["id"])]["learned"] = False
-        save_stats(app_state["stats"])
-        show_main_menu()
+        txt = UI_TEXT[app_state["lang"]]
+        cat_info = category_map.get(category_name, {})
+        cat_display = cat_info.get(app_state["lang"].lower(), category_name)
+
+        def do_reset():
+            for w in all_words:
+                if w["category"] == category_name:
+                    w["learned"] = False
+                    app_state["stats"]["words"][str(w["id"])]["learned"] = False
+            save_stats(app_state["stats"])
+            show_main_menu()
+
+        show_confirm_dialog(
+            title=txt["reset"],
+            message=txt["confirm_reset_category"].format(cat_display),
+            on_confirm=do_reset,
+        )
 
     def reset_all_progress():
-        for w in all_words:
-            w["learned"] = False
-            app_state["stats"]["words"][str(w["id"])]["learned"] = False
-        save_stats(app_state["stats"])
-        show_main_menu()
+        txt = UI_TEXT[app_state["lang"]]
+
+        def do_reset():
+            for w in all_words:
+                w["learned"] = False
+                app_state["stats"]["words"][str(w["id"])]["learned"] = False
+            save_stats(app_state["stats"])
+            show_main_menu()
+
+        show_confirm_dialog(
+            title=txt["reset_all"],
+            message=txt["confirm_reset_all"],
+            on_confirm=do_reset,
+        )
 
     def show_word_list(category):
         app_state["tracking_scroll"] = False
@@ -626,6 +657,16 @@ def main(page: ft.Page):
         app_state["index"] += 1
         show_study_card()
 
+    def skip_word():
+        word = app_state["current_batch"][app_state["index"]]
+        word_stats = app_state["stats"]["words"][str(word["id"])]
+        word_stats["wrong_answers"] = word_stats.get("wrong_answers", 0) + 1
+        word_stats["last_seen"] = datetime.date.today().isoformat()
+        save_stats(app_state["stats"])
+        app_state["index"] += 1
+        app_state["feedback_text"] = ""
+        show_quiz_card()
+
     def show_quiz_card():
         page.clean()
         page.scroll = None
@@ -700,11 +741,11 @@ def main(page: ft.Page):
             if direction == "forward":
                 prompt_word = word.get(lang.lower(), word.get("ru", "---"))
                 correct = word["gag"]
-                others = [w["gag"] for w in all_words if w["gag"] != correct]
+                others = list({w["gag"] for w in all_words if w["gag"] != correct})
             else:
                 prompt_word = word["gag"]
                 correct = word.get(lang.lower(), word.get("ru", "---"))
-                others = [w.get(lang.lower(), w.get("ru", "---")) for w in all_words if w.get(lang.lower(), w.get("ru", "---")) != correct]
+                others = list({w.get(lang.lower(), w.get("ru", "---")) for w in all_words if w.get(lang.lower(), w.get("ru", "---")) != correct})
 
             if is_tf:
                 is_truth = random.choice([True, False])
@@ -804,7 +845,8 @@ def main(page: ft.Page):
                     ft.Text(title_text, size=16, color="grey"),
                     ft.Container(height=20), ft.Text(prompt_word, size=35, weight="bold", color=prompt_color, italic=prompt_italic),
                     ft.Container(height=20), btns_column, ft.Container(height=20),
-                    ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
+                    ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black"),
+                    *( [ft.TextButton(content=ft.Text(txt["skip"], size=14, color="grey"), on_click=lambda _: skip_word())] if app_state["mode"] == "review" else [] )
                 )
                 page.update()
 
@@ -878,7 +920,10 @@ def main(page: ft.Page):
                     page.update()
             page.run_task(reset_btn)
 
-    show_language_selector()
+    if user_stats.get("lang"):
+        show_main_menu(reset_scroll=True)
+    else:
+        show_language_selector()
 
 if __name__ == "__main__":
     ft.run(main)
