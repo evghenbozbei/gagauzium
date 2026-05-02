@@ -235,7 +235,7 @@
     "id": 30,
     "ru": "завтра",
     "ro": "mâine",
-    "gag": "yaarın",
+    "gag": "yaarın / sabaa",
     "category": "Время",
     "learned": false
   },
@@ -259,7 +259,7 @@
     "id": 33,
     "ru": "вечер",
     "ro": "seară",
-    "gag": "avşam",
+    "gag": "avşam / akşam",
     "category": "Время",
     "learned": false
   },
@@ -635,7 +635,7 @@
     "id": 80,
     "ru": "масло",
     "ro": "ulei",
-    "gag": "oloy",
+    "gag": "yaa / oloy",
     "category": "Еда",
     "learned": false
   },
@@ -811,7 +811,7 @@
     "id": 102,
     "ru": "говорить",
     "ro": "a spune",
-    "gag": "demää",
+    "gag": "demää / lafetmää",
     "category": "Глаголы",
     "learned": false
   },
@@ -1035,7 +1035,7 @@
     "id": 130,
     "ru": "хороший",
     "ro": "bun",
-    "gag": "islää",
+    "gag": "islää / ey",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1043,7 +1043,7 @@
     "id": 131,
     "ru": "плохой",
     "ro": "rău",
-    "gag": "bet",
+    "gag": "bet / fena",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1051,7 +1051,7 @@
     "id": 132,
     "ru": "большой",
     "ro": "mare",
-    "gag": "büük",
+    "gag": "büük / büyük",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1059,7 +1059,7 @@
     "id": 133,
     "ru": "маленький",
     "ro": "mic",
-    "gag": "ufak",
+    "gag": "ufak / küçük",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1099,7 +1099,7 @@
     "id": 138,
     "ru": "толстый",
     "ro": "gros",
-    "gag": "kalın",
+    "gag": "kalın / semiz",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1107,7 +1107,7 @@
     "id": 139,
     "ru": "тонкий",
     "ro": "subțire",
-    "gag": "incä",
+    "gag": "incä / yufka",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1123,7 +1123,7 @@
     "id": 141,
     "ru": "легкий",
     "ro": "ușor",
-    "gag": "ilin",
+    "gag": "ilin / kolay",
     "category": "Прилагательные",
     "learned": false
   },
@@ -1617,14 +1617,6 @@
   },
   {
     "id": 203,
-    "ru": "рыба",
-    "ro": "pește",
-    "gag": "balık",
-    "category": "Животные",
-    "learned": false
-  },
-  {
-    "id": 204,
     "ru": "дом",
     "ro": "casă",
     "gag": "ev",
@@ -1632,7 +1624,7 @@
     "learned": false
   },
   {
-    "id": 205,
+    "id": 204,
     "ru": "дверь",
     "ro": "ușă",
     "gag": "kapu",
@@ -1640,7 +1632,7 @@
     "learned": false
   },
   {
-    "id": 206,
+    "id": 205,
     "ru": "окно",
     "ro": "fereastră",
     "gag": "pencerä",
@@ -1648,7 +1640,7 @@
     "learned": false
   },
   {
-    "id": 207,
+    "id": 206,
     "ru": "комната",
     "ro": "cameră",
     "gag": "içer",
@@ -1656,7 +1648,7 @@
     "learned": false
   },
   {
-    "id": 208,
+    "id": 207,
     "ru": "стена",
     "ro": "perete",
     "gag": "duvar",
@@ -1664,7 +1656,7 @@
     "learned": false
   },
   {
-    "id": 209,
+    "id": 208,
     "ru": "крыша",
     "ro": "acoperiș",
     "gag": "örtü",
@@ -1672,7 +1664,7 @@
     "learned": false
   },
   {
-    "id": 210,
+    "id": 209,
     "ru": "пол",
     "ro": "podea",
     "gag": "er",
@@ -1680,7 +1672,7 @@
     "learned": false
   },
   {
-    "id": 211,
+    "id": 210,
     "ru": "потолок",
     "ro": "tavan",
     "gag": "tavan",
@@ -1688,7 +1680,7 @@
     "learned": false
   },
   {
-    "id": 212,
+    "id": 211,
     "ru": "стол",
     "ro": "masă",
     "gag": "masa",
@@ -1696,7 +1688,7 @@
     "learned": false
   },
   {
-    "id": 213,
+    "id": 212,
     "ru": "стул",
     "ro": "scaun",
     "gag": "skemnä",
@@ -1704,15 +1696,15 @@
     "learned": false
   },
   {
-    "id": 214,
+    "id": 213,
     "ru": "кровать",
     "ro": "pat",
-    "gag": "krevat",
+    "gag": "krevat / pat",
     "category": "Дом и Предметы",
     "learned": false
   },
   {
-    "id": 215,
+    "id": 214,
     "ru": "шкаф",
     "ro": "dulap",
     "gag": "dolap",
@@ -1720,7 +1712,7 @@
     "learned": false
   },
   {
-    "id": 216,
+    "id": 215,
     "ru": "печь",
     "ro": "sobă",
     "gag": "soba",
@@ -1728,7 +1720,7 @@
     "learned": false
   },
   {
-    "id": 217,
+    "id": 216,
     "ru": "зеркало",
     "ro": "oglindă",
     "gag": "ayna",
@@ -1736,7 +1728,7 @@
     "learned": false
   },
   {
-    "id": 218,
+    "id": 217,
     "ru": "нож",
     "ro": "cuțit",
     "gag": "bıçak",
@@ -1744,7 +1736,7 @@
     "learned": false
   },
   {
-    "id": 219,
+    "id": 218,
     "ru": "ложка",
     "ro": "lingură",
     "gag": "kaşık",
@@ -1752,23 +1744,23 @@
     "learned": false
   },
   {
-    "id": 220,
+    "id": 219,
     "ru": "вилка",
     "ro": "furculiță",
-    "gag": "furkuliţa",
+    "gag": "furkuliţa / vilka / çatall",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 220,
+    "ru": "тарелка",
+    "ro": "farfurie",
+    "gag": "çini / taaler / tabaak",
     "category": "Дом и Предметы",
     "learned": false
   },
   {
     "id": 221,
-    "ru": "тарелка",
-    "ro": "farfurie",
-    "gag": "çini",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 222,
     "ru": "стакан",
     "ro": "pahar",
     "gag": "stakan",
@@ -1776,7 +1768,7 @@
     "learned": false
   },
   {
-    "id": 223,
+    "id": 222,
     "ru": "чашка",
     "ro": "ceașcă",
     "gag": "fincan",
@@ -1784,15 +1776,15 @@
     "learned": false
   },
   {
-    "id": 224,
+    "id": 223,
     "ru": "кастрюля",
     "ro": "cratiță",
-    "gag": "tencärä",
+    "gag": "tencerä",
     "category": "Дом и Предметы",
     "learned": false
   },
   {
-    "id": 225,
+    "id": 224,
     "ru": "ковер",
     "ro": "covor",
     "gag": "kilim",
@@ -1800,7 +1792,7 @@
     "learned": false
   },
   {
-    "id": 226,
+    "id": 225,
     "ru": "подушка",
     "ro": "pernă",
     "gag": "yastık",
@@ -1808,7 +1800,7 @@
     "learned": false
   },
   {
-    "id": 227,
+    "id": 226,
     "ru": "одеяло",
     "ro": "pătură",
     "gag": "yorgan",
@@ -1816,7 +1808,7 @@
     "learned": false
   },
   {
-    "id": 228,
+    "id": 227,
     "ru": "мыло",
     "ro": "săpun",
     "gag": "sabun",
@@ -1824,7 +1816,7 @@
     "learned": false
   },
   {
-    "id": 229,
+    "id": 228,
     "ru": "ключ",
     "ro": "cheie",
     "gag": "anatar",
@@ -1832,15 +1824,15 @@
     "learned": false
   },
   {
-    "id": 230,
+    "id": 229,
     "ru": "часы",
     "ro": "ceas",
-    "gag": "sahat",
+    "gag": "saat",
     "category": "Дом и Предметы",
     "learned": false
   },
   {
-    "id": 231,
+    "id": 230,
     "ru": "утюг",
     "ro": "fier de călcat",
     "gag": "ütü",
@@ -1848,7 +1840,7 @@
     "learned": false
   },
   {
-    "id": 232,
+    "id": 231,
     "ru": "веник",
     "ro": "mătură",
     "gag": "süpürgä",
@@ -1856,15 +1848,15 @@
     "learned": false
   },
   {
-    "id": 233,
+    "id": 232,
     "ru": "ведро",
     "ro": "căldare",
-    "gag": "kazan",
+    "gag": "kazan / kova",
     "category": "Дом и Предметы",
     "learned": false
   },
   {
-    "id": 234,
+    "id": 233,
     "ru": "учитель",
     "ro": "profesor",
     "gag": "üüredici",
@@ -1872,15 +1864,15 @@
     "learned": false
   },
   {
-    "id": 235,
+    "id": 234,
     "ru": "врач",
     "ro": "medic",
-    "gag": "doktor",
+    "gag": "doktor / hekim",
     "category": "Профессии",
     "learned": false
   },
   {
-    "id": 236,
+    "id": 235,
     "ru": "повар",
     "ro": "bucătar",
     "gag": "aşçı",
@@ -1888,7 +1880,7 @@
     "learned": false
   },
   {
-    "id": 237,
+    "id": 236,
     "ru": "продавец",
     "ro": "vânzător",
     "gag": "satıcı",
@@ -1896,7 +1888,7 @@
     "learned": false
   },
   {
-    "id": 238,
+    "id": 237,
     "ru": "рабочий",
     "ro": "muncitor",
     "gag": "işçi",
@@ -1904,7 +1896,7 @@
     "learned": false
   },
   {
-    "id": 239,
+    "id": 238,
     "ru": "водитель",
     "ro": "șofer",
     "gag": "şoför",
@@ -1912,7 +1904,7 @@
     "learned": false
   },
   {
-    "id": 240,
+    "id": 239,
     "ru": "крестьянин",
     "ro": "țăran",
     "gag": "çiftçi",
@@ -1920,7 +1912,7 @@
     "learned": false
   },
   {
-    "id": 241,
+    "id": 240,
     "ru": "пастух",
     "ro": "cioban",
     "gag": "çoban",
@@ -1928,7 +1920,7 @@
     "learned": false
   },
   {
-    "id": 242,
+    "id": 241,
     "ru": "рыбак",
     "ro": "pescar",
     "gag": "balıkçı",
@@ -1936,7 +1928,7 @@
     "learned": false
   },
   {
-    "id": 243,
+    "id": 242,
     "ru": "охотник",
     "ro": "vânător",
     "gag": "avcı",
@@ -1944,7 +1936,7 @@
     "learned": false
   },
   {
-    "id": 244,
+    "id": 243,
     "ru": "кузнец",
     "ro": "fierar",
     "gag": "çilingir",
@@ -1952,7 +1944,7 @@
     "learned": false
   },
   {
-    "id": 245,
+    "id": 244,
     "ru": "портной",
     "ro": "croitor",
     "gag": "terzi",
@@ -1960,7 +1952,7 @@
     "learned": false
   },
   {
-    "id": 246,
+    "id": 245,
     "ru": "сапожник",
     "ro": "cizmar",
     "gag": "çizmeci",
@@ -1968,7 +1960,7 @@
     "learned": false
   },
   {
-    "id": 247,
+    "id": 246,
     "ru": "пекарь",
     "ro": "brutar",
     "gag": "fırıncı",
@@ -1976,7 +1968,7 @@
     "learned": false
   },
   {
-    "id": 248,
+    "id": 247,
     "ru": "мясник",
     "ro": "măcelar",
     "gag": "kasap",
@@ -1984,7 +1976,7 @@
     "learned": false
   },
   {
-    "id": 249,
+    "id": 248,
     "ru": "музыкант",
     "ro": "muzicant",
     "gag": "çalgıcı",
@@ -1992,7 +1984,7 @@
     "learned": false
   },
   {
-    "id": 250,
+    "id": 249,
     "ru": "певец",
     "ro": "cântăreț",
     "gag": "türkücü",
@@ -2000,7 +1992,7 @@
     "learned": false
   },
   {
-    "id": 251,
+    "id": 250,
     "ru": "писатель",
     "ro": "scriitor",
     "gag": "yazıcı",
@@ -2008,7 +2000,7 @@
     "learned": false
   },
   {
-    "id": 252,
+    "id": 251,
     "ru": "художник",
     "ro": "pictor",
     "gag": "resimci",
@@ -2016,7 +2008,7 @@
     "learned": false
   },
   {
-    "id": 253,
+    "id": 252,
     "ru": "солдат",
     "ro": "soldat",
     "gag": "asker",
@@ -2024,7 +2016,7 @@
     "learned": false
   },
   {
-    "id": 254,
+    "id": 253,
     "ru": "начальник",
     "ro": "șef",
     "gag": "bakan",
@@ -2032,7 +2024,7 @@
     "learned": false
   },
   {
-    "id": 255,
+    "id": 254,
     "ru": "судья",
     "ro": "judecător",
     "gag": "daavacı",
@@ -2040,7 +2032,7 @@
     "learned": false
   },
   {
-    "id": 256,
+    "id": 255,
     "ru": "ученый",
     "ro": "savant",
     "gag": "bilimci",
@@ -2048,7 +2040,7 @@
     "learned": false
   },
   {
-    "id": 257,
+    "id": 256,
     "ru": "цвет",
     "ro": "culoare",
     "gag": "renk",
@@ -2056,7 +2048,7 @@
     "learned": false
   },
   {
-    "id": 258,
+    "id": 257,
     "ru": "белый",
     "ro": "alb",
     "gag": "biyaz",
@@ -2064,7 +2056,7 @@
     "learned": false
   },
   {
-    "id": 259,
+    "id": 258,
     "ru": "черный",
     "ro": "negru",
     "gag": "kara",
@@ -2072,7 +2064,7 @@
     "learned": false
   },
   {
-    "id": 260,
+    "id": 259,
     "ru": "красный",
     "ro": "roșu",
     "gag": "kırmızı",
@@ -2080,7 +2072,7 @@
     "learned": false
   },
   {
-    "id": 261,
+    "id": 260,
     "ru": "синий",
     "ro": "albastru",
     "gag": "maavi",
@@ -2088,15 +2080,15 @@
     "learned": false
   },
   {
-    "id": 262,
+    "id": 261,
     "ru": "зеленый",
     "ro": "verde",
-    "gag": "eşil",
+    "gag": "eşil / yeşil",
     "category": "Цвета",
     "learned": false
   },
   {
-    "id": 263,
+    "id": 262,
     "ru": "желтый",
     "ro": "galben",
     "gag": "sarı",
@@ -2104,7 +2096,7 @@
     "learned": false
   },
   {
-    "id": 264,
+    "id": 263,
     "ru": "серый",
     "ro": "gri",
     "gag": "boz",
@@ -2112,7 +2104,7 @@
     "learned": false
   },
   {
-    "id": 265,
+    "id": 264,
     "ru": "голубой",
     "ro": "azuriu",
     "gag": "çakır",
@@ -2120,7 +2112,7 @@
     "learned": false
   },
   {
-    "id": 266,
+    "id": 265,
     "ru": "розовый",
     "ro": "roz",
     "gag": "pembä",
@@ -2128,7 +2120,7 @@
     "learned": false
   },
   {
-    "id": 267,
+    "id": 266,
     "ru": "фиолетовый",
     "ro": "violet",
     "gag": "mor",
@@ -2136,7 +2128,7 @@
     "learned": false
   },
   {
-    "id": 268,
+    "id": 267,
     "ru": "оранжевый",
     "ro": "portocaliu",
     "gag": "turuncu",
@@ -2144,7 +2136,7 @@
     "learned": false
   },
   {
-    "id": 269,
+    "id": 268,
     "ru": "пестрый",
     "ro": "pestriț",
     "gag": "alaca",
@@ -2152,191 +2144,191 @@
     "learned": false
   },
   {
-    "id": 270,
+    "id": 269,
     "ru": "город",
     "ro": "oraș",
     "gag": "kasaba",
-    "category": "Транспорт и Город",
+    "category": "Город и Транспорт",
+    "learned": false
+  },
+  {
+    "id": 270,
+    "ru": "село",
+    "ro": "sat",
+    "gag": "küü",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 271,
-    "ru": "село",
-    "ro": "sat",
-    "gag": "küü",
-    "category": "Транспорт и Город",
+    "ru": "улица",
+    "ro": "stradă",
+    "gag": "sokak",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 272,
-    "ru": "улица",
-    "ro": "stradă",
-    "gag": "sokak",
-    "category": "Транспорт и Город",
+    "ru": "дорога",
+    "ro": "drum",
+    "gag": "yol",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 273,
-    "ru": "дорога",
-    "ro": "drum",
-    "gag": "yol",
-    "category": "Транспорт и Город",
+    "ru": "машина",
+    "ro": "mașină",
+    "gag": "maşina / avtomobil",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 274,
-    "ru": "машина",
-    "ro": "mașină",
-    "gag": "maşina",
-    "category": "Транспорт и Город",
+    "ru": "автобус",
+    "ro": "autobuz",
+    "gag": "avtobus",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 275,
-    "ru": "автобус",
-    "ro": "autobuz",
-    "gag": "avtobus",
-    "category": "Транспорт и Город",
+    "ru": "поезд",
+    "ro": "tren",
+    "gag": "tren",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 276,
-    "ru": "поезд",
-    "ro": "tren",
-    "gag": "tren",
-    "category": "Транспорт и Город",
+    "ru": "самолёт",
+    "ro": "avion",
+    "gag": "uçak",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 277,
-    "ru": "самолет",
-    "ro": "avion",
-    "gag": "uçak",
-    "category": "Транспорт и Город",
+    "ru": "корабль",
+    "ro": "corabie",
+    "gag": "gemi",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 278,
-    "ru": "корабль",
-    "ro": "corabie",
-    "gag": "gemi",
-    "category": "Транспорт и Город",
+    "ru": "лодка",
+    "ro": "barcă",
+    "gag": "kayık",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 279,
-    "ru": "лодка",
-    "ro": "barcă",
-    "gag": "kayık",
-    "category": "Транспорт и Город",
+    "ru": "велосипед",
+    "ro": "bicicletă",
+    "gag": "velosiped",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 280,
-    "ru": "велосипед",
-    "ro": "bicicletă",
-    "gag": "velosiped",
-    "category": "Транспорт и Город",
+    "ru": "мост",
+    "ro": "pod",
+    "gag": "köprü",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 281,
-    "ru": "мост",
-    "ro": "pod",
-    "gag": "köprü",
-    "category": "Транспорт и Город",
+    "ru": "вокзал",
+    "ro": "gară",
+    "gag": "gara",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 282,
-    "ru": "вокзал",
-    "ro": "gară",
-    "gag": "gara",
-    "category": "Транспорт и Город",
+    "ru": "аэропорт",
+    "ro": "aeroport",
+    "gag": "aeroport",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 283,
-    "ru": "аэропорт",
-    "ro": "aeroport",
-    "gag": "aeroport",
-    "category": "Транспорт и Город",
+    "ru": "магазин",
+    "ro": "magazin",
+    "gag": "tükän / dükän",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 284,
-    "ru": "магазин",
-    "ro": "magazin",
-    "gag": "tükän",
-    "category": "Транспорт и Город",
+    "ru": "школа",
+    "ro": "școală",
+    "gag": "şkola",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 285,
-    "ru": "школа",
-    "ro": "școală",
-    "gag": "şkola",
-    "category": "Транспорт и Город",
+    "ru": "больница",
+    "ro": "spital",
+    "gag": "bolniţa / hastalık evi",
+    "category": "Здоровье и Медицина",
     "learned": false
   },
   {
     "id": 286,
-    "ru": "больница",
-    "ro": "spital",
-    "gag": "bolniţa",
-    "category": "Транспорт и Город",
+    "ru": "аптека",
+    "ro": "farmacie",
+    "gag": "apteka / eczane",
+    "category": "Здоровье и Медицина",
     "learned": false
   },
   {
     "id": 287,
-    "ru": "аптека",
-    "ro": "farmacie",
-    "gag": "apteka",
-    "category": "Транспорт и Город",
+    "ru": "церковь",
+    "ro": "biserică",
+    "gag": "klisä",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 288,
-    "ru": "церковь",
-    "ro": "biserică",
-    "gag": "klisä",
-    "category": "Транспорт и Город",
+    "ru": "площадь",
+    "ro": "piață",
+    "gag": "meydan",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 289,
-    "ru": "площадь",
-    "ro": "piață",
-    "gag": "meydan",
-    "category": "Транспорт и Город",
+    "ru": "остановка",
+    "ro": "stație",
+    "gag": "durak",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 290,
-    "ru": "остановка",
-    "ro": "stație",
-    "gag": "durak",
-    "category": "Транспорт и Город",
+    "ru": "рынок",
+    "ro": "piață comercială",
+    "gag": "panayır / pazar",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 291,
-    "ru": "рынок",
-    "ro": "piață comercială",
-    "gag": "panayır",
-    "category": "Транспорт и Город",
+    "ru": "здание",
+    "ro": "clădire",
+    "gag": "bina",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
     "id": 292,
-    "ru": "здание",
-    "ro": "clădire",
-    "gag": "bina",
-    "category": "Транспорт и Город",
-    "learned": false
-  },
-  {
-    "id": 293,
     "ru": "одежда",
     "ro": "haine",
     "gag": "giiyim",
@@ -2344,7 +2336,7 @@
     "learned": false
   },
   {
-    "id": 294,
+    "id": 293,
     "ru": "платье",
     "ro": "rochie",
     "gag": "fistan",
@@ -2352,7 +2344,7 @@
     "learned": false
   },
   {
-    "id": 295,
+    "id": 294,
     "ru": "рубашка",
     "ro": "cămașă",
     "gag": "gölmek",
@@ -2360,7 +2352,7 @@
     "learned": false
   },
   {
-    "id": 296,
+    "id": 295,
     "ru": "брюки",
     "ro": "pantaloni",
     "gag": "pantalon",
@@ -2368,15 +2360,15 @@
     "learned": false
   },
   {
-    "id": 297,
+    "id": 296,
     "ru": "юбка",
     "ro": "fustă",
-    "gag": "fısta",
+    "gag": "fısta / futa",
     "category": "Одежда",
     "learned": false
   },
   {
-    "id": 298,
+    "id": 297,
     "ru": "куртка",
     "ro": "scurtă/geacă",
     "gag": "jaket",
@@ -2384,7 +2376,7 @@
     "learned": false
   },
   {
-    "id": 299,
+    "id": 298,
     "ru": "пальто",
     "ro": "palton",
     "gag": "palto",
@@ -2392,23 +2384,23 @@
     "learned": false
   },
   {
-    "id": 300,
+    "id": 299,
     "ru": "шапка",
     "ro": "căciulă/șapcă",
-    "gag": "şapka",
+    "gag": "şapka / kalpak",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 300,
+    "ru": "обувь",
+    "ro": "încălțăminte",
+    "gag": "ayak kabı / papuç",
     "category": "Одежда",
     "learned": false
   },
   {
     "id": 301,
-    "ru": "обувь",
-    "ro": "încălțăminte",
-    "gag": "ayak kabı",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 302,
     "ru": "сапог",
     "ro": "cizmă",
     "gag": "çizmä",
@@ -2416,7 +2408,7 @@
     "learned": false
   },
   {
-    "id": 303,
+    "id": 302,
     "ru": "носки",
     "ro": "ciorapi",
     "gag": "çorap",
@@ -2424,31 +2416,31 @@
     "learned": false
   },
   {
-    "id": 304,
+    "id": 303,
     "ru": "платок",
     "ro": "batic",
-    "gag": "çember",
+    "gag": "çember / yemeni",
+    "category": "Одежда",
+    "learned": false
+  },
+  {
+    "id": 304,
+    "ru": "карман",
+    "ro": "buzunar",
+    "gag": "cöp / cep",
     "category": "Одежда",
     "learned": false
   },
   {
     "id": 305,
-    "ru": "карман",
-    "ro": "buzunar",
-    "gag": "cöp",
+    "ru": "пуговица",
+    "ro": "nasture",
+    "gag": "düüme / sedef",
     "category": "Одежда",
     "learned": false
   },
   {
     "id": 306,
-    "ru": "пуговица",
-    "ro": "nasture",
-    "gag": "düüme",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 307,
     "ru": "неделя",
     "ro": "săptămână",
     "gag": "afta",
@@ -2456,7 +2448,7 @@
     "learned": false
   },
   {
-    "id": 308,
+    "id": 307,
     "ru": "понедельник",
     "ro": "luni",
     "gag": "pazertesi",
@@ -2464,7 +2456,7 @@
     "learned": false
   },
   {
-    "id": 309,
+    "id": 308,
     "ru": "вторник",
     "ro": "marți",
     "gag": "salı",
@@ -2472,7 +2464,7 @@
     "learned": true
   },
   {
-    "id": 310,
+    "id": 309,
     "ru": "среда",
     "ro": "miercuri",
     "gag": "çarşamba",
@@ -2480,7 +2472,7 @@
     "learned": false
   },
   {
-    "id": 311,
+    "id": 310,
     "ru": "четверг",
     "ro": "joi",
     "gag": "perşembä",
@@ -2488,7 +2480,7 @@
     "learned": false
   },
   {
-    "id": 312,
+    "id": 311,
     "ru": "пятница",
     "ro": "vineri",
     "gag": "cumaa",
@@ -2496,7 +2488,7 @@
     "learned": false
   },
   {
-    "id": 313,
+    "id": 312,
     "ru": "суббота",
     "ro": "sâmbătă",
     "gag": "cumertesi",
@@ -2504,7 +2496,7 @@
     "learned": false
   },
   {
-    "id": 314,
+    "id": 313,
     "ru": "воскресенье",
     "ro": "duminică",
     "gag": "pazar",
@@ -2512,7 +2504,7 @@
     "learned": true
   },
   {
-    "id": 315,
+    "id": 314,
     "ru": "год",
     "ro": "an",
     "gag": "yıl",
@@ -2520,7 +2512,7 @@
     "learned": false
   },
   {
-    "id": 316,
+    "id": 315,
     "ru": "месяц",
     "ro": "lună",
     "gag": "ay",
@@ -2528,7 +2520,7 @@
     "learned": true
   },
   {
-    "id": 317,
+    "id": 316,
     "ru": "весна",
     "ro": "primăvară",
     "gag": "ilkyaz",
@@ -2536,7 +2528,7 @@
     "learned": false
   },
   {
-    "id": 318,
+    "id": 317,
     "ru": "лето",
     "ro": "vară",
     "gag": "yaz",
@@ -2544,7 +2536,7 @@
     "learned": false
   },
   {
-    "id": 319,
+    "id": 318,
     "ru": "осень",
     "ro": "toamnă",
     "gag": "güz",
@@ -2552,7 +2544,7 @@
     "learned": false
   },
   {
-    "id": 320,
+    "id": 319,
     "ru": "зима",
     "ro": "iarnă",
     "gag": "kış",
@@ -2560,55 +2552,7 @@
     "learned": false
   },
   {
-    "id": 321,
-    "ru": "красный",
-    "ro": "roșu",
-    "gag": "kırmız",
-    "category": "Цвета",
-    "learned": false
-  },
-  {
-    "id": 322,
-    "ru": "синий",
-    "ro": "albastru",
-    "gag": "mavy",
-    "category": "Цвета",
-    "learned": false
-  },
-  {
-    "id": 323,
-    "ru": "зеленый",
-    "ro": "verde",
-    "gag": "yeşil",
-    "category": "Цвета",
-    "learned": false
-  },
-  {
-    "id": 324,
-    "ru": "желтый",
-    "ro": "galben",
-    "gag": "sary",
-    "category": "Цвета",
-    "learned": false
-  },
-  {
-    "id": 325,
-    "ru": "серый",
-    "ro": "gri",
-    "gag": "bori",
-    "category": "Цвета",
-    "learned": false
-  },
-  {
-    "id": 326,
-    "ru": "розовый",
-    "ro": "roz",
-    "gag": "fink",
-    "category": "Цвета",
-    "learned": false
-  },
-  {
-    "id": 327,
+    "id": 320,
     "ru": "звезда",
     "ro": "stea",
     "gag": "yıldız",
@@ -2616,7 +2560,7 @@
     "learned": false
   },
   {
-    "id": 328,
+    "id": 321,
     "ru": "облако",
     "ro": "nor",
     "gag": "bulut",
@@ -2624,7 +2568,7 @@
     "learned": false
   },
   {
-    "id": 329,
+    "id": 322,
     "ru": "дождь",
     "ro": "ploaie",
     "gag": "yamur",
@@ -2632,7 +2576,7 @@
     "learned": false
   },
   {
-    "id": 330,
+    "id": 323,
     "ru": "снег",
     "ro": "zăpadă",
     "gag": "kar",
@@ -2640,15 +2584,7 @@
     "learned": false
   },
   {
-    "id": 331,
-    "ru": "ветер",
-    "ro": "vânt",
-    "gag": "rüzgar",
-    "category": "Природа",
-    "learned": false
-  },
-  {
-    "id": 332,
+    "id": 324,
     "ru": "море",
     "ro": "mare",
     "gag": "deniz",
@@ -2656,7 +2592,7 @@
     "learned": false
   },
   {
-    "id": 333,
+    "id": 325,
     "ru": "река",
     "ro": "râu",
     "gag": "dere",
@@ -2664,7 +2600,7 @@
     "learned": false
   },
   {
-    "id": 334,
+    "id": 326,
     "ru": "лес",
     "ro": "pădure",
     "gag": "daa",
@@ -2672,7 +2608,7 @@
     "learned": false
   },
   {
-    "id": 335,
+    "id": 327,
     "ru": "гора",
     "ro": "munte",
     "gag": "bayır",
@@ -2680,31 +2616,7 @@
     "learned": false
   },
   {
-    "id": 336,
-    "ru": "брюки",
-    "ro": "pantaloni",
-    "gag": "pantol",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 337,
-    "ru": "рубашка",
-    "ro": "cămașă",
-    "gag": "gömlek",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 338,
-    "ru": "обувь",
-    "ro": "încălțăminte",
-    "gag": "papuç",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 339,
+    "id": 328,
     "ru": "ремень",
     "ro": "curea",
     "gag": "kemer",
@@ -2712,431 +2624,103 @@
     "learned": false
   },
   {
+    "id": 329,
+    "ru": "слушать",
+    "ro": "a asculta",
+    "gag": "işitmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 330,
+    "ru": "просыпаться",
+    "ro": "a se trezi",
+    "gag": "uyanmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 331,
+    "ru": "стоять",
+    "ro": "a sta",
+    "gag": "durmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 332,
+    "ru": "играть",
+    "ro": "a se juca",
+    "gag": "oynamaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 333,
+    "ru": "бежать",
+    "ro": "a fugi",
+    "gag": "kaçmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 334,
+    "ru": "гулять",
+    "ro": "a se plimba",
+    "gag": "gezmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 335,
+    "ru": "покупать",
+    "ro": "a cumpăra",
+    "gag": "satın almaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 336,
+    "ru": "продавать",
+    "ro": "a vinde",
+    "gag": "satmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 337,
+    "ru": "новый",
+    "ro": "nou",
+    "gag": "yeni",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 338,
+    "ru": "высокий",
+    "ro": "înalt",
+    "gag": "üsek",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 339,
+    "ru": "низкий",
+    "ro": "scund",
+    "gag": "alçak",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
     "id": 340,
-    "ru": "куртка",
-    "ro": "geacă",
-    "gag": "kofte",
-    "category": "Одежда",
+    "ru": "медленный",
+    "ro": "lent",
+    "gag": "yavaş",
+    "category": "Прилагательные",
     "learned": false
   },
   {
     "id": 341,
-    "ru": "идти",
-    "ro": "a merge",
-    "gag": "gitmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 342,
-    "ru": "приходить",
-    "ro": "a veni",
-    "gag": "gelmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 343,
-    "ru": "смотреть",
-    "ro": "a privi",
-    "gag": "bakmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 344,
-    "ru": "видеть",
-    "ro": "a vedea",
-    "gag": "görmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 345,
-    "ru": "слушать",
-    "ro": "a asculta",
-    "gag": "işitmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 346,
-    "ru": "говорить",
-    "ro": "a vorbi",
-    "gag": "lafetmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 347,
-    "ru": "кушать",
-    "ro": "a mânca",
-    "gag": "iyimää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 348,
-    "ru": "пить",
-    "ro": "a bea",
-    "gag": "içmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 349,
-    "ru": "спать",
-    "ro": "a dormi",
-    "gag": "uyumaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 350,
-    "ru": "просыпаться",
-    "ro": "a se trezi",
-    "gag": "uyanmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 351,
-    "ru": "сидеть",
-    "ro": "a ședea",
-    "gag": "oturmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 352,
-    "ru": "стоять",
-    "ro": "a sta",
-    "gag": "durmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 353,
-    "ru": "читать",
-    "ro": "a citi",
-    "gag": "okumaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 354,
-    "ru": "писать",
-    "ro": "a scrie",
-    "gag": "yazmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 355,
-    "ru": "работать",
-    "ro": "a lucra",
-    "gag": "işlemää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 356,
-    "ru": "играть",
-    "ro": "a se juca",
-    "gag": "oynamaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 357,
-    "ru": "бежать",
-    "ro": "a fugi",
-    "gag": "kaçmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 358,
-    "ru": "гулять",
-    "ro": "a se plimba",
-    "gag": "gezmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 359,
-    "ru": "покупать",
-    "ro": "a cumpăra",
-    "gag": "satın almaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 360,
-    "ru": "продавать",
-    "ro": "a vinde",
-    "gag": "satmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 361,
-    "ru": "учитель",
-    "ro": "profesor",
-    "gag": "üretici",
-    "category": "Профессии",
-    "learned": false
-  },
-  {
-    "id": 362,
-    "ru": "врач",
-    "ro": "medic",
-    "gag": "hekim",
-    "category": "Профессии",
-    "learned": false
-  },
-  {
-    "id": 363,
-    "ru": "масло",
-    "ro": "unt/ulei",
-    "gag": "maslo",
-    "category": "Еда",
-    "learned": false
-  },
-  {
-    "id": 364,
-    "ru": "большой",
-    "ro": "mare",
-    "gag": "büyük",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 365,
-    "ru": "маленький",
-    "ro": "mic",
-    "gag": "küçük",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 366,
-    "ru": "хороший",
-    "ro": "bun",
-    "gag": "ey",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 367,
-    "ru": "плохой",
-    "ro": "rău",
-    "gag": "fena",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 368,
-    "ru": "новый",
-    "ro": "nou",
-    "gag": "yeni",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 369,
-    "ru": "старый",
-    "ro": "vechi",
-    "gag": "eskі",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 370,
-    "ru": "горячий",
-    "ro": "fierbinte",
-    "gag": "sıcak",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 371,
-    "ru": "холодный",
-    "ro": "rece",
-    "gag": "suuk",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 372,
-    "ru": "высокий",
-    "ro": "înalt",
-    "gag": "üsek",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 373,
-    "ru": "низкий",
-    "ro": "scund",
-    "gag": "alçak",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 374,
-    "ru": "быстрый",
-    "ro": "rapid",
-    "gag": "çabuk",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 375,
-    "ru": "медленный",
-    "ro": "lent",
-    "gag": "yavaş",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 376,
-    "ru": "умный",
-    "ro": "inteligent",
-    "gag": "akıllı",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 377,
-    "ru": "красивый",
-    "ro": "frumos",
-    "gag": "gözäl",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 378,
-    "ru": "стул",
-    "ro": "scaun",
-    "gag": "skemni",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 379,
-    "ru": "кровать",
-    "ro": "pat",
-    "gag": "yataat",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 380,
-    "ru": "тарелка",
-    "ro": "farfurie",
-    "gag": "taaler",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 381,
-    "ru": "вилка",
-    "ro": "furculiță",
-    "gag": "vilka",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 382,
-    "ru": "нож",
-    "ro": "cuțit",
-    "gag": "biçak",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 383,
-    "ru": "город",
-    "ro": "oraș",
-    "gag": "kasaba",
-    "category": "Места",
-    "learned": false
-  },
-  {
-    "id": 384,
-    "ru": "село",
-    "ro": "sat",
-    "gag": "küü",
-    "category": "Места",
-    "learned": false
-  },
-  {
-    "id": 385,
-    "ru": "школа",
-    "ro": "școală",
-    "gag": "şkola",
-    "category": "Места",
-    "learned": false
-  },
-  {
-    "id": 386,
-    "ru": "магазин",
-    "ro": "magazin",
-    "gag": "dükän",
-    "category": "Места",
-    "learned": false
-  },
-  {
-    "id": 387,
-    "ru": "дорога",
-    "ro": "drum",
-    "gag": "yol",
-    "category": "Места",
-    "learned": false
-  },
-  {
-    "id": 388,
-    "ru": "сегодня",
-    "ro": "astăzi",
-    "gag": "buün",
-    "category": "Время",
-    "learned": true
-  },
-  {
-    "id": 389,
-    "ru": "завтра",
-    "ro": "mâine",
-    "gag": "saaba",
-    "category": "Время",
-    "learned": false
-  },
-  {
-    "id": 390,
-    "ru": "утро",
-    "ro": "dimineață",
-    "gag": "saaba",
-    "category": "Время",
-    "learned": false
-  },
-  {
-    "id": 391,
-    "ru": "вечер",
-    "ro": "seară",
-    "gag": "akşam",
-    "category": "Время",
-    "learned": false
-  },
-  {
-    "id": 392,
-    "ru": "ночь",
-    "ro": "noapte",
-    "gag": "gece",
-    "category": "Время",
-    "learned": false
-  },
-  {
-    "id": 393,
     "ru": "счастье",
     "ro": "fericire",
     "gag": "baht",
@@ -3144,7 +2728,7 @@
     "learned": false
   },
   {
-    "id": 394,
+    "id": 342,
     "ru": "радость",
     "ro": "bucurie",
     "gag": "sevinç",
@@ -3152,7 +2736,7 @@
     "learned": false
   },
   {
-    "id": 395,
+    "id": 343,
     "ru": "грусть",
     "ro": "tristețe",
     "gag": "kahır",
@@ -3160,7 +2744,7 @@
     "learned": false
   },
   {
-    "id": 396,
+    "id": 344,
     "ru": "страх",
     "ro": "frică",
     "gag": "korku",
@@ -3168,7 +2752,7 @@
     "learned": false
   },
   {
-    "id": 397,
+    "id": 345,
     "ru": "гнев",
     "ro": "furie",
     "gag": "üfkä",
@@ -3176,7 +2760,7 @@
     "learned": false
   },
   {
-    "id": 398,
+    "id": 346,
     "ru": "любовь",
     "ro": "iubire",
     "gag": "sevda",
@@ -3184,7 +2768,7 @@
     "learned": false
   },
   {
-    "id": 399,
+    "id": 347,
     "ru": "улыбка",
     "ro": "zâmbet",
     "gag": "gülüş",
@@ -3192,7 +2776,7 @@
     "learned": false
   },
   {
-    "id": 400,
+    "id": 348,
     "ru": "совесть",
     "ro": "conștiință",
     "gag": "namuz",
@@ -3200,7 +2784,7 @@
     "learned": false
   },
   {
-    "id": 401,
+    "id": 349,
     "ru": "покой",
     "ro": "liniște",
     "gag": "raatlık",
@@ -3208,7 +2792,7 @@
     "learned": false
   },
   {
-    "id": 402,
+    "id": 350,
     "ru": "уважение",
     "ro": "respect",
     "gag": "saygı",
@@ -3216,7 +2800,7 @@
     "learned": false
   },
   {
-    "id": 403,
+    "id": 351,
     "ru": "книга",
     "ro": "carte",
     "gag": "kiyat",
@@ -3224,7 +2808,7 @@
     "learned": false
   },
   {
-    "id": 404,
+    "id": 352,
     "ru": "ученик",
     "ro": "elev",
     "gag": "üürenici",
@@ -3232,7 +2816,7 @@
     "learned": false
   },
   {
-    "id": 405,
+    "id": 353,
     "ru": "урок",
     "ro": "lecție",
     "gag": "ders",
@@ -3240,7 +2824,7 @@
     "learned": false
   },
   {
-    "id": 406,
+    "id": 354,
     "ru": "тетрадь",
     "ro": "caiet",
     "gag": "tefter",
@@ -3248,7 +2832,7 @@
     "learned": false
   },
   {
-    "id": 407,
+    "id": 355,
     "ru": "карандаш",
     "ro": "creion",
     "gag": "kalem",
@@ -3256,7 +2840,7 @@
     "learned": false
   },
   {
-    "id": 408,
+    "id": 356,
     "ru": "линейка",
     "ro": "riglă",
     "gag": "çizgiç",
@@ -3264,7 +2848,7 @@
     "learned": false
   },
   {
-    "id": 409,
+    "id": 357,
     "ru": "знание",
     "ro": "cunoștință",
     "gag": "bilgi",
@@ -3272,7 +2856,7 @@
     "learned": false
   },
   {
-    "id": 410,
+    "id": 358,
     "ru": "язык",
     "ro": "limbă",
     "gag": "dil",
@@ -3280,7 +2864,7 @@
     "learned": false
   },
   {
-    "id": 411,
+    "id": 359,
     "ru": "слово",
     "ro": "cuvânt",
     "gag": "laf",
@@ -3288,7 +2872,7 @@
     "learned": false
   },
   {
-    "id": 412,
+    "id": 360,
     "ru": "пример",
     "ro": "exemplu",
     "gag": "örnek",
@@ -3296,135 +2880,111 @@
     "learned": false
   },
   {
-    "id": 413,
+    "id": 361,
     "ru": "помогать",
     "ro": "a ajuta",
     "gag": "yardım etmää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 414,
+    "id": 362,
     "ru": "ждать",
     "ro": "a aștepta",
     "gag": "beklemää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 415,
+    "id": 363,
     "ru": "обещать",
     "ro": "a promite",
     "gag": "söz vermää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 416,
-    "ru": "играть",
-    "ro": "a se juca",
-    "gag": "oynamaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 417,
+    "id": 364,
     "ru": "петь",
     "ro": "a cânta",
     "gag": "çalmaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 418,
+    "id": 365,
     "ru": "танцевать",
     "ro": "a dansa",
     "gag": "oynamaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 419,
+    "id": 366,
     "ru": "смеяться",
     "ro": "a râde",
     "gag": "gülmää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 420,
+    "id": 367,
     "ru": "прыгать",
     "ro": "a sări",
     "gag": "atlamaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 421,
+    "id": 368,
     "ru": "мыть",
     "ro": "a spăla",
     "gag": "yıkamaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 422,
+    "id": 369,
     "ru": "изучать",
     "ro": "a studia",
     "gag": "üürenmää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 423,
+    "id": 370,
     "ru": "прощать",
     "ro": "a ierta",
     "gag": "afetmää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 424,
+    "id": 371,
     "ru": "посылать",
     "ro": "a trimite",
     "gag": "yollamaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 425,
-    "ru": "спрашивать",
-    "ro": "a întreba",
-    "gag": "sormaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 426,
+    "id": 372,
     "ru": "надеяться",
     "ro": "a spera",
     "gag": "umutlanmaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 427,
+    "id": 373,
     "ru": "мешать",
     "ro": "a încurca",
     "gag": "engellemää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 428,
-    "ru": "звезда",
-    "ro": "stea",
-    "gag": "yıldız",
-    "category": "Природа",
-    "learned": false
-  },
-  {
-    "id": 429,
+    "id": 374,
     "ru": "туман",
     "ro": "ceață",
     "gag": "duman",
@@ -3432,15 +2992,7 @@
     "learned": false
   },
   {
-    "id": 430,
-    "ru": "облако",
-    "ro": "nor",
-    "gag": "bulut",
-    "category": "Природа",
-    "learned": false
-  },
-  {
-    "id": 431,
+    "id": 375,
     "ru": "гром",
     "ro": "tunet",
     "gag": "gürültü",
@@ -3448,7 +3000,7 @@
     "learned": false
   },
   {
-    "id": 432,
+    "id": 376,
     "ru": "молния",
     "ro": "fulger",
     "gag": "yıldırım",
@@ -3456,15 +3008,7 @@
     "learned": false
   },
   {
-    "id": 433,
-    "ru": "море",
-    "ro": "mare",
-    "gag": "deniz",
-    "category": "Природа",
-    "learned": false
-  },
-  {
-    "id": 434,
+    "id": 377,
     "ru": "остров",
     "ro": "insulă",
     "gag": "ada",
@@ -3472,23 +3016,7 @@
     "learned": false
   },
   {
-    "id": 435,
-    "ru": "лес",
-    "ro": "pădure",
-    "gag": "daa",
-    "category": "Природа",
-    "learned": false
-  },
-  {
-    "id": 436,
-    "ru": "воздух",
-    "ro": "aer",
-    "gag": "hava",
-    "category": "Природа",
-    "learned": false
-  },
-  {
-    "id": 437,
+    "id": 378,
     "ru": "берег",
     "ro": "mal",
     "gag": "kenar",
@@ -3496,7 +3024,7 @@
     "learned": false
   },
   {
-    "id": 438,
+    "id": 379,
     "ru": "друг",
     "ro": "prieten",
     "gag": "arkadaş",
@@ -3504,7 +3032,7 @@
     "learned": false
   },
   {
-    "id": 439,
+    "id": 380,
     "ru": "сосед",
     "ro": "vecin",
     "gag": "komşu",
@@ -3512,7 +3040,7 @@
     "learned": false
   },
   {
-    "id": 440,
+    "id": 381,
     "ru": "гость",
     "ro": "oaspete",
     "gag": "musaafir",
@@ -3520,7 +3048,7 @@
     "learned": false
   },
   {
-    "id": 441,
+    "id": 382,
     "ru": "подарок",
     "ro": "cadou",
     "gag": "baaşış",
@@ -3528,7 +3056,7 @@
     "learned": false
   },
   {
-    "id": 442,
+    "id": 383,
     "ru": "мир",
     "ro": "pace",
     "gag": "barış",
@@ -3536,7 +3064,7 @@
     "learned": false
   },
   {
-    "id": 443,
+    "id": 384,
     "ru": "праздник",
     "ro": "sărbătoare",
     "gag": "yortu",
@@ -3544,7 +3072,7 @@
     "learned": false
   },
   {
-    "id": 444,
+    "id": 385,
     "ru": "здоровье",
     "ro": "sănătate",
     "gag": "saalık",
@@ -3552,7 +3080,7 @@
     "learned": false
   },
   {
-    "id": 445,
+    "id": 386,
     "ru": "жизнь",
     "ro": "viață",
     "gag": "ömür",
@@ -3560,7 +3088,7 @@
     "learned": false
   },
   {
-    "id": 446,
+    "id": 387,
     "ru": "имя",
     "ro": "nume",
     "gag": "ad",
@@ -3568,7 +3096,7 @@
     "learned": false
   },
   {
-    "id": 447,
+    "id": 388,
     "ru": "твой",
     "ro": "al tău",
     "gag": "kendin",
@@ -3576,15 +3104,7 @@
     "learned": false
   },
   {
-    "id": 448,
-    "ru": "мыло",
-    "ro": "săpun",
-    "gag": "sabun",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 449,
+    "id": 389,
     "ru": "забор",
     "ro": "gard",
     "gag": "aul",
@@ -3592,55 +3112,7 @@
     "learned": false
   },
   {
-    "id": 450,
-    "ru": "ключ",
-    "ro": "cheie",
-    "gag": "anatar",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 451,
-    "ru": "стена",
-    "ro": "perete",
-    "gag": "duvar",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 452,
-    "ru": "потолок",
-    "ro": "tavan",
-    "gag": "tavan",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 453,
-    "ru": "крыша",
-    "ro": "acoperiș",
-    "gag": "örtü",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 454,
-    "ru": "одеяло",
-    "ro": "pătură",
-    "gag": "yorgan",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 455,
-    "ru": "подушка",
-    "ro": "pernă",
-    "gag": "yastık",
-    "category": "Дом и Предметы",
-    "learned": false
-  },
-  {
-    "id": 456,
+    "id": 390,
     "ru": "щетка",
     "ro": "perie",
     "gag": "çotka",
@@ -3648,7 +3120,7 @@
     "learned": false
   },
   {
-    "id": 457,
+    "id": 391,
     "ru": "сундук",
     "ro": "cufăr",
     "gag": "sandık",
@@ -3656,335 +3128,135 @@
     "learned": false
   },
   {
-    "id": 458,
-    "ru": "сильный",
-    "ro": "puternic",
-    "gag": "kaavi",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 459,
-    "ru": "слабый",
-    "ro": "slab",
-    "gag": "yufka",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 460,
-    "ru": "тяжелый",
-    "ro": "greu",
-    "gag": "aar",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 461,
-    "ru": "легкий",
-    "ro": "ușor",
-    "gag": "ilin",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 462,
-    "ru": "быстрый",
-    "ro": "rapid",
-    "gag": "çabuk",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 463,
-    "ru": "медленный",
-    "ro": "lent",
-    "gag": "yavaş",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 464,
-    "ru": "чистый",
-    "ro": "curat",
-    "gag": "pak",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 465,
-    "ru": "грязный",
-    "ro": "murdar",
-    "gag": "kirli",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 466,
-    "ru": "новый",
-    "ro": "nou",
-    "gag": "yeni",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 467,
-    "ru": "старый",
-    "ro": "vechi",
-    "gag": "eski",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 468,
+    "id": 392,
     "ru": "верный",
     "ro": "corect",
     "gag": "dooru",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 469,
-    "ru": "высокий",
-    "ro": "înalt",
-    "gag": "üsek",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 470,
-    "ru": "низкий",
-    "ro": "scund",
-    "gag": "alçak",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 471,
-    "ru": "широкий",
-    "ro": "lat",
-    "gag": "geniş",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 472,
-    "ru": "узкий",
-    "ro": "îngust",
-    "gag": "dar",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 473,
+    "id": 393,
     "ru": "глубокий",
     "ro": "adânc",
     "gag": "derin",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 474,
+    "id": 394,
     "ru": "твердый",
     "ro": "tare",
     "gag": "çetin",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 475,
+    "id": 395,
     "ru": "мягкий",
     "ro": "moale",
     "gag": "yımışak",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 476,
+    "id": 396,
     "ru": "богатый",
     "ro": "bogat",
     "gag": "zengin",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 477,
+    "id": 397,
     "ru": "бедный",
     "ro": "sărac",
     "gag": "fukaara",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 478,
+    "id": 398,
     "ru": "трудный",
     "ro": "dificil",
     "gag": "zor",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 479,
-    "ru": "легкий",
-    "ro": "ușor",
-    "gag": "kolay",
-    "category": "Качества",
-    "learned": false
-  },
-  {
-    "id": 480,
+    "id": 399,
     "ru": "храбрый",
     "ro": "curajos",
     "gag": "ürekli",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 481,
+    "id": 400,
     "ru": "ленивый",
     "ro": "leneș",
     "gag": "haylaz",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 482,
+    "id": 401,
     "ru": "острый",
     "ro": "ascuțit",
     "gag": "keskin",
-    "category": "Качества",
+    "category": "Прилагательные",
     "learned": false
   },
   {
-    "id": 483,
+    "id": 402,
     "ru": "забывать",
     "ro": "a uita",
     "gag": "unutmaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 484,
+    "id": 403,
     "ru": "помнить",
     "ro": "a-și aminti",
     "gag": "anmaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 485,
+    "id": 404,
     "ru": "приносить",
     "ro": "a aduce",
     "gag": "getirmää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 486,
-    "ru": "брать",
-    "ro": "a lua",
-    "gag": "almaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 487,
-    "ru": "отвечать",
-    "ro": "a răspunde",
-    "gag": "cuvap etmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 488,
+    "id": 405,
     "ru": "звать",
     "ro": "a chema",
     "gag": "çaarmaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 489,
+    "id": 406,
     "ru": "летать",
     "ro": "a zbura",
     "gag": "uçmaa",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 490,
+    "id": 407,
     "ru": "плавать",
     "ro": "a înota",
     "gag": "üzmää",
-    "category": "Действия",
+    "category": "Глаголы",
     "learned": false
   },
   {
-    "id": 491,
-    "ru": "бежать",
-    "ro": "a fugi",
-    "gag": "kaçmaa",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 492,
-    "ru": "гулять",
-    "ro": "a se plimba",
-    "gag": "gezmää",
-    "category": "Действия",
-    "learned": false
-  },
-  {
-    "id": 493,
-    "ru": "тарелка",
-    "ro": "farfurie",
-    "gag": "tabaak",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 494,
-    "ru": "ложка",
-    "ro": "lingură",
-    "gag": "kaşık",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 495,
-    "ru": "вилка",
-    "ro": "furculiță",
-    "gag": "çatall",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 496,
-    "ru": "нож",
-    "ro": "cuțit",
-    "gag": "bıçak",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 497,
-    "ru": "стакан",
-    "ro": "pahar",
-    "gag": "stakan",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 498,
-    "ru": "кастрюля",
-    "ro": "oală",
-    "gag": "tencere",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 499,
+    "id": 408,
     "ru": "сковорода",
     "ro": "tigaie",
     "gag": "tava",
@@ -3992,7 +3264,7 @@
     "learned": false
   },
   {
-    "id": 500,
+    "id": 409,
     "ru": "чайник",
     "ro": "ceainic",
     "gag": "çaynik",
@@ -4000,31 +3272,7 @@
     "learned": false
   },
   {
-    "id": 501,
-    "ru": "соль",
-    "ro": "sare",
-    "gag": "tuz",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 502,
-    "ru": "сахар",
-    "ro": "zahăr",
-    "gag": "şeker",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 503,
-    "ru": "масло",
-    "ro": "unt",
-    "gag": "yaa",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 504,
+    "id": 410,
     "ru": "мука",
     "ro": "făină",
     "gag": "un",
@@ -4032,23 +3280,7 @@
     "learned": false
   },
   {
-    "id": 505,
-    "ru": "хлеб",
-    "ro": "pâine",
-    "gag": "ekmek",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 506,
-    "ru": "вода",
-    "ro": "apă",
-    "gag": "su",
-    "category": "Кухня",
-    "learned": false
-  },
-  {
-    "id": 507,
+    "id": 411,
     "ru": "завтрак",
     "ro": "mic dejun",
     "gag": "ierli imäk",
@@ -4056,7 +3288,7 @@
     "learned": false
   },
   {
-    "id": 508,
+    "id": 412,
     "ru": "обед",
     "ro": "prânz",
     "gag": "ölä imää",
@@ -4064,7 +3296,7 @@
     "learned": false
   },
   {
-    "id": 509,
+    "id": 413,
     "ru": "ужин",
     "ro": "cină",
     "gag": "akşam imää",
@@ -4072,7 +3304,7 @@
     "learned": false
   },
   {
-    "id": 510,
+    "id": 414,
     "ru": "скатерть",
     "ro": "față de masă",
     "gag": "sofra bezi",
@@ -4080,7 +3312,7 @@
     "learned": false
   },
   {
-    "id": 511,
+    "id": 415,
     "ru": "салфетка",
     "ro": "șervețel",
     "gag": "peşkir",
@@ -4088,7 +3320,7 @@
     "learned": false
   },
   {
-    "id": 512,
+    "id": 416,
     "ru": "холодильник",
     "ro": "frigider",
     "gag": "buzdolabı",
@@ -4096,7 +3328,7 @@
     "learned": false
   },
   {
-    "id": 513,
+    "id": 417,
     "ru": "молоток",
     "ro": "ciocan",
     "gag": "çekic",
@@ -4104,7 +3336,7 @@
     "learned": false
   },
   {
-    "id": 514,
+    "id": 418,
     "ru": "топор",
     "ro": "topor",
     "gag": "balta",
@@ -4112,7 +3344,7 @@
     "learned": false
   },
   {
-    "id": 515,
+    "id": 419,
     "ru": "пила",
     "ro": "ferăstrău",
     "gag": "bıchkı",
@@ -4120,7 +3352,7 @@
     "learned": false
   },
   {
-    "id": 516,
+    "id": 420,
     "ru": "гвоздь",
     "ro": "cui",
     "gag": "çivi",
@@ -4128,7 +3360,7 @@
     "learned": false
   },
   {
-    "id": 517,
+    "id": 421,
     "ru": "лопата",
     "ro": "lopată",
     "gag": "kürek",
@@ -4136,7 +3368,7 @@
     "learned": false
   },
   {
-    "id": 518,
+    "id": 422,
     "ru": "грабли",
     "ro": "greblă",
     "gag": "tırmık",
@@ -4144,15 +3376,7 @@
     "learned": false
   },
   {
-    "id": 519,
-    "ru": "ведро",
-    "ro": "găleată",
-    "gag": "kova",
-    "category": "Инструменты",
-    "learned": false
-  },
-  {
-    "id": 520,
+    "id": 423,
     "ru": "лестница",
     "ro": "scară",
     "gag": "merdiven",
@@ -4160,7 +3384,7 @@
     "learned": false
   },
   {
-    "id": 521,
+    "id": 424,
     "ru": "верёвка",
     "ro": "sfoară",
     "gag": "sicim",
@@ -4168,7 +3392,7 @@
     "learned": false
   },
   {
-    "id": 522,
+    "id": 425,
     "ru": "ножницы",
     "ro": "foarfecă",
     "gag": "makas",
@@ -4176,7 +3400,7 @@
     "learned": false
   },
   {
-    "id": 523,
+    "id": 426,
     "ru": "клей",
     "ro": "adeziv",
     "gag": "tutkall",
@@ -4184,7 +3408,7 @@
     "learned": false
   },
   {
-    "id": 524,
+    "id": 427,
     "ru": "краска",
     "ro": "vopsea",
     "gag": "boya",
@@ -4192,7 +3416,7 @@
     "learned": false
   },
   {
-    "id": 525,
+    "id": 428,
     "ru": "кисть",
     "ro": "pensulă",
     "gag": "fırça",
@@ -4200,71 +3424,7 @@
     "learned": false
   },
   {
-    "id": 526,
-    "ru": "рубашка",
-    "ro": "cămașă",
-    "gag": "gömlek",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 527,
-    "ru": "платье",
-    "ro": "rochie",
-    "gag": "fistan",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 528,
-    "ru": "брюки",
-    "ro": "pantaloni",
-    "gag": "pantolon",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 529,
-    "ru": "юбка",
-    "ro": "fustă",
-    "gag": "futa",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 530,
-    "ru": "шапка",
-    "ro": "căciulă",
-    "gag": "kalpak",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 531,
-    "ru": "платок",
-    "ro": "batic",
-    "gag": "yemeni",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 532,
-    "ru": "носки",
-    "ro": "ciorapi",
-    "gag": "çorap",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 533,
-    "ru": "обувь",
-    "ro": "încălțăminte",
-    "gag": "pabuç",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 534,
+    "id": 429,
     "ru": "пояс",
     "ro": "curea",
     "gag": "kuşak",
@@ -4272,23 +3432,7 @@
     "learned": false
   },
   {
-    "id": 535,
-    "ru": "карман",
-    "ro": "buzunar",
-    "gag": "cep",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 536,
-    "ru": "пуговица",
-    "ro": "nasture",
-    "gag": "sedef",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 537,
+    "id": 430,
     "ru": "перчатки",
     "ro": "mănuși",
     "gag": "eldiven",
@@ -4296,7 +3440,7 @@
     "learned": false
   },
   {
-    "id": 538,
+    "id": 431,
     "ru": "шарф",
     "ro": "fular",
     "gag": "fular",
@@ -4304,7 +3448,7 @@
     "learned": false
   },
   {
-    "id": 539,
+    "id": 432,
     "ru": "зонт",
     "ro": "umbrelă",
     "gag": "şemşiye",
@@ -4312,7 +3456,7 @@
     "learned": false
   },
   {
-    "id": 540,
+    "id": 433,
     "ru": "сумка",
     "ro": "geantă",
     "gag": "çanta",
@@ -4320,7 +3464,7 @@
     "learned": false
   },
   {
-    "id": 541,
+    "id": 434,
     "ru": "очки",
     "ro": "ochelari",
     "gag": "gözlük",
@@ -4328,143 +3472,31 @@
     "learned": false
   },
   {
-    "id": 542,
-    "ru": "часы",
-    "ro": "ceas",
-    "gag": "saat",
-    "category": "Одежда",
-    "learned": false
-  },
-  {
-    "id": 543,
-    "ru": "улица",
-    "ro": "stradă",
-    "gag": "sokak",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 544,
-    "ru": "дорога",
-    "ro": "drum",
-    "gag": "yol",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 545,
-    "ru": "мост",
-    "ro": "pod",
-    "gag": "köprü",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 546,
-    "ru": "рынок",
-    "ro": "piață",
-    "gag": "pazar",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 547,
-    "ru": "магазин",
-    "ro": "magazin",
-    "gag": "dükän",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 548,
-    "ru": "больница",
-    "ro": "spital",
-    "gag": "hastalık evi",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 549,
-    "ru": "аптека",
-    "ro": "farmacie",
-    "gag": "eczane",
-    "category": "Город",
-    "learned": false
-  },
-  {
-    "id": 550,
+    "id": 435,
     "ru": "банк",
     "ro": "bancă",
     "gag": "banka",
-    "category": "Город",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
-    "id": 551,
+    "id": 436,
     "ru": "парк",
     "ro": "parc",
     "gag": "park",
-    "category": "Город",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
-    "id": 552,
-    "ru": "машина",
-    "ro": "mașină",
-    "gag": "avtomobil",
-    "category": "Транспорт",
-    "learned": false
-  },
-  {
-    "id": 553,
-    "ru": "автобус",
-    "ro": "autobuz",
-    "gag": "avtobus",
-    "category": "Транспорт",
-    "learned": false
-  },
-  {
-    "id": 554,
+    "id": 437,
     "ru": "колесо",
     "ro": "roată",
     "gag": "teerlek",
-    "category": "Транспорт",
+    "category": "Город и Транспорт",
     "learned": false
   },
   {
-    "id": 555,
-    "ru": "самолёт",
-    "ro": "avion",
-    "gag": "uçak",
-    "category": "Транспорт",
-    "learned": false
-  },
-  {
-    "id": 556,
-    "ru": "поезд",
-    "ro": "tren",
-    "gag": "tren",
-    "category": "Транспорт",
-    "learned": false
-  },
-  {
-    "id": 557,
-    "ru": "велосипед",
-    "ro": "bicicletă",
-    "gag": "velosiped",
-    "category": "Транспорт",
-    "learned": false
-  },
-  {
-    "id": 558,
-    "ru": "время",
-    "ro": "timp",
-    "gag": "vakit",
-    "category": "Время",
-    "learned": false
-  },
-  {
-    "id": 559,
+    "id": 438,
     "ru": "час",
     "ro": "oră",
     "gag": "saat",
@@ -4472,7 +3504,7 @@
     "learned": false
   },
   {
-    "id": 560,
+    "id": 439,
     "ru": "минута",
     "ro": "minut",
     "gag": "dakika",
@@ -4480,7 +3512,7 @@
     "learned": false
   },
   {
-    "id": 561,
+    "id": 440,
     "ru": "секунда",
     "ro": "secundă",
     "gag": "saniye",
@@ -4488,251 +3520,2483 @@
     "learned": false
   },
   {
+    "id": 441,
+    "ru": "открывать",
+    "ro": "a deschide",
+    "gag": "açmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 442,
+    "ru": "закрывать",
+    "ro": "a închide",
+    "gag": "kapamaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 443,
+    "ru": "платить",
+    "ro": "a plăti",
+    "gag": "ödämää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 444,
+    "ru": "выигрывать",
+    "ro": "a câștiga",
+    "gag": "kazanmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 445,
+    "ru": "проигрывать",
+    "ro": "a pierde",
+    "gag": "kaybetmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 446,
+    "ru": "терять",
+    "ro": "a pierde",
+    "gag": "çıbıtmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 447,
+    "ru": "показывать",
+    "ro": "a arăta",
+    "gag": "göstermää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 448,
+    "ru": "прятать",
+    "ro": "a ascunde",
+    "gag": "saklamaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 449,
+    "ru": "ломать",
+    "ro": "a strica",
+    "gag": "kıramaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 450,
+    "ru": "чинить",
+    "ro": "a repara",
+    "gag": "düzmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 451,
+    "ru": "строить",
+    "ro": "a construi",
+    "gag": "kurmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 452,
+    "ru": "готовить (еду)",
+    "ro": "a găti",
+    "gag": "bişirmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 453,
+    "ru": "пробовать (вкус)",
+    "ro": "a gusta",
+    "gag": "dadmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 454,
+    "ru": "горький",
+    "ro": "amar",
+    "gag": "acı",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 455,
+    "ru": "сладкий",
+    "ro": "dulce",
+    "gag": "tatlı",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 456,
+    "ru": "кислый",
+    "ro": "acru",
+    "gag": "eşki",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 457,
+    "ru": "соленый",
+    "ro": "sărat",
+    "gag": "tuzlu",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 458,
+    "ru": "фрукт",
+    "ro": "fruct",
+    "gag": "meyva",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 459,
+    "ru": "овощ",
+    "ro": "legumă",
+    "gag": "zarzavat",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 460,
+    "ru": "ягода",
+    "ro": "boabă",
+    "gag": "emiş",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 461,
+    "ru": "абрикос",
+    "ro": "caisă",
+    "gag": "zerdeli",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 462,
+    "ru": "айва",
+    "ro": "gutuie",
+    "gag": "ayva",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 463,
+    "ru": "апельсин",
+    "ro": "portocală",
+    "gag": "portokal",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 464,
+    "ru": "банан",
+    "ro": "banană",
+    "gag": "banan",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 465,
+    "ru": "виноград",
+    "ro": "struguri",
+    "gag": "üzüm",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 466,
+    "ru": "лимон",
+    "ro": "lămâie",
+    "gag": "limon",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 467,
+    "ru": "персик",
+    "ro": "piersică",
+    "gag": "şefteli",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 468,
+    "ru": "вишня",
+    "ro": "vișină",
+    "gag": "iişi kirez",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 469,
+    "ru": "черешня",
+    "ro": "cireașă",
+    "gag": "kirez",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 470,
+    "ru": "крыжовник",
+    "ro": "agrișă",
+    "gag": "tatar üzümü",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 471,
+    "ru": "миндаль",
+    "ro": "migdală",
+    "gag": "badem",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 472,
+    "ru": "баклажан",
+    "ro": "vânătă",
+    "gag": "mor patlacan",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 473,
+    "ru": "боб",
+    "ro": "bob",
+    "gag": "bakla",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 474,
+    "ru": "горох",
+    "ro": "mazăre",
+    "gag": "borçak",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 475,
+    "ru": "фасоль",
+    "ro": "fasole",
+    "gag": "fasülä",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 476,
+    "ru": "капуста",
+    "ro": "varză",
+    "gag": "laana",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 477,
+    "ru": "морковь",
+    "ro": "morcov",
+    "gag": "morkva",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 478,
+    "ru": "огурец",
+    "ro": "castravete",
+    "gag": "hıyar",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 479,
+    "ru": "помидор",
+    "ro": "roșie",
+    "gag": "patlacan",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 480,
+    "ru": "тыква",
+    "ro": "dovleac",
+    "gag": "kabak",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 481,
+    "ru": "свекла",
+    "ro": "sfeclă",
+    "gag": "çukundur",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 482,
+    "ru": "кукуруза",
+    "ro": "porumb",
+    "gag": "papşoy",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 483,
+    "ru": "чечевица",
+    "ro": "linte",
+    "gag": "mercimek",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 484,
+    "ru": "редька",
+    "ro": "ridiche",
+    "gag": "trup",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 485,
+    "ru": "пшеница",
+    "ro": "grâu",
+    "gag": "booday",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 486,
+    "ru": "ячмень",
+    "ro": "orz",
+    "gag": "arpa",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 487,
+    "ru": "рожь",
+    "ro": "secară",
+    "gag": "çavdar",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 488,
+    "ru": "просо",
+    "ro": "mei",
+    "gag": "darı",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 489,
+    "ru": "рис",
+    "ro": "orez",
+    "gag": "pirinç",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 490,
+    "ru": "зерно",
+    "ro": "bob",
+    "gag": "tenä",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 491,
+    "ru": "семя",
+    "ro": "sămânță",
+    "gag": "toom",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 492,
+    "ru": "косточка",
+    "ro": "sâmbure",
+    "gag": "çekerdek",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 493,
+    "ru": "дрожжи",
+    "ro": "drojdie",
+    "gag": "pitacık",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 494,
+    "ru": "булочка",
+    "ro": "chiflă",
+    "gag": "pesmet",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 495,
+    "ru": "конфета",
+    "ro": "bomboană",
+    "gag": "bomboni",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 496,
+    "ru": "мороженое",
+    "ro": "înghețată",
+    "gag": "dondurma",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 497,
+    "ru": "борщ",
+    "ro": "borș",
+    "gag": "borç",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 498,
+    "ru": "компот",
+    "ro": "compot",
+    "gag": "hoşaf",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 499,
+    "ru": "сок",
+    "ro": "suc",
+    "gag": "şıra",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 500,
+    "ru": "еда",
+    "ro": "mâncare",
+    "gag": "imäk",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 501,
+    "ru": "голубцы",
+    "ro": "sarmale",
+    "gag": "sarma",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 502,
+    "ru": "жаркое",
+    "ro": "friptură",
+    "gag": "kaurma",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 503,
+    "ru": "свинина",
+    "ro": "carne de porc",
+    "gag": "domuz yaanısı",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 504,
+    "ru": "говядина",
+    "ro": "carne de vită",
+    "gag": "sıır yaanısı",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 505,
+    "ru": "блины",
+    "ro": "clătite",
+    "gag": "akıtma",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 506,
+    "ru": "мамалыга",
+    "ro": "mămăligă",
+    "gag": "mamaliga",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 507,
+    "ru": "сметана",
+    "ro": "smântână",
+    "gag": "kaymak",
+    "category": "Еда",
+    "learned": false
+  },
+  {
+    "id": 508,
+    "ru": "буйвол",
+    "ro": "bivol",
+    "gag": "manda",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 509,
+    "ru": "вол",
+    "ro": "bou",
+    "gag": "öküz",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 510,
+    "ru": "осел",
+    "ro": "măgar",
+    "gag": "eşek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 511,
+    "ru": "кабан",
+    "ro": "mistreț",
+    "gag": "yaban domuzu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 512,
+    "ru": "белка",
+    "ro": "veveriță",
+    "gag": "sıncap",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 513,
+    "ru": "еж",
+    "ro": "arici",
+    "gag": "kirpi",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 514,
+    "ru": "обезьяна",
+    "ro": "maimuță",
+    "gag": "maymun",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 515,
+    "ru": "кролик",
+    "ro": "iepure de casă",
+    "gag": "tavşam",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 516,
+    "ru": "теленок",
+    "ro": "vițel",
+    "gag": "buzaa",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 517,
+    "ru": "ягненок",
+    "ro": "miel",
+    "gag": "kuzu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 518,
+    "ru": "жеребенок",
+    "ro": "mânz",
+    "gag": "kuli",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 519,
+    "ru": "козленок",
+    "ro": "ied",
+    "gag": "olak",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 520,
+    "ru": "щенок",
+    "ro": "cățel",
+    "gag": "pali",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 521,
+    "ru": "цыпленок",
+    "ro": "pui",
+    "gag": "piliç",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 522,
+    "ru": "утенок",
+    "ro": "boboc de rață",
+    "gag": "boboç",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 523,
+    "ru": "гусенок",
+    "ro": "boboc de gâscă",
+    "gag": "bıcı",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 524,
+    "ru": "индюк",
+    "ro": "curcan",
+    "gag": "buura",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 525,
+    "ru": "голубь",
+    "ro": "porumbel",
+    "gag": "guguş",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 526,
+    "ru": "воробей",
+    "ro": "vrabie",
+    "gag": "saçak kuşu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 527,
+    "ru": "ласточка",
+    "ro": "rândunică",
+    "gag": "kırlangaç",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 528,
+    "ru": "соловей",
+    "ro": "privighetoare",
+    "gag": "bülbül",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 529,
+    "ru": "аист",
+    "ro": "barză",
+    "gag": "lelek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 530,
+    "ru": "синица",
+    "ro": "pițigoi",
+    "gag": "keçi kuşu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 531,
+    "ru": "дятел",
+    "ro": "ciocănitoare",
+    "gag": "aaç kakan",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 532,
+    "ru": "снегирь",
+    "ro": "mugurar",
+    "gag": "çakrak kuşu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 533,
+    "ru": "чайка",
+    "ro": "pescăruș",
+    "gag": "balık kuşu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 534,
+    "ru": "страус",
+    "ro": "struț",
+    "gag": "dev kuşu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 535,
+    "ru": "жаворонок",
+    "ro": "ciocârlie",
+    "gag": "cıvırliga",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 536,
+    "ru": "коршун",
+    "ro": "gaie",
+    "gag": "çaylak",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 537,
+    "ru": "скворец",
+    "ro": "graur",
+    "gag": "sıırcık",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 538,
+    "ru": "кукушка",
+    "ro": "cuc",
+    "gag": "kuku",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 539,
+    "ru": "лебедь",
+    "ro": "lebădă",
+    "gag": "kuu kuşu",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 540,
+    "ru": "комар",
+    "ro": "țânțar",
+    "gag": "sivri sinek",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 541,
+    "ru": "улитка",
+    "ro": "melc",
+    "gag": "sülük",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 542,
+    "ru": "паук",
+    "ro": "păianjen",
+    "gag": "payak",
+    "category": "Животные",
+    "learned": false
+  },
+  {
+    "id": 543,
+    "ru": "сад",
+    "ro": "grădină",
+    "gag": "başça",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 544,
+    "ru": "виноградник",
+    "ro": "vie",
+    "gag": "baa",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 545,
+    "ru": "бахча",
+    "ro": "bostan",
+    "gag": "bostan",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 546,
+    "ru": "поле",
+    "ro": "câmp",
+    "gag": "kır",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 547,
+    "ru": "луг",
+    "ro": "pajiște",
+    "gag": "çayır",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 548,
+    "ru": "болото",
+    "ro": "mlaștină",
+    "gag": "batak",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 549,
+    "ru": "озеро",
+    "ro": "lac",
+    "gag": "göl",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 550,
+    "ru": "ручей",
+    "ro": "pârâu",
+    "gag": "sel",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 551,
+    "ru": "родник",
+    "ro": "izvor",
+    "gag": "çöşmä",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 552,
+    "ru": "камень",
+    "ro": "piatră",
+    "gag": "taş",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 553,
+    "ru": "песок",
+    "ro": "nisip",
+    "gag": "kum",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 554,
+    "ru": "лед",
+    "ro": "gheață",
+    "gag": "buz",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 555,
+    "ru": "лист",
+    "ro": "frunză",
+    "gag": "yaprak",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 556,
+    "ru": "корень",
+    "ro": "rădăcină",
+    "gag": "kök",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 557,
+    "ru": "ветка",
+    "ro": "ramură",
+    "gag": "dal",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 558,
+    "ru": "бутылка",
+    "ro": "sticlă",
+    "gag": "şişä",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 559,
+    "ru": "глиняный кувшин",
+    "ro": "ulcior de lut",
+    "gag": "boduç",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 560,
+    "ru": "горшок",
+    "ro": "oală",
+    "gag": "çölmek",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 561,
+    "ru": "котел",
+    "ro": "cazan",
+    "gag": "çüven",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
     "id": 562,
-    "ru": "сегодня",
-    "ro": "astăzi",
-    "gag": "büün",
-    "category": "Время",
+    "ru": "мешок",
+    "ro": "sac",
+    "gag": "çuval",
+    "category": "Кухня",
     "learned": false
   },
   {
     "id": 563,
-    "ru": "вчера",
-    "ro": "ieri",
-    "gag": "dün",
-    "category": "Время",
+    "ru": "бочка",
+    "ro": "butoi",
+    "gag": "fıçı",
+    "category": "Кухня",
     "learned": false
   },
   {
     "id": 564,
-    "ru": "завтра",
-    "ro": "mâine",
-    "gag": "saaba",
-    "category": "Время",
+    "ru": "сито",
+    "ro": "sită",
+    "gag": "elek",
+    "category": "Кухня",
     "learned": false
   },
   {
     "id": 565,
-    "ru": "неделя",
-    "ro": "săptămână",
-    "gag": "afta",
-    "category": "Время",
+    "ru": "корзина",
+    "ro": "coș",
+    "gag": "sepet",
+    "category": "Кухня",
     "learned": false
   },
   {
     "id": 566,
-    "ru": "месяц",
-    "ro": "lună",
-    "gag": "ay",
-    "category": "Время",
+    "ru": "ухо",
+    "ro": "ureche",
+    "gag": "kulak",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 567,
-    "ru": "год",
-    "ro": "an",
-    "gag": "yıl",
-    "category": "Время",
+    "ru": "лицо",
+    "ro": "față",
+    "gag": "üz / surat",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 568,
-    "ru": "открывать",
-    "ro": "a deschide",
-    "gag": "açmaa",
-    "category": "Действия",
+    "ru": "шея",
+    "ro": "gât",
+    "gag": "boynu / ensä",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 569,
-    "ru": "закрывать",
-    "ro": "a închide",
-    "gag": "kapamaa",
-    "category": "Действия",
+    "ru": "плечо",
+    "ro": "umăr",
+    "gag": "omuz",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 570,
-    "ru": "начинать",
-    "ro": "a începe",
-    "gag": "başlamaa",
-    "category": "Действия",
+    "ru": "палец",
+    "ro": "deget",
+    "gag": "parmak",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 571,
-    "ru": "заканчивать",
-    "ro": "a termina",
-    "gag": "bitirmää",
-    "category": "Действия",
+    "ru": "волосы",
+    "ro": "păr",
+    "gag": "saç",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 572,
-    "ru": "покупать",
-    "ro": "a cumpăra",
-    "gag": "satın almaa",
-    "category": "Действия",
+    "ru": "сердце",
+    "ro": "inimă",
+    "gag": "kalp / ürek",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 573,
-    "ru": "продавать",
-    "ro": "a vinde",
-    "gag": "satmaa",
-    "category": "Действия",
+    "ru": "кожа",
+    "ro": "piele",
+    "gag": "deri",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 574,
-    "ru": "платить",
-    "ro": "a plăti",
-    "gag": "ödämää",
-    "category": "Действия",
+    "ru": "грудь",
+    "ro": "piept",
+    "gag": "güüs",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 575,
-    "ru": "выигрывать",
-    "ro": "a câștiga",
-    "gag": "kazanmaa",
-    "category": "Действия",
+    "ru": "колено",
+    "ro": "genunchi",
+    "gag": "diz",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 576,
-    "ru": "проигрывать",
-    "ro": "a pierde",
-    "gag": "kaybetmää",
-    "category": "Действия",
+    "ru": "ноготь",
+    "ro": "unghie",
+    "gag": "tırnak",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 577,
-    "ru": "находить",
-    "ro": "a găsi",
-    "gag": "bulmaa",
-    "category": "Действия",
+    "ru": "губы",
+    "ro": "buze",
+    "gag": "dudak",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 578,
-    "ru": "терять",
-    "ro": "a pierde",
-    "gag": "çıbıtmaa",
-    "category": "Действия",
+    "ru": "щека",
+    "ro": "obraz",
+    "gag": "yanak",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 579,
-    "ru": "давать",
-    "ro": "a da",
-    "gag": "vermää",
-    "category": "Действия",
+    "ru": "лоб",
+    "ro": "frunte",
+    "gag": "annı",
+    "category": "Анатомия",
     "learned": false
   },
   {
     "id": 580,
-    "ru": "показывать",
-    "ro": "a arăta",
-    "gag": "göstermää",
-    "category": "Действия",
+    "ru": "дядя",
+    "ro": "unchi",
+    "gag": "çiçu / amıca",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 581,
-    "ru": "прятать",
-    "ro": "a ascunde",
-    "gag": "saklamaa",
-    "category": "Действия",
+    "ru": "тётя",
+    "ro": "mătușă",
+    "gag": "lelü / bulü",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 582,
-    "ru": "ломать",
-    "ro": "a strica",
-    "gag": "kıramaa",
-    "category": "Действия",
+    "ru": "внук",
+    "ro": "nepot",
+    "gag": "unuka / torun",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 583,
-    "ru": "чинить",
-    "ro": "a repara",
-    "gag": "düzmää",
-    "category": "Действия",
+    "ru": "внучка",
+    "ro": "nepoată",
+    "gag": "unuka / torun",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 584,
-    "ru": "строить",
-    "ro": "a construi",
-    "gag": "kurmaa",
-    "category": "Действия",
+    "ru": "родственник",
+    "ro": "rudă",
+    "gag": "hısım / akraba",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 585,
-    "ru": "готовить (еду)",
-    "ro": "a găti",
-    "gag": "bişirmää",
-    "category": "Действия",
+    "ru": "родители",
+    "ro": "părinți",
+    "gag": "ana-boba",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 586,
-    "ru": "пробовать (вкус)",
-    "ro": "a gusta",
-    "gag": "dadmaa",
-    "category": "Действия",
+    "ru": "муж",
+    "ro": "soț",
+    "gag": "koca",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 587,
-    "ru": "толстый",
-    "ro": "gros / gras",
-    "gag": "semiz",
-    "category": "Качества",
+    "ru": "тесть",
+    "ro": "socru",
+    "gag": "kaynata",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 588,
-    "ru": "тонкий",
-    "ro": "subțire",
-    "gag": "yufka",
-    "category": "Качества",
+    "ru": "невеста",
+    "ro": "mireasă",
+    "gag": "gelin",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 589,
-    "ru": "горький",
-    "ro": "amar",
-    "gag": "acı",
-    "category": "Качества",
+    "ru": "жених",
+    "ro": "mire",
+    "gag": "güvää",
+    "category": "Семья",
     "learned": false
   },
   {
     "id": 590,
-    "ru": "сладкий",
-    "ro": "dulce",
-    "gag": "tatlı",
-    "category": "Качества",
+    "ru": "ручка",
+    "ro": "pix",
+    "gag": "yazal / kulup",
+    "category": "Школа и Наука",
     "learned": false
   },
   {
     "id": 591,
-    "ru": "кислый",
-    "ro": "acru",
-    "gag": "eşki",
-    "category": "Качества",
+    "ru": "доска",
+    "ro": "tablă",
+    "gag": "tafta / tabla",
+    "category": "Школа и Наука",
     "learned": false
   },
   {
     "id": 592,
-    "ru": "соленый",
-    "ro": "sărat",
-    "gag": "tuzlu",
-    "category": "Качества",
+    "ru": "оценка",
+    "ro": "notă",
+    "gag": "nota",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 593,
+    "ru": "экзамен",
+    "ro": "examen",
+    "gag": "ekzamen",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 594,
+    "ru": "число",
+    "ro": "număr",
+    "gag": "sayı",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 595,
+    "ru": "буква",
+    "ro": "literă",
+    "gag": "bukva",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 596,
+    "ru": "страница",
+    "ro": "pagină",
+    "gag": "sayfa",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 597,
+    "ru": "перемена",
+    "ro": "pauză",
+    "gag": "aralık",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 598,
+    "ru": "школьник",
+    "ro": "elev",
+    "gag": "şkolacı / okulcu",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 599,
+    "ru": "ответ",
+    "ro": "răspuns",
+    "gag": "cuvap",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 600,
+    "ru": "обида",
+    "ro": "supărare",
+    "gag": "küsü / acı",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 601,
+    "ru": "надежда",
+    "ro": "speranță",
+    "gag": "umut",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 602,
+    "ru": "стыд",
+    "ro": "rușine",
+    "gag": "utanmak / ayıp",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 603,
+    "ru": "гордость",
+    "ro": "mândrie",
+    "gag": "hodulluk",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 604,
+    "ru": "скука",
+    "ro": "plictiseală",
+    "gag": "kefsiz",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 605,
+    "ru": "удивление",
+    "ro": "mirare",
+    "gag": "şaşmak",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 606,
+    "ru": "зависть",
+    "ro": "invidie",
+    "gag": "kıskançlık",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 607,
+    "ru": "тоска",
+    "ro": "dor",
+    "gag": "darsımak / özlemäk",
+    "category": "Чувства",
+    "learned": false
+  },
+  {
+    "id": 608,
+    "ru": "весь",
+    "ro": "tot",
+    "gag": "bütün / dübüdüz",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 609,
+    "ru": "каждый",
+    "ro": "fiecare",
+    "gag": "herbir / herkez",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 610,
+    "ru": "никто",
+    "ro": "nimeni",
+    "gag": "kimsey / hiç",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 611,
+    "ru": "сам",
+    "ro": "însuși",
+    "gag": "kendi",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 612,
+    "ru": "другой",
+    "ro": "alt",
+    "gag": "başka / öbür",
+    "category": "Местоимения",
+    "learned": false
+  },
+  {
+    "id": 613,
+    "ru": "какой",
+    "ro": "ce fel de",
+    "gag": "angı / netürlü",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 614,
+    "ru": "который",
+    "ro": "care",
+    "gag": "angı / ani",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 615,
+    "ru": "зачем",
+    "ro": "de ce",
+    "gag": "neçin",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 616,
+    "ru": "сколько раз",
+    "ro": "de câte ori",
+    "gag": "kaç kerä",
+    "category": "Вопросы",
+    "learned": false
+  },
+  {
+    "id": 617,
+    "ru": "коричневый",
+    "ro": "maro",
+    "gag": "mor",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 618,
+    "ru": "светлый",
+    "ro": "deschis",
+    "gag": "aydın / açık",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 619,
+    "ru": "тёмный",
+    "ro": "închis",
+    "gag": "esmer / koyu",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 620,
+    "ru": "золотой",
+    "ro": "auriu",
+    "gag": "altın",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 621,
+    "ru": "может",
+    "ro": "poate",
+    "gag": "sanki / olmalı",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 622,
+    "ru": "нужно",
+    "ro": "trebuie",
+    "gag": "lääzım",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 623,
+    "ru": "конечно",
+    "ro": "desigur",
+    "gag": "elbet / elbetki",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 624,
+    "ru": "наверное",
+    "ro": "probabil",
+    "gag": "allelem / beki",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 625,
+    "ru": "извинение",
+    "ro": "scuză",
+    "gag": "af",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 626,
+    "ru": "успех",
+    "ro": "succes",
+    "gag": "başarı",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 627,
+    "ru": "отдых",
+    "ro": "odihnă",
+    "gag": "dinnenmäk",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 628,
+    "ru": "разговор",
+    "ro": "conversație",
+    "gag": "lafetmäk / laf",
+    "category": "Базовые",
+    "learned": false
+  },
+  {
+    "id": 629,
+    "ru": "поздно",
+    "ro": "târziu",
+    "gag": "geç",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 630,
+    "ru": "всегда",
+    "ro": "întotdeauna",
+    "gag": "herzaman",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 631,
+    "ru": "никогда",
+    "ro": "niciodată",
+    "gag": "bir kerä bilä",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 632,
+    "ru": "иногда",
+    "ro": "uneori",
+    "gag": "kimi kerä / arada-sırada",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 633,
+    "ru": "снова",
+    "ro": "din nou",
+    "gag": "enidän",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 634,
+    "ru": "давно",
+    "ro": "demult",
+    "gag": "çoktan / hanidän",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 635,
+    "ru": "скоро",
+    "ro": "curând",
+    "gag": "tez",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 636,
+    "ru": "потом",
+    "ro": "apoi",
+    "gag": "sora",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 637,
+    "ru": "прежде",
+    "ro": "înainte",
+    "gag": "öncä",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 638,
+    "ru": "долго",
+    "ro": "mult timp",
+    "gag": "oya",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 639,
+    "ru": "иней",
+    "ro": "brumă",
+    "gag": "kraa",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 640,
+    "ru": "мороз",
+    "ro": "ger",
+    "gag": "ayaz",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 641,
+    "ru": "закат",
+    "ro": "apus",
+    "gag": "kauşmak",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 642,
+    "ru": "тень",
+    "ro": "umbră",
+    "gag": "gölgä",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 643,
+    "ru": "волна",
+    "ro": "val",
+    "gag": "dalga",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 644,
+    "ru": "пыль",
+    "ro": "praf",
+    "gag": "toz",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 645,
+    "ru": "буря",
+    "ro": "furtună",
+    "gag": "boran / furtuna",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 646,
+    "ru": "засуха",
+    "ro": "secetă",
+    "gag": "kurak / kuraklık",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 647,
+    "ru": "жара",
+    "ro": "căldură",
+    "gag": "sıcak",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 648,
+    "ru": "холод",
+    "ro": "frig",
+    "gag": "suuk",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 649,
+    "ru": "тёплый",
+    "ro": "cald",
+    "gag": "ılı / sıcak",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 650,
+    "ru": "солнечный",
+    "ro": "însorit",
+    "gag": "güneşli",
+    "category": "Природа",
+    "learned": false
+  },
+  {
+    "id": 651,
+    "ru": "разный",
+    "ro": "diferit",
+    "gag": "farklı / türlü",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 652,
+    "ru": "одинаковый",
+    "ro": "la fel",
+    "gag": "birtürlü / birä-bir",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 653,
+    "ru": "важный",
+    "ro": "important",
+    "gag": "önemni",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 654,
+    "ru": "простой",
+    "ro": "simplu",
+    "gag": "sadä",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 655,
+    "ru": "мокрый",
+    "ro": "ud",
+    "gag": "yaş",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 656,
+    "ru": "сухой",
+    "ro": "uscat",
+    "gag": "kuru",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 657,
+    "ru": "тупой",
+    "ro": "tocit",
+    "gag": "kör",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 658,
+    "ru": "свежий",
+    "ro": "proaspăt",
+    "gag": "taazä",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 659,
+    "ru": "прямой",
+    "ro": "drept",
+    "gag": "dooru / düz",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 660,
+    "ru": "спокойный",
+    "ro": "calm",
+    "gag": "raat / uslu",
+    "category": "Прилагательные",
+    "learned": false
+  },
+  {
+    "id": 661,
+    "ru": "бояться",
+    "ro": "a se teme",
+    "gag": "korkmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 662,
+    "ru": "верить",
+    "ro": "a crede",
+    "gag": "inanmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 663,
+    "ru": "уметь",
+    "ro": "a ști",
+    "gag": "becermää / bilmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 664,
+    "ru": "желать",
+    "ro": "a dori",
+    "gag": "istemää / dilemää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 665,
+    "ru": "удивляться",
+    "ro": "a se mira",
+    "gag": "şaşmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 666,
+    "ru": "улыбаться",
+    "ro": "a zâmbi",
+    "gag": "gülümsemää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 667,
+    "ru": "объяснять",
+    "ro": "a explica",
+    "gag": "açıklamak",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 668,
+    "ru": "повторять",
+    "ro": "a repeta",
+    "gag": "tekrarlamaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 669,
+    "ru": "входить",
+    "ro": "a intra",
+    "gag": "girmää",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 670,
+    "ru": "выходить",
+    "ro": "a ieși",
+    "gag": "çıkmaa",
+    "category": "Глаголы",
+    "learned": false
+  },
+  {
+    "id": 671,
+    "ru": "свет",
+    "ro": "lumină",
+    "gag": "şafk / aydınnık",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 672,
+    "ru": "лампа",
+    "ro": "lampă",
+    "gag": "lampa",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 673,
+    "ru": "телевизор",
+    "ro": "televizor",
+    "gag": "televizor",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 674,
+    "ru": "коридор",
+    "ro": "coridor",
+    "gag": "hayat",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 675,
+    "ru": "полотенце",
+    "ro": "prosop",
+    "gag": "peşkir",
+    "category": "Дом и Предметы",
+    "learned": false
+  },
+  {
+    "id": 676,
+    "ru": "сон",
+    "ro": "somn",
+    "gag": "uyku / düş",
+    "category": "Время",
+    "learned": false
+  },
+  {
+    "id": 677,
+    "ru": "одиннадцать",
+    "ro": "unsprezece",
+    "gag": "on bir",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 678,
+    "ru": "двенадцать",
+    "ro": "doisprezece",
+    "gag": "on iki",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 679,
+    "ru": "тринадцать",
+    "ro": "treisprezece",
+    "gag": "on üç",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 680,
+    "ru": "четырнадцать",
+    "ro": "paisprezece",
+    "gag": "on dört",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 681,
+    "ru": "пятнадцать",
+    "ro": "cincisprezece",
+    "gag": "on beş",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 682,
+    "ru": "шестнадцать",
+    "ro": "șaisprezece",
+    "gag": "on altı",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 683,
+    "ru": "семнадцать",
+    "ro": "șaptesprezece",
+    "gag": "on yedi",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 684,
+    "ru": "восемнадцать",
+    "ro": "optsprezece",
+    "gag": "on sekiz",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 685,
+    "ru": "девятнадцать",
+    "ro": "nouăsprezece",
+    "gag": "on dokuz",
+    "category": "Цифры",
+    "learned": false
+  },
+  {
+    "id": 686,
+    "ru": "инженер",
+    "ro": "inginer",
+    "gag": "inciner",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 687,
+    "ru": "библиотекарь",
+    "ro": "bibliotecar",
+    "gag": "bibliotekacı",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 688,
+    "ru": "журналист",
+    "ro": "jurnalist",
+    "gag": "jurnalist",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 689,
+    "ru": "агроном",
+    "ro": "agronom",
+    "gag": "agronom",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 690,
+    "ru": "директор",
+    "ro": "director",
+    "gag": "direktor",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 691,
+    "ru": "почтальон",
+    "ro": "poștaș",
+    "gag": "poştar",
+    "category": "Профессии",
+    "learned": false
+  },
+  {
+    "id": 692,
+    "ru": "тёрка",
+    "ro": "răzătoare",
+    "gag": "rendä",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 693,
+    "ru": "скалка",
+    "ro": "sucitor",
+    "gag": "oklava",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 694,
+    "ru": "поднос",
+    "ro": "tavă",
+    "gag": "tepsi",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 695,
+    "ru": "крышка",
+    "ro": "capac",
+    "gag": "kapak",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 696,
+    "ru": "дуршлаг",
+    "ro": "strecurătoare",
+    "gag": "süzecäk",
+    "category": "Кухня",
+    "learned": false
+  },
+  {
+    "id": 697,
+    "ru": "кирка",
+    "ro": "târnăcop",
+    "gag": "tırnakop",
+    "category": "Инструменты",
+    "learned": false
+  },
+  {
+    "id": 698,
+    "ru": "мотыга",
+    "ro": "sapă",
+    "gag": "kazma",
+    "category": "Инструменты",
+    "learned": false
+  },
+  {
+    "id": 699,
+    "ru": "вилы",
+    "ro": "furcă",
+    "gag": "diiren",
+    "category": "Инструменты",
+    "learned": false
+  },
+  {
+    "id": 700,
+    "ru": "коса",
+    "ro": "coasă",
+    "gag": "kósa / tırpan",
+    "category": "Инструменты",
+    "learned": false
+  },
+  {
+    "id": 701,
+    "ru": "наковальня",
+    "ro": "nicovală",
+    "gag": "örs",
+    "category": "Инструменты",
+    "learned": false
+  },
+  {
+    "id": 702,
+    "ru": "университет",
+    "ro": "universitate",
+    "gag": "universitet",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 703,
+    "ru": "лицей",
+    "ro": "liceu",
+    "gag": "liţey",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 704,
+    "ru": "диктант",
+    "ro": "dictare",
+    "gag": "diktant",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 705,
+    "ru": "дневник",
+    "ro": "jurnal",
+    "gag": "günnük",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 706,
+    "ru": "перевод",
+    "ro": "traducere",
+    "gag": "çevirmäk",
+    "category": "Школа и Наука",
+    "learned": false
+  },
+  {
+    "id": 707,
+    "ru": "серебряный",
+    "ro": "argintiu",
+    "gag": "gümüş",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 708,
+    "ru": "разноцветный",
+    "ro": "multicolor",
+    "gag": "renkli / alaca",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 709,
+    "ru": "седой",
+    "ro": "cărunt",
+    "gag": "biyaz",
+    "category": "Цвета",
+    "learned": false
+  },
+  {
+    "id": 710,
+    "ru": "болезнь",
+    "ro": "boală",
+    "gag": "hastalık / dert",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 711,
+    "ru": "лекарство",
+    "ro": "medicament",
+    "gag": "ilaç",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 712,
+    "ru": "простуда",
+    "ro": "răceală",
+    "gag": "suuklamak",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 713,
+    "ru": "кашель",
+    "ro": "tuse",
+    "gag": "üüsürük",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 714,
+    "ru": "температура",
+    "ro": "temperatură",
+    "gag": "yangın / ateş",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 715,
+    "ru": "больной",
+    "ro": "bolnav",
+    "gag": "hasta",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 716,
+    "ru": "боль",
+    "ro": "durere",
+    "gag": "acı / sancı",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 717,
+    "ru": "рана",
+    "ro": "rană",
+    "gag": "yara",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 718,
+    "ru": "укол",
+    "ro": "injecție",
+    "gag": "iinä",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 719,
+    "ru": "медицина",
+    "ro": "medicină",
+    "gag": "mediţina",
+    "category": "Здоровье и Медицина",
+    "learned": false
+  },
+  {
+    "id": 720,
+    "ru": "деньги",
+    "ro": "bani",
+    "gag": "para",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 721,
+    "ru": "цена",
+    "ro": "preț",
+    "gag": "paa / kıymet",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 722,
+    "ru": "дешёвый",
+    "ro": "ieftin",
+    "gag": "ucuz",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 723,
+    "ru": "дорогой",
+    "ro": "scump",
+    "gag": "paalı",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 724,
+    "ru": "кошелёк",
+    "ro": "portofel",
+    "gag": "kesä",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 725,
+    "ru": "товар",
+    "ro": "marfă",
+    "gag": "mal",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 726,
+    "ru": "торговец",
+    "ro": "comerciant",
+    "gag": "alış-verişçi / tükenci",
+    "category": "Деньги и Торговля",
+    "learned": false
+  },
+  {
+    "id": 727,
+    "ru": "спорт",
+    "ro": "sport",
+    "gag": "sport",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 728,
+    "ru": "мяч",
+    "ro": "minge",
+    "gag": "top",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 729,
+    "ru": "чемпион",
+    "ro": "campion",
+    "gag": "çempion",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 730,
+    "ru": "команда",
+    "ro": "echipă",
+    "gag": "takım",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 731,
+    "ru": "игрушка",
+    "ro": "jucărie",
+    "gag": "oyuncak",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 732,
+    "ru": "победа",
+    "ro": "victorie",
+    "gag": "enseyiş",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 733,
+    "ru": "футбол",
+    "ro": "fotbal",
+    "gag": "futbol",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 734,
+    "ru": "музыка",
+    "ro": "muzică",
+    "gag": "muzıka",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 735,
+    "ru": "песня",
+    "ro": "cântec",
+    "gag": "türkü",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 736,
+    "ru": "танец",
+    "ro": "dans",
+    "gag": "oyun",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 737,
+    "ru": "картина",
+    "ro": "tablou",
+    "gag": "resim",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 738,
+    "ru": "нота",
+    "ro": "notă",
+    "gag": "nota",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 739,
+    "ru": "фильм",
+    "ro": "film",
+    "gag": "filma",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 740,
+    "ru": "свадьба",
+    "ro": "nuntă",
+    "gag": "düün",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 741,
+    "ru": "рождество",
+    "ro": "Crăciun",
+    "gag": "Kolada",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 742,
+    "ru": "пасха",
+    "ro": "Paște",
+    "gag": "Paskellä",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 743,
+    "ru": "день рождения",
+    "ro": "zi de naștere",
+    "gag": "duum günü",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 744,
+    "ru": "новый год",
+    "ro": "Anul Nou",
+    "gag": "Eni yıl",
+    "category": "Спорт и Искусство",
+    "learned": false
+  },
+  {
+    "id": 745,
+    "ru": "и",
+    "ro": "și",
+    "gag": "hem / da",
+    "category": "Союзы и Связки",
+    "learned": false
+  },
+  {
+    "id": 746,
+    "ru": "или",
+    "ro": "sau",
+    "gag": "ya / ya da",
+    "category": "Союзы и Связки",
+    "learned": false
+  },
+  {
+    "id": 747,
+    "ru": "но",
+    "ro": "dar",
+    "gag": "ama",
+    "category": "Союзы и Связки",
+    "learned": false
+  },
+  {
+    "id": 748,
+    "ru": "потому что",
+    "ro": "pentru că",
+    "gag": "çünkü",
+    "category": "Союзы и Связки",
+    "learned": false
+  },
+  {
+    "id": 749,
+    "ru": "поэтому",
+    "ro": "de aceea",
+    "gag": "onuştan / bu beterä",
+    "category": "Союзы и Связки",
+    "learned": false
+  },
+  {
+    "id": 750,
+    "ru": "если",
+    "ro": "dacă",
+    "gag": "eer",
+    "category": "Союзы и Связки",
     "learned": false
   }
 ]

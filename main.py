@@ -239,15 +239,8 @@ def main(page: ft.Page):
         "feedback_text": "",
         "last_word_id": None,
         "last_category": None,
-        "saved_scroll": 0.0,
         "stats": user_stats
     }
-
-    def on_scroll(e):
-        if app_state.get("tracking_scroll", False):
-            app_state["saved_scroll"] = e.pixels
-
-    page.on_scroll = on_scroll
 
     def show_statistics():
         page.clean()
@@ -328,9 +321,8 @@ def main(page: ft.Page):
 
     def show_main_menu(reset_scroll=False):
         app_state["question_id"] = -1  # Отменяем все запущенные таймеры
-        app_state["tracking_scroll"] = False  # Пауза трекинга на время построения
         if reset_scroll:
-            app_state["saved_scroll"] = 0.0
+            app_state["last_category"] = None  # Сброс позиции скролла
         page.clean()
         page.scroll = ft.ScrollMode.AUTO
         page.bgcolor = "#E0FFFF"
@@ -448,15 +440,17 @@ def main(page: ft.Page):
         )
         page.update()
         
-        saved = app_state["saved_scroll"]
-        if saved > 0:
+        # Скроллим к последней категории, если была
+        last_cat = app_state.get("last_category")
+        if last_cat and last_cat in categories:
             async def restore_scroll():
-                await asyncio.sleep(0.05)
-                await page.scroll_to(offset=saved, duration=400)
+                await asyncio.sleep(0.1)  # Даем время на отрисовку
+                # Ищем контейнер с ключом = название категории
+                for control in category_column.controls:
+                    if hasattr(control, 'key') and control.key == last_cat:
+                        await page.scroll_to(control=control, duration=500)
+                        break
             page.run_task(restore_scroll)
-        
-        app_state["tracking_scroll"] = True
-        app_state["last_category"] = None
 
     def show_confirm_dialog(title, message, on_confirm):
         txt = UI_TEXT[app_state["lang"]]
@@ -516,7 +510,6 @@ def main(page: ft.Page):
         )
 
     def show_word_list(category):
-        app_state["tracking_scroll"] = False
         app_state["last_category"] = category
         page.clean()
         page.scroll = None
