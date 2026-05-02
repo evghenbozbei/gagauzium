@@ -40,7 +40,12 @@ UI_TEXT = {
         "continue_question": "Продолжить изучение новых слов?",
         "continue_yes": "Да",
         "continue_no": "Нет",
-        "all_learned": "Все слова выучены! 🎉"
+        "all_learned": "Все слова выучены! 🎉",
+        "daily_review_btn": "🎯 Ежедневное повторение",
+        "daily_review_locked": "Возвращайся завтра 🌙",
+        "daily_review_min": "Нужно ≥20 выученных слов",
+        "daily_review_score": "Готово! {0}/{1} верно ({2}%)",
+        "daily_review_title": "ЕЖЕДНЕВНОЕ ПОВТОРЕНИЕ"
     },
     "RO": {
         "title": "Gagauzça üürenmää",
@@ -75,7 +80,12 @@ UI_TEXT = {
         "continue_question": "Continuați învățarea cuvintelor noi?",
         "continue_yes": "Da",
         "continue_no": "Nu",
-        "all_learned": "Toate cuvintele învățate! 🎉"
+        "all_learned": "Toate cuvintele învățate! 🎉",
+        "daily_review_btn": "🎯 Repetare zilnică",
+        "daily_review_locked": "Revino mâine 🌙",
+        "daily_review_min": "Aveți nevoie de ≥20 cuvinte învățate",
+        "daily_review_score": "Gata! {0}/{1} corect ({2}%)",
+        "daily_review_title": "REPETARE ZILNICĂ"
     }
 }
 
@@ -125,6 +135,55 @@ def save_stats(stats):
     with open("user_stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
+def word_weight(word, stats, today):
+    s = stats["words"].get(str(word["id"]), {})
+    correct = s.get("correct_answers", 0)
+    wrong = s.get("wrong_answers", 0)
+    error_rate = wrong / (wrong + correct + 1)
+
+    last_seen_str = s.get("last_seen", "1970-01-01")
+    try:
+        last_seen = datetime.date.fromisoformat(last_seen_str)
+        days_since = (today - last_seen).days
+    except (ValueError, TypeError):
+        days_since = 365
+    days_since = max(0, min(days_since, 30))
+
+    return 1.0 + error_rate * 5.0 + days_since * 0.3
+
+
+def weighted_sample(words, stats, today, k):
+    if not words or k <= 0:
+        return []
+    if k >= len(words):
+        result = list(words)
+        random.shuffle(result)
+        return result
+    keys = []
+    for i, w in enumerate(words):
+        weight = word_weight(w, stats, today)
+        keys.append((random.random() ** (1.0 / weight), i))
+    keys.sort(key=lambda x: -x[0])
+    return [words[i] for _, i in keys[:k]]
+
+
+def build_daily_set(learned_words, stats, today):
+    if len(learned_words) < 20:
+        return []
+
+    def wrong_count(w):
+        return stats["words"].get(str(w["id"]), {}).get("wrong_answers", 0)
+
+    sorted_by_wrong = sorted(learned_words, key=lambda w: (wrong_count(w), random.random()), reverse=True)
+    top5 = sorted_by_wrong[:5]
+    top5_ids = {w["id"] for w in top5}
+    remaining = [w for w in learned_words if w["id"] not in top5_ids]
+    rest = weighted_sample(remaining, stats, today, k=15)
+    combined = top5 + rest
+    random.shuffle(combined)
+    return [w["id"] for w in combined]
+
+
 def merge_data_and_stats(all_words, stats):
     needs_save = False
     for w in all_words:
@@ -134,20 +193,19 @@ def merge_data_and_stats(all_words, stats):
                 "learned": w.get("learned", False),
                 "correct_answers": 0,
                 "wrong_answers": 0,
-                "interval": 0,
-                "next_review": "1970-01-01"
+                "last_seen": "1970-01-01"
             }
             needs_save = True
         else:
-            # Миграция для старых записей
-            if "interval" not in stats["words"][w_id]:
-                stats["words"][w_id]["interval"] = 0
+            if "last_seen" not in stats["words"][w_id]:
+                stats["words"][w_id]["last_seen"] = "1970-01-01"
                 needs_save = True
-            if "next_review" not in stats["words"][w_id]:
-                stats["words"][w_id]["next_review"] = "1970-01-01"
-                needs_save = True
+            for dead_key in ("interval", "next_review"):
+                if dead_key in stats["words"][w_id]:
+                    del stats["words"][w_id][dead_key]
+                    needs_save = True
             w["learned"] = stats["words"][w_id]["learned"]
-    
+
     if needs_save:
         save_stats(stats)
     return all_words
@@ -294,10 +352,25 @@ def main(page: ft.Page):
         categories = sorted(list(set(w["category"] for w in all_words)))
         category_column = ft.Column(spacing=20, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
         total_learned_count = len([w for w in all_words if w["learned"]])
-        
         today = datetime.date.today().isoformat()
-        due_global = [w for w in all_words if w["learned"] and app_state["stats"]["words"][str(w["id"])].get("next_review", "1970-01-01") <= today]
-        due_count = len(due_global)
+
+        daily_review = app_state["stats"].get("daily_review")
+        daily_is_today = bool(daily_review and daily_review.get("date") == today)
+        daily_index = daily_review.get("index", 0) if daily_is_today else 0
+        daily_done = daily_is_today and daily_index >= 20
+
+        if total_learned_count < 20:
+            daily_btn_text = txt["daily_review_min"]
+            daily_btn_disabled = True
+        elif daily_done:
+            daily_btn_text = txt["daily_review_locked"]
+            daily_btn_disabled = True
+        elif daily_is_today and daily_index > 0:
+            daily_btn_text = f"{txt['daily_review_btn']} ({daily_index}/20)"
+            daily_btn_disabled = False
+        else:
+            daily_btn_text = txt["daily_review_btn"]
+            daily_btn_disabled = False
 
         page.add(
             ft.Container(height=30),
@@ -308,7 +381,13 @@ def main(page: ft.Page):
             ft.Text(txt["title"], size=25, weight="bold", color="#00008B"),
             ft.Container(height=20),
             ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
-            ft.ElevatedButton(content=ft.Text(f"{txt['global_btn']} ({due_count})", size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=due_count == 0),
+            ft.ElevatedButton(
+                content=ft.Text(daily_btn_text, size=16, weight="bold"),
+                bgcolor="#fff59d", color="black", width=350, height=60,
+                on_click=lambda _: start_session("ALL", "daily"),
+                disabled=daily_btn_disabled),
+            ft.Container(height=10),
+            ft.ElevatedButton(content=ft.Text(f"{txt['global_btn']} ({total_learned_count})", size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count == 0),
             ft.Container(height=10),
             ft.ElevatedButton(
                 content=ft.Row(
@@ -358,9 +437,9 @@ def main(page: ft.Page):
                         ft.ElevatedButton(content=ft.Text(txt["learn"], size=13, color="black" if len(unlearned) > 0 else "grey", text_align=ft.TextAlign.CENTER), on_click=lambda e, c=cat: start_session(c, "new"), disabled=len(unlearned) == 0, bgcolor="#FFD700" if len(unlearned) > 0 else "#E0E0E0", width=165),
                         
                         ft.ElevatedButton(
-                            content=ft.Text(f"{txt['review']} ({len([w for w in learned if app_state['stats']['words'][str(w['id'])].get('next_review', '1970-01-01') <= today])})", size=13, text_align=ft.TextAlign.CENTER), 
-                            on_click=lambda e, c=cat: start_session(c, "review"), 
-                            disabled=len([w for w in learned if app_state['stats']['words'][str(w['id'])].get('next_review', '1970-01-01') <= today]) == 0, 
+                            content=ft.Text(f"{txt['review']} ({len(learned)})", size=13, text_align=ft.TextAlign.CENTER),
+                            on_click=lambda e, c=cat: start_session(c, "review"),
+                            disabled=len(learned) == 0,
                             width=165
                         ),
                     ], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
@@ -448,38 +527,58 @@ def main(page: ft.Page):
         if category != "ALL":
             app_state["last_category"] = category
         app_state["mode"] = mode
-        batch_size = 6
-        today = datetime.date.today().isoformat()
+        today = datetime.date.today()
+        today_iso = today.isoformat()
 
         if mode == "fast":
             words = [w for w in all_words if w["learned"]]
+            random.shuffle(words)
             app_state["is_quiz"] = True
             app_state["lives"] = 3
             app_state["score"] = 0
-            batch_size = len(words)
+            app_state["current_batch"] = words
             app_state["question_id"] = 0
+            app_state["index"] = 0
         elif mode == "true_false":
             words = [w for w in all_words if w["learned"]]
             app_state["is_quiz"] = True
-            batch_size = 15
             app_state["score"] = 0
-        elif category == "ALL":
-            # SRS mode for global review
-            words = [w for w in all_words if w["learned"] and app_state["stats"]["words"][str(w["id"])].get("next_review", "1970-01-01") <= today]
+            app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=15)
+            app_state["index"] = 0
+        elif mode == "daily":
             app_state["is_quiz"] = True
-            batch_size = 10
+            daily = app_state["stats"].get("daily_review")
+            if not daily or daily.get("date") != today_iso:
+                learned = [w for w in all_words if w["learned"]]
+                word_ids = build_daily_set(learned, app_state["stats"], today)
+                daily = {
+                    "date": today_iso,
+                    "word_ids": word_ids,
+                    "index": 0,
+                    "correct_count": 0
+                }
+                app_state["stats"]["daily_review"] = daily
+                save_stats(app_state["stats"])
+            word_map = {w["id"]: w for w in all_words}
+            app_state["current_batch"] = [word_map[wid] for wid in daily["word_ids"] if wid in word_map]
+            app_state["index"] = daily.get("index", 0)
+        elif category == "ALL":
+            words = [w for w in all_words if w["learned"]]
+            app_state["is_quiz"] = True
+            app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=10)
+            app_state["index"] = 0
         elif mode == "new":
             words = [w for w in all_words if w["category"] == category and not w["learned"]]
+            random.shuffle(words)
             app_state["is_quiz"] = False
+            app_state["current_batch"] = words[:6]
+            app_state["index"] = 0
         else:
-            # SRS mode for category review
-            words = [w for w in all_words if w["category"] == category and w["learned"] and app_state["stats"]["words"][str(w["id"])].get("next_review", "1970-01-01") <= today]
+            words = [w for w in all_words if w["category"] == category and w["learned"]]
             app_state["is_quiz"] = True
+            app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=6)
+            app_state["index"] = 0
 
-        random.shuffle(words)
-        app_state["current_batch"] = words[:batch_size]
-        app_state["index"] = 0
-        
         if not app_state["current_batch"]:
             show_main_menu()
         else:
@@ -567,6 +666,19 @@ def main(page: ft.Page):
                             ft.ElevatedButton(txt["continue_no"], on_click=lambda _: show_main_menu(), width=150)
                         ], alignment=ft.MainAxisAlignment.CENTER)
                     )
+            elif app_state["mode"] == "daily":
+                daily = app_state["stats"].get("daily_review", {})
+                correct = daily.get("correct_count", 0)
+                total = len(app_state["current_batch"])
+                pct = int(round(correct / total * 100)) if total > 0 else 0
+                page.add(
+                    ft.Container(height=100), ft.Text("🎉", size=80),
+                    ft.Text(txt["daily_review_score"].format(correct, total, pct), size=22, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
+                    ft.Container(height=20),
+                    ft.Text(txt["daily_review_locked"], size=18, color="grey", text_align=ft.TextAlign.CENTER),
+                    ft.Container(height=20),
+                    ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                )
             else:
                 msg = txt["fast_review_success"] if (is_fast or is_tf) else txt["finished"]
                 page.add(
@@ -578,10 +690,22 @@ def main(page: ft.Page):
             return
 
         word = app_state["current_batch"][app_state["index"]]
-        native_word = word.get(lang.lower(), word.get("ru", "---"))
         if app_state["last_word_id"] != word["id"]:
-            correct = word["gag"]
-            others = [w["gag"] for w in all_words if w["gag"] != correct]
+            if app_state["mode"] == "new":
+                direction = "forward"
+            else:
+                direction = random.choice(["forward", "reverse"])
+            app_state["direction"] = direction
+
+            if direction == "forward":
+                prompt_word = word.get(lang.lower(), word.get("ru", "---"))
+                correct = word["gag"]
+                others = [w["gag"] for w in all_words if w["gag"] != correct]
+            else:
+                prompt_word = word["gag"]
+                correct = word.get(lang.lower(), word.get("ru", "---"))
+                others = [w.get(lang.lower(), w.get("ru", "---")) for w in all_words if w.get(lang.lower(), w.get("ru", "---")) != correct]
+
             if is_tf:
                 is_truth = random.choice([True, False])
                 if is_truth:
@@ -595,8 +719,17 @@ def main(page: ft.Page):
                 options = distractors + [correct]
                 random.shuffle(options)
                 app_state["current_options"] = options
+            app_state["prompt_word"] = prompt_word
+            app_state["correct_answer"] = correct
             app_state["last_word_id"] = word["id"]
             app_state["feedback_text"] = ""
+
+        prompt_word = app_state["prompt_word"]
+        direction = app_state.get("direction", "forward")
+        prompt_color = "blue" if direction == "reverse" else "black"
+        prompt_italic = direction == "reverse"
+        tf_displayed_color = "black" if direction == "reverse" else "blue"
+        tf_displayed_italic = direction == "forward"
 
         btns_column = ft.Column(spacing=10, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
         
@@ -610,8 +743,8 @@ def main(page: ft.Page):
                 ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=350),
                 ft.Container(height=10),
                 ft.Text(txt["quiz_title"], size=16, color="grey"),
-                ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
-                ft.Container(height=10), ft.Text(app_state["tf_displayed"], size=30, weight="bold", color="blue", italic=True, text_align=ft.TextAlign.CENTER),
+                ft.Container(height=20), ft.Text(prompt_word, size=35, weight="bold", color=prompt_color, italic=prompt_italic, text_align=ft.TextAlign.CENTER),
+                ft.Container(height=10), ft.Text(app_state["tf_displayed"], size=30, weight="bold", color=tf_displayed_color, italic=tf_displayed_italic, text_align=ft.TextAlign.CENTER),
                 ft.Container(height=20), btns_column, ft.Container(height=20),
                 ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
             )
@@ -635,7 +768,7 @@ def main(page: ft.Page):
                     counter_text,
                     ft.Container(height=10),
                     ft.Text(txt["quiz_title"], size=16, color="grey"),
-                    ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
+                    ft.Container(height=20), ft.Text(prompt_word, size=35, weight="bold", color=prompt_color, italic=prompt_italic),
                     ft.Container(height=20), btns_column, ft.Container(height=20),
                     ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
                 )
@@ -662,13 +795,14 @@ def main(page: ft.Page):
                 page.run_task(run_timer)
             else:
                 progress_val = (app_state["index"] + 1) / len(app_state["current_batch"])
+                title_text = txt["daily_review_title"] if app_state["mode"] == "daily" else txt["quiz_title"]
                 page.add(
                     ft.Container(height=30),
                     ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
                     ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=350),
                     ft.Container(height=10),
-                    ft.Text(txt["quiz_title"], size=16, color="grey"),
-                    ft.Container(height=20), ft.Text(native_word, size=35, weight="bold", color="black"),
+                    ft.Text(title_text, size=16, color="grey"),
+                    ft.Container(height=20), ft.Text(prompt_word, size=35, weight="bold", color=prompt_color, italic=prompt_italic),
                     ft.Container(height=20), btns_column, ft.Container(height=20),
                     ft.Text(app_state["feedback_text"], size=20, weight="bold", color="black")
                 )
@@ -678,40 +812,22 @@ def main(page: ft.Page):
         lang = app_state["lang"]
         btn = e.control
         is_tf = app_state["mode"] == "true_false"
-        
+        is_daily = app_state["mode"] == "daily"
+        today_iso = datetime.date.today().isoformat()
+
         if app_state["mode"] == "fast":
             app_state["question_id"] += 1
 
-        is_correct = False
         if is_tf:
             is_correct = (selected == app_state["tf_is_truth"])
         else:
-            is_correct = (selected == correct_word["gag"])
+            is_correct = (selected == app_state.get("correct_answer", correct_word["gag"]))
+
+        word_stats = app_state["stats"]["words"][str(correct_word["id"])]
+        word_stats["last_seen"] = today_iso
 
         if is_correct:
-            app_state["stats"]["words"][str(correct_word["id"])]["correct_answers"] += 1
-            
-            # SRS Обновление
-            if app_state["mode"] == "review" or (app_state["mode"] == "new"):
-                word_stats = app_state["stats"]["words"][str(correct_word["id"])]
-                if app_state["mode"] == "new":
-                    # Для новых слов: interval=0, next_review=сегодня (чтобы можно было повторять сразу)
-                    word_stats["interval"] = 0
-                    word_stats["next_review"] = datetime.date.today().isoformat()
-                else:
-                    # Для review: стандартная SRS логика
-                    intervals = [1, 3, 7, 14, 30]
-                    current_int = word_stats.get("interval", 0)
-                    new_int = 1
-                    for i in intervals:
-                        if i > current_int:
-                            new_int = i
-                            break
-                    else:
-                        new_int = 30
-                    
-                    word_stats["interval"] = new_int
-                    word_stats["next_review"] = (datetime.date.today() + datetime.timedelta(days=new_int)).isoformat()
+            word_stats["correct_answers"] += 1
 
             if app_state["mode"] == "fast" or is_tf:
                 app_state["score"] = app_state.get("score", 0) + 1
@@ -719,8 +835,12 @@ def main(page: ft.Page):
                 for w in all_words:
                     if w["id"] == correct_word["id"]:
                         w["learned"] = True
-                        app_state["stats"]["words"][str(correct_word["id"])]["learned"] = True
+                        word_stats["learned"] = True
                         break
+            if is_daily:
+                app_state["stats"]["daily_review"]["correct_count"] = app_state["stats"]["daily_review"].get("correct_count", 0) + 1
+                app_state["stats"]["daily_review"]["index"] = app_state["index"] + 1
+
             save_stats(app_state["stats"])
             btn.bgcolor = "green"
             btn.color = "white"
@@ -734,13 +854,10 @@ def main(page: ft.Page):
                 show_quiz_card()
             page.run_task(go_next)
         else:
-            app_state["stats"]["words"][str(correct_word["id"])]["wrong_answers"] += 1
-            
-            # SRS Сброс при ошибке
-            if app_state["mode"] == "review":
-                word_stats = app_state["stats"]["words"][str(correct_word["id"])]
-                word_stats["interval"] = 0
-                word_stats["next_review"] = datetime.date.today().isoformat()
+            word_stats["wrong_answers"] += 1
+
+            if is_daily:
+                app_state["stats"]["daily_review"]["index"] = app_state["index"] + 1
 
             save_stats(app_state["stats"])
             if app_state["mode"] == "fast":
@@ -754,7 +871,7 @@ def main(page: ft.Page):
                 btn.bgcolor = None
                 btn.color = None
                 app_state["feedback_text"] = ""
-                if app_state["mode"] == "fast" or is_tf:
+                if app_state["mode"] == "fast" or is_tf or is_daily:
                     app_state["index"] += 1
                     show_quiz_card()
                 else:
