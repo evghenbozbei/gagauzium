@@ -1,0 +1,30 @@
+[project]
+name = "gagauzium"
+version = "1.0.0"
+description = "Android application for learning Gagauz vocabulary"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "flet==0.86.5",
+]
+
+[tool.flet]
+product = "Gagauzium"
+org = "com.flet"
+bundle_id = "com.flet.gagauzium"
+build_number = 1
+
+[tool.flet.app]
+path = "."
+module = "main.py"
+exclude = [
+    ".env",
+    ".env.example",
+    ".git",
+    ".gitignore",
+    ".venv",
+    "README.md",
+    "user_stats.json",
+]
+
+[tool.flet.android.signing]
+key_alias = "androiddebugkey"

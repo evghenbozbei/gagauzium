@@ -2,3 +2,6 @@ __pycache__/
 *.py[cod]
 .flet/
 build/
+.env
+*.jks
+*.keystore
