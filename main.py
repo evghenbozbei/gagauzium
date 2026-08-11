@@ -3,6 +3,14 @@ import json
 import random
 import asyncio
 import datetime
+import os
+from pathlib import Path
+
+
+APP_DIR = Path(__file__).resolve().parent
+STORAGE_DIR = Path(os.environ.get("FLET_APP_STORAGE_DATA", APP_DIR))
+WORDS_DATA_FILE = APP_DIR / "words_data.json"
+USER_STATS_FILE = STORAGE_DIR / "user_stats.json"
 
 # --- ПЕРЕВОДЫ ИНТЕРФЕЙСА ---
 UI_TEXT = {
@@ -122,24 +130,21 @@ category_map = {
 
 def load_data():
     try:
-        with open("words_data.json", "r", encoding="utf-8") as f:
+        with WORDS_DATA_FILE.open("r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
         return []
 
-def save_data(data):
-    with open("words_data.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
 def load_stats():
     try:
-        with open("user_stats.json", "r", encoding="utf-8") as f:
+        with USER_STATS_FILE.open("r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
         return {"streak_days": 0, "last_login": "", "words": {}}
 
 def save_stats(stats):
-    with open("user_stats.json", "w", encoding="utf-8") as f:
+    USER_STATS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with USER_STATS_FILE.open("w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
 def word_weight(word, stats, today):
@@ -196,8 +201,11 @@ def merge_data_and_stats(all_words, stats):
     for w in all_words:
         w_id = str(w["id"])
         if w_id not in stats["words"]:
+            # The dictionary contains learning content only. A new user always
+            # starts with zero progress; learned state lives in user_stats.json.
+            w["learned"] = False
             stats["words"][w_id] = {
-                "learned": w.get("learned", False),
+                "learned": False,
                 "correct_answers": 0,
                 "wrong_answers": 0,
                 "last_seen": "1970-01-01"
