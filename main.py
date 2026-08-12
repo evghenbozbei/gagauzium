@@ -6,6 +6,8 @@ import datetime
 import os
 from pathlib import Path
 
+from category_metadata import CATEGORY_METADATA, CATEGORIES_BY_SOURCE, category_name as localized_category_name
+
 
 APP_DIR = Path(__file__).resolve().parent
 STORAGE_DIR = Path(os.environ.get("FLET_APP_STORAGE_DATA", APP_DIR))
@@ -104,28 +106,61 @@ UI_TEXT = {
     }
 }
 
-# --- СЛОВАРЬ КАТЕГОРИЙ ---
-category_map = {
-    "Местоимения": {"ro": "Pronume", "gag": "Adıllar"},
-    "Вопросы": {"ro": "Întrebări", "gag": "Sormalar"},
-    "Базовые": {"ro": "Cuvinte de bază", "gag": "Temel laflar"},
-    "Время": {"ro": "Timpul", "gag": "Vakıt"},
-    "Цифры": {"ro": "Numere", "gag": "Sayılar"},
-    "Семья": {"ro": "Familia", "gag": "Aylä"},
-    "Еда": {"ro": "Mâncare", "gag": "İimäk"},
-    "Глаголы": {"ro": "Verbe", "gag": "İşliklär"},
-    "Прилагательные": {"ro": "Adjective", "gag": "Nışannar"},
-    "Анатомия": {"ro": "Anatomia", "gag": "Anatomiya"},
-    "Природа": {"ro": "Natura", "gag": "Tabiat"},
-    "Животные": {"ro": "Animale", "gag": "Hayvannar"},
-    "Дом и Предметы": {"ro": "Casă și obiecte", "gag": "Ev hem nesnelär"},
-    "Профессии": {"ro": "Profesii", "gag": "Zanaatlar"},
-    "Цвета": {"ro": "Culori", "gag": "Renklär"},
-    "Транспорт и Город": {"ro": "Transport și oraș", "gag": "Transport hem Kasaba"},
-    "Одежда": {"ro": "Haine", "gag": "Giiyim"},
-    "Действия": {"ro": "Acțiuni", "gag": "İşlär"},
-    "Качества": {"ro": "Calități", "gag": "Kallitälär"},
-    "Места": {"ro": "Locuri", "gag": "Erler"}
+PHASE1_TEXT = {
+    "RU": {
+        "nav_home": "Главная", "nav_learn": "Учить", "nav_review": "Повторять",
+        "gagauz_language": "Гагаузский язык", "settings": "Настройки",
+        "your_progress": "ВАШ ПРОГРЕСС", "words": "слов", "beginner": "Начальный",
+        "today": "Сегодня", "daily_review": "Ежедневное повторение",
+        "ready_review": "20 слов готовы к повторению", "daily_in_progress": "Продолжить: {0} / 20",
+        "daily_complete": "Повторение на сегодня завершено", "daily_locked": "Откроется после изучения 20 слов",
+        "start_daily": "Начать повторение", "continue_daily": "Продолжить повторение",
+        "continue_learning": "ПРОДОЛЖИТЬ ОБУЧЕНИЕ", "choose_category": "Выбрать категорию",
+        "continue": "Продолжить", "no_category": "Выберите первую категорию в разделе «Учить».",
+        "day_streak": "дн. подряд", "streak_hint": "Завершите занятие сегодня, чтобы продолжить серию.",
+        "learn_title": "Что вы хотите изучить?", "learn_subtitle": "Выберите тему и учитесь в своём темпе.",
+        "conversational": "Разговорный", "advanced": "Продвинутый", "expert": "Эксперт", "locked": "Скоро",
+        "back": "Назад", "words_learned": "слов изучено", "learn_new": "Учить новые слова",
+        "words_remaining": "слов осталось", "start_learning": "Начать обучение",
+        "difficult_words": "Сложные слова", "need_attention": "слов требуют внимания", "review_action": "Повторить",
+        "learned_words": "Изученные слова", "view_words": "Посмотреть слова",
+        "review_title": "Повторение", "review_subtitle": "Закрепляйте слова короткими тренировками.",
+        "daily_desc": "Персональная подборка на сегодня.", "difficult_desc": "Слова, в которых вы чаще ошибаетесь.",
+        "quick_review": "Быстрое повторение", "quick_desc": "Тренировка на скорость с тремя жизнями.",
+        "quiz": "Тест", "quiz_desc": "Проверьте себя в формате «Правда или ложь».",
+        "start_session": "Начать", "global_review": "Выбор слов", "true_false_short": "Правда / Ложь", "no_difficult": "Пока нет сложных слов",
+        "language": "Язык обучения", "russian": "Русский", "romanian": "Румынский",
+        "reset_progress": "Сброс прогресса", "reset_category_label": "Сбросить категорию",
+        "select_category": "Выберите категорию", "reset_all_hint": "Изученные слова станут неизученными. Статистика ответов сохранится.",
+        "open_settings": "Открыть настройки", "all_words_learned": "Все слова изучены",
+    },
+    "RO": {
+        "nav_home": "Acasă", "nav_learn": "Învață", "nav_review": "Repetă",
+        "gagauz_language": "Limba găgăuză", "settings": "Setări",
+        "your_progress": "PROGRESUL TĂU", "words": "cuvinte", "beginner": "Începător",
+        "today": "Astăzi", "daily_review": "Repetare zilnică",
+        "ready_review": "20 de cuvinte sunt gata de repetat", "daily_in_progress": "Continuă: {0} / 20",
+        "daily_complete": "Repetarea de astăzi este finalizată", "daily_locked": "Disponibilă după 20 de cuvinte învățate",
+        "start_daily": "Începe repetarea", "continue_daily": "Continuă repetarea",
+        "continue_learning": "CONTINUĂ ÎNVĂȚAREA", "choose_category": "Alege categoria",
+        "continue": "Continuă", "no_category": "Alege prima categorie din secțiunea „Învață”.",
+        "day_streak": "zile la rând", "streak_hint": "Finalizează o sesiune astăzi pentru a continua seria.",
+        "learn_title": "Ce vrei să înveți?", "learn_subtitle": "Alege o temă și învață în ritmul tău.",
+        "conversational": "Conversațional", "advanced": "Avansat", "expert": "Expert", "locked": "În curând",
+        "back": "Înapoi", "words_learned": "cuvinte învățate", "learn_new": "Învață cuvinte noi",
+        "words_remaining": "cuvinte rămase", "start_learning": "Începe învățarea",
+        "difficult_words": "Cuvinte dificile", "need_attention": "cuvinte necesită atenție", "review_action": "Repetă",
+        "learned_words": "Cuvinte învățate", "view_words": "Vezi cuvintele",
+        "review_title": "Repetare", "review_subtitle": "Consolidează vocabularul prin sesiuni scurte.",
+        "daily_desc": "Selecția personalizată pentru astăzi.", "difficult_desc": "Cuvintele la care greșești mai des.",
+        "quick_review": "Repetare rapidă", "quick_desc": "Antrenament contra cronometru cu trei vieți.",
+        "quiz": "Test", "quiz_desc": "Verifică-te în formatul Adevărat sau Fals.",
+        "start_session": "Începe", "global_review": "Alegere de cuvinte", "true_false_short": "Adevărat / Fals", "no_difficult": "Nu există încă cuvinte dificile",
+        "language": "Limba de învățare", "russian": "Rusă", "romanian": "Română",
+        "reset_progress": "Resetarea progresului", "reset_category_label": "Resetează categoria",
+        "select_category": "Alege categoria", "reset_all_hint": "Cuvintele învățate vor deveni neînvățate. Statisticile răspunsurilor se păstrează.",
+        "open_settings": "Deschide setările", "all_words_learned": "Toate cuvintele sunt învățate",
+    },
 }
 
 def load_data():
@@ -138,9 +173,13 @@ def load_data():
 def load_stats():
     try:
         with USER_STATS_FILE.open("r", encoding="utf-8") as f:
-            return json.load(f)
+            stats = json.load(f)
     except FileNotFoundError:
-        return {"streak_days": 0, "last_login": "", "words": {}}
+        stats = {}
+    stats.setdefault("streak_days", 0)
+    stats.setdefault("last_login", "")
+    stats.setdefault("words", {})
+    return stats
 
 def save_stats(stats):
     USER_STATS_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -196,6 +235,22 @@ def build_daily_set(learned_words, stats, today):
     return [w["id"] for w in combined]
 
 
+def register_learning_day(stats, today):
+    """Update the streak after a completed session; return whether it changed."""
+    last_value = stats.get("last_learning_date")
+    try:
+        last_day = datetime.date.fromisoformat(last_value) if last_value else None
+    except (TypeError, ValueError):
+        last_day = None
+    if last_day == today:
+        return False
+    current = max(0, int(stats.get("streak_days", 0) or 0))
+    stats["streak_days"] = current + 1 if last_day == today - datetime.timedelta(days=1) else 1
+    stats["last_learning_date"] = today.isoformat()
+    stats["last_login"] = today.isoformat()
+    return True
+
+
 def merge_data_and_stats(all_words, stats):
     needs_save = False
     for w in all_words:
@@ -212,12 +267,15 @@ def merge_data_and_stats(all_words, stats):
             }
             needs_save = True
         else:
-            if "last_seen" not in stats["words"][w_id]:
-                stats["words"][w_id]["last_seen"] = "1970-01-01"
-                needs_save = True
-            for dead_key in ("interval", "next_review"):
-                if dead_key in stats["words"][w_id]:
-                    del stats["words"][w_id][dead_key]
+            defaults = {
+                "learned": False,
+                "correct_answers": 0,
+                "wrong_answers": 0,
+                "last_seen": "1970-01-01",
+            }
+            for field, default in defaults.items():
+                if field not in stats["words"][w_id]:
+                    stats["words"][w_id][field] = default
                     needs_save = True
             w["learned"] = stats["words"][w_id]["learned"]
 
@@ -242,13 +300,150 @@ def main(page: ft.Page):
         "current_batch": [],
         "index": 0,
         "is_quiz": False, 
-        "mode": "new", 
+        "mode": "new",
         "current_options": [],
+        "option_buttons": {},
         "feedback_text": "",
         "last_word_id": None,
-        "last_category": None,
+        "last_category": user_stats.get("last_active_category"),
+        "current_screen": "home",
+        "nav_index": 0,
+        "exercise_return_screen": "home",
+        "exercise_return_category": None,
+        "session_completion_recorded": False,
         "stats": user_stats
     }
+
+    BG = "#F8F7F2"
+    CARD = "#FFFFFF"
+    INK = "#172033"
+    MUTED = "#667085"
+    INDIGO = "#4353C7"
+    INDIGO_DARK = "#222A5D"
+    BORDER = "#E8E8ED"
+
+    def phase_text():
+        return PHASE1_TEXT[app_state["lang"]]
+
+    def get_category_meta(source_name):
+        return CATEGORIES_BY_SOURCE.get(source_name, {
+            "key": source_name, "source_name": source_name,
+            "ru": source_name, "ro": source_name, "gag": None,
+            "icon": "📚", "illustration": None, "order": 999, "level": "beginner",
+        })
+
+    def category_words(source_name):
+        return [w for w in all_words if w["category"] == source_name]
+
+    def category_counts(source_name):
+        words = category_words(source_name)
+        learned = sum(1 for w in words if w["learned"])
+        difficult = sum(
+            1 for w in words
+            if w["learned"] and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0
+        )
+        return learned, len(words), difficult
+
+    def category_visual(source_name, size=54):
+        meta = get_category_meta(source_name)
+        return ft.Container(
+            content=ft.Text(meta.get("icon", "📚"), size=max(24, int(size * 0.48))),
+            width=size, height=size, alignment=ft.Alignment.CENTER,
+            bgcolor="#EEF2FF", border_radius=size / 3,
+        )
+
+    def rounded_card(content, padding=18, bgcolor=CARD):
+        return ft.Container(
+            content=content, padding=padding, bgcolor=bgcolor,
+            border=ft.Border.all(1, BORDER), border_radius=22,
+            shadow=ft.BoxShadow(blur_radius=10, color="#120F172A", offset=ft.Offset(0, 2)),
+        )
+
+    def app_header():
+        t = phase_text()
+        return ft.Row([
+            ft.Container(
+                content=ft.Text("G", size=19, weight=ft.FontWeight.BOLD, color=INDIGO),
+                width=38, height=38, alignment=ft.Alignment.CENTER,
+                bgcolor="#EEF2FF", border_radius=12,
+            ),
+            ft.Column([
+                ft.Text("Gagauzium", size=19, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Text(t["gagauz_language"], size=11, color=MUTED),
+            ], spacing=0, expand=True),
+            ft.Container(
+                content=ft.Text(app_state["lang"], size=11, weight=ft.FontWeight.BOLD, color=INDIGO),
+                padding=ft.Padding.symmetric(horizontal=10, vertical=7),
+                bgcolor="#EEF2FF", border_radius=12,
+            ),
+            ft.IconButton(icon=ft.Icons.SETTINGS_OUTLINED, icon_color=MUTED, tooltip=t["settings"], on_click=lambda _: show_settings()),
+        ], spacing=9, vertical_alignment=ft.CrossAxisAlignment.CENTER)
+
+    def on_nav_change(e):
+        index = e.control.selected_index
+        app_state["nav_index"] = index
+        if index == 0:
+            show_home()
+        elif index == 1:
+            show_learn()
+        else:
+            show_review_hub()
+
+    def set_bottom_navigation(selected_index):
+        t = phase_text()
+        app_state["nav_index"] = selected_index
+        page.navigation_bar = ft.NavigationBar(
+            selected_index=selected_index,
+            bgcolor="#FFFFFF",
+            indicator_color="#E9EDFF",
+            elevation=8,
+            destinations=[
+                ft.NavigationBarDestination(icon=ft.Icons.HOME_OUTLINED, selected_icon=ft.Icons.HOME, label=t["nav_home"]),
+                ft.NavigationBarDestination(icon=ft.Icons.MENU_BOOK_OUTLINED, selected_icon=ft.Icons.MENU_BOOK, label=t["nav_learn"]),
+                ft.NavigationBarDestination(icon=ft.Icons.REPLAY_OUTLINED, selected_icon=ft.Icons.REPLAY, label=t["nav_review"]),
+            ],
+            on_change=on_nav_change,
+        )
+
+    def prepare_main_screen(screen, nav_index, add_header=True):
+        app_state["question_id"] = -1
+        app_state["current_screen"] = screen
+        page.clean()
+        page.scroll = ft.ScrollMode.AUTO
+        page.bgcolor = BG
+        page.padding = ft.Padding.only(left=16, right=16, top=14, bottom=18)
+        set_bottom_navigation(nav_index)
+        if add_header:
+            page.add(ft.SafeArea(
+                content=app_header(),
+                avoid_intrusions_bottom=False,
+                minimum_padding=ft.Padding.only(top=14),
+            ))
+
+    def persist_last_category(source_name):
+        app_state["last_category"] = source_name
+        if app_state["stats"].get("last_active_category") != source_name:
+            app_state["stats"]["last_active_category"] = source_name
+            save_stats(app_state["stats"])
+
+    def record_completed_session():
+        if app_state.get("session_completion_recorded"):
+            return
+        app_state["session_completion_recorded"] = True
+        today = datetime.date.today()
+        if register_learning_day(app_state["stats"], today):
+            save_stats(app_state["stats"])
+
+    def displayed_streak():
+        current = max(0, int(app_state["stats"].get("streak_days", 0) or 0))
+        last_value = app_state["stats"].get("last_learning_date") or app_state["stats"].get("last_login")
+        try:
+            last_day = datetime.date.fromisoformat(last_value) if last_value else None
+        except (TypeError, ValueError):
+            last_day = None
+        if last_day and last_day < datetime.date.today() - datetime.timedelta(days=1):
+            return 0
+        return current
 
     def show_statistics():
         page.clean()
@@ -302,163 +497,273 @@ def main(page: ft.Page):
 
     def show_language_selector():
         page.clean()
+        page.navigation_bar = None
         page.scroll = None
-        page.bgcolor = "white"
-        page.add(
-            ft.Container(height=100),
-            ft.Text("Gagauzium", size=45, weight="bold", color="#00008B"),
-            ft.Text("Выберите язык / Alegeți limba", size=16, color="grey"),
-            ft.Container(height=40),
-            ft.ElevatedButton(
-                content=ft.Row([ft.Text("РУССКИЙ", size=20, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
-                width=300, height=70, on_click=lambda _: set_language("RU")
+        page.bgcolor = BG
+        page.padding = 0
+        page.add(ft.SafeArea(
+            content=ft.Container(
+                content=ft.Column([
+                    ft.Container(height=80),
+                    ft.Container(content=ft.Text("G", size=34, weight=ft.FontWeight.BOLD, color="white"), width=76, height=76, alignment=ft.Alignment.CENTER, bgcolor=INDIGO, border_radius=24),
+                    ft.Container(height=16),
+                    ft.Text("Welcome to Gagauzium", size=28, weight="bold", color=INK, text_align=ft.TextAlign.CENTER),
+                    ft.Text("Выберите язык обучения\nAlegeți limba de învățare", size=15, color=MUTED, text_align=ft.TextAlign.CENTER),
+                    ft.Container(height=28),
+                    ft.ElevatedButton(
+                        content=ft.Row([ft.Text("🇷🇺", size=24), ft.Text("Русский", size=18, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
+                        width=330, height=62, bgcolor=INDIGO, color="white", on_click=lambda _: set_language("RU")
+                    ),
+                    ft.Container(height=12),
+                    ft.ElevatedButton(
+                        content=ft.Row([ft.Text("🇷🇴", size=24), ft.Text("Română", size=18, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
+                        width=330, height=62, bgcolor="white", color=INK, on_click=lambda _: set_language("RO")
+                    ),
+                ], horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                padding=24,
             ),
-            ft.Container(height=20),
-            ft.ElevatedButton(
-                content=ft.Row([ft.Text("ROMÂNĂ", size=20, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
-                width=300, height=70, on_click=lambda _: set_language("RO")
-            )
-        )
+            avoid_intrusions_bottom=False,
+            expand=True,
+        ))
         page.update()
 
-    def set_language(lang):
+    def set_language(lang, destination="home"):
         app_state["lang"] = lang
         app_state["stats"]["lang"] = lang
         save_stats(app_state["stats"])
-        show_main_menu(reset_scroll=True)
+        if destination == "settings":
+            show_settings()
+        else:
+            show_home(reset_scroll=True)
 
-    def show_main_menu(reset_scroll=False):
-        app_state["question_id"] = -1  # Отменяем все запущенные таймеры
-        if reset_scroll:
-            app_state["last_category"] = None  # Сброс позиции скролла
-        page.clean()
-        page.scroll = ft.ScrollMode.AUTO
-        page.bgcolor = "#E0FFFF"
-        lang = app_state["lang"]
-        txt = UI_TEXT[lang]
+    def show_home(reset_scroll=False):
         nonlocal all_words
         all_words = merge_data_and_stats(load_data(), app_state["stats"])
-        
-        categories = sorted(list(set(w["category"] for w in all_words)))
-        category_column = ft.Column(spacing=20, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
-        total_learned_count = len([w for w in all_words if w["learned"]])
+        prepare_main_screen("home", 0)
+        t = phase_text()
+        learned_count = sum(1 for w in all_words if w["learned"])
+        total_count = len(all_words)
+        percentage = round(learned_count / total_count * 100) if total_count else 0
         today = datetime.date.today().isoformat()
-
-        daily_review = app_state["stats"].get("daily_review")
-        daily_is_today = bool(daily_review and daily_review.get("date") == today)
-        daily_index = daily_review.get("index", 0) if daily_is_today else 0
+        daily = app_state["stats"].get("daily_review") or {}
+        daily_is_today = daily.get("date") == today
+        daily_index = min(20, daily.get("index", 0)) if daily_is_today else 0
         daily_done = daily_is_today and daily_index >= 20
-
-        if total_learned_count < 20:
-            daily_btn_text = txt["daily_review_min"]
-            daily_btn_disabled = True
+        if learned_count < 20:
+            daily_status, daily_cta, daily_disabled = t["daily_locked"], t["start_daily"], True
         elif daily_done:
-            daily_btn_text = txt["daily_review_locked"]
-            daily_btn_disabled = True
-        elif daily_is_today and daily_index > 0:
-            daily_btn_text = f"{txt['daily_review_btn']} ({daily_index}/20)"
-            daily_btn_disabled = False
+            daily_status, daily_cta, daily_disabled = t["daily_complete"], t["start_daily"], True
+        elif daily_index > 0:
+            daily_status, daily_cta, daily_disabled = t["daily_in_progress"].format(daily_index), t["continue_daily"], False
         else:
-            daily_btn_text = txt["daily_review_btn"]
-            daily_btn_disabled = False
+            daily_status, daily_cta, daily_disabled = t["ready_review"], t["start_daily"], False
 
-        page.add(
-            ft.Container(height=30),
-            ft.Row([
-                ft.TextButton("🌐 Сменить язык / Schimbă limba", on_click=lambda _: show_language_selector())
-            ], alignment=ft.MainAxisAlignment.END),
-            ft.Text(txt["title"], size=25, weight="bold", color="#00008B"),
-            ft.Container(height=20),
-            ft.Text(txt["global_title"], size=18, weight="bold", color="black"),
-            ft.ElevatedButton(
-                content=ft.Text(daily_btn_text, size=16, weight="bold"),
-                bgcolor="#fff59d", color="black", width=350, height=60,
-                on_click=lambda _: start_session("ALL", "daily"),
-                disabled=daily_btn_disabled),
-            ft.Container(height=10),
-            ft.ElevatedButton(content=ft.Text(f"{txt['global_btn']} ({total_learned_count})", size=16, weight="bold"), bgcolor="#bbdefb", color="black", width=350, height=60, on_click=lambda _: start_session("ALL", "review"), disabled=total_learned_count == 0),
-            ft.Container(height=10),
-            ft.ElevatedButton(
-                content=ft.Row(
-                    [
-                        ft.Image(src="fast_check.png", width=24, height=24),
-                        ft.Text(txt["fast_review_btn"], size=16, weight="bold")
-                    ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    spacing=10
-                ),
-                bgcolor="#ffcdd2", color="black", width=350, height=60,
-                on_click=lambda _: start_session("ALL", "fast"), disabled=total_learned_count < 4),
-            ft.Container(height=10),
-            ft.ElevatedButton(
-                content=ft.Text(txt["true_false_btn"], size=16, weight="bold"),
-                bgcolor="#ffe082", color="black", width=350, height=60,
-                on_click=lambda _: start_session("ALL", "true_false"), disabled=total_learned_count < 4),
-            ft.Container(height=10),
-            ft.ElevatedButton(
-                content=ft.Text(txt["statistics"], size=16, weight="bold"),
-                bgcolor="#e1bee7", color="black", width=350, height=60,
-                on_click=lambda _: show_statistics()),
-            ft.Container(height=20),
-            ft.Divider(height=1, color="#eeeeee"),
-            ft.Container(height=10),
-            ft.Text(txt["category_title"], size=18, weight="bold", color="black"),
-            ft.Container(height=10)
+        progress_card = ft.Container(
+            content=ft.Column([
+                ft.Row([
+                    ft.Text(t["your_progress"], size=12, weight=ft.FontWeight.BOLD, color="#B9C5FF"),
+                    ft.Container(content=ft.Text(f"{percentage}%", size=12, weight=ft.FontWeight.BOLD, color="white"), padding=ft.Padding.symmetric(horizontal=10, vertical=4), bgcolor="#344071", border_radius=12),
+                ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                ft.Row([
+                    ft.Text(str(learned_count), size=38, weight=ft.FontWeight.BOLD, color="white"),
+                    ft.Text(f"/ {total_count} {t['words']}", size=14, color="#C9CEDD"),
+                ], vertical_alignment=ft.CrossAxisAlignment.END, spacing=7),
+                ft.ProgressBar(value=learned_count / total_count if total_count else 0, color="#75D3C7", bgcolor="#394269", height=10),
+                ft.Text(f"Level 1 · {t['beginner']}", size=11, color="#A9E7DF"),
+            ], spacing=10), padding=20, bgcolor=INDIGO_DARK, border_radius=24,
         )
 
-        for cat in categories:
-            unlearned = [w for w in all_words if w["category"] == cat and not w["learned"]]
-            learned = [w for w in all_words if w["category"] == cat and w["learned"]]
-            
-            cat_info = category_map.get(cat, {})
-            base_name = cat_info.get(lang.lower(), cat)
-            gag_name = cat_info.get("gag", "")
-            display_name = f"{base_name} / {gag_name}" if gag_name else base_name
+        attention = sum(1 for w in all_words if w["learned"] and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0)
+        daily_card = rounded_card(ft.Column([
+            ft.Row([ft.Text("✨", size=24), ft.Column([ft.Text(t["today"], size=17, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["daily_review"], size=11, color=MUTED)], spacing=0)], spacing=10),
+            ft.Text(daily_status, size=14, weight=ft.FontWeight.W_600, color=INK),
+            ft.Text(f"⚠ {min(5, attention)} {t['need_attention']}", size=12, color="#B54747"),
+            ft.ElevatedButton(daily_cta, icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session("ALL", "daily"), disabled=daily_disabled, bgcolor=INDIGO, color="white", height=46),
+        ], spacing=10))
 
-            cat_card = ft.Container(
+        last_category = app_state["stats"].get("last_active_category")
+        actual_categories = {w["category"] for w in all_words}
+        if last_category in actual_categories:
+            learned, total, _ = category_counts(last_category)
+            continue_content = ft.Column([
+                ft.Row([ft.Text(t["continue_learning"], size=11, weight=ft.FontWeight.BOLD, color=MUTED), ft.TextButton(t["choose_category"], on_click=lambda _: show_learn())], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                ft.Row([category_visual(last_category, 62), ft.Column([ft.Text(localized_category_name(last_category, app_state["lang"]), size=18, weight=ft.FontWeight.BOLD, color=INK), ft.Text(get_category_meta(last_category).get("gag") or "", size=11, color=INDIGO), ft.Text(f"{learned} / {total} {t['words']}", size=12, color=MUTED)], spacing=2, expand=True)], spacing=14),
+                ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=8),
+                ft.ElevatedButton(t["continue"], icon=ft.Icons.ARROW_FORWARD, on_click=lambda _, c=last_category: open_category_detail(c), bgcolor="#20283D", color="white", height=46),
+            ], spacing=10)
+        else:
+            continue_content = ft.Column([
+                ft.Text(t["continue_learning"], size=11, weight=ft.FontWeight.BOLD, color=MUTED),
+                ft.Text(t["no_category"], size=14, color=MUTED),
+                ft.ElevatedButton(t["choose_category"], icon=ft.Icons.MENU_BOOK, on_click=lambda _: show_learn(), bgcolor=INDIGO, color="white"),
+            ], spacing=12)
+
+        streak = displayed_streak()
+        streak_card = rounded_card(ft.Row([
+            ft.Container(content=ft.Text("🔥", size=24), width=46, height=46, alignment=ft.Alignment.CENTER, bgcolor="#FFF0D9", border_radius=15),
+            ft.Column([ft.Text(f"{streak} {t['day_streak']}", size=15, weight=ft.FontWeight.BOLD, color="#8B4513"), ft.Text(t["streak_hint"], size=11, color="#9A633A")], spacing=2, expand=True),
+        ], spacing=12), padding=14, bgcolor="#FFF8EC")
+
+        page.add(ft.Container(height=4), progress_card, daily_card, rounded_card(continue_content), streak_card, ft.Container(height=8))
+        page.update()
+
+    def show_main_menu(reset_scroll=False):
+        show_home(reset_scroll=reset_scroll)
+
+    def show_learn():
+        prepare_main_screen("learn", 1, add_header=False)
+        page.scroll = None
+        page.padding = 0
+        t = phase_text()
+        actual = {w["category"] for w in all_words}
+        cards = []
+        for meta in CATEGORY_METADATA:
+            source_name = meta["source_name"]
+            if source_name not in actual:
+                continue
+            learned, total, _ = category_counts(source_name)
+            percent = round(learned / total * 100) if total else 0
+            subtitle = meta.get("gag") or ""
+            cards.append(ft.Container(
                 content=ft.Column([
+                    ft.Row([category_visual(source_name, 48), ft.Container(content=ft.Text(f"{percent}%", size=10, weight=ft.FontWeight.BOLD, color=INDIGO), padding=ft.Padding.symmetric(horizontal=7, vertical=3), bgcolor="#EEF2FF", border_radius=10, visible=percent > 0)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                    ft.Text(localized_category_name(source_name, app_state["lang"]), size=14, weight=ft.FontWeight.BOLD, color=INK, max_lines=2, overflow=ft.TextOverflow.ELLIPSIS),
+                    ft.Text(subtitle, size=10, color=INDIGO, visible=bool(subtitle)),
+                    ft.Container(expand=True),
+                    ft.Text(f"{learned} / {total}", size=11, color=MUTED),
+                    ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=6),
+                ], spacing=5),
+                padding=12, bgcolor=CARD,
+                border=ft.Border.all(1, BORDER), border_radius=19,
+                shadow=ft.BoxShadow(blur_radius=7, color="#0D0F172A", offset=ft.Offset(0, 2)),
+                on_click=lambda _, c=source_name: open_category_detail(c), ink=True,
+            ))
+        category_grid = ft.GridView(
+            controls=cards,
+            runs_count=2,
+            spacing=11,
+            run_spacing=11,
+            child_aspect_ratio=0.92,
+            padding=ft.Padding.only(bottom=12),
+            expand=True,
+        )
+        page.add(ft.SafeArea(
+            content=ft.Container(
+                content=ft.Column([
+                    app_header(),
+                    ft.Container(height=4),
+                    ft.Text(t["learn_title"], size=24, weight=ft.FontWeight.BOLD, color=INK),
+                    ft.Text(t["learn_subtitle"], size=12, color=MUTED),
                     ft.Row([
-                        ft.Text(display_name, size=18, weight="bold", color="black", expand=True),
-                        ft.TextButton(content=ft.Text(txt["reset"], size=11, color="red"), on_click=lambda e, c=cat: reset_category(c))
-                    ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-                    ft.Container(height=10),
-                    ft.Row([
-                        ft.ElevatedButton(content=ft.Text(txt["learn"], size=13, color="black" if len(unlearned) > 0 else "grey", text_align=ft.TextAlign.CENTER), on_click=lambda e, c=cat: start_session(c, "new"), disabled=len(unlearned) == 0, bgcolor="#FFD700" if len(unlearned) > 0 else "#E0E0E0", width=165),
-                        
-                        ft.ElevatedButton(
-                            content=ft.Text(f"{txt['review']} ({len(learned)})", size=13, text_align=ft.TextAlign.CENTER),
-                            on_click=lambda e, c=cat: start_session(c, "review"),
-                            disabled=len(learned) == 0,
-                            width=165
-                        ),
-                    ], alignment=ft.MainAxisAlignment.CENTER, spacing=10),
-                    ft.TextButton(content=ft.Text(txt["view_all"], size=14, color="blue"), on_click=lambda e, c=cat: show_word_list(c), width=340),
-                    *( [ft.Text(txt["all_learned"], size=13, color="green", weight="bold")] if len(unlearned) == 0 and len(learned) > 0 else [] )
-                ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=5),
-                padding=15, width=400, bgcolor="#FFFFE0", border=ft.Border.all(1, "#dddddd"), border_radius=15,
-                key=cat
-            )
-            category_column.controls.append(cat_card)
-        
-        page.add(category_column)
+                        ft.Container(content=ft.Text(t["beginner"], size=12, weight=ft.FontWeight.BOLD, color="white"), padding=ft.Padding.symmetric(horizontal=14, vertical=9), bgcolor=INDIGO, border_radius=12),
+                        *[ft.Container(content=ft.Text(f"🔒 {label}", size=11, color="#98A2B3"), padding=ft.Padding.symmetric(horizontal=11, vertical=9), bgcolor="#EEEFF2", border_radius=12) for label in (t["conversational"], t["advanced"], t["expert"])],
+                    ], scroll=ft.ScrollMode.AUTO, spacing=7),
+                    ft.Container(height=2),
+                    category_grid,
+                ], spacing=8, expand=True),
+                padding=ft.Padding.only(left=16, right=16, top=14),
+                expand=True,
+            ),
+            avoid_intrusions_bottom=False,
+            expand=True,
+        ))
+        page.update()
+
+    def open_category_detail(source_name):
+        persist_last_category(source_name)
+        show_category_detail(source_name)
+
+    def show_category_detail(source_name):
+        prepare_main_screen("category", 1)
+        t = phase_text()
+        learned, total, difficult = category_counts(source_name)
+        remaining = total - learned
+        meta = get_category_meta(source_name)
         page.add(
-            ft.Container(height=30), ft.Divider(height=1, color="#eeeeee"), ft.Container(height=20),
-            ft.TextButton(content=ft.Text(txt["reset_all"], size=15, color="red"), on_click=lambda _: reset_all_progress()),
-            ft.Container(height=40)
+            ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_learn()), ft.Container(expand=True), ft.Text(meta.get("gag") or "", size=11, color=INDIGO)], spacing=5),
+            rounded_card(ft.Column([
+                ft.Row([category_visual(source_name, 82), ft.Column([ft.Text(localized_category_name(source_name, app_state["lang"]), size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(meta.get("gag") or "", size=12, color=INDIGO)], spacing=3, expand=True)], spacing=15),
+                ft.Row([ft.Text(f"{learned} / {total} {t['words_learned']}", size=12, weight=ft.FontWeight.BOLD, color=INK), ft.Text(f"{round(learned / total * 100) if total else 0}%", size=12, weight=ft.FontWeight.BOLD, color=INDIGO)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=9),
+            ], spacing=12)),
+            rounded_card(ft.Column([
+                ft.Text("✨ " + t["learn_new"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Text(f"{remaining} {t['words_remaining']}", size=12, color=MUTED),
+                ft.ElevatedButton(t["start_learning"] if remaining else t["all_words_learned"], icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session(source_name, "new"), disabled=remaining == 0, bgcolor=INDIGO, color="white"),
+            ], spacing=9)),
+            rounded_card(ft.Column([
+                ft.Text("⚠️ " + t["difficult_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Text(f"{difficult} {t['need_attention']}" if difficult else t["no_difficult"], size=12, color=MUTED),
+                ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, bgcolor="#D34A5B", color="white"),
+            ], spacing=9)),
+            rounded_card(ft.Column([
+                ft.Text("📖 " + t["learned_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Text(f"{learned} {t['words']}", size=12, color=MUTED),
+                ft.ElevatedButton(t["view_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name, learned_only=True), disabled=learned == 0, bgcolor="#16847A", color="white"),
+            ], spacing=9)),
+            ft.Container(height=8),
         )
         page.update()
-        
-        # Скроллим к последней категории, если была
-        last_cat = app_state.get("last_category")
-        if last_cat and last_cat in categories:
-            async def restore_scroll():
-                await asyncio.sleep(0.1)  # Даем время на отрисовку
-                # Ищем контейнер с ключом = название категории
-                for control in category_column.controls:
-                    if hasattr(control, 'key') and control.key == last_cat:
-                        await page.scroll_to(control=control, duration=500)
-                        break
-            page.run_task(restore_scroll)
+
+    def show_review_hub():
+        prepare_main_screen("review", 2)
+        t = phase_text()
+        learned_count = sum(1 for w in all_words if w["learned"])
+        difficult_count = sum(1 for w in all_words if w["learned"] and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0)
+        today = datetime.date.today().isoformat()
+        daily = app_state["stats"].get("daily_review") or {}
+        daily_done = daily.get("date") == today and daily.get("index", 0) >= 20
+
+        def review_card(icon, title, description, badge, action, color, disabled=False, secondary=None):
+            actions = [ft.ElevatedButton(t["start_session"] if secondary is None else t["global_review"], icon=ft.Icons.PLAY_ARROW, on_click=action, disabled=disabled, bgcolor=color, color="white", height=44, expand=True)]
+            if secondary is not None:
+                actions.append(ft.OutlinedButton(t["true_false_short"], on_click=secondary, disabled=disabled, height=44, expand=True))
+            return rounded_card(ft.Column([
+                ft.Row([ft.Text(icon, size=28), ft.Column([ft.Text(title, size=18, weight=ft.FontWeight.BOLD, color=INK), ft.Text(badge, size=11, color=color)], spacing=1, expand=True)], spacing=11),
+                ft.Text(description, size=12, color=MUTED),
+                ft.Row(actions, spacing=8),
+            ], spacing=10))
+
+        page.add(
+            ft.Container(height=4), ft.Text(t["review_title"], size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["review_subtitle"], size=12, color=MUTED),
+            review_card("✨", t["daily_review"], t["daily_desc"], t["daily_complete"] if daily_done else (t["ready_review"] if learned_count >= 20 else t["daily_locked"]), lambda _: start_session("ALL", "daily"), INDIGO, learned_count < 20 or daily_done),
+            review_card("⚠️", t["difficult_words"], t["difficult_desc"], f"{difficult_count} {t['need_attention']}" if difficult_count else t["no_difficult"], lambda _: start_session("ALL", "difficult"), "#D34A5B", difficult_count == 0),
+            review_card("⚡", t["quick_review"], t["quick_desc"], f"{learned_count} {t['words']}", lambda _: start_session("ALL", "fast"), "#5C55C8", learned_count < 4),
+            review_card("✓", t["quiz"], t["quiz_desc"], "10 / 15", lambda _: start_session("ALL", "review"), "#16847A", learned_count < 4, secondary=lambda _: start_session("ALL", "true_false")),
+            ft.Container(height=8),
+        )
+        page.update()
+
+    def show_settings():
+        prepare_main_screen("settings", app_state.get("nav_index", 0))
+        t = phase_text()
+        categories = [m for m in CATEGORY_METADATA if any(w["category"] == m["source_name"] for w in all_words)]
+        category_select = ft.Dropdown(
+            label=t["select_category"], value=app_state.get("last_category") if app_state.get("last_category") in {m["source_name"] for m in categories} else None,
+            options=[ft.DropdownOption(key=m["source_name"], text=localized_category_name(m["source_name"], app_state["lang"])) for m in categories],
+            border_radius=14, expand=True,
+        )
+        page.add(
+            ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_home()), ft.Container(expand=True)]),
+            ft.Text(t["settings"], size=25, weight=ft.FontWeight.BOLD, color=INK),
+            rounded_card(ft.Column([
+                ft.Text(t["language"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Row([
+                    ft.ElevatedButton("🇷🇺 " + t["russian"], on_click=lambda _: set_language("RU", "settings"), bgcolor=INDIGO if app_state["lang"] == "RU" else "#EEEFF4", color="white" if app_state["lang"] == "RU" else INK, expand=True),
+                    ft.ElevatedButton("🇷🇴 " + t["romanian"], on_click=lambda _: set_language("RO", "settings"), bgcolor=INDIGO if app_state["lang"] == "RO" else "#EEEFF4", color="white" if app_state["lang"] == "RO" else INK, expand=True),
+                ], spacing=8),
+            ], spacing=12)),
+            rounded_card(ft.Column([
+                ft.Text(t["reset_progress"], size=17, weight=ft.FontWeight.BOLD, color="#B42318"),
+                category_select,
+                ft.OutlinedButton(t["reset_category_label"], icon=ft.Icons.RESTART_ALT, on_click=lambda _: reset_category(category_select.value) if category_select.value else None),
+                ft.Divider(color=BORDER),
+                ft.Text(t["reset_all_hint"], size=11, color=MUTED),
+                ft.OutlinedButton(UI_TEXT[app_state["lang"]]["reset_all"], icon=ft.Icons.DELETE_OUTLINE, on_click=lambda _: reset_all_progress()),
+            ], spacing=10)),
+            ft.Container(height=8),
+        )
+        page.update()
 
     def show_confirm_dialog(title, message, on_confirm):
         txt = UI_TEXT[app_state["lang"]]
@@ -484,8 +789,7 @@ def main(page: ft.Page):
 
     def reset_category(category_name):
         txt = UI_TEXT[app_state["lang"]]
-        cat_info = category_map.get(category_name, {})
-        cat_display = cat_info.get(app_state["lang"].lower(), category_name)
+        cat_display = localized_category_name(category_name, app_state["lang"])
 
         def do_reset():
             for w in all_words:
@@ -517,16 +821,17 @@ def main(page: ft.Page):
             on_confirm=do_reset,
         )
 
-    def show_word_list(category):
-        app_state["last_category"] = category
+    def show_word_list(category, learned_only=False):
+        persist_last_category(category)
         page.clean()
+        page.navigation_bar = None
         page.scroll = None
-        page.bgcolor = "#E0FFFF"
+        page.bgcolor = BG
+        page.padding = 16
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
-        words = [w for w in all_words if w["category"] == category]
-        cat_info = category_map.get(category, {})
-        cat_display = cat_info.get(lang.lower(), category)
+        words = [w for w in all_words if w["category"] == category and (w["learned"] or not learned_only)]
+        cat_display = localized_category_name(category, lang)
 
         rows = []
         for i, w in enumerate(words):
@@ -539,7 +844,7 @@ def main(page: ft.Page):
                         ft.Text("✅" if w["learned"] else "⭕", size=14)
                     ], alignment=ft.MainAxisAlignment.START),
                     padding=12, bgcolor="#ffffff" if i % 2 == 0 else "#f9f9f9",
-                    border=ft.border.only(bottom=ft.border.BorderSide(1, "#eeeeee"))
+                    border=ft.Border(bottom=ft.BorderSide(1, "#eeeeee"))
                 )
             )
 
@@ -547,7 +852,7 @@ def main(page: ft.Page):
 
         page.add(
             ft.Container(height=30),
-            ft.Row([ft.TextButton(content=ft.Text(txt["back"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Row([ft.TextButton(content=ft.Text(phase_text()["back"], size=17, weight="bold"), icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_category_detail(category))], alignment=ft.MainAxisAlignment.START),
             ft.Container(height=10),
             ft.Text(f"{txt['dictionary']}{cat_display}", size=20, weight="bold", color="black"),
             ft.Container(height=10),
@@ -555,14 +860,49 @@ def main(page: ft.Page):
         )
         page.update()
 
+    def return_from_exercise():
+        return_screen = app_state.get("exercise_return_screen", "home")
+        return_category = app_state.get("exercise_return_category")
+        if return_screen == "category" and return_category:
+            show_category_detail(return_category)
+        elif return_screen == "learn":
+            show_learn()
+        elif return_screen == "review":
+            show_review_hub()
+        elif return_screen == "settings":
+            show_settings()
+        else:
+            show_home()
+
     def start_session(category, mode):
+        if app_state.get("current_screen") != "exercise":
+            app_state["exercise_return_screen"] = app_state.get("current_screen", "home")
+            app_state["exercise_return_category"] = (
+                category if app_state["exercise_return_screen"] == "category" and category != "ALL" else None
+            )
+        app_state["current_screen"] = "exercise"
+        page.navigation_bar = None
         if category != "ALL":
-            app_state["last_category"] = category
+            persist_last_category(category)
         app_state["mode"] = mode
+        app_state["last_word_id"] = None
+        app_state["session_completion_recorded"] = False
         today = datetime.date.today()
         today_iso = today.isoformat()
 
-        if mode == "fast":
+        if mode == "difficult":
+            words = [
+                w for w in all_words
+                if w["learned"]
+                and (category == "ALL" or w["category"] == category)
+                and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0
+            ]
+            app_state["is_quiz"] = True
+            app_state["current_batch"] = weighted_sample(
+                words, app_state["stats"], today, k=10 if category == "ALL" else 6
+            )
+            app_state["index"] = 0
+        elif mode == "fast":
             words = [w for w in all_words if w["learned"]]
             random.shuffle(words)
             app_state["is_quiz"] = True
@@ -612,7 +952,7 @@ def main(page: ft.Page):
             app_state["index"] = 0
 
         if not app_state["current_batch"]:
-            show_main_menu()
+            return_from_exercise()
         else:
             if app_state["is_quiz"]: show_quiz_card()
             else: show_study_card()
@@ -622,7 +962,9 @@ def main(page: ft.Page):
 
     def show_study_card():
         page.clean()
+        page.navigation_bar = None
         page.scroll = None
+        page.padding = 0
         page.bgcolor = "#F5DEB3"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
@@ -637,7 +979,7 @@ def main(page: ft.Page):
 
         page.add(
             ft.Container(height=30),
-            ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: return_from_exercise())], alignment=ft.MainAxisAlignment.START),
             ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=380),
             ft.Container(height=30),
             ft.Container(
@@ -670,7 +1012,9 @@ def main(page: ft.Page):
 
     def show_quiz_card():
         page.clean()
+        page.navigation_bar = None
         page.scroll = None
+        page.padding = 0
         page.bgcolor = "#FFE4B5"
         lang = app_state["lang"]
         txt = UI_TEXT[lang]
@@ -681,12 +1025,13 @@ def main(page: ft.Page):
             page.add(
                 ft.Container(height=100), ft.Text("💔", size=80),
                 ft.Text(txt["fast_review_fail"], size=20, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
-                ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                ft.ElevatedButton(txt["to_menu"], on_click=lambda _: return_from_exercise(), width=200)
             )
             page.update()
             return
 
         if app_state["index"] >= len(app_state["current_batch"]):
+            record_completed_session()
             if app_state["mode"] == "new":
                 unlearned_left = len([w for w in all_words if w["category"] == app_state["last_category"] and not w["learned"]])
                 if unlearned_left == 0:
@@ -695,7 +1040,7 @@ def main(page: ft.Page):
                         ft.Text(txt["finished"], size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
                         ft.Text(txt["all_learned"], size=20, weight="bold", color="green", text_align=ft.TextAlign.CENTER),
                         ft.Container(height=20),
-                        ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                        ft.ElevatedButton(txt["to_menu"], on_click=lambda _: return_from_exercise(), width=200)
                     )
                 else:
                     # Предложить продолжить изучение новых слов
@@ -705,7 +1050,7 @@ def main(page: ft.Page):
                         ft.Text(txt["continue_question"], size=18, color="black", text_align=ft.TextAlign.CENTER),
                         ft.Row([
                             ft.ElevatedButton(txt["continue_yes"], on_click=lambda _: continue_new_session(), width=150),
-                            ft.ElevatedButton(txt["continue_no"], on_click=lambda _: show_main_menu(), width=150)
+                            ft.ElevatedButton(txt["continue_no"], on_click=lambda _: return_from_exercise(), width=150)
                         ], alignment=ft.MainAxisAlignment.CENTER)
                     )
             elif app_state["mode"] == "daily":
@@ -719,14 +1064,14 @@ def main(page: ft.Page):
                     ft.Container(height=20),
                     ft.Text(txt["daily_review_locked"], size=18, color="grey", text_align=ft.TextAlign.CENTER),
                     ft.Container(height=20),
-                    ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                    ft.ElevatedButton(txt["to_menu"], on_click=lambda _: return_from_exercise(), width=200)
                 )
             else:
                 msg = txt["fast_review_success"] if (is_fast or is_tf) else txt["finished"]
                 page.add(
                     ft.Container(height=100), ft.Text("✅", size=80),
                     ft.Text(msg, size=25, weight="bold", color="black", text_align=ft.TextAlign.CENTER),
-                    ft.ElevatedButton(txt["to_menu"], on_click=lambda _: show_main_menu(), width=200)
+                    ft.ElevatedButton(txt["to_menu"], on_click=lambda _: return_from_exercise(), width=200)
                 )
             page.update()
             return
@@ -781,7 +1126,7 @@ def main(page: ft.Page):
             progress_val = (app_state["index"] + 1) / len(app_state["current_batch"])
             page.add(
                 ft.Container(height=30),
-                ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+                ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: return_from_exercise())], alignment=ft.MainAxisAlignment.START),
                 ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=350),
                 ft.Container(height=10),
                 ft.Text(txt["quiz_title"], size=16, color="grey"),
@@ -792,8 +1137,11 @@ def main(page: ft.Page):
             )
             page.update()
         else:
+            app_state["option_buttons"] = {}
             for opt in app_state["current_options"]:
-                btns_column.controls.append(ft.ElevatedButton(opt, width=350, height=55, on_click=lambda e, s=opt: check_answer(e, s, word)))
+                option_btn = ft.ElevatedButton(opt, width=350, height=55, on_click=lambda e, s=opt: check_answer(e, s, word))
+                app_state["option_buttons"][opt] = option_btn
+                btns_column.controls.append(option_btn)
 
             if is_fast:
                 app_state["question_id"] = app_state.get("question_id", 0) + 1
@@ -804,7 +1152,7 @@ def main(page: ft.Page):
                 
                 page.add(
                     ft.Container(height=30),
-                    ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+                    ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: return_from_exercise())], alignment=ft.MainAxisAlignment.START),
                     lives_text,
                     progress_bar,
                     counter_text,
@@ -840,7 +1188,7 @@ def main(page: ft.Page):
                 title_text = txt["daily_review_title"] if app_state["mode"] == "daily" else txt["quiz_title"]
                 page.add(
                     ft.Container(height=30),
-                    ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+                    ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: return_from_exercise())], alignment=ft.MainAxisAlignment.START),
                     ft.ProgressBar(value=progress_val, color="#449C4A", bgcolor="#eeeeee", width=350),
                     ft.Container(height=10),
                     ft.Text(title_text, size=16, color="grey"),
@@ -907,12 +1255,21 @@ def main(page: ft.Page):
                 app_state["lives"] -= 1
             btn.bgcolor = "red"
             btn.color = "white"
+            correct_btn = None
+            if is_daily:
+                correct_btn = app_state.get("option_buttons", {}).get(app_state.get("correct_answer"))
+                if correct_btn is not None:
+                    correct_btn.bgcolor = "green"
+                    correct_btn.color = "white"
             app_state["feedback_text"] = UI_TEXT[lang]["wrong"]
             page.update()
             async def reset_btn():
-                await asyncio.sleep(0.8)
+                await asyncio.sleep(1.2 if is_daily else 0.8)
                 btn.bgcolor = None
                 btn.color = None
+                if correct_btn is not None:
+                    correct_btn.bgcolor = None
+                    correct_btn.color = None
                 app_state["feedback_text"] = ""
                 if app_state["mode"] == "fast" or is_tf or is_daily:
                     app_state["index"] += 1
