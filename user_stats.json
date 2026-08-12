@@ -1,6 +1,6 @@
 {
   "streak_days": 1,
-  "last_login": "2026-05-02",
+  "last_login": "2026-08-12",
   "words": {
     "1": {
       "learned": false,
@@ -27,10 +27,10 @@
       "last_seen": "1970-01-01"
     },
     "5": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "6": {
       "learned": false,
@@ -51,10 +51,10 @@
       "last_seen": "1970-01-01"
     },
     "9": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "10": {
       "learned": false,
@@ -81,22 +81,22 @@
       "last_seen": "1970-01-01"
     },
     "14": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "15": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "16": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "17": {
       "learned": false,
@@ -106,57 +106,57 @@
     },
     "18": {
       "learned": true,
-      "correct_answers": 4,
-      "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "correct_answers": 5,
+      "wrong_answers": 2,
+      "last_seen": "2026-08-12"
     },
     "19": {
       "learned": true,
-      "correct_answers": 4,
-      "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "correct_answers": 6,
+      "wrong_answers": 2,
+      "last_seen": "2026-08-12"
     },
     "20": {
       "learned": true,
       "correct_answers": 1,
-      "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "wrong_answers": 1,
+      "last_seen": "2026-08-12"
     },
     "21": {
       "learned": true,
-      "correct_answers": 3,
+      "correct_answers": 4,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "22": {
       "learned": true,
-      "correct_answers": 2,
+      "correct_answers": 3,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "23": {
       "learned": true,
       "correct_answers": 3,
-      "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "wrong_answers": 1,
+      "last_seen": "2026-08-12"
     },
     "24": {
       "learned": true,
-      "correct_answers": 4,
+      "correct_answers": 5,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "25": {
       "learned": true,
-      "correct_answers": 5,
+      "correct_answers": 6,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "26": {
       "learned": true,
-      "correct_answers": 4,
+      "correct_answers": 5,
       "wrong_answers": 1,
-      "last_seen": "2026-08-11"
+      "last_seen": "2026-08-12"
     },
     "27": {
       "learned": false,
@@ -166,9 +166,9 @@
     },
     "28": {
       "learned": true,
-      "correct_answers": 5,
+      "correct_answers": 6,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "29": {
       "learned": false,
@@ -190,9 +190,9 @@
     },
     "32": {
       "learned": true,
-      "correct_answers": 4,
+      "correct_answers": 5,
       "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "33": {
       "learned": false,
@@ -928,27 +928,27 @@
     },
     "155": {
       "learned": true,
-      "correct_answers": 5,
+      "correct_answers": 6,
       "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "156": {
       "learned": true,
-      "correct_answers": 6,
+      "correct_answers": 7,
       "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "157": {
       "learned": true,
       "correct_answers": 5,
-      "wrong_answers": 2,
-      "last_seen": "2026-08-11"
+      "wrong_answers": 3,
+      "last_seen": "2026-08-12"
     },
     "158": {
       "learned": true,
-      "correct_answers": 5,
+      "correct_answers": 6,
       "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "159": {
       "learned": false,
@@ -964,15 +964,15 @@
     },
     "161": {
       "learned": true,
-      "correct_answers": 6,
+      "correct_answers": 7,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "162": {
       "learned": true,
-      "correct_answers": 7,
+      "correct_answers": 8,
       "wrong_answers": 3,
-      "last_seen": "2026-08-11"
+      "last_seen": "2026-08-12"
     },
     "163": {
       "learned": false,
@@ -1853,8 +1853,8 @@
     "309": {
       "learned": true,
       "correct_answers": 4,
-      "wrong_answers": 2,
-      "last_seen": "2026-05-02"
+      "wrong_answers": 6,
+      "last_seen": "2026-08-12"
     },
     "310": {
       "learned": false,
@@ -1882,9 +1882,9 @@
     },
     "314": {
       "learned": true,
-      "correct_answers": 4,
-      "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "correct_answers": 5,
+      "wrong_answers": 2,
+      "last_seen": "2026-08-12"
     },
     "315": {
       "learned": false,
@@ -1895,8 +1895,8 @@
     "316": {
       "learned": true,
       "correct_answers": 2,
-      "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "wrong_answers": 2,
+      "last_seen": "2026-08-12"
     },
     "317": {
       "learned": false,
@@ -2452,27 +2452,27 @@
     },
     "409": {
       "learned": true,
-      "correct_answers": 1,
+      "correct_answers": 2,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "410": {
       "learned": true,
       "correct_answers": 1,
-      "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "wrong_answers": 1,
+      "last_seen": "2026-08-12"
     },
     "411": {
       "learned": true,
-      "correct_answers": 1,
+      "correct_answers": 2,
       "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "last_seen": "2026-08-12"
     },
     "412": {
       "learned": true,
       "correct_answers": 1,
-      "wrong_answers": 0,
-      "last_seen": "2026-05-02"
+      "wrong_answers": 1,
+      "last_seen": "2026-08-12"
     },
     "413": {
       "learned": true,
@@ -2483,8 +2483,8 @@
     "414": {
       "learned": true,
       "correct_answers": 5,
-      "wrong_answers": 1,
-      "last_seen": "2026-05-02"
+      "wrong_answers": 2,
+      "last_seen": "2026-08-12"
     },
     "415": {
       "learned": false,
@@ -3645,10 +3645,10 @@
       "last_seen": "1970-01-01"
     },
     "608": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "609": {
       "learned": false,
@@ -3659,8 +3659,8 @@
     "610": {
       "learned": false,
       "correct_answers": 0,
-      "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "wrong_answers": 1,
+      "last_seen": "2026-08-12"
     },
     "611": {
       "learned": false,
@@ -3671,20 +3671,20 @@
     "612": {
       "learned": false,
       "correct_answers": 0,
-      "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "wrong_answers": 1,
+      "last_seen": "2026-08-12"
     },
     "613": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "614": {
-      "learned": false,
-      "correct_answers": 0,
+      "learned": true,
+      "correct_answers": 1,
       "wrong_answers": 0,
-      "last_seen": "1970-01-01"
+      "last_seen": "2026-08-12"
     },
     "615": {
       "learned": false,
@@ -4527,9 +4527,10 @@
       19,
       162
     ],
-    "index": 0,
-    "correct_count": 0
+    "index": 20,
+    "correct_count": 16
   },
   "lang": "RU",
-  "last_active_category": "Местоимения"
+  "last_active_category": "Глаголы",
+  "last_learning_date": "2026-08-12"
 }
