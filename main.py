@@ -41,7 +41,7 @@ UI_TEXT = {
         "statistics": "📊 Статистика",
         "stats_title": "СТАТИСТИКА ПРОФИЛЯ",
         "hard_words": "Самые сложные слова (ошибок):",
-        "skip": "Пропустить →",
+        "skip": "Не знаю",
         "category_title": "Изучения и повторения по категориям",
         "true_false_btn": "Правда или Ложь",
         "true_btn": "✅ Правда",
@@ -85,7 +85,7 @@ UI_TEXT = {
         "statistics": "📊 Statistici",
         "stats_title": "STATISTICI PROFIL",
         "hard_words": "Cele mai grele cuvinte (erori):",
-        "skip": "Sari peste →",
+        "skip": "Nu știu",
         "category_title": "Studiu și repetare pe categorii",
         "true_false_btn": "Adevărat sau Fals",
         "true_btn": "✅ Adevărat",
@@ -449,6 +449,7 @@ def main(page: ft.Page):
         page.scroll = ft.ScrollMode.HIDDEN
         page.bgcolor = BG
         page.padding = ft.Padding.only(left=16, right=16, top=14, bottom=18)
+        page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
         set_bottom_navigation(nav_index)
         if add_header:
             page.add(ft.SafeArea(
@@ -741,6 +742,7 @@ def main(page: ft.Page):
 
     def show_category_detail(source_name):
         prepare_main_screen("category", 1)
+        page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
         t = phase_text()
         learned, total, difficult = category_counts(source_name)
         remaining = total - learned
@@ -756,17 +758,17 @@ def main(page: ft.Page):
                 ft.Text("✨ " + t["learn_new"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(f"{remaining} {t['words_remaining']}", size=12, color=MUTED),
                 ft.ElevatedButton(t["start_learning"] if remaining else t["all_words_learned"], icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session(source_name, "new"), disabled=remaining == 0, bgcolor=INDIGO, color="white"),
-            ], spacing=9)),
+            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             rounded_card(ft.Column([
                 ft.Text("⚠️ " + t["difficult_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(f"{difficult} {t['need_attention']}" if difficult else t["no_difficult"], size=12, color=MUTED),
-                ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, bgcolor="#D34A5B", color="white"),
-            ], spacing=9)),
+                ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, opacity=0.48 if difficult == 0 else 1.0, bgcolor="#D34A5B", color="white"),
+            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             rounded_card(ft.Column([
                 ft.Text("📖 " + t["learned_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(f"{learned} {t['words']}", size=12, color=MUTED),
-                ft.ElevatedButton(t["view_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name, learned_only=True), disabled=learned == 0, bgcolor="#16847A", color="white"),
-            ], spacing=9)),
+                ft.ElevatedButton(t["view_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name, learned_only=True), disabled=learned == 0, opacity=0.48 if learned == 0 else 1.0, bgcolor="#16847A", color="white"),
+            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             ft.Container(height=8),
         )
         page.update()
@@ -803,7 +805,7 @@ def main(page: ft.Page):
                 ),
             ], spacing=10, expand=True))
             card.col = 6
-            card.height = 250
+            card.height = 270
             card.on_click = None if disabled else action
             card.ink = not disabled
             card.ink_color = "#16212A5D"
@@ -853,7 +855,7 @@ def main(page: ft.Page):
                 ft.Divider(color=BORDER),
                 ft.Text(t["reset_all_hint"], size=11, color=MUTED),
                 ft.OutlinedButton(UI_TEXT[app_state["lang"]]["reset_all"], icon=ft.Icons.DELETE_OUTLINE, on_click=lambda _: reset_all_progress()),
-            ], spacing=10)),
+            ], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             ft.Container(height=8),
         )
         page.update()
@@ -1254,15 +1256,22 @@ def main(page: ft.Page):
         t = phase_text()
         native = word.get(app_state["lang"].lower(), word.get("ru", "---"))
         correct = app_state["feedback_correct"]
-        return ft.Container(
-            content=ft.Column([
+        skipped = app_state.get("selected_answer") == "__skip__"
+        if skipped:
+            feedback_controls = [
+                ft.Text(f"{t['correct_was']}: {word['gag']} — {native}", size=16, weight=ft.FontWeight.W_600, color=INK),
+            ]
+        else:
+            feedback_controls = [
                 ft.Text("✓ " + t["correct_answer"] if correct else "✕ " + t["incorrect_answer"], size=20, weight=ft.FontWeight.BOLD, color="#157347" if correct else "#B42318"),
                 ft.Text(f"{word['gag']} — {native}" if correct else f"{t['correct_was']}: {word['gag']} — {native}", size=14, color=INK),
-            ], spacing=5),
+            ]
+        return ft.Container(
+            content=ft.Column(feedback_controls, spacing=5),
             padding=16,
-            bgcolor="#EAF8EF" if correct else "#FDECEC",
+            bgcolor="#EEF2FF" if skipped else ("#EAF8EF" if correct else "#FDECEC"),
             border_radius=18,
-            border=ft.Border.all(1, "#B7E4C7" if correct else "#F3B7B7"),
+            border=ft.Border.all(1, "#C7D2FE" if skipped else ("#B7E4C7" if correct else "#F3B7B7")),
         )
 
     def multiple_choice_body(word):
@@ -1528,10 +1537,59 @@ def main(page: ft.Page):
         )
         set_session_view(result_view)
 
-    if user_stats.get("lang"):
-        show_main_menu(reset_scroll=True)
-    else:
-        show_language_selector()
+    async def open_app_after_welcome():
+        await asyncio.sleep(3)
+        if user_stats.get("lang"):
+            show_main_menu(reset_scroll=True)
+        else:
+            show_language_selector()
+
+    def show_welcome_screen():
+        page.clean()
+        page.navigation_bar = None
+        page.scroll = None
+        page.padding = 0
+        page.bgcolor = BG
+        page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
+        page.add(ft.SafeArea(
+            content=ft.Container(
+                content=ft.Column([
+                    ft.Container(height=64),
+                    ft.Image(
+                        src="icon.svg",
+                        width=132,
+                        height=132,
+                        fit=ft.BoxFit.CONTAIN,
+                        border_radius=28,
+                        anti_alias=True,
+                    ),
+                    ft.Text("Hoş geldiniz!", size=22, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                    # ft.Text("Gagauzium", size=28, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
+                    ft.Container(height=8),
+                    ft.Text(
+                        "Приветствуем в изучении гагаузского языка",
+                        size=18,
+                        weight=ft.FontWeight.W_600,
+                        color=INK,
+                        text_align=ft.TextAlign.CENTER,
+                    ),
+                    ft.Text(
+                        "Bine ați venit la studiul limbii găgăuze",
+                        size=18,
+                        color=MUTED,
+                        text_align=ft.TextAlign.CENTER,
+                    ),
+                    ft.Container(expand=True),
+                ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=10, expand=True),
+                padding=ft.Padding.symmetric(horizontal=28),
+                expand=True,
+            ),
+            expand=True,
+        ))
+        page.update()
+        page.run_task(open_app_after_welcome)
+
+    show_welcome_screen()
 
 if __name__ == "__main__":
     ft.run(main)
