@@ -114,10 +114,16 @@ PHASE1_TEXT = {
         "today": "Сегодня", "daily_review": "Ежедневное повторение",
         "ready_review": "20 слов готовы к повторению", "daily_in_progress": "Продолжить: {0} / 20",
         "daily_complete": "Ежедневное повторение на сегодня завершено", "daily_locked": "Откроется после изучения 20 слов",
+        "daily_new_user_hint": "Каждый день здесь вас ждут 20 слов для повторения.",
+        "daily_new_user_locked": "Откроется после изучения первых 20 слов.",
         "daily_complete_hint": "Вы можете проверять себя в обычных повторениях или учить новые слова.",
         "start_daily": "Начать повторение", "continue_daily": "Продолжить повторение",
         "continue_learning": "ПРОДОЛЖИТЬ ОБУЧЕНИЕ", "choose_category": "Выбрать другую категорию",
         "continue": "Продолжить изучение этой категории", "no_category": "Выберите первую категорию в разделе «Учить».",
+        "welcome_learning": "Приветствуем в изучении гагаузского языка",
+        "welcome_gagauz": "Hoş geldiniz!",
+        "choose_start": "Выберите, с чего начать изучение",
+        "choose_first_topic": "Выбрать первую тему",
         "home_words_learned": "слов выучено",
         "day_streak": "дн. подряд", "streak_hint": "Завершите занятие сегодня, чтобы продолжить серию.",
         "learn_title": "Что вы хотите изучить?", "learn_subtitle": "Выберите тему и учитесь в своём темпе.",
@@ -155,10 +161,16 @@ PHASE1_TEXT = {
         "today": "Astăzi", "daily_review": "Repetare zilnică",
         "ready_review": "20 de cuvinte sunt gata de repetat", "daily_in_progress": "Continuă: {0} / 20",
         "daily_complete": "Repetarea zilnică pentru astăzi este finalizată", "daily_locked": "Disponibilă după 20 de cuvinte învățate",
+        "daily_new_user_hint": "În fiecare zi, aici te așteaptă 20 de cuvinte pentru repetare.",
+        "daily_new_user_locked": "Se va deschide după învățarea primelor 20 de cuvinte.",
         "daily_complete_hint": "Îți poți verifica cunoștințele prin repetări obișnuite sau poți învăța cuvinte noi.",
         "start_daily": "Începe repetarea", "continue_daily": "Continuă repetarea",
         "continue_learning": "CONTINUĂ ÎNVĂȚAREA", "choose_category": "Alege altă categorie",
         "continue": "Continuă învățarea acestei categorii", "no_category": "Alege prima categorie din secțiunea „Învață”.",
+        "welcome_learning": "Bine ați venit la studiul limbii găgăuze",
+        "welcome_gagauz": "Hoş geldiniz!",
+        "choose_start": "Alege cu ce să începi învățarea",
+        "choose_first_topic": "Alege prima temă",
         "home_words_learned": "cuvinte învățate",
         "day_streak": "zile la rând", "streak_hint": "Finalizează o sesiune astăzi pentru a continua seria.",
         "learn_title": "Ce vrei să înveți?", "learn_subtitle": "Alege o temă și învață în ritmul tău.",
@@ -190,6 +202,58 @@ PHASE1_TEXT = {
         "learning_new_words": "Învățarea cuvintelor noi",
     },
 }
+
+
+def russian_plural(count, one, few, many):
+    value = abs(int(count))
+    if value % 10 == 1 and value % 100 != 11:
+        return one
+    if value % 10 in (2, 3, 4) and value % 100 not in (12, 13, 14):
+        return few
+    return many
+
+
+def word_count_text(count, lang):
+    if lang == "RU":
+        noun = russian_plural(count, "слово", "слова", "слов")
+    else:
+        noun = "cuvânt" if abs(int(count)) == 1 else "cuvinte"
+    return f"{count} {noun}"
+
+
+def learned_word_count_text(count, lang):
+    if lang == "RU":
+        return f"{word_count_text(count, lang)} изучено"
+    ending = "cuvânt învățat" if abs(int(count)) == 1 else "cuvinte învățate"
+    return f"{count} {ending}"
+
+
+def learned_of_total_text(learned, total, lang):
+    connector = "из" if lang == "RU" else "din"
+    return f"{learned_word_count_text(learned, lang)} {connector} {total}"
+
+
+def remaining_word_count_text(count, lang):
+    if lang == "RU":
+        return f"{word_count_text(count, lang)} осталось"
+    ending = "cuvânt rămas" if abs(int(count)) == 1 else "cuvinte rămase"
+    return f"{count} {ending}"
+
+
+def attention_word_count_text(count, lang):
+    if lang == "RU":
+        verb = "требует" if abs(int(count)) == 1 else "требуют"
+        return f"{word_count_text(count, lang)} {verb} внимания"
+    return f"{word_count_text(count, lang)} necesită atenție"
+
+
+def streak_days_text(count, lang):
+    if lang == "RU":
+        noun = russian_plural(count, "день", "дня", "дней")
+        return f"{count} {noun} подряд"
+    noun = "zi" if abs(int(count)) == 1 else "zile"
+    return f"{count} {noun} la rând"
+
 
 def load_data():
     try:
@@ -404,10 +468,13 @@ def main(page: ft.Page):
     def app_header():
         t = phase_text()
         return ft.Row([
-            ft.Container(
-                content=ft.Text("G", size=19, weight=ft.FontWeight.BOLD, color=INDIGO),
-                width=38, height=38, alignment=ft.Alignment.CENTER,
-                bgcolor="#EEF2FF", border_radius=12,
+            ft.Image(
+                src="icon.svg",
+                width=38,
+                height=38,
+                fit=ft.BoxFit.CONTAIN,
+                border_radius=12,
+                anti_alias=True,
             ),
             ft.Column([
                 ft.Text("Gagauzium", size=19, weight=ft.FontWeight.BOLD, color=INK),
@@ -543,7 +610,14 @@ def main(page: ft.Page):
             content=ft.Container(
                 content=ft.Column([
                     ft.Container(height=80),
-                    ft.Container(content=ft.Text("G", size=34, weight=ft.FontWeight.BOLD, color="white"), width=76, height=76, alignment=ft.Alignment.CENTER, bgcolor=INDIGO, border_radius=24),
+                    ft.Image(
+                        src="icon.svg",
+                        width=76,
+                        height=76,
+                        fit=ft.BoxFit.CONTAIN,
+                        border_radius=24,
+                        anti_alias=True,
+                    ),
                     ft.Container(height=16),
                     ft.Text("Welcome to Gagauzium", size=28, weight="bold", color=INK, text_align=ft.TextAlign.CENTER),
                     ft.Text("Выберите язык обучения\nAlegeți limba de învățare", size=15, color=MUTED, text_align=ft.TextAlign.CENTER),
@@ -605,7 +679,7 @@ def main(page: ft.Page):
                 ft.Text(
                     spans=[
                         ft.TextSpan(str(learned_count), style=ft.TextStyle(size=38, weight=ft.FontWeight.BOLD, color="white")),
-                        ft.TextSpan(f" / {total_count} {t['words']}", style=ft.TextStyle(size=14, color="#C9CEDD")),
+                        ft.TextSpan(f" / {word_count_text(total_count, app_state['lang'])}", style=ft.TextStyle(size=14, color="#C9CEDD")),
                     ],
                 ),
                 ft.ProgressBar(value=learned_count / total_count if total_count else 0, color="#75D3C7", bgcolor="#394269", height=10),
@@ -615,11 +689,17 @@ def main(page: ft.Page):
 
         daily_controls = [
             ft.Row([ft.Text("✨", size=24), ft.Column([ft.Text(t["today"], size=17, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["daily_review"], size=11, color=MUTED)], spacing=0)], spacing=10),
-            ft.Text(daily_status, size=14, weight=ft.FontWeight.W_600, color=INK),
         ]
-        if daily_done:
+        if learned_count == 0:
+            daily_controls.extend([
+                ft.Text(t["daily_new_user_hint"], size=14, weight=ft.FontWeight.W_600, color=INK),
+                ft.Text(t["daily_new_user_locked"], size=12, color=MUTED),
+            ])
+        else:
+            daily_controls.append(ft.Text(daily_status, size=14, weight=ft.FontWeight.W_600, color=INK))
+        if learned_count > 0 and daily_done:
             daily_controls.append(ft.Text(t["daily_complete_hint"], size=12, color=MUTED))
-        elif not daily_disabled:
+        elif learned_count > 0 and not daily_disabled:
             daily_controls.append(ft.ElevatedButton(
                 daily_cta,
                 icon=ft.Icons.PLAY_ARROW,
@@ -636,11 +716,26 @@ def main(page: ft.Page):
 
         last_category = app_state["stats"].get("last_active_category")
         actual_categories = {w["category"] for w in all_words}
-        if last_category in actual_categories:
+        if learned_count == 0:
+            continue_content = ft.Column([
+                ft.Text(t["welcome_learning"], size=18, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
+                ft.Text(t["welcome_gagauz"], size=16, weight=ft.FontWeight.W_600, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                ft.Container(height=2),
+                ft.Text(t["choose_start"], size=14, color=MUTED, text_align=ft.TextAlign.CENTER),
+                ft.ElevatedButton(
+                    t["choose_first_topic"],
+                    icon=ft.Icons.MENU_BOOK,
+                    on_click=lambda _: show_learn(),
+                    bgcolor=INDIGO,
+                    color="white",
+                    height=46,
+                ),
+            ], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)
+        elif last_category in actual_categories:
             learned, total, _ = category_counts(last_category)
             continue_content = ft.Column([
                 ft.Text(t["continue_learning"], size=11, weight=ft.FontWeight.BOLD, color=MUTED),
-                ft.Row([category_visual(last_category, 62), ft.Column([ft.Text(localized_category_name(last_category, app_state["lang"]), size=18, weight=ft.FontWeight.BOLD, color=INK), ft.Text(get_category_meta(last_category).get("gag") or "", size=11, color=INDIGO), ft.Text(f"{learned} / {total} {t['home_words_learned']}", size=12, color=MUTED)], spacing=2, expand=True)], spacing=14),
+                ft.Row([category_visual(last_category, 62), ft.Column([ft.Text(localized_category_name(last_category, app_state["lang"]), size=18, weight=ft.FontWeight.BOLD, color=INK), ft.Text(get_category_meta(last_category).get("gag") or "", size=11, color=INDIGO), ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, color=MUTED)], spacing=2, expand=True)], spacing=14),
                 ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=8),
                 ft.ElevatedButton(
                     content=ft.Text(t["continue"], size=13, text_align=ft.TextAlign.CENTER),
@@ -667,10 +762,14 @@ def main(page: ft.Page):
         streak = displayed_streak()
         streak_card = rounded_card(ft.Row([
             ft.Container(content=ft.Text("🔥", size=24), width=46, height=46, alignment=ft.Alignment.CENTER, bgcolor="#FFF0D9", border_radius=15),
-            ft.Column([ft.Text(f"{streak} {t['day_streak']}", size=15, weight=ft.FontWeight.BOLD, color="#8B4513"), ft.Text(t["streak_hint"], size=11, color="#9A633A")], spacing=2, expand=True),
+            ft.Column([ft.Text(streak_days_text(streak, app_state["lang"]), size=15, weight=ft.FontWeight.BOLD, color="#8B4513"), ft.Text(t["streak_hint"], size=11, color="#9A633A")], spacing=2, expand=True),
         ], spacing=12), padding=14, bgcolor="#FFF8EC")
 
-        page.add(ft.Container(height=4), progress_card, daily_card, rounded_card(continue_content), streak_card, ft.Container(height=8))
+        learning_card = rounded_card(continue_content)
+        if learned_count == 0:
+            page.add(ft.Container(height=4), progress_card, learning_card, daily_card, streak_card, ft.Container(height=8))
+        else:
+            page.add(ft.Container(height=4), progress_card, daily_card, learning_card, streak_card, ft.Container(height=8))
         page.update()
 
     def show_main_menu(reset_scroll=False):
@@ -751,22 +850,22 @@ def main(page: ft.Page):
             ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_learn())], spacing=5),
             rounded_card(ft.Column([
                 ft.Row([category_visual(source_name, 82), ft.Column([ft.Text(localized_category_name(source_name, app_state["lang"]), size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(meta.get("gag") or "", size=14, color=INDIGO)], spacing=3, expand=True)], spacing=15),
-                ft.Row([ft.Text(f"{learned} / {total} {t['words_learned']}", size=12, weight=ft.FontWeight.BOLD, color=INK), ft.Text(f"{round(learned / total * 100) if total else 0}%", size=12, weight=ft.FontWeight.BOLD, color=INDIGO)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                ft.Row([ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, weight=ft.FontWeight.BOLD, color=INK), ft.Text(f"{round(learned / total * 100) if total else 0}%", size=12, weight=ft.FontWeight.BOLD, color=INDIGO)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                 ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=9),
             ], spacing=12)),
             rounded_card(ft.Column([
                 ft.Text("✨ " + t["learn_new"], size=17, weight=ft.FontWeight.BOLD, color=INK),
-                ft.Text(f"{remaining} {t['words_remaining']}", size=12, color=MUTED),
+                ft.Text(remaining_word_count_text(remaining, app_state["lang"]), size=12, color=MUTED),
                 ft.ElevatedButton(t["start_learning"] if remaining else t["all_words_learned"], icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session(source_name, "new"), disabled=remaining == 0, bgcolor=INDIGO, color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             rounded_card(ft.Column([
                 ft.Text("⚠️ " + t["difficult_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
-                ft.Text(f"{difficult} {t['need_attention']}" if difficult else t["no_difficult"], size=12, color=MUTED),
+                ft.Text(attention_word_count_text(difficult, app_state["lang"]) if difficult else t["no_difficult"], size=12, color=MUTED),
                 ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, opacity=0.48 if difficult == 0 else 1.0, bgcolor="#D34A5B", color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             rounded_card(ft.Column([
                 ft.Text("📖 " + t["learned_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
-                ft.Text(f"{learned} {t['words']}", size=12, color=MUTED),
+                ft.Text(learned_word_count_text(learned, app_state["lang"]), size=12, color=MUTED),
                 ft.ElevatedButton(t["view_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name, learned_only=True), disabled=learned == 0, opacity=0.48 if learned == 0 else 1.0, bgcolor="#16847A", color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             ft.Container(height=8),
@@ -805,7 +904,7 @@ def main(page: ft.Page):
                 ),
             ], spacing=10, expand=True))
             card.col = 6
-            card.height = 270
+            card.height = 285
             card.on_click = None if disabled else action
             card.ink = not disabled
             card.ink_color = "#16212A5D"
@@ -816,11 +915,11 @@ def main(page: ft.Page):
 
         exercise_cards = [
             review_card("✨", t["daily_review"], t["daily_desc"], t["daily_complete"] if daily_done else (t["ready_review"] if learned_count >= 20 else t["daily_locked"]), lambda _: start_session("ALL", "daily"), INDIGO, learned_count < 20 or daily_done, completed=daily_done),
-            review_card("🔁", t["regular_review"], t["regular_review_desc"], f"10 {t['words']}", lambda _: start_session("ALL", "review"), "#16847A", learned_count < 4),
-            review_card("⚠️", t["difficult_words"], t["difficult_desc"], f"{difficult_count} {t['need_attention']}" if difficult_count else t["no_difficult"], lambda _: start_session("ALL", "difficult"), "#D34A5B", difficult_count == 0),
-            review_card("⚡", t["quick_review"], t["quick_desc"], f"{learned_count} {t['words']}", lambda _: start_session("ALL", "fast"), "#5C55C8", learned_count < 4),
-            review_card("🔤", t["word_building"], t["word_building_desc"], f"10 {t['words']}", lambda _: start_session("ALL", "word_building"), "#B45F06", learned_count < 4),
-            review_card("❓", t["true_false_short"], t["quiz_desc"], f"15 {t['words']}", lambda _: start_session("ALL", "true_false"), "#16847A", learned_count < 4),
+            review_card("🔁", t["regular_review"], t["regular_review_desc"], word_count_text(10, app_state["lang"]), lambda _: start_session("ALL", "review"), "#16847A", learned_count < 4),
+            review_card("⚠️", t["difficult_words"], t["difficult_desc"], attention_word_count_text(difficult_count, app_state["lang"]) if difficult_count else t["no_difficult"], lambda _: start_session("ALL", "difficult"), "#D34A5B", difficult_count == 0),
+            review_card("⚡", t["quick_review"], t["quick_desc"], word_count_text(learned_count, app_state["lang"]), lambda _: start_session("ALL", "fast"), "#5C55C8", learned_count < 4),
+            review_card("🔤", t["word_building"], t["word_building_desc"], word_count_text(10, app_state["lang"]), lambda _: start_session("ALL", "word_building"), "#B45F06", learned_count < 4),
+            review_card("❓", t["true_false_short"], t["quiz_desc"], word_count_text(15, app_state["lang"]), lambda _: start_session("ALL", "true_false"), "#16847A", learned_count < 4),
         ]
         page.add(
             ft.Container(height=4), ft.Text(t["review_title"], size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["review_subtitle"], size=12, color=MUTED),
@@ -1521,7 +1620,7 @@ def main(page: ft.Page):
                             ft.Text(f"{t['accuracy']}: {accuracy}%", size=16, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
                             ft.Divider(color=BORDER),
                             ft.Text(f"{t['newly_learned']}: {app_state.get('session_new_learned', 0)}", size=14, color=MUTED),
-                            ft.Text(f"🔥 {t['streak_confirmed']}: {displayed_streak()}", size=14, color="#A15C00"),
+                            ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
                         ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=10)),
                         ft.Container(expand=True),
                         ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
