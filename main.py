@@ -58,7 +58,7 @@ UI_TEXT = {
         "confirm_yes": "Да, обнулить",
         "confirm_no": "Отмена",
         "confirm_reset_category": "Обнулить категорию «{0}»? Прогресс этой категории будет потерян.",
-        "confirm_reset_all": "Обнулить весь прогресс? Все выученные слова станут невыученными."
+        "confirm_reset_all": "Обнулить весь прогресс? Будут удалены изученные слова, статистика ответов и серия занятий."
     },
     "RO": {
         "title": "Gagauzça üürenmää",
@@ -102,7 +102,7 @@ UI_TEXT = {
         "confirm_yes": "Da, resetează",
         "confirm_no": "Anulează",
         "confirm_reset_category": "Resetăm categoria «{0}»? Progresul acestei categorii va fi pierdut.",
-        "confirm_reset_all": "Resetăm tot progresul? Toate cuvintele învățate vor deveni neînvățate."
+        "confirm_reset_all": "Resetăm tot progresul? Vor fi șterse cuvintele învățate, statisticile răspunsurilor și seria de studiu."
     }
 }
 
@@ -137,15 +137,27 @@ PHASE1_TEXT = {
         "quick_review": "Быстрое повторение", "quick_desc": "На скорость, с тремя жизнями.",
         "regular_review": "Обычное повторение", "regular_review_desc": "Выберите правильный перевод.",
         "quiz": "Тест", "quiz_desc": "Определите, верен ли перевод.",
+        "review_mode_locked": "Откроется после изучения первой серии слов",
         "start_session": "Начать", "true_false_short": "Да / Нет", "no_difficult": "Пока нет сложных слов",
         "language": "Язык обучения", "russian": "Русский", "romanian": "Румынский",
         "reset_progress": "Сброс прогресса", "reset_category_label": "Сбросить категорию",
-        "select_category": "Выберите категорию", "reset_all_hint": "Изученные слова станут неизученными. Статистика ответов сохранится.",
+        "select_category": "Выберите категорию", "reset_all_hint": "Будут удалены прогресс, статистика ответов и серия занятий.",
         "open_settings": "Открыть настройки", "all_words_learned": "Все слова изучены",
         "close_session": "Закрыть занятие", "question": "Задание", "continue_answer": "Продолжить",
         "correct_answer": "Правильно!", "incorrect_answer": "Не совсем", "correct_was": "Правильный ответ",
         "results": "Результаты", "great_job": "Отличная работа!", "accuracy": "Точность",
         "newly_learned": "Новых слов изучено", "streak_confirmed": "Серия подтверждена",
+        "result_excellent_title": "Отлично!", "result_excellent_hint": "Эти слова уже хорошо запомнились.",
+        "result_good_title": "Хороший результат", "result_good_hint": "Ещё немного практики — и будет совсем уверенно.",
+        "result_practice_title": "Продолжаем", "result_practice_hint": "Слова постепенно закрепляются.",
+        "result_attention_title": "Всё приходит с практикой", "result_attention_hint": "Этим словам нужно ещё немного внимания.",
+        "learning_result_title": "Серия слов пройдена",
+        "learning_result_all": "Все слова этой серии добавлены в изученные.",
+        "learning_result_retry": "Некоторые слова встретятся снова в следующих занятиях.",
+        "fast_result_title": "Ваш результат", "fast_score": "СЧЁТ", "fast_best_score": "Лучший результат",
+        "fast_first_score": "Первый результат сохранён", "fast_new_record": "Новый личный рекорд!",
+        "fast_record_tied": "Вы повторили свой лучший результат", "fast_to_record": "До личного рекорда — {0}",
+        "try_again": "Попробовать снова",
         "finish": "Завершить", "build_word": "Составьте слово на гагаузском",
         "word_building": "Составление слов", "word_building_desc": "Соберите слово из букв. Некоторые могут быть лишними.",
         "check": "Проверить", "backspace": "Удалить", "clear": "Очистить",
@@ -184,15 +196,27 @@ PHASE1_TEXT = {
         "quick_review": "Repetare rapidă", "quick_desc": "Contra cronometru, cu trei vieți.",
         "regular_review": "Repetare obișnuită", "regular_review_desc": "Alege traducerea corectă.",
         "quiz": "Test", "quiz_desc": "Stabilește dacă traducerea este corectă.",
+        "review_mode_locked": "Se va deschide după învățarea primei serii de cuvinte",
         "start_session": "Începe", "true_false_short": "Da / Nu", "no_difficult": "Nu există încă cuvinte dificile",
         "language": "Limba de învățare", "russian": "Rusă", "romanian": "Română",
         "reset_progress": "Resetarea progresului", "reset_category_label": "Resetează categoria",
-        "select_category": "Alege categoria", "reset_all_hint": "Cuvintele învățate vor deveni neînvățate. Statisticile răspunsurilor se păstrează.",
+        "select_category": "Alege categoria", "reset_all_hint": "Vor fi șterse progresul, statisticile răspunsurilor și seria de studiu.",
         "open_settings": "Deschide setările", "all_words_learned": "Toate cuvintele sunt învățate",
         "close_session": "Închide sesiunea", "question": "Exercițiu", "continue_answer": "Continuă",
         "correct_answer": "Corect!", "incorrect_answer": "Nu chiar", "correct_was": "Răspunsul corect",
         "results": "Rezultate", "great_job": "Foarte bine!", "accuracy": "Acuratețe",
         "newly_learned": "Cuvinte noi învățate", "streak_confirmed": "Seria este confirmată",
+        "result_excellent_title": "Excelent!", "result_excellent_hint": "Aceste cuvinte sunt deja bine memorate.",
+        "result_good_title": "Rezultat bun", "result_good_hint": "Încă puțină practică și vei răspunde cu mai multă încredere.",
+        "result_practice_title": "Continuăm", "result_practice_hint": "Cuvintele se fixează treptat.",
+        "result_attention_title": "Totul vine prin practică", "result_attention_hint": "Aceste cuvinte mai au nevoie de puțină atenție.",
+        "learning_result_title": "Seria de cuvinte este parcursă",
+        "learning_result_all": "Toate cuvintele din această serie au fost adăugate la cele învățate.",
+        "learning_result_retry": "Unele cuvinte vor apărea din nou în lecțiile următoare.",
+        "fast_result_title": "Rezultatul tău", "fast_score": "SCOR", "fast_best_score": "Cel mai bun rezultat",
+        "fast_first_score": "Primul rezultat a fost salvat", "fast_new_record": "Un nou record personal!",
+        "fast_record_tied": "Ți-ai egalat cel mai bun rezultat", "fast_to_record": "Până la recordul personal — {0}",
+        "try_again": "Încearcă din nou",
         "finish": "Finalizează", "build_word": "Construiește cuvântul găgăuz",
         "word_building": "Construirea cuvintelor", "word_building_desc": "Construiește cuvântul din litere. Unele pot fi în plus.",
         "check": "Verifică", "backspace": "Șterge", "clear": "Curăță",
@@ -880,17 +904,23 @@ def main(page: ft.Page):
         today = datetime.date.today().isoformat()
         daily = app_state["stats"].get("daily_review") or {}
         daily_done = daily.get("date") == today and daily.get("index", 0) >= 20
+        basic_review_locked = learned_count < 4
+        basic_review_status = t["review_mode_locked"] if basic_review_locked else None
 
         def review_card(icon, title, description, badge, action, color, disabled=False, completed=False):
             state_icon = ft.Icons.CHECK_CIRCLE_OUTLINE if completed else (ft.Icons.LOCK_OUTLINE if disabled else None)
             state_color = "#16847A" if completed else ("#98A2B3" if disabled else color)
+            visual_bgcolor = "#DFF4E7" if completed else ("#EAECF0" if disabled else color)
             visual_controls = [ft.Text(icon, size=30)]
             if state_icon is not None:
                 visual_controls.append(ft.Icon(state_icon, size=23, color=state_color))
-            card = rounded_card(ft.Column([
+            card_controls = [
                 ft.Text(title, size=17, weight=ft.FontWeight.BOLD, color=INK, max_lines=2, overflow=ft.TextOverflow.ELLIPSIS),
                 ft.Text(description, size=12, color=MUTED, max_lines=3, overflow=ft.TextOverflow.ELLIPSIS),
-                ft.Text(badge, size=11, weight=ft.FontWeight.W_600, color=state_color, max_lines=3, overflow=ft.TextOverflow.ELLIPSIS),
+            ]
+            if badge:
+                card_controls.append(ft.Text(badge, size=11, weight=ft.FontWeight.W_600, color=state_color, max_lines=3, overflow=ft.TextOverflow.ELLIPSIS))
+            card_controls.extend([
                 ft.Container(expand=True),
                 ft.Container(
                     content=ft.Row(
@@ -899,10 +929,11 @@ def main(page: ft.Page):
                         vertical_alignment=ft.CrossAxisAlignment.CENTER,
                     ),
                     padding=ft.Padding.symmetric(horizontal=12, vertical=7),
-                    bgcolor="#B4BFE9" if disabled else "#B4BFE9",
+                    bgcolor=visual_bgcolor,
                     border_radius=14,
                 ),
-            ], spacing=10, expand=True))
+            ])
+            card = rounded_card(ft.Column(card_controls, spacing=10, expand=True))
             card.col = 6
             card.height = 285
             card.on_click = None if disabled else action
@@ -915,11 +946,11 @@ def main(page: ft.Page):
 
         exercise_cards = [
             review_card("✨", t["daily_review"], t["daily_desc"], t["daily_complete"] if daily_done else (t["ready_review"] if learned_count >= 20 else t["daily_locked"]), lambda _: start_session("ALL", "daily"), INDIGO, learned_count < 20 or daily_done, completed=daily_done),
-            review_card("🔁", t["regular_review"], t["regular_review_desc"], word_count_text(10, app_state["lang"]), lambda _: start_session("ALL", "review"), "#16847A", learned_count < 4),
+            review_card("🔁", t["regular_review"], t["regular_review_desc"], basic_review_status, lambda _: start_session("ALL", "review"), "#16847A", basic_review_locked),
             review_card("⚠️", t["difficult_words"], t["difficult_desc"], attention_word_count_text(difficult_count, app_state["lang"]) if difficult_count else t["no_difficult"], lambda _: start_session("ALL", "difficult"), "#D34A5B", difficult_count == 0),
-            review_card("⚡", t["quick_review"], t["quick_desc"], word_count_text(learned_count, app_state["lang"]), lambda _: start_session("ALL", "fast"), "#5C55C8", learned_count < 4),
-            review_card("🔤", t["word_building"], t["word_building_desc"], word_count_text(10, app_state["lang"]), lambda _: start_session("ALL", "word_building"), "#B45F06", learned_count < 4),
-            review_card("❓", t["true_false_short"], t["quiz_desc"], word_count_text(15, app_state["lang"]), lambda _: start_session("ALL", "true_false"), "#16847A", learned_count < 4),
+            review_card("⚡", t["quick_review"], t["quick_desc"], basic_review_status, lambda _: start_session("ALL", "fast"), "#5C55C8", basic_review_locked),
+            review_card("🔤", t["word_building"], t["word_building_desc"], basic_review_status, lambda _: start_session("ALL", "word_building"), "#B45F06", basic_review_locked),
+            review_card("❓", t["true_false_short"], t["quiz_desc"], basic_review_status, lambda _: start_session("ALL", "true_false"), "#16847A", basic_review_locked),
         ]
         page.add(
             ft.Container(height=4), ft.Text(t["review_title"], size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["review_subtitle"], size=12, color=MUTED),
@@ -1003,9 +1034,23 @@ def main(page: ft.Page):
         txt = UI_TEXT[app_state["lang"]]
 
         def do_reset():
+            fresh_word_stats = {}
             for w in all_words:
                 w["learned"] = False
-                app_state["stats"]["words"][str(w["id"])]["learned"] = False
+                fresh_word_stats[str(w["id"])] = {
+                    "learned": False,
+                    "correct_answers": 0,
+                    "wrong_answers": 0,
+                    "last_seen": "1970-01-01",
+                }
+            app_state["stats"].clear()
+            app_state["stats"].update({
+                "lang": app_state["lang"],
+                "streak_days": 0,
+                "last_login": "",
+                "words": fresh_word_stats,
+            })
+            app_state["last_category"] = None
             save_stats(app_state["stats"])
             show_main_menu()
 
@@ -1145,6 +1190,7 @@ def main(page: ft.Page):
         app_state["selected_letter_indices"] = []
         app_state["fast_timer_value"] = 1.0
         app_state["fast_timer_bar"] = None
+        app_state["fast_result_state"] = None
         today = datetime.date.today()
         today_iso = today.isoformat()
 
@@ -1441,6 +1487,14 @@ def main(page: ft.Page):
         built = "".join(app_state["letter_bank"][i] for i in selected)
         target_length = len(answer_letters(word_build_target(word)))
         display = " ".join(char.upper() for char in built) if built else " ".join("_" for _ in range(target_length))
+        if app_state["feedback_active"]:
+            answer_bgcolor = "#EAF8EF" if app_state["feedback_correct"] else "#FDECEC"
+            answer_border_color = "#B7E4C7" if app_state["feedback_correct"] else "#F3B7B7"
+            answer_color = "#157347" if app_state["feedback_correct"] else "#B42318"
+        else:
+            answer_bgcolor = "#EEF2FF"
+            answer_border_color = "#C7D2FE"
+            answer_color = INDIGO
         bank = []
         for index, letter in enumerate(app_state["letter_bank"]):
             bank.append(ft.ElevatedButton(
@@ -1456,14 +1510,29 @@ def main(page: ft.Page):
             ft.Container(height=8),
             ft.Text(app_state["prompt_word"], size=31, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
             ft.Text(t["build_word"], size=13, color=MUTED),
-            ft.Container(content=ft.Text(display, size=24, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER), padding=18, bgcolor="#EEF2FF", border_radius=16),
+            ft.Container(
+                content=ft.Text(display, size=24, weight=ft.FontWeight.BOLD, color=answer_color, text_align=ft.TextAlign.CENTER),
+                padding=18,
+                bgcolor=answer_bgcolor,
+                border=ft.Border.all(1, answer_border_color),
+                border_radius=16,
+            ),
             ft.Row(bank, wrap=True, spacing=8, run_spacing=8, alignment=ft.MainAxisAlignment.CENTER),
             ft.Row([
                 ft.OutlinedButton(t["backspace"], icon=ft.Icons.BACKSPACE_OUTLINED, on_click=lambda _: remove_letter(), disabled=not selected or app_state["feedback_active"]),
                 ft.OutlinedButton(t["clear"], icon=ft.Icons.CLEAR_ALL, on_click=lambda _: clear_letters(), disabled=not selected or app_state["feedback_active"]),
             ], alignment=ft.MainAxisAlignment.CENTER),
-            ft.ElevatedButton(t["check"], icon=ft.Icons.CHECK, on_click=lambda _: submit_answer(built, word), disabled=len(selected) != target_length or app_state["feedback_active"], bgcolor=INDIGO, color="white", height=50),
-        ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=14, scroll=ft.ScrollMode.HIDDEN, expand=True)
+            ft.ElevatedButton(
+                t["check"],
+                icon=ft.Icons.CHECK,
+                on_click=lambda _: submit_answer(built, word),
+                disabled=not selected,
+                visible=not app_state["feedback_active"],
+                bgcolor=INDIGO,
+                color="white",
+                height=50,
+            ),
+        ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=14, scroll=ft.ScrollMode.AUTO, expand=True)
 
     def show_quiz_card():
         if app_state["index"] >= len(app_state["current_batch"]) or (
@@ -1493,7 +1562,10 @@ def main(page: ft.Page):
             else:
                 title = phase_text()["quiz"]
         if app_state["feedback_active"]:
-            body.controls.append(feedback_panel(word))
+            if mode == "word_building":
+                body.controls.insert(4, feedback_panel(word))
+            else:
+                body.controls.append(feedback_panel(word))
             bottom = None if mode == "fast" else ft.ElevatedButton(
                 phase_text()["continue_answer"],
                 icon=ft.Icons.ARROW_FORWARD,
@@ -1504,7 +1576,7 @@ def main(page: ft.Page):
             )
         else:
             bottom = None
-            if mode == "review":
+            if mode in ("review", "word_building"):
                 body.controls.append(ft.TextButton(UI_TEXT[app_state["lang"]]["skip"], on_click=lambda _: submit_answer("__skip__", word)))
         view = exercise_shell(body, bottom, title)
         set_session_view(view)
@@ -1603,9 +1675,87 @@ def main(page: ft.Page):
     def show_results():
         record_completed_session()
         t = phase_text()
+        mode = app_state["mode"]
         answered = app_state.get("session_answered", 0)
         correct = app_state.get("session_correct", 0)
+        newly_learned = app_state.get("session_new_learned", 0)
         accuracy = round(correct / answered * 100) if answered else 0
+
+        if mode == "fast":
+            fast_result = app_state.get("fast_result_state")
+            if fast_result is None:
+                score = app_state.get("score", correct)
+                best_exists = "fast_best_score" in app_state["stats"]
+                previous_best = max(0, int(app_state["stats"].get("fast_best_score", 0) or 0))
+                if not best_exists:
+                    best_score = score
+                    message = t["fast_first_score"]
+                elif score > previous_best:
+                    best_score = score
+                    message = t["fast_new_record"]
+                elif score == previous_best:
+                    best_score = previous_best
+                    message = t["fast_record_tied"]
+                else:
+                    best_score = previous_best
+                    message = t["fast_to_record"].format(previous_best - score)
+                if not best_exists or best_score != previous_best:
+                    app_state["stats"]["fast_best_score"] = best_score
+                    save_stats(app_state["stats"])
+                fast_result = {"score": score, "best_score": best_score, "message": message}
+                app_state["fast_result_state"] = fast_result
+
+            emoji = "⚡"
+            result_title = t["fast_result_title"]
+            result_hint = fast_result["message"]
+            result_card_controls = [
+                ft.Text(t["fast_score"], size=12, weight=ft.FontWeight.BOLD, color=MUTED),
+                ft.Text(str(fast_result["score"]), size=42, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                ft.Text(f"{t['accuracy']}: {accuracy}%", size=15, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Divider(color=BORDER),
+                ft.Text(f"{t['fast_best_score']}: {fast_result['best_score']}", size=14, color=MUTED),
+                ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
+            ]
+            result_actions = [
+                ft.ElevatedButton(t["try_again"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session("ALL", "fast"), bgcolor=INDIGO, color="white", height=54),
+                ft.OutlinedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, height=50),
+            ]
+        elif mode == "new":
+            all_learned = answered > 0 and newly_learned == answered
+            emoji = "✨" if all_learned else "🌱"
+            result_title = t["learning_result_title"]
+            result_hint = t["learning_result_all"] if all_learned else t["learning_result_retry"]
+            result_card_controls = [
+                ft.Text(str(newly_learned), size=42, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                ft.Text(t["newly_learned"], size=14, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Divider(color=BORDER),
+                ft.Text(f"{correct} / {answered} · {t['accuracy'].lower()}: {accuracy}%", size=14, color=MUTED),
+                ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
+            ]
+            result_actions = [
+                ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
+            ]
+        else:
+            if accuracy >= 90:
+                emoji, title_key, hint_key = "🎉", "result_excellent_title", "result_excellent_hint"
+            elif accuracy >= 70:
+                emoji, title_key, hint_key = "✨", "result_good_title", "result_good_hint"
+            elif accuracy >= 40:
+                emoji, title_key, hint_key = "🌱", "result_practice_title", "result_practice_hint"
+            else:
+                emoji, title_key, hint_key = "🔄", "result_attention_title", "result_attention_hint"
+            result_title = t[title_key]
+            result_hint = t[hint_key]
+            result_card_controls = [
+                ft.Text(f"{correct} / {answered}", size=34, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                ft.Text(f"{t['accuracy']}: {accuracy}%", size=16, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
+                ft.Divider(color=BORDER),
+                ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
+            ]
+            result_actions = [
+                ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
+            ]
+
         result_view = ft.View(
             route="/results",
             controls=[ft.SafeArea(
@@ -1613,17 +1763,12 @@ def main(page: ft.Page):
                     content=ft.Column([
                         ft.Container(expand=True),
                         ft.Text(t["results"].upper(), size=12, weight=ft.FontWeight.BOLD, color=MUTED, text_align=ft.TextAlign.CENTER),
-                        ft.Text("🎉", size=72, text_align=ft.TextAlign.CENTER),
-                        ft.Text(t["great_job"], size=29, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
-                        rounded_card(ft.Column([
-                            ft.Text(f"{correct} / {answered}", size=34, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
-                            ft.Text(f"{t['accuracy']}: {accuracy}%", size=16, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
-                            ft.Divider(color=BORDER),
-                            ft.Text(f"{t['newly_learned']}: {app_state.get('session_new_learned', 0)}", size=14, color=MUTED),
-                            ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
-                        ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=10)),
+                        ft.Text(emoji, size=72, text_align=ft.TextAlign.CENTER),
+                        ft.Text(result_title, size=28, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
+                        ft.Text(result_hint, size=14, color=MUTED, text_align=ft.TextAlign.CENTER),
+                        rounded_card(ft.Column(result_card_controls, horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=10)),
                         ft.Container(expand=True),
-                        ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
+                        *result_actions,
                     ], horizontal_alignment=ft.CrossAxisAlignment.STRETCH, spacing=16, expand=True),
                     padding=ft.Padding.all(22),
                     expand=True,
