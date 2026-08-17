@@ -1,0 +1,364 @@
+[
+  {
+    "ids": [
+      3,
+      8
+    ],
+    "gag_forms": "o | o",
+    "ru_translations": "он/она/оно | тот",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      14,
+      615
+    ],
+    "gag_forms": "neçin | neçin",
+    "ru_translations": "почему | зачем",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      23,
+      130
+    ],
+    "gag_forms": "islää | islää / ey",
+    "ru_translations": "хорошо | хороший",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      24,
+      131
+    ],
+    "gag_forms": "bet | bet / fena",
+    "ru_translations": "плохо | плохой",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      30,
+      31
+    ],
+    "gag_forms": "yaarın / sabaa | sabaa",
+    "ru_translations": "завтра | утро",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      54,
+      567
+    ],
+    "gag_forms": "üz | üz / surat",
+    "ru_translations": "сто | лицо",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      103,
+      663
+    ],
+    "gag_forms": "bilmää | becermää / bilmää",
+    "ru_translations": "знать | уметь",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      105,
+      664
+    ],
+    "gag_forms": "istemää | istemää / dilemää",
+    "ru_translations": "хотеть | желать",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      106,
+      663
+    ],
+    "gag_forms": "becermää | becermää / bilmää",
+    "ru_translations": "мочь (уметь) | уметь",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      113,
+      329
+    ],
+    "gag_forms": "işitmää | işitmää",
+    "ru_translations": "слышать | слушать",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      139,
+      148
+    ],
+    "gag_forms": "incä / yufka | yufka",
+    "ru_translations": "тонкий | слабый",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      142,
+      647
+    ],
+    "gag_forms": "sıcak | sıcak",
+    "ru_translations": "горячий | жара",
+    "reason": "Одинаковая нормализованная гагаузская форма",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      142,
+      647,
+      649
+    ],
+    "gag_forms": "sıcak | sıcak | ılı / sıcak",
+    "ru_translations": "горячий | жара | тёплый",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      143,
+      648
+    ],
+    "gag_forms": "suuk | suuk",
+    "ru_translations": "холодный | холод",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      165,
+      315
+    ],
+    "gag_forms": "ay | ay",
+    "ru_translations": "луна | месяц",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      167,
+      209
+    ],
+    "gag_forms": "er | er",
+    "ru_translations": "земля | пол",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      168,
+      714
+    ],
+    "gag_forms": "ateş | yangın / ateş",
+    "ru_translations": "огонь | температура",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      229,
+      438
+    ],
+    "gag_forms": "saat | saat",
+    "ru_translations": "часы | час",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      257,
+      709
+    ],
+    "gag_forms": "biyaz | biyaz",
+    "ru_translations": "белый | седой",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      266,
+      617
+    ],
+    "gag_forms": "mor | mor",
+    "ru_translations": "фиолетовый | коричневый",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      268,
+      708
+    ],
+    "gag_forms": "alaca | renkli / alaca",
+    "ru_translations": "пестрый | разноцветный",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      290,
+      313
+    ],
+    "gag_forms": "panayır / pazar | pazar",
+    "ru_translations": "рынок | воскресенье",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      332,
+      365
+    ],
+    "gag_forms": "oynamaa | oynamaa",
+    "ru_translations": "играть | танцевать",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      359,
+      628
+    ],
+    "gag_forms": "laf | lafetmäk / laf",
+    "ru_translations": "слово | разговор",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      392,
+      659
+    ],
+    "gag_forms": "dooru | dooru / düz",
+    "ru_translations": "верный | прямой",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      415,
+      675
+    ],
+    "gag_forms": "peşkir | peşkir",
+    "ru_translations": "салфетка | полотенце",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      454,
+      600,
+      716
+    ],
+    "gag_forms": "acı | küsü / acı | acı / sancı",
+    "ru_translations": "горький | обида | боль",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  },
+  {
+    "ids": [
+      582,
+      583
+    ],
+    "gag_forms": "unuka / torun | unuka / torun",
+    "ru_translations": "внук | внучка",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      592,
+      738
+    ],
+    "gag_forms": "nota | nota",
+    "ru_translations": "оценка | нота",
+    "reason": "Одинаковая нормализованная гагаузская форма; Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "high"
+  },
+  {
+    "ids": [
+      613,
+      614
+    ],
+    "gag_forms": "angı / netürlü | angı / ani",
+    "ru_translations": "какой | который",
+    "reason": "Совпадающий вариант внутри записи через '/'",
+    "recommendation": "Не объединять автоматически; сверить значения и варианты с носителем языка и словарём.",
+    "source": "words_data.json; slova_1-5_kl.pdf where matched",
+    "confidence": "medium"
+  }
+]

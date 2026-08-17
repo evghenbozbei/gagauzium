@@ -1,0 +1,222 @@
+[
+  {
+    "id": 3,
+    "field": "ru",
+    "current_value": "он/она/оно",
+    "proposed_value": "он / она / оно",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 3,
+    "field": "ro",
+    "current_value": "el/ea",
+    "proposed_value": "el / ea",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 6,
+    "field": "ro",
+    "current_value": "ei/ele",
+    "proposed_value": "ei / ele",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 94,
+    "field": "ro",
+    "current_value": "supă/ciorbă",
+    "proposed_value": "supă / ciorbă",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 153,
+    "field": "ro",
+    "current_value": "vechi/bătrân",
+    "proposed_value": "vechi / bătrân",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 297,
+    "field": "ro",
+    "current_value": "scurtă/geacă",
+    "proposed_value": "scurtă / geacă",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 299,
+    "field": "ro",
+    "current_value": "căciulă/șapcă",
+    "proposed_value": "căciulă / șapcă",
+    "reason": "Привести разделитель вариантов к единому формату ' / ' без изменения смысла.",
+    "source_name": "Правила рабочего задания",
+    "pdf_page": null,
+    "printed_page": null,
+    "confidence": "high"
+  },
+  {
+    "id": 59,
+    "field": "ru",
+    "current_value": "дочь/девочка",
+    "proposed_value": "девушка / девочка",
+    "reason": "Гагаузско-русская статья kız подтверждает значения 'девушка; девочка; девичий', но не 'дочь'.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 101,
+    "printed_page": 100,
+    "confidence": "high"
+  },
+  {
+    "id": 59,
+    "field": "ro",
+    "current_value": "fiică/fată",
+    "proposed_value": "fată / fetiță",
+    "reason": "Привести румынское значение к предложенному русскому значению; перевод требует отдельной проверки.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 101,
+    "printed_page": 100,
+    "confidence": "medium"
+  },
+  {
+    "id": 68,
+    "field": "gag",
+    "current_value": "kadına",
+    "proposed_value": "kadína",
+    "reason": "Орфография и ударение сверены с гагаузско-русской статьёй kadína — женщина; дама.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 90,
+    "printed_page": 89,
+    "confidence": "high"
+  },
+  {
+    "id": 206,
+    "field": "gag",
+    "current_value": "içer",
+    "proposed_value": "içer / oda",
+    "reason": "Русско-гагаузская статья 'комната' содержит оба варианта.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 235,
+    "printed_page": 234,
+    "confidence": "medium"
+  },
+  {
+    "id": 232,
+    "field": "gag",
+    "current_value": "kazan / kova",
+    "proposed_value": "kazan",
+    "reason": "В статье 'ведро' уверенно найден kazan; вариант kova в той же статье не подтверждён автоматической сверкой.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 198,
+    "printed_page": 197,
+    "confidence": "medium"
+  },
+  {
+    "id": 253,
+    "field": "gag",
+    "current_value": "bakan",
+    "proposed_value": "zaabit / başkan",
+    "reason": "Русско-гагаузская статья 'начальник' даёт zaabit, başkan.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 253,
+    "printed_page": 252,
+    "confidence": "high"
+  },
+  {
+    "id": 254,
+    "field": "gag",
+    "current_value": "daavacı",
+    "proposed_value": "daavacı / sud kesän",
+    "reason": "Добавлен второй вариант из статьи 'судья'; изменение не применять без проверки носителем.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 308,
+    "printed_page": 307,
+    "confidence": "medium"
+  },
+  {
+    "id": 329,
+    "field": "gag",
+    "current_value": "işitmää",
+    "proposed_value": "seslemää",
+    "reason": "Статья 'слушать' даёт seslemää; işitmää уже используется для 'слышать'.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 299,
+    "printed_page": 298,
+    "confidence": "high"
+  },
+  {
+    "id": 446,
+    "field": "gag",
+    "current_value": "çıbıtmaa",
+    "proposed_value": "kaybetmää",
+    "reason": "Статья 'терять' даёт kaybetmää. После изменения возникнет совпадение формы с ID 445, поэтому нужна ручная проверка структуры значений.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 311,
+    "printed_page": 310,
+    "confidence": "high"
+  },
+  {
+    "id": 602,
+    "field": "gag",
+    "current_value": "utanmak / ayıp",
+    "proposed_value": "rız / ayıp",
+    "reason": "В статье 'стыд' rız и ayıp являются более подходящими словарными единицами для существительного; utanmak выглядит глагольной формой.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 307,
+    "printed_page": 306,
+    "confidence": "medium"
+  },
+  {
+    "id": 607,
+    "field": "gag",
+    "current_value": "darsımak / özlemäk",
+    "proposed_value": "darsıklık / sıklet",
+    "reason": "В статье 'тоска' выбраны существительные darsıklık, sıklet вместо глагольных вариантов.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 313,
+    "printed_page": 312,
+    "confidence": "medium"
+  },
+  {
+    "id": 628,
+    "field": "gag",
+    "current_value": "lafetmäk / laf",
+    "proposed_value": "laf",
+    "reason": "Для существительного 'разговор' выбран существительный вариант из той же статьи; lafetmäk выглядит глагольной формой.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 287,
+    "printed_page": 286,
+    "confidence": "medium"
+  },
+  {
+    "id": 667,
+    "field": "gag",
+    "current_value": "açıklamak",
+    "proposed_value": "annatmaa",
+    "reason": "Статья 'объяснять' подтверждает annatmaa; текущая форма отличается от инфинитивного оформления базы и не найдена точно.",
+    "source_name": "slova_1-5_kl.pdf",
+    "pdf_page": 259,
+    "printed_page": 258,
+    "confidence": "medium"
+  }
+]

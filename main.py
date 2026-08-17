@@ -40,7 +40,9 @@ UI_TEXT = {
         "fast_review_fail": "Закончились жизни, повторите слова и попробуйте ещё",
         "statistics": "📊 Статистика",
         "stats_title": "СТАТИСТИКА ПРОФИЛЯ",
-        "hard_words": "Самые сложные слова (ошибок):",
+        "hard_words": "Слова, требующие внимания (ошибок):",
+        "stats_learned": "Изучено: {0} из {1}",
+        "no_errors": "Ошибок пока нет!",
         "skip": "Не знаю",
         "category_title": "Изучения и повторения по категориям",
         "true_false_btn": "Правда или Ложь",
@@ -84,7 +86,9 @@ UI_TEXT = {
         "fast_review_fail": "S-au terminat viețile, repetați cuvintele și încercați din nou",
         "statistics": "📊 Statistici",
         "stats_title": "STATISTICI PROFIL",
-        "hard_words": "Cele mai grele cuvinte (erori):",
+        "hard_words": "Cuvinte care necesită atenție (greșeli):",
+        "stats_learned": "Învățate: {0} din {1}",
+        "no_errors": "Nu există încă greșeli!",
         "skip": "Nu știu",
         "category_title": "Studiu și repetare pe categorii",
         "true_false_btn": "Adevărat sau Fals",
@@ -131,7 +135,10 @@ PHASE1_TEXT = {
         "back": "Назад", "words_learned": "слов изучено", "learn_new": "Учить новые слова",
         "words_remaining": "слов осталось", "start_learning": "Начать обучение",
         "difficult_words": "Сложные слова", "need_attention": "слов требуют внимания", "review_action": "Повторить",
+        "difficult_progress": "Закрепление: {0} из 2", "difficult_resolved": "Слово больше не требует внимания.",
         "learned_words": "Изученные слова", "view_words": "Посмотреть слова",
+        "category_statistics": "Статистика категории", "view_all_words": "Посмотреть все слова",
+        "category_words_title": "Слова категории",
         "review_title": "Повторение", "review_subtitle": "Закрепляйте слова короткими тренировками.",
         "daily_desc": "Подборка слов на сегодня.", "difficult_desc": "Повторите слова, в которых ошибались.",
         "quick_review": "Быстрое повторение", "quick_desc": "На скорость, с тремя жизнями.",
@@ -140,6 +147,7 @@ PHASE1_TEXT = {
         "review_mode_locked": "Откроется после изучения первой серии слов",
         "start_session": "Начать", "true_false_short": "Да / Нет", "no_difficult": "Пока нет сложных слов",
         "language": "Язык обучения", "russian": "Русский", "romanian": "Румынский",
+        "statistics_hint": "Общий прогресс и слова, которые требуют внимания.", "open_statistics": "Открыть статистику",
         "reset_progress": "Сброс прогресса", "reset_category_label": "Сбросить категорию",
         "select_category": "Выберите категорию", "reset_all_hint": "Будут удалены прогресс, статистика ответов и серия занятий.",
         "open_settings": "Открыть настройки", "all_words_learned": "Все слова изучены",
@@ -163,7 +171,7 @@ PHASE1_TEXT = {
         "check": "Проверить", "backspace": "Удалить", "clear": "Очистить",
         "what_mean": "Что это значит?",
         "previous_word": "Предыдущее слово",
-        "next_word": "Следующее слово", "repeat_learned": "Повторять изученные слова",
+        "next_word": "Следующее слово", "repeat_learned": "Закрепить изученные слова",
         "learning_new_words": "Изучение новых слов",
     },
     "RO": {
@@ -190,7 +198,10 @@ PHASE1_TEXT = {
         "back": "Înapoi", "words_learned": "cuvinte învățate", "learn_new": "Învață cuvinte noi",
         "words_remaining": "cuvinte rămase", "start_learning": "Începe învățarea",
         "difficult_words": "Cuvinte dificile", "need_attention": "cuvinte necesită atenție", "review_action": "Repetă",
+        "difficult_progress": "Consolidare: {0} din 2", "difficult_resolved": "Cuvântul nu mai necesită atenție.",
         "learned_words": "Cuvinte învățate", "view_words": "Vezi cuvintele",
+        "category_statistics": "Statisticile categoriei", "view_all_words": "Vezi toate cuvintele",
+        "category_words_title": "Cuvintele categoriei",
         "review_title": "Repetare", "review_subtitle": "Consolidează vocabularul prin sesiuni scurte.",
         "daily_desc": "Selecția de cuvinte pentru astăzi.", "difficult_desc": "Repetă cuvintele la care ai greșit.",
         "quick_review": "Repetare rapidă", "quick_desc": "Contra cronometru, cu trei vieți.",
@@ -199,6 +210,7 @@ PHASE1_TEXT = {
         "review_mode_locked": "Se va deschide după învățarea primei serii de cuvinte",
         "start_session": "Începe", "true_false_short": "Da / Nu", "no_difficult": "Nu există încă cuvinte dificile",
         "language": "Limba de învățare", "russian": "Rusă", "romanian": "Română",
+        "statistics_hint": "Progresul general și cuvintele care necesită atenție.", "open_statistics": "Deschide statisticile",
         "reset_progress": "Resetarea progresului", "reset_category_label": "Resetează categoria",
         "select_category": "Alege categoria", "reset_all_hint": "Vor fi șterse progresul, statisticile răspunsurilor și seria de studiu.",
         "open_settings": "Deschide setările", "all_words_learned": "Toate cuvintele sunt învățate",
@@ -222,7 +234,7 @@ PHASE1_TEXT = {
         "check": "Verifică", "backspace": "Șterge", "clear": "Curăță",
         "what_mean": "Ce înseamnă?",
         "previous_word": "Cuvântul anterior",
-        "next_word": "Cuvântul următor", "repeat_learned": "Repetă cuvintele învățate",
+        "next_word": "Cuvântul următor", "repeat_learned": "Consolidează cuvintele învățate",
         "learning_new_words": "Învățarea cuvintelor noi",
     },
 }
@@ -277,6 +289,25 @@ def streak_days_text(count, lang):
         return f"{count} {noun} подряд"
     noun = "zi" if abs(int(count)) == 1 else "zile"
     return f"{count} {noun} la rând"
+
+
+def requires_attention(word_stats):
+    return bool(word_stats.get("needs_attention", word_stats.get("wrong_answers", 0) > 0))
+
+
+def update_word_performance(word_stats, is_correct, mode, today):
+    word_stats["last_seen"] = today.isoformat()
+    if is_correct:
+        word_stats["correct_answers"] = word_stats.get("correct_answers", 0) + 1
+        if mode == "difficult" and requires_attention(word_stats):
+            streak = max(0, int(word_stats.get("difficult_correct_streak", 0) or 0)) + 1
+            word_stats["difficult_correct_streak"] = min(streak, 2)
+            if streak >= 2:
+                word_stats["needs_attention"] = False
+    else:
+        word_stats["wrong_answers"] = word_stats.get("wrong_answers", 0) + 1
+        word_stats["needs_attention"] = True
+        word_stats["difficult_correct_streak"] = 0
 
 
 def load_data():
@@ -379,7 +410,9 @@ def merge_data_and_stats(all_words, stats):
                 "learned": False,
                 "correct_answers": 0,
                 "wrong_answers": 0,
-                "last_seen": "1970-01-01"
+                "last_seen": "1970-01-01",
+                "needs_attention": False,
+                "difficult_correct_streak": 0,
             }
             needs_save = True
         else:
@@ -388,6 +421,8 @@ def merge_data_and_stats(all_words, stats):
                 "correct_answers": 0,
                 "wrong_answers": 0,
                 "last_seen": "1970-01-01",
+                "needs_attention": stats["words"][w_id].get("wrong_answers", 0) > 0,
+                "difficult_correct_streak": 0,
             }
             for field, default in defaults.items():
                 if field not in stats["words"][w_id]:
@@ -470,7 +505,7 @@ def main(page: ft.Page):
         learned = sum(1 for w in words if w["learned"])
         difficult = sum(
             1 for w in words
-            if w["learned"] and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0
+            if w["learned"] and requires_attention(app_state["stats"]["words"].get(str(w["id"]), {}))
         )
         return learned, len(words), difficult
 
@@ -588,8 +623,9 @@ def main(page: ft.Page):
         words_with_errors = []
         for w in all_words:
             w_id = str(w["id"])
-            errors = app_state["stats"]["words"].get(w_id, {}).get("wrong_answers", 0)
-            if errors > 0:
+            word_stats = app_state["stats"]["words"].get(w_id, {})
+            errors = word_stats.get("wrong_answers", 0)
+            if w["learned"] and requires_attention(word_stats):
                 words_with_errors.append({"word": w, "errors": errors})
 
         words_with_errors.sort(key=lambda x: x["errors"], reverse=True)
@@ -611,15 +647,15 @@ def main(page: ft.Page):
 
         page.add(
             ft.Container(height=30),
-            ft.Row([ft.TextButton(content=ft.Text(txt["to_menu"], size=17, weight="bold"), on_click=lambda _: show_main_menu())], alignment=ft.MainAxisAlignment.START),
+            ft.Row([ft.TextButton(content=ft.Text(phase_text()["back"], size=17, weight="bold"), icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_settings())], alignment=ft.MainAxisAlignment.START),
             ft.Text(txt["stats_title"], size=25, weight="bold", color="#4A148C"),
             ft.Container(height=20),
-            ft.Text(f"Выучено: {learned_words} из {total_words}", size=18, weight="bold"),
+            ft.Text(txt["stats_learned"].format(learned_words, total_words), size=18, weight="bold"),
             ft.ProgressBar(value=progress_val, color="#4A148C", bgcolor="#eeeeee", width=380, height=20),
             ft.Container(height=30),
             ft.Text(txt["hard_words"], size=18, weight="bold", color="red"),
             ft.Container(height=10),
-            hard_words_column if top_hard else ft.Text("Ошибок пока нет!", color="grey"),
+            hard_words_column if top_hard else ft.Text(txt["no_errors"], color="grey"),
             ft.Container(height=40)
         )
         page.update()
@@ -888,9 +924,9 @@ def main(page: ft.Page):
                 ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, opacity=0.48 if difficult == 0 else 1.0, bgcolor="#D34A5B", color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             rounded_card(ft.Column([
-                ft.Text("📖 " + t["learned_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
-                ft.Text(learned_word_count_text(learned, app_state["lang"]), size=12, color=MUTED),
-                ft.ElevatedButton(t["view_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name, learned_only=True), disabled=learned == 0, opacity=0.48 if learned == 0 else 1.0, bgcolor="#16847A", color="white"),
+                ft.Text("📊 " + t["category_statistics"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, color=MUTED),
+                ft.ElevatedButton(t["view_all_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name), bgcolor="#16847A", color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             ft.Container(height=8),
         )
@@ -900,7 +936,7 @@ def main(page: ft.Page):
         prepare_main_screen("review", 2)
         t = phase_text()
         learned_count = sum(1 for w in all_words if w["learned"])
-        difficult_count = sum(1 for w in all_words if w["learned"] and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0)
+        difficult_count = sum(1 for w in all_words if w["learned"] and requires_attention(app_state["stats"]["words"].get(str(w["id"]), {})))
         today = datetime.date.today().isoformat()
         daily = app_state["stats"].get("daily_review") or {}
         daily_done = daily.get("date") == today and daily.get("index", 0) >= 20
@@ -979,6 +1015,11 @@ def main(page: ft.Page):
                 ], spacing=8),
             ], spacing=12)),
             rounded_card(ft.Column([
+                ft.Text(UI_TEXT[app_state["lang"]]["statistics"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                ft.Text(t["statistics_hint"], size=12, color=MUTED),
+                ft.ElevatedButton(t["open_statistics"], icon=ft.Icons.QUERY_STATS, on_click=lambda _: show_statistics(), bgcolor=INDIGO, color="white"),
+            ], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
+            rounded_card(ft.Column([
                 ft.Text(t["reset_progress"], size=17, weight=ft.FontWeight.BOLD, color="#B42318"),
                 category_select,
                 ft.OutlinedButton(t["reset_category_label"], icon=ft.Icons.RESTART_ALT, on_click=lambda _: reset_category(category_select.value) if category_select.value else None),
@@ -1042,6 +1083,8 @@ def main(page: ft.Page):
                     "correct_answers": 0,
                     "wrong_answers": 0,
                     "last_seen": "1970-01-01",
+                    "needs_attention": False,
+                    "difficult_correct_streak": 0,
                 }
             app_state["stats"].clear()
             app_state["stats"].update({
@@ -1060,41 +1103,62 @@ def main(page: ft.Page):
             on_confirm=do_reset,
         )
 
-    def show_word_list(category, learned_only=False):
+    def show_word_list(category):
         persist_last_category(category)
-        page.clean()
-        page.navigation_bar = None
+        prepare_main_screen("category_words", 1)
         page.scroll = None
-        page.bgcolor = BG
-        page.padding = 16
+        page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
         lang = app_state["lang"]
-        txt = UI_TEXT[lang]
-        words = [w for w in all_words if w["category"] == category and (w["learned"] or not learned_only)]
+        t = phase_text()
+        words = [w for w in all_words if w["category"] == category]
         cat_display = localized_category_name(category, lang)
+        learned = sum(1 for w in words if w["learned"])
+        total = len(words)
+        percentage = round(learned / total * 100) if total else 0
 
         rows = []
-        for i, w in enumerate(words):
+        for w in words:
             native_word = w.get(lang.lower(), w.get("ru", "---"))
+            is_learned = w["learned"]
             rows.append(
                 ft.Container(
                     content=ft.Row([
-                        ft.Container(content=ft.Text(native_word, size=16, weight="bold", color="black"), width=150),
-                        ft.Text(w["gag"], size=16, color="blue", italic=True, expand=True),
-                        ft.Text("✅" if w["learned"] else "⭕", size=14)
-                    ], alignment=ft.MainAxisAlignment.START),
-                    padding=12, bgcolor="#ffffff" if i % 2 == 0 else "#f9f9f9",
-                    border=ft.Border(bottom=ft.BorderSide(1, "#eeeeee"))
+                        ft.Column([
+                            ft.Text(native_word, size=16, weight=ft.FontWeight.BOLD, color=INK),
+                            ft.Text(w["gag"], size=14, color=INDIGO, italic=True),
+                        ], spacing=2, expand=True),
+                        ft.Icon(
+                            ft.Icons.CHECK_CIRCLE if is_learned else ft.Icons.RADIO_BUTTON_UNCHECKED,
+                            size=25,
+                            color="#16847A" if is_learned else "#B3BAC5",
+                        ),
+                    ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
+                    padding=ft.Padding.symmetric(horizontal=15, vertical=13),
+                    bgcolor="#F5FBF8" if is_learned else CARD,
+                    border=ft.Border.all(1, "#B9E0D5" if is_learned else BORDER),
+                    border_radius=17,
                 )
             )
 
-        list_view = ft.ListView(controls=rows, expand=True, spacing=0, scroll=ft.ScrollMode.HIDDEN)
+        list_view = ft.ListView(
+            controls=rows,
+            expand=True,
+            spacing=8,
+            padding=ft.Padding.only(bottom=10),
+            scroll=ft.ScrollMode.HIDDEN,
+        )
 
         page.add(
-            ft.Container(height=30),
-            ft.Row([ft.TextButton(content=ft.Text(phase_text()["back"], size=17, weight="bold"), icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_category_detail(category))], alignment=ft.MainAxisAlignment.START),
-            ft.Container(height=10),
-            ft.Text(f"{txt['dictionary']}{cat_display}", size=20, weight="bold", color="black"),
-            ft.Container(height=10),
+            ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_category_detail(category))]),
+            ft.Text(t["category_words_title"], size=24, weight=ft.FontWeight.BOLD, color=INK),
+            ft.Text(cat_display, size=14, color=MUTED),
+            rounded_card(ft.Column([
+                ft.Row([
+                    ft.Text(learned_of_total_text(learned, total, lang), size=13, weight=ft.FontWeight.BOLD, color=INK),
+                    ft.Text(f"{percentage}%", size=13, weight=ft.FontWeight.BOLD, color=INDIGO),
+                ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                ft.ProgressBar(value=learned / total if total else 0, color="#16847A", bgcolor="#E8EAF2", height=9),
+            ], spacing=10), padding=15),
             list_view,
         )
         page.update()
@@ -1199,7 +1263,7 @@ def main(page: ft.Page):
                 w for w in all_words
                 if w["learned"]
                 and (category == "ALL" or w["category"] == category)
-                and app_state["stats"]["words"].get(str(w["id"]), {}).get("wrong_answers", 0) > 0
+                and requires_attention(app_state["stats"]["words"].get(str(w["id"]), {}))
             ]
             app_state["is_quiz"] = True
             app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=10 if category == "ALL" else 6)
@@ -1411,6 +1475,22 @@ def main(page: ft.Page):
                 ft.Text("✓ " + t["correct_answer"] if correct else "✕ " + t["incorrect_answer"], size=20, weight=ft.FontWeight.BOLD, color="#157347" if correct else "#B42318"),
                 ft.Text(f"{word['gag']} — {native}" if correct else f"{t['correct_was']}: {word['gag']} — {native}", size=14, color=INK),
             ]
+        if app_state["mode"] == "difficult" and correct:
+            word_stats = app_state["stats"]["words"].get(str(word["id"]), {})
+            if requires_attention(word_stats):
+                feedback_controls.append(ft.Text(
+                    t["difficult_progress"].format(word_stats.get("difficult_correct_streak", 0)),
+                    size=13,
+                    weight=ft.FontWeight.W_600,
+                    color="#157347",
+                ))
+            else:
+                feedback_controls.append(ft.Text(
+                    t["difficult_resolved"],
+                    size=13,
+                    weight=ft.FontWeight.W_600,
+                    color="#157347",
+                ))
         return ft.Container(
             content=ft.Column(feedback_controls, spacing=5),
             padding=16,
@@ -1635,13 +1715,12 @@ def main(page: ft.Page):
         if mode == "fast":
             app_state["question_id"] += 1
         stats = app_state["stats"]["words"][str(word["id"])]
-        stats["last_seen"] = datetime.date.today().isoformat()
+        update_word_performance(stats, is_correct, mode, datetime.date.today())
         app_state["session_answered"] += 1
         app_state["selected_answer"] = selected
         app_state["feedback_correct"] = is_correct
         app_state["feedback_active"] = True
         if is_correct:
-            stats["correct_answers"] = stats.get("correct_answers", 0) + 1
             app_state["session_correct"] += 1
             if mode in ("fast", "true_false"):
                 app_state["score"] = app_state.get("score", 0) + 1
@@ -1652,7 +1731,6 @@ def main(page: ft.Page):
             if mode == "daily":
                 app_state["stats"]["daily_review"]["correct_count"] = app_state["stats"]["daily_review"].get("correct_count", 0) + 1
         else:
-            stats["wrong_answers"] = stats.get("wrong_answers", 0) + 1
             if mode == "fast":
                 app_state["lives"] -= 1
         if mode == "daily":

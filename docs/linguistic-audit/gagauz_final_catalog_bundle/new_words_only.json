@@ -1,0 +1,2042 @@
+[
+  {
+    "id": 751,
+    "ru": "что-то",
+    "ro": "ceva",
+    "gag": "bişey",
+    "category": "Местоимения",
+    "level": "beginner",
+    "part_of_speech": [
+      "pronoun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 752,
+    "ru": "где-то",
+    "ro": "undeva",
+    "gag": "neredäsä",
+    "category": "Вопросы",
+    "level": "beginner",
+    "part_of_speech": [
+      "adverb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 753,
+    "ru": "когда-то",
+    "ro": "cândva",
+    "gag": "nezamansa",
+    "category": "Вопросы",
+    "level": "conversational",
+    "part_of_speech": [
+      "adverb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 754,
+    "ru": "привет",
+    "ro": "salut",
+    "gag": "seläm",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "interjection"
+    ],
+    "learned": false
+  },
+  {
+    "id": 755,
+    "ru": "помощь",
+    "ro": "ajutor",
+    "gag": "yardım / imdat",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 756,
+    "ru": "правда",
+    "ro": "adevăr",
+    "gag": "gerçek / dooruluk",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 757,
+    "ru": "ошибка",
+    "ro": "greșeală",
+    "gag": "yannışlık",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 758,
+    "ru": "причина",
+    "ro": "cauză",
+    "gag": "sebep",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 759,
+    "ru": "проблема",
+    "ro": "problemă",
+    "gag": "problem",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 760,
+    "ru": "дело",
+    "ro": "lucru / treabă",
+    "gag": "iş",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 761,
+    "ru": "часть",
+    "ro": "parte",
+    "gag": "pay / bölük",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 762,
+    "ru": "случай",
+    "ro": "caz",
+    "gag": "olay / oluş",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 763,
+    "ru": "порядок",
+    "ro": "ordine",
+    "gag": "tertip / tertiplik",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 764,
+    "ru": "разница",
+    "ro": "diferență",
+    "gag": "fark",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 765,
+    "ru": "смысл",
+    "ro": "sens",
+    "gag": "maana",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 766,
+    "ru": "цель",
+    "ro": "scop",
+    "gag": "neet",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 767,
+    "ru": "совет",
+    "ro": "sfat",
+    "gag": "nasaat",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 768,
+    "ru": "новость",
+    "ro": "știre",
+    "gag": "haber",
+    "category": "Базовые",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 769,
+    "ru": "адрес",
+    "ro": "adresă",
+    "gag": "adres",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 770,
+    "ru": "номер",
+    "ro": "număr",
+    "gag": "numer",
+    "category": "Базовые",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 771,
+    "ru": "полдень",
+    "ro": "amiază",
+    "gag": "üülen",
+    "category": "Время",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 772,
+    "ru": "полночь",
+    "ro": "miezul nopții",
+    "gag": "gecä yarısı",
+    "category": "Время",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 773,
+    "ru": "начало",
+    "ro": "început",
+    "gag": "başlantı",
+    "category": "Время",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 774,
+    "ru": "конец",
+    "ro": "sfârșit",
+    "gag": "son",
+    "category": "Время",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 775,
+    "ru": "сначала",
+    "ro": "mai întâi / la început",
+    "gag": "baştan",
+    "category": "Время",
+    "level": "beginner",
+    "part_of_speech": [
+      "adverb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 776,
+    "ru": "сразу",
+    "ro": "imediat",
+    "gag": "osaat / birdän-birä",
+    "category": "Время",
+    "level": "beginner",
+    "part_of_speech": [
+      "adverb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 777,
+    "ru": "недавно",
+    "ro": "recent",
+    "gag": "geçennerdä / temin",
+    "category": "Время",
+    "level": "conversational",
+    "part_of_speech": [
+      "adverb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 778,
+    "ru": "первый",
+    "ro": "primul",
+    "gag": "birinci",
+    "category": "Цифры",
+    "level": "beginner",
+    "part_of_speech": [
+      "numeral"
+    ],
+    "learned": false
+  },
+  {
+    "id": 779,
+    "ru": "половина",
+    "ro": "jumătate",
+    "gag": "yarı / yarım / buçuk",
+    "category": "Цифры",
+    "level": "beginner",
+    "part_of_speech": [
+      "numeral"
+    ],
+    "learned": false
+  },
+  {
+    "id": 780,
+    "ru": "сестра",
+    "ro": "soră",
+    "gag": "kızkardaş / ţaţi",
+    "category": "Семья",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 781,
+    "ru": "свекровь",
+    "ro": "soacră",
+    "gag": "kayınna",
+    "category": "Семья",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 782,
+    "ru": "близнецы",
+    "ro": "gemeni",
+    "gag": "ikiz",
+    "category": "Семья",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 783,
+    "ru": "макароны",
+    "ro": "macaroane",
+    "gag": "makarina",
+    "category": "Еда",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 784,
+    "ru": "майонез",
+    "ro": "maioneză",
+    "gag": "mayonez",
+    "category": "Еда",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 785,
+    "ru": "напиток",
+    "ro": "băutură",
+    "gag": "içki",
+    "category": "Еда",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 786,
+    "ru": "голод",
+    "ro": "foame",
+    "gag": "aaçlık / kıtlık",
+    "category": "Еда",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 787,
+    "ru": "закуска",
+    "ro": "gustare",
+    "gag": "mezä (içeceklerä)",
+    "category": "Еда",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 788,
+    "ru": "жить",
+    "ro": "a trăi",
+    "gag": "yaşamaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 789,
+    "ru": "оставаться",
+    "ro": "a rămâne",
+    "gag": "kalmaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 790,
+    "ru": "встречать",
+    "ro": "a întâmpina",
+    "gag": "karşılamaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 791,
+    "ru": "рассказывать",
+    "ro": "a povesti",
+    "gag": "annatmaa",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 792,
+    "ru": "выбирать",
+    "ro": "a alege",
+    "gag": "seçmää / ayırmaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 793,
+    "ru": "менять",
+    "ro": "a schimba",
+    "gag": "diiştirmää",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 794,
+    "ru": "носить",
+    "ro": "a purta",
+    "gag": "taşımaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 795,
+    "ru": "одеваться",
+    "ro": "a se îmbrăca",
+    "gag": "giiyinmää",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 796,
+    "ru": "болеть",
+    "ro": "a durea / a fi bolnav",
+    "gag": "acımaa / sızlamaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 797,
+    "ru": "чувствовать",
+    "ro": "a simți",
+    "gag": "duymaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 798,
+    "ru": "проверять",
+    "ro": "a verifica",
+    "gag": "kontrol etmää",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 799,
+    "ru": "останавливать",
+    "ro": "a opri",
+    "gag": "durgutmaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 800,
+    "ru": "переходить",
+    "ro": "a traversa",
+    "gag": "aykırlamaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 801,
+    "ru": "получать",
+    "ro": "a primi",
+    "gag": "kabletmää",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 802,
+    "ru": "решать",
+    "ro": "a decide / a rezolva",
+    "gag": "kararlamaa",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 803,
+    "ru": "поздравлять",
+    "ro": "a felicita",
+    "gag": "kutlamaa",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 804,
+    "ru": "встречаться",
+    "ro": "a se întâlni",
+    "gag": "buluşmaa",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 805,
+    "ru": "отдыхать",
+    "ro": "a se odihni",
+    "gag": "dinnenmää",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 806,
+    "ru": "дышать",
+    "ro": "a respira",
+    "gag": "solumaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 807,
+    "ru": "кашлять",
+    "ro": "a tuși",
+    "gag": "üüsürmää",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 808,
+    "ru": "плакать",
+    "ro": "a plânge",
+    "gag": "aalamaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 809,
+    "ru": "кричать",
+    "ro": "a striga",
+    "gag": "baarmaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 810,
+    "ru": "держать",
+    "ro": "a ține",
+    "gag": "tutmaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 811,
+    "ru": "класть",
+    "ro": "a pune",
+    "gag": "koymaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 812,
+    "ru": "поднимать",
+    "ro": "a ridica",
+    "gag": "kaldırmaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 813,
+    "ru": "опускать",
+    "ro": "a coborî",
+    "gag": "indirmää",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 814,
+    "ru": "резать",
+    "ro": "a tăia",
+    "gag": "kesmää / parçalamaa",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 815,
+    "ru": "одевать",
+    "ro": "a îmbrăca",
+    "gag": "giimää",
+    "category": "Глаголы",
+    "level": "beginner",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 816,
+    "ru": "раздеваться",
+    "ro": "a se dezbrăca",
+    "gag": "soyunmaa",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 817,
+    "ru": "торопиться",
+    "ro": "a se grăbi",
+    "gag": "alatlamaa",
+    "category": "Глаголы",
+    "level": "conversational",
+    "part_of_speech": [
+      "verb"
+    ],
+    "learned": false
+  },
+  {
+    "id": 818,
+    "ru": "свободный",
+    "ro": "liber",
+    "gag": "serbest",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 819,
+    "ru": "готовый",
+    "ro": "gata / pregătit",
+    "gag": "hazır",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 820,
+    "ru": "нужный",
+    "ro": "necesar",
+    "gag": "tecil / lääzımnı",
+    "category": "Прилагательные",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 821,
+    "ru": "близкий",
+    "ro": "apropiat",
+    "gag": "yakın",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 822,
+    "ru": "далёкий",
+    "ro": "îndepărtat",
+    "gag": "uzak / yırak",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 823,
+    "ru": "удобный",
+    "ro": "comod",
+    "gag": "yakışıklı",
+    "category": "Прилагательные",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 824,
+    "ru": "интересный",
+    "ro": "interesant",
+    "gag": "meraklı / interesli",
+    "category": "Прилагательные",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 825,
+    "ru": "полный",
+    "ro": "plin",
+    "gag": "dolu",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 826,
+    "ru": "пустой",
+    "ro": "gol",
+    "gag": "boş / kof",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 827,
+    "ru": "закрытый",
+    "ro": "închis",
+    "gag": "kapalı",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 828,
+    "ru": "главный",
+    "ro": "principal",
+    "gag": "baş",
+    "category": "Прилагательные",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 829,
+    "ru": "последний",
+    "ro": "ultimul",
+    "gag": "bitki",
+    "category": "Прилагательные",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 830,
+    "ru": "левый",
+    "ro": "stâng",
+    "gag": "sol",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 831,
+    "ru": "правый",
+    "ro": "drept",
+    "gag": "saa",
+    "category": "Прилагательные",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 832,
+    "ru": "местный",
+    "ro": "local",
+    "gag": "erli",
+    "category": "Прилагательные",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 833,
+    "ru": "локоть",
+    "ro": "cot",
+    "gag": "dirsek",
+    "category": "Анатомия",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 834,
+    "ru": "ладонь",
+    "ro": "palmă",
+    "gag": "auç",
+    "category": "Анатомия",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 835,
+    "ru": "пятка",
+    "ro": "călcâi",
+    "gag": "ökçä",
+    "category": "Анатомия",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 836,
+    "ru": "горло",
+    "ro": "gât",
+    "gag": "buaz",
+    "category": "Анатомия",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 837,
+    "ru": "бровь",
+    "ro": "sprânceană",
+    "gag": "kaş",
+    "category": "Анатомия",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 838,
+    "ru": "ресница",
+    "ro": "geană",
+    "gag": "kirpik",
+    "category": "Анатомия",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 839,
+    "ru": "кость",
+    "ro": "os",
+    "gag": "kemik",
+    "category": "Анатомия",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 840,
+    "ru": "мозг",
+    "ro": "creier",
+    "gag": "imik",
+    "category": "Анатомия",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 841,
+    "ru": "печень",
+    "ro": "ficat",
+    "gag": "ceer / kara ceer",
+    "category": "Анатомия",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 842,
+    "ru": "желудок",
+    "ro": "stomac",
+    "gag": "katı",
+    "category": "Анатомия",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 843,
+    "ru": "позвоночник",
+    "ro": "coloană vertebrală",
+    "gag": "bel kemii",
+    "category": "Анатомия",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 844,
+    "ru": "град",
+    "ro": "grindină",
+    "gag": "tolu",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 845,
+    "ru": "радуга",
+    "ro": "curcubeu",
+    "gag": "gök kuşaa",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 846,
+    "ru": "роса",
+    "ro": "rouă",
+    "gag": "çii",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 847,
+    "ru": "влажный",
+    "ro": "umed",
+    "gag": "nemni",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 848,
+    "ru": "ясный",
+    "ro": "senin / clar",
+    "gag": "belli",
+    "category": "Природа",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 849,
+    "ru": "север",
+    "ro": "nord",
+    "gag": "poyraz",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 850,
+    "ru": "юг",
+    "ro": "sud",
+    "gag": "üülen tarafı",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 851,
+    "ru": "восток",
+    "ro": "est",
+    "gag": "duu / günduusu",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 852,
+    "ru": "запад",
+    "ro": "vest",
+    "gag": "batı / günbatısı",
+    "category": "Природа",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 853,
+    "ru": "полка",
+    "ro": "raft",
+    "gag": "sergen / set",
+    "category": "Дом и Предметы",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 854,
+    "ru": "телефон",
+    "ro": "telefon",
+    "gag": "telefon",
+    "category": "Дом и Предметы",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 855,
+    "ru": "компьютер",
+    "ro": "calculator",
+    "gag": "kompyuter",
+    "category": "Дом и Предметы",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 856,
+    "ru": "балкон",
+    "ro": "balcon",
+    "gag": "balkon",
+    "category": "Дом и Предметы",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 857,
+    "ru": "гараж",
+    "ro": "garaj",
+    "gag": "garaj",
+    "category": "Дом и Предметы",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 858,
+    "ru": "переводчик",
+    "ro": "traducător",
+    "gag": "çevirici / talmaç",
+    "category": "Профессии",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 859,
+    "ru": "менеджер",
+    "ro": "manager",
+    "gag": "menecer",
+    "category": "Профессии",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 860,
+    "ru": "такси",
+    "ro": "taxi",
+    "gag": "taksi",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 861,
+    "ru": "билет",
+    "ro": "bilet",
+    "gag": "bilet",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 862,
+    "ru": "пассажир",
+    "ro": "pasager",
+    "gag": "yolcu / pasajir",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 863,
+    "ru": "перекрёсток",
+    "ro": "intersecție",
+    "gag": "çatırık",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 864,
+    "ru": "центр",
+    "ro": "centru",
+    "gag": "orta",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 865,
+    "ru": "гостиница",
+    "ro": "hotel",
+    "gag": "konak evi",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 866,
+    "ru": "почта",
+    "ro": "poștă",
+    "gag": "poşta",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 867,
+    "ru": "направление",
+    "ro": "direcție",
+    "gag": "uur / taraf",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 868,
+    "ru": "поворот",
+    "ro": "cotitură",
+    "gag": "dönemeç",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 869,
+    "ru": "вход",
+    "ro": "intrare",
+    "gag": "giriş",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 870,
+    "ru": "выход",
+    "ro": "ieșire",
+    "gag": "çıkış",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 871,
+    "ru": "тротуар",
+    "ro": "trotuar",
+    "gag": "trotuar",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 872,
+    "ru": "бензин",
+    "ro": "benzină",
+    "gag": "benzin",
+    "category": "Город и Транспорт",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 873,
+    "ru": "багаж",
+    "ro": "bagaj",
+    "gag": "göç",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 874,
+    "ru": "путешествие",
+    "ro": "călătorie",
+    "gag": "gezi / yolculuk",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 875,
+    "ru": "район",
+    "ro": "raion / zonă",
+    "gag": "dolay / bölgä / rayon",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 876,
+    "ru": "столица",
+    "ro": "capitală",
+    "gag": "baş kasaba",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 877,
+    "ru": "граница",
+    "ro": "graniță",
+    "gag": "sınır",
+    "category": "Город и Транспорт",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 878,
+    "ru": "анализ",
+    "ro": "analiză",
+    "gag": "analiz",
+    "category": "Здоровье и Медицина",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 879,
+    "ru": "аллергия",
+    "ro": "alergie",
+    "gag": "alergiya",
+    "category": "Здоровье и Медицина",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 880,
+    "ru": "инфекция",
+    "ro": "infecție",
+    "gag": "infekțiya",
+    "category": "Здоровье и Медицина",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 881,
+    "ru": "тошнота",
+    "ro": "greață",
+    "gag": "bulantı",
+    "category": "Здоровье и Медицина",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 882,
+    "ru": "здоровый",
+    "ro": "sănătos",
+    "gag": "dinç",
+    "category": "Здоровье и Медицина",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 883,
+    "ru": "стоматолог",
+    "ro": "stomatolog",
+    "gag": "stomatolog",
+    "category": "Здоровье и Медицина",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 884,
+    "ru": "дыхание",
+    "ro": "respirație",
+    "gag": "soluk / solumak",
+    "category": "Здоровье и Медицина",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 885,
+    "ru": "перелом",
+    "ro": "fractură",
+    "gag": "kırık / kırıntı",
+    "category": "Здоровье и Медицина",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 886,
+    "ru": "ботинки",
+    "ro": "ghete",
+    "gag": "çipiçi",
+    "category": "Одежда",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 887,
+    "ru": "туфли",
+    "ro": "pantofi",
+    "gag": "emeni",
+    "category": "Одежда",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 888,
+    "ru": "бельё",
+    "ro": "lenjerie",
+    "gag": "giisi / çamaşır",
+    "category": "Одежда",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 889,
+    "ru": "капюшон",
+    "ro": "glugă",
+    "gag": "gugla",
+    "category": "Одежда",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 890,
+    "ru": "воротник",
+    "ro": "guler",
+    "gag": "yaka",
+    "category": "Одежда",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 891,
+    "ru": "злой",
+    "ro": "rău / furios",
+    "gag": "üfkeli",
+    "category": "Чувства",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 892,
+    "ru": "сердитый",
+    "ro": "supărat",
+    "gag": "dargın",
+    "category": "Чувства",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 893,
+    "ru": "весёлый",
+    "ro": "vesel",
+    "gag": "şen",
+    "category": "Чувства",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 894,
+    "ru": "приятный",
+    "ro": "plăcut",
+    "gag": "hoş",
+    "category": "Чувства",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 895,
+    "ru": "настроение",
+    "ro": "dispoziție",
+    "gag": "kef",
+    "category": "Чувства",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 896,
+    "ru": "чувство",
+    "ro": "sentiment",
+    "gag": "duygu",
+    "category": "Чувства",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 897,
+    "ru": "тревога",
+    "ro": "neliniște / anxietate",
+    "gag": "poträ / kuşku",
+    "category": "Чувства",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 898,
+    "ru": "доверие",
+    "ro": "încredere",
+    "gag": "inan",
+    "category": "Чувства",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 899,
+    "ru": "класс",
+    "ro": "clasă",
+    "gag": "klas",
+    "category": "Школа и Наука",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 900,
+    "ru": "библиотека",
+    "ro": "bibliotecă",
+    "gag": "biblioteka",
+    "category": "Школа и Наука",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 901,
+    "ru": "предмет",
+    "ro": "materie / obiect",
+    "gag": "predmet",
+    "category": "Школа и Наука",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 902,
+    "ru": "задача",
+    "ro": "problemă / sarcină",
+    "gag": "daava",
+    "category": "Школа и Наука",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 903,
+    "ru": "правило",
+    "ro": "regulă",
+    "gag": "kural",
+    "category": "Школа и Наука",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 904,
+    "ru": "вопрос",
+    "ro": "întrebare",
+    "gag": "soruş",
+    "category": "Школа и Наука",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 905,
+    "ru": "словарь",
+    "ro": "dicționar",
+    "gag": "laflık / sözlük",
+    "category": "Школа и Наука",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 906,
+    "ru": "грамматика",
+    "ro": "gramatică",
+    "gag": "gramatika",
+    "category": "Школа и Наука",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 907,
+    "ru": "кухня",
+    "ro": "bucătărie",
+    "gag": "kufnä",
+    "category": "Кухня",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 908,
+    "ru": "солонка",
+    "ro": "solniță",
+    "gag": "tuzluk",
+    "category": "Кухня",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 909,
+    "ru": "посуда",
+    "ro": "veselă",
+    "gag": "kap",
+    "category": "Кухня",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 910,
+    "ru": "покупатель",
+    "ro": "cumpărător",
+    "gag": "müşteri",
+    "category": "Деньги и Торговля",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 911,
+    "ru": "счёт",
+    "ro": "cont / factură",
+    "gag": "hesap",
+    "category": "Деньги и Торговля",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 912,
+    "ru": "килограмм",
+    "ro": "kilogram",
+    "gag": "kila",
+    "category": "Деньги и Торговля",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 913,
+    "ru": "грамм",
+    "ro": "gram",
+    "gag": "gram",
+    "category": "Деньги и Торговля",
+    "level": "beginner",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 914,
+    "ru": "бесплатный",
+    "ro": "gratuit",
+    "gag": "parasız / ödeksiz / caba",
+    "category": "Деньги и Торговля",
+    "level": "beginner",
+    "part_of_speech": [
+      "adjective"
+    ],
+    "learned": false
+  },
+  {
+    "id": 915,
+    "ru": "долг",
+    "ro": "datorie / împrumut",
+    "gag": "ödünç",
+    "category": "Деньги и Торговля",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 916,
+    "ru": "театр",
+    "ro": "teatru",
+    "gag": "teatru",
+    "category": "Спорт и Искусство",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 917,
+    "ru": "стадион",
+    "ro": "stadion",
+    "gag": "stadion",
+    "category": "Спорт и Искусство",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 918,
+    "ru": "скрипка",
+    "ro": "vioară",
+    "gag": "kemençä",
+    "category": "Спорт и Искусство",
+    "level": "conversational",
+    "part_of_speech": [
+      "noun"
+    ],
+    "learned": false
+  },
+  {
+    "id": 919,
+    "ru": "только",
+    "ro": "numai / doar",
+    "gag": "sade / salt",
+    "category": "Союзы и Связки",
+    "level": "beginner",
+    "part_of_speech": [
+      "particle"
+    ],
+    "learned": false
+  },
+  {
+    "id": 920,
+    "ru": "чтобы",
+    "ro": "ca să",
+    "gag": "aniki",
+    "category": "Союзы и Связки",
+    "level": "beginner",
+    "part_of_speech": [
+      "conjunction"
+    ],
+    "learned": false
+  }
+]
