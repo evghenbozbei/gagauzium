@@ -168,6 +168,11 @@ PHASE1_TEXT = {
         "try_again": "Попробовать снова",
         "finish": "Завершить", "build_word": "Составьте слово на гагаузском",
         "word_building": "Составление слов", "word_building_desc": "Соберите слово из букв. Некоторые могут быть лишними.",
+        "matching_pairs": "Найди пары", "matching_pairs_desc": "Соедините слова с правильными переводами.",
+        "matching_instruction": "Выберите слово слева и его перевод справа.",
+        "matching_round_complete": "Все пары найдены!",
+        "mega_review": "Большое повторение", "mega_review_desc": "Смешанная тренировка со всеми видами упражнений.",
+        "mega_review_locked": "Откроется после изучения двух серий слов",
         "check": "Проверить", "backspace": "Удалить", "clear": "Очистить",
         "what_mean": "Что это значит?",
         "previous_word": "Предыдущее слово",
@@ -231,6 +236,11 @@ PHASE1_TEXT = {
         "try_again": "Încearcă din nou",
         "finish": "Finalizează", "build_word": "Construiește cuvântul găgăuz",
         "word_building": "Construirea cuvintelor", "word_building_desc": "Construiește cuvântul din litere. Unele pot fi în plus.",
+        "matching_pairs": "Găsește perechile", "matching_pairs_desc": "Potrivește cuvintele cu traducerile corecte.",
+        "matching_instruction": "Alege cuvântul din stânga și traducerea lui din dreapta.",
+        "matching_round_complete": "Toate perechile au fost găsite!",
+        "mega_review": "Recapitulare completă", "mega_review_desc": "Antrenament mixt cu toate tipurile de exerciții.",
+        "mega_review_locked": "Se va deschide după învățarea a două serii de cuvinte",
         "check": "Verifică", "backspace": "Șterge", "clear": "Curăță",
         "what_mean": "Ce înseamnă?",
         "previous_word": "Cuvântul anterior",
@@ -454,6 +464,7 @@ def main(page: ft.Page):
         "index": 0,
         "is_quiz": False,
         "mode": "new",
+        "session_mode": "new",
         "current_options": [],
         "option_buttons": {},
         "feedback_text": "",
@@ -474,6 +485,10 @@ def main(page: ft.Page):
         "learning_batch_viewed": False,
         "letter_bank": [],
         "selected_letter_indices": [],
+        "matching_left_id": None,
+        "matching_right_id": None,
+        "matching_matched_ids": [],
+        "matching_wrong_pair": None,
         "fast_timer_value": 1.0,
         "fast_timer_bar": None,
         "stats": user_stats
@@ -568,17 +583,66 @@ def main(page: ft.Page):
             on_change=on_nav_change,
         )
 
+    def clear_navigation_view():
+        """Return rendering to the root view before building a regular screen."""
+        while len(page.views) > 1:
+            page.views.pop()
+        page.on_view_pop = None
+        app_state["system_back_action"] = None
+
+    def handle_system_back(e):
+        """Run the same navigation as the visible screen's Back button."""
+        if len(page.views) > 1 and e.view is not None and e.view in page.views:
+            page.views.remove(e.view)
+        elif len(page.views) > 1:
+            page.views.pop()
+
+        back_action = app_state.get("system_back_action")
+        app_state["system_back_action"] = None
+        page.on_view_pop = None
+        if back_action:
+            back_action()
+        else:
+            show_home()
+
+    def present_navigation_view(route, back_action):
+        """Make an internal screen respond to Android's system Back gesture."""
+        view = ft.View(
+            route=route,
+            controls=list(page.controls),
+            navigation_bar=page.navigation_bar,
+            bgcolor=page.bgcolor,
+            padding=page.padding,
+            scroll=page.scroll,
+            vertical_alignment=page.vertical_alignment,
+            horizontal_alignment=page.horizontal_alignment,
+            spacing=page.spacing,
+            can_pop=True,
+        )
+        page.controls.clear()
+        page.navigation_bar = None
+        while len(page.views) > 1:
+            page.views.pop()
+        page.views.append(view)
+        app_state["system_back_action"] = back_action
+        page.on_view_pop = handle_system_back
+
+    def stage_page_controls(*controls):
+        """Build a screen without sending intermediate frames to the client."""
+        page.controls.extend(controls)
+
     def prepare_main_screen(screen, nav_index, add_header=True):
         app_state["question_id"] = -1
         app_state["current_screen"] = screen
-        page.clean()
+        clear_navigation_view()
+        page.controls.clear()
         page.scroll = ft.ScrollMode.HIDDEN
         page.bgcolor = BG
         page.padding = ft.Padding.only(left=16, right=16, top=14, bottom=18)
         page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
         set_bottom_navigation(nav_index)
         if add_header:
-            page.add(ft.SafeArea(
+            stage_page_controls(ft.SafeArea(
                 content=app_header(),
                 avoid_intrusions_bottom=False,
                 minimum_padding=ft.Padding.only(top=14),
@@ -610,7 +674,8 @@ def main(page: ft.Page):
         return current
 
     def show_statistics():
-        page.clean()
+        clear_navigation_view()
+        page.controls.clear()
         page.scroll = ft.ScrollMode.HIDDEN
         page.bgcolor = "#F3E5F5"
         lang = app_state["lang"]
@@ -645,7 +710,7 @@ def main(page: ft.Page):
                 )
             )
 
-        page.add(
+        stage_page_controls(
             ft.Container(height=30),
             ft.Row([ft.TextButton(content=ft.Text(phase_text()["back"], size=17, weight="bold"), icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_settings())], alignment=ft.MainAxisAlignment.START),
             ft.Text(txt["stats_title"], size=25, weight="bold", color="#4A148C"),
@@ -658,15 +723,17 @@ def main(page: ft.Page):
             hard_words_column if top_hard else ft.Text(txt["no_errors"], color="grey"),
             ft.Container(height=40)
         )
+        present_navigation_view("/statistics", show_settings)
         page.update()
 
     def show_language_selector():
-        page.clean()
+        clear_navigation_view()
+        page.controls.clear()
         page.navigation_bar = None
         page.scroll = None
         page.bgcolor = BG
         page.padding = 0
-        page.add(ft.SafeArea(
+        stage_page_controls(ft.SafeArea(
             content=ft.Container(
                 content=ft.Column([
                     ft.Container(height=80),
@@ -827,9 +894,9 @@ def main(page: ft.Page):
 
         learning_card = rounded_card(continue_content)
         if learned_count == 0:
-            page.add(ft.Container(height=4), progress_card, learning_card, daily_card, streak_card, ft.Container(height=8))
+            stage_page_controls(ft.Container(height=4), progress_card, learning_card, daily_card, streak_card, ft.Container(height=8))
         else:
-            page.add(ft.Container(height=4), progress_card, daily_card, learning_card, streak_card, ft.Container(height=8))
+            stage_page_controls(ft.Container(height=4), progress_card, daily_card, learning_card, streak_card, ft.Container(height=8))
         page.update()
 
     def show_main_menu(reset_scroll=False):
@@ -873,7 +940,7 @@ def main(page: ft.Page):
             scroll=ft.ScrollMode.HIDDEN,
             expand=True,
         )
-        page.add(ft.SafeArea(
+        stage_page_controls(ft.SafeArea(
             content=ft.Container(
                 content=ft.Column([
                     app_header(),
@@ -893,6 +960,7 @@ def main(page: ft.Page):
             avoid_intrusions_bottom=False,
             expand=True,
         ))
+        present_navigation_view("/learn", show_home)
         page.update()
 
     def open_category_detail(source_name):
@@ -906,7 +974,7 @@ def main(page: ft.Page):
         learned, total, difficult = category_counts(source_name)
         remaining = total - learned
         meta = get_category_meta(source_name)
-        page.add(
+        stage_page_controls(
             ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_learn())], spacing=5),
             rounded_card(ft.Column([
                 ft.Row([category_visual(source_name, 82), ft.Column([ft.Text(localized_category_name(source_name, app_state["lang"]), size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(meta.get("gag") or "", size=14, color=INDIGO)], spacing=3, expand=True)], spacing=15),
@@ -930,6 +998,7 @@ def main(page: ft.Page):
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             ft.Container(height=8),
         )
+        present_navigation_view("/category", show_learn)
         page.update()
 
     def show_review_hub():
@@ -942,6 +1011,10 @@ def main(page: ft.Page):
         daily_done = daily.get("date") == today and daily.get("index", 0) >= 20
         basic_review_locked = learned_count < 4
         basic_review_status = t["review_mode_locked"] if basic_review_locked else None
+        matching_locked = len(matching_candidates()) < 4
+        matching_status = t["review_mode_locked"] if matching_locked else None
+        mega_review_locked = len(matching_candidates()) < 8
+        mega_review_status = t["mega_review_locked"] if mega_review_locked else None
 
         def review_card(icon, title, description, badge, action, color, disabled=False, completed=False):
             state_icon = ft.Icons.CHECK_CIRCLE_OUTLINE if completed else (ft.Icons.LOCK_OUTLINE if disabled else None)
@@ -987,12 +1060,15 @@ def main(page: ft.Page):
             review_card("⚡", t["quick_review"], t["quick_desc"], basic_review_status, lambda _: start_session("ALL", "fast"), "#5C55C8", basic_review_locked),
             review_card("🔤", t["word_building"], t["word_building_desc"], basic_review_status, lambda _: start_session("ALL", "word_building"), "#B45F06", basic_review_locked),
             review_card("❓", t["true_false_short"], t["quiz_desc"], basic_review_status, lambda _: start_session("ALL", "true_false"), "#16847A", basic_review_locked),
+            review_card("🧩", t["matching_pairs"], t["matching_pairs_desc"], matching_status, lambda _: start_session("ALL", "matching"), "#7B4AB5", matching_locked),
+            review_card("🌟", t["mega_review"], t["mega_review_desc"], mega_review_status, lambda _: start_session("ALL", "mega"), "#C05A17", mega_review_locked),
         ]
-        page.add(
+        stage_page_controls(
             ft.Container(height=4), ft.Text(t["review_title"], size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["review_subtitle"], size=12, color=MUTED),
             ft.ResponsiveRow(exercise_cards, columns=12, spacing=11, run_spacing=11),
             ft.Container(height=8),
         )
+        present_navigation_view("/review", show_home)
         page.update()
 
     def show_settings():
@@ -1004,7 +1080,7 @@ def main(page: ft.Page):
             options=[ft.DropdownOption(key=m["source_name"], text=localized_category_name(m["source_name"], app_state["lang"])) for m in categories],
             border_radius=14, expand=True,
         )
-        page.add(
+        stage_page_controls(
             ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_home()), ft.Container(expand=True)]),
             ft.Text(t["settings"], size=25, weight=ft.FontWeight.BOLD, color=INK),
             rounded_card(ft.Column([
@@ -1029,6 +1105,7 @@ def main(page: ft.Page):
             ], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             ft.Container(height=8),
         )
+        present_navigation_view("/settings", show_home)
         page.update()
 
     def show_confirm_dialog(title, message, on_confirm):
@@ -1148,7 +1225,7 @@ def main(page: ft.Page):
             scroll=ft.ScrollMode.HIDDEN,
         )
 
-        page.add(
+        stage_page_controls(
             ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_category_detail(category))]),
             ft.Text(t["category_words_title"], size=24, weight=ft.FontWeight.BOLD, color=INK),
             ft.Text(cat_display, size=14, color=MUTED),
@@ -1161,6 +1238,7 @@ def main(page: ft.Page):
             ], spacing=10), padding=15),
             list_view,
         )
+        present_navigation_view("/category/words", lambda: show_category_detail(category))
         page.update()
 
     def restore_exercise_origin():
@@ -1231,6 +1309,60 @@ def main(page: ft.Page):
             can_pop=True,
         )
 
+    def matching_candidates():
+        """Return learned words with unambiguous labels in both columns."""
+        candidates = []
+        seen_native = set()
+        seen_gagauz = set()
+        lang_key = app_state["lang"].lower()
+        for word in all_words:
+            if not word["learned"]:
+                continue
+            native = str(word.get(lang_key, word.get("ru", "---"))).strip()
+            gagauz = str(word.get("gag", "")).strip()
+            native_key = native.casefold()
+            gagauz_key = gagauz.casefold()
+            if not native or not gagauz or native_key in seen_native or gagauz_key in seen_gagauz:
+                continue
+            candidates.append(word)
+            seen_native.add(native_key)
+            seen_gagauz.add(gagauz_key)
+        return candidates
+
+    def build_mega_review_stages(today):
+        """Build a mixed session while avoiding repeated words when possible."""
+        candidates = matching_candidates()
+        if len(candidates) < 8:
+            return []
+        selected = weighted_sample(candidates, app_state["stats"], today, k=min(17, len(candidates)))
+        matching_words = selected[:8]
+        simple_words = list(selected[8:])
+
+        refill_pool = list(candidates)
+        random.shuffle(refill_pool)
+        while len(simple_words) < 9:
+            if not refill_pool:
+                refill_pool = list(candidates)
+                random.shuffle(refill_pool)
+            simple_words.append(refill_pool.pop())
+
+        simple_modes = ["review"] * 3 + ["word_building"] * 3 + ["true_false"] * 3
+        random.shuffle(simple_modes)
+        stages = [
+            {"mode": mode, "word": word}
+            for mode, word in zip(simple_modes, simple_words[:9])
+        ]
+        stages.extend([
+            {"mode": "matching", "words": matching_words[:4]},
+            {"mode": "matching", "words": matching_words[4:8]},
+        ])
+
+        for _ in range(12):
+            random.shuffle(stages)
+            if all(stages[index]["mode"] != stages[index + 1]["mode"] for index in range(len(stages) - 1)):
+                break
+        return stages
+
     def start_session(category, mode):
         if app_state.get("current_screen") != "exercise":
             app_state["exercise_return_screen"] = app_state.get("current_screen", "home")
@@ -1242,6 +1374,7 @@ def main(page: ft.Page):
         if category != "ALL":
             persist_last_category(category)
         app_state["mode"] = mode
+        app_state["session_mode"] = mode
         app_state["last_word_id"] = None
         app_state["session_completion_recorded"] = False
         app_state["feedback_active"] = False
@@ -1252,6 +1385,10 @@ def main(page: ft.Page):
         app_state["session_new_learned"] = 0
         app_state["learning_batch_viewed"] = False
         app_state["selected_letter_indices"] = []
+        app_state["matching_left_id"] = None
+        app_state["matching_right_id"] = None
+        app_state["matching_matched_ids"] = []
+        app_state["matching_wrong_pair"] = None
         app_state["fast_timer_value"] = 1.0
         app_state["fast_timer_bar"] = None
         app_state["fast_result_state"] = None
@@ -1287,6 +1424,22 @@ def main(page: ft.Page):
             words = [w for w in all_words if w["learned"]]
             app_state["is_quiz"] = True
             app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=10)
+            app_state["index"] = 0
+        elif mode == "mega":
+            app_state["is_quiz"] = True
+            app_state["score"] = 0
+            app_state["current_batch"] = build_mega_review_stages(today)
+            app_state["index"] = 0
+        elif mode == "matching":
+            words = matching_candidates()
+            usable_count = min(len(words), 32)
+            usable_count -= usable_count % 4
+            selected_words = weighted_sample(words, app_state["stats"], today, k=usable_count)
+            app_state["is_quiz"] = True
+            app_state["current_batch"] = [
+                selected_words[index:index + 4]
+                for index in range(0, len(selected_words), 4)
+            ]
             app_state["index"] = 0
         elif mode == "daily":
             app_state["is_quiz"] = True
@@ -1614,15 +1767,150 @@ def main(page: ft.Page):
             ),
         ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, spacing=14, scroll=ft.ScrollMode.AUTO, expand=True)
 
+    def matching_button(word, side):
+        lang_key = app_state["lang"].lower()
+        word_id = word["id"]
+        matched = word_id in app_state["matching_matched_ids"]
+        selected_id = app_state["matching_left_id"] if side == "left" else app_state["matching_right_id"]
+        wrong_pair = app_state.get("matching_wrong_pair")
+        is_wrong = bool(wrong_pair and word_id == wrong_pair[0 if side == "left" else 1])
+        is_selected = word_id == selected_id
+
+        if matched:
+            bgcolor, color, border_color = "#EAF8EF", "#157347", "#91D5A8"
+        elif is_wrong:
+            bgcolor, color, border_color = "#FDECEC", "#B42318", "#F3B7B7"
+        elif is_selected:
+            bgcolor, color, border_color = "#EEF2FF", INDIGO, "#AAB8FF"
+        else:
+            bgcolor, color, border_color = "#FFFFFF", INK, BORDER
+
+        label = word.get(lang_key, word.get("ru", "---")) if side == "left" else word["gag"]
+        return ft.ElevatedButton(
+            content=ft.Container(
+                content=ft.Text(
+                    ("✓ " if matched else "") + str(label),
+                    size=14,
+                    weight=ft.FontWeight.W_600,
+                    color=color,
+                    text_align=ft.TextAlign.CENTER,
+                    max_lines=2,
+                    overflow=ft.TextOverflow.ELLIPSIS,
+                ),
+                alignment=ft.Alignment.CENTER,
+            ),
+            height=66,
+            bgcolor=bgcolor,
+            elevation=0,
+            disabled=matched,
+            style=ft.ButtonStyle(
+                padding=ft.Padding.symmetric(horizontal=8, vertical=6),
+                side=ft.BorderSide(1, border_color),
+                shape=ft.RoundedRectangleBorder(radius=14),
+            ),
+            on_click=None if matched else lambda _, wid=word_id, column=side: select_matching_word(column, wid),
+        )
+
+    def show_matching_round():
+        if app_state["index"] >= len(app_state["current_batch"]):
+            show_results()
+            return
+        t = phase_text()
+        if app_state.get("session_mode") == "mega":
+            words = app_state["current_batch"][app_state["index"]]["words"]
+        else:
+            words = app_state["current_batch"][app_state["index"]]
+        right_words = list(words)
+        random_state = random.Random(f"{app_state['index']}:{','.join(str(w['id']) for w in words)}")
+        for _ in range(8):
+            random_state.shuffle(right_words)
+            if all(left["id"] != right["id"] for left, right in zip(words, right_words)):
+                break
+        else:
+            right_words = words[1:] + words[:1]
+        round_complete = len(app_state["matching_matched_ids"]) == len(words)
+
+        status = None
+        if round_complete:
+            status = ft.Text("✓ " + t["matching_round_complete"], size=15, weight=ft.FontWeight.BOLD, color="#157347", text_align=ft.TextAlign.CENTER)
+        elif app_state.get("matching_wrong_pair"):
+            status = ft.Text("✕ " + t["incorrect_answer"], size=15, weight=ft.FontWeight.BOLD, color="#B42318", text_align=ft.TextAlign.CENTER)
+
+        body_controls = [
+            ft.Container(height=4),
+            ft.Text(t["matching_instruction"], size=13, color=MUTED, text_align=ft.TextAlign.CENTER),
+        ]
+        if status is not None:
+            body_controls.append(status)
+        body_controls.append(ft.Row([
+            ft.Column([matching_button(word, "left") for word in words], spacing=10, expand=True, horizontal_alignment=ft.CrossAxisAlignment.STRETCH),
+            ft.Column([matching_button(word, "right") for word in right_words], spacing=10, expand=True, horizontal_alignment=ft.CrossAxisAlignment.STRETCH),
+        ], spacing=10, vertical_alignment=ft.CrossAxisAlignment.START, expand=True))
+
+        bottom = None
+        if round_complete:
+            bottom = ft.ElevatedButton(
+                t["continue_answer"] if app_state["index"] < len(app_state["current_batch"]) - 1 else t["finish"],
+                icon=ft.Icons.ARROW_FORWARD if app_state["index"] < len(app_state["current_batch"]) - 1 else ft.Icons.CHECK,
+                on_click=lambda _: continue_matching_round(),
+                bgcolor=INDIGO,
+                color="white",
+                height=52,
+            )
+        set_session_view(exercise_shell(ft.Column(body_controls, spacing=14, expand=True), bottom, t["matching_pairs"]))
+
+    def select_matching_word(side, word_id):
+        if word_id in app_state["matching_matched_ids"]:
+            return
+        app_state["matching_wrong_pair"] = None
+        app_state[f"matching_{side}_id"] = word_id
+        left_id = app_state["matching_left_id"]
+        right_id = app_state["matching_right_id"]
+        if left_id is not None and right_id is not None:
+            is_correct = left_id == right_id
+            word_stats = app_state["stats"]["words"][str(left_id)]
+            update_word_performance(word_stats, is_correct, "matching", datetime.date.today())
+            app_state["session_answered"] += 1
+            if is_correct:
+                app_state["session_correct"] += 1
+                app_state["matching_matched_ids"].append(left_id)
+            else:
+                app_state["matching_wrong_pair"] = (left_id, right_id)
+            app_state["matching_left_id"] = None
+            app_state["matching_right_id"] = None
+            save_stats(app_state["stats"])
+        show_matching_round()
+
+    def continue_matching_round():
+        app_state["matching_left_id"] = None
+        app_state["matching_right_id"] = None
+        app_state["matching_matched_ids"] = []
+        app_state["matching_wrong_pair"] = None
+        app_state["last_word_id"] = None
+        app_state["index"] += 1
+        show_quiz_card()
+
     def show_quiz_card():
+        session_mode = app_state.get("session_mode", app_state["mode"])
         if app_state["index"] >= len(app_state["current_batch"]) or (
-            app_state["mode"] == "fast"
+            session_mode == "fast"
             and app_state.get("lives", 0) <= 0
             and not app_state["feedback_active"]
         ):
             show_results()
             return
-        word = app_state["current_batch"][app_state["index"]]
+        if session_mode == "mega":
+            stage = app_state["current_batch"][app_state["index"]]
+            app_state["mode"] = stage["mode"]
+            if stage["mode"] == "matching":
+                show_matching_round()
+                return
+            word = stage["word"]
+        elif app_state["mode"] == "matching":
+            show_matching_round()
+            return
+        else:
+            word = app_state["current_batch"][app_state["index"]]
         is_new_question = app_state["last_word_id"] != word["id"]
         if is_new_question:
             prepare_question(word)
@@ -1753,7 +2041,7 @@ def main(page: ft.Page):
     def show_results():
         record_completed_session()
         t = phase_text()
-        mode = app_state["mode"]
+        mode = app_state.get("session_mode", app_state["mode"])
         answered = app_state.get("session_answered", 0)
         correct = app_state.get("session_correct", 0)
         newly_learned = app_state.get("session_new_learned", 0)
@@ -1867,13 +2155,14 @@ def main(page: ft.Page):
             show_language_selector()
 
     def show_welcome_screen():
-        page.clean()
+        clear_navigation_view()
+        page.controls.clear()
         page.navigation_bar = None
         page.scroll = None
         page.padding = 0
         page.bgcolor = BG
         page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
-        page.add(ft.SafeArea(
+        stage_page_controls(ft.SafeArea(
             content=ft.Container(
                 content=ft.Column([
                     ft.Container(height=64),
