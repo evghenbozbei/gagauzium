@@ -146,6 +146,7 @@ PHASE1_TEXT = {
         "quiz": "Тест", "quiz_desc": "Определите, верен ли перевод.",
         "review_mode_locked": "Откроется после изучения первой серии слов",
         "start_session": "Начать", "true_false_short": "Да / Нет", "no_difficult": "Пока нет сложных слов",
+        "true_false_correct_translation": "А правильный перевод — это:",
         "language": "Язык обучения", "russian": "Русский", "romanian": "Румынский",
         "statistics_hint": "Общий прогресс и слова, которые требуют внимания.", "open_statistics": "Открыть статистику",
         "reset_progress": "Сброс прогресса", "reset_category_label": "Сбросить категорию",
@@ -171,8 +172,9 @@ PHASE1_TEXT = {
         "matching_pairs": "Найди пары", "matching_pairs_desc": "Соедините слова с правильными переводами.",
         "matching_instruction": "Выберите слово слева и его перевод справа.",
         "matching_round_complete": "Все пары найдены!",
+        "matching_pairs_locked": "Откроется после изучения первых 5 слов",
         "mega_review": "Большое повторение", "mega_review_desc": "Смешанная тренировка со всеми видами упражнений.",
-        "mega_review_locked": "Откроется после изучения двух серий слов",
+        "mega_review_locked": "Откроется после изучения первых 10 слов",
         "check": "Проверить", "backspace": "Удалить", "clear": "Очистить",
         "what_mean": "Что это значит?",
         "previous_word": "Предыдущее слово",
@@ -214,6 +216,7 @@ PHASE1_TEXT = {
         "quiz": "Test", "quiz_desc": "Stabilește dacă traducerea este corectă.",
         "review_mode_locked": "Se va deschide după învățarea primei serii de cuvinte",
         "start_session": "Începe", "true_false_short": "Da / Nu", "no_difficult": "Nu există încă cuvinte dificile",
+        "true_false_correct_translation": "Iar traducerea corectă este:",
         "language": "Limba de învățare", "russian": "Rusă", "romanian": "Română",
         "statistics_hint": "Progresul general și cuvintele care necesită atenție.", "open_statistics": "Deschide statisticile",
         "reset_progress": "Resetarea progresului", "reset_category_label": "Resetează categoria",
@@ -239,8 +242,9 @@ PHASE1_TEXT = {
         "matching_pairs": "Găsește perechile", "matching_pairs_desc": "Potrivește cuvintele cu traducerile corecte.",
         "matching_instruction": "Alege cuvântul din stânga și traducerea lui din dreapta.",
         "matching_round_complete": "Toate perechile au fost găsite!",
+        "matching_pairs_locked": "Se va deschide după învățarea primelor 5 cuvinte",
         "mega_review": "Recapitulare completă", "mega_review_desc": "Antrenament mixt cu toate tipurile de exerciții.",
-        "mega_review_locked": "Se va deschide după învățarea a două serii de cuvinte",
+        "mega_review_locked": "Se va deschide după învățarea primelor 10 cuvinte",
         "check": "Verifică", "backspace": "Șterge", "clear": "Curăță",
         "what_mean": "Ce înseamnă?",
         "previous_word": "Cuvântul anterior",
@@ -483,12 +487,22 @@ def main(page: ft.Page):
         "session_answered": 0,
         "session_new_learned": 0,
         "learning_batch_viewed": False,
+        "learning_matching_started": False,
+        "learning_matching_words": [],
+        "learning_word_count": 0,
+        "learning_extra_count": 0,
+        "learning_extra_started": False,
+        "learning_extra_stages": [],
+        "learning_extra_index": 0,
+        "learning_wrong_ids": [],
         "letter_bank": [],
         "selected_letter_indices": [],
         "matching_left_id": None,
         "matching_right_id": None,
         "matching_matched_ids": [],
         "matching_wrong_pair": None,
+        "tf_followup_active": False,
+        "tf_followup_options": [],
         "fast_timer_value": 1.0,
         "fast_timer_bar": None,
         "stats": user_stats
@@ -1011,9 +1025,9 @@ def main(page: ft.Page):
         daily_done = daily.get("date") == today and daily.get("index", 0) >= 20
         basic_review_locked = learned_count < 4
         basic_review_status = t["review_mode_locked"] if basic_review_locked else None
-        matching_locked = len(matching_candidates()) < 4
-        matching_status = t["review_mode_locked"] if matching_locked else None
-        mega_review_locked = len(matching_candidates()) < 8
+        matching_locked = len(matching_candidates()) < 5
+        matching_status = t["matching_pairs_locked"] if matching_locked else None
+        mega_review_locked = len(matching_candidates()) < 10
         mega_review_status = t["mega_review_locked"] if mega_review_locked else None
 
         def review_card(icon, title, description, badge, action, color, disabled=False, completed=False):
@@ -1274,7 +1288,17 @@ def main(page: ft.Page):
     def exercise_shell(body, bottom=None, title=None):
         t = phase_text()
         total = max(1, len(app_state["current_batch"]))
-        current = min(total, app_state["index"] + 1)
+        if app_state.get("session_mode") == "new" and app_state.get("is_quiz", False):
+            word_count = len(app_state["current_batch"])
+            total = word_count + app_state.get("learning_extra_count", 0) + 1
+            if app_state.get("learning_matching_started", False):
+                current = total
+            elif app_state.get("learning_extra_started", False):
+                current = word_count + app_state.get("learning_extra_index", 0) + 1
+            else:
+                current = app_state["index"] + 1
+        else:
+            current = min(total, app_state["index"] + 1)
         if app_state["mode"] == "fast":
             progress_bar = ft.ProgressBar(value=app_state.get("fast_timer_value", 1.0), color="#D9363E", bgcolor="#F4D7DA", height=8)
             app_state["fast_timer_bar"] = progress_bar
@@ -1332,11 +1356,11 @@ def main(page: ft.Page):
     def build_mega_review_stages(today):
         """Build a mixed session while avoiding repeated words when possible."""
         candidates = matching_candidates()
-        if len(candidates) < 8:
+        if len(candidates) < 10:
             return []
-        selected = weighted_sample(candidates, app_state["stats"], today, k=min(17, len(candidates)))
-        matching_words = selected[:8]
-        simple_words = list(selected[8:])
+        selected = weighted_sample(candidates, app_state["stats"], today, k=min(19, len(candidates)))
+        matching_words = selected[:10]
+        simple_words = list(selected[10:])
 
         refill_pool = list(candidates)
         random.shuffle(refill_pool)
@@ -1353,8 +1377,8 @@ def main(page: ft.Page):
             for mode, word in zip(simple_modes, simple_words[:9])
         ]
         stages.extend([
-            {"mode": "matching", "words": matching_words[:4]},
-            {"mode": "matching", "words": matching_words[4:8]},
+            {"mode": "matching", "words": matching_words[:5]},
+            {"mode": "matching", "words": matching_words[5:10]},
         ])
 
         for _ in range(12):
@@ -1384,11 +1408,21 @@ def main(page: ft.Page):
         app_state["session_answered"] = 0
         app_state["session_new_learned"] = 0
         app_state["learning_batch_viewed"] = False
+        app_state["learning_matching_started"] = False
+        app_state["learning_matching_words"] = []
+        app_state["learning_word_count"] = 0
+        app_state["learning_extra_count"] = 0
+        app_state["learning_extra_started"] = False
+        app_state["learning_extra_stages"] = []
+        app_state["learning_extra_index"] = 0
+        app_state["learning_wrong_ids"] = []
         app_state["selected_letter_indices"] = []
         app_state["matching_left_id"] = None
         app_state["matching_right_id"] = None
         app_state["matching_matched_ids"] = []
         app_state["matching_wrong_pair"] = None
+        app_state["tf_followup_active"] = False
+        app_state["tf_followup_options"] = []
         app_state["fast_timer_value"] = 1.0
         app_state["fast_timer_bar"] = None
         app_state["fast_result_state"] = None
@@ -1432,13 +1466,13 @@ def main(page: ft.Page):
             app_state["index"] = 0
         elif mode == "matching":
             words = matching_candidates()
-            usable_count = min(len(words), 32)
-            usable_count -= usable_count % 4
+            usable_count = min(len(words), 20)
+            usable_count -= usable_count % 5
             selected_words = weighted_sample(words, app_state["stats"], today, k=usable_count)
             app_state["is_quiz"] = True
             app_state["current_batch"] = [
-                selected_words[index:index + 4]
-                for index in range(0, len(selected_words), 4)
+                selected_words[index:index + 5]
+                for index in range(0, len(selected_words), 5)
             ]
             app_state["index"] = 0
         elif mode == "daily":
@@ -1465,6 +1499,9 @@ def main(page: ft.Page):
             random.shuffle(words)
             app_state["is_quiz"] = False
             app_state["current_batch"] = words[:6]
+            app_state["learning_matching_words"] = list(app_state["current_batch"])
+            app_state["learning_word_count"] = len(app_state["current_batch"])
+            app_state["learning_extra_count"] = min(3, (len(app_state["current_batch"]) + 1) // 2)
             app_state["index"] = 0
         else:
             words = [w for w in all_words if w["category"] == category and w["learned"]]
@@ -1558,6 +1595,41 @@ def main(page: ft.Page):
     def answer_letters(value):
         return [char for char in value if char.isalpha()]
 
+    def build_learning_extra_stages():
+        words = list(app_state.get("learning_matching_words", []))
+        count = app_state.get("learning_extra_count", 0)
+        if not words or count <= 0:
+            return []
+
+        wrong_ids = set(app_state.get("learning_wrong_ids", []))
+        stage_modes = ["true_false"]
+        if count >= 2:
+            stage_modes.append("word_building")
+        if count >= 3:
+            stage_modes.append("true_false")
+
+        stages = []
+        used_ids = set()
+        if "word_building" in stage_modes:
+            suitable = [word for word in words if len(answer_letters(word_build_target(word))) <= 10]
+            build_pool = suitable or words
+            preferred = [word for word in build_pool if word["id"] in wrong_ids]
+            build_word = min(preferred or build_pool, key=lambda word: len(answer_letters(word_build_target(word))))
+            stages.append({"mode": "word_building", "word": build_word})
+            used_ids.add(build_word["id"])
+
+        true_false_count = stage_modes.count("true_false")
+        for _ in range(true_false_count):
+            unused = [word for word in words if word["id"] not in used_ids]
+            preferred = [word for word in unused if word["id"] in wrong_ids]
+            pool = preferred or unused or words
+            selected_word = random.choice(pool)
+            stages.append({"mode": "true_false", "word": selected_word})
+            used_ids.add(selected_word["id"])
+
+        random.shuffle(stages)
+        return stages
+
     def prepare_question(word):
         lang = app_state["lang"]
         mode = app_state["mode"]
@@ -1610,6 +1682,8 @@ def main(page: ft.Page):
         app_state["last_word_id"] = word["id"]
         app_state["feedback_active"] = False
         app_state["selected_answer"] = None
+        app_state["tf_followup_active"] = False
+        app_state["tf_followup_options"] = []
         if mode == "fast":
             app_state["fast_timer_value"] = 1.0
             app_state["question_id"] = app_state.get("question_id", 0) + 1
@@ -1686,6 +1760,58 @@ def main(page: ft.Page):
 
     def true_false_body(word):
         txt = UI_TEXT[app_state["lang"]]
+        if app_state.get("tf_followup_active", False):
+            option_cards = []
+            for option in app_state["tf_followup_options"]:
+                bgcolor, color, border_color = "#FFFFFF", INK, BORDER
+                if app_state["feedback_active"]:
+                    if option == app_state["correct_answer"]:
+                        bgcolor, color, border_color = "#EAF8EF", "#157347", "#91D5A8"
+                    elif option == app_state["selected_answer"]:
+                        bgcolor, color, border_color = "#FDECEC", "#B42318", "#F3B7B7"
+                option_cards.append(ft.ElevatedButton(
+                    content=ft.Container(
+                        content=ft.Text(
+                            option,
+                            size=17,
+                            weight=ft.FontWeight.BOLD,
+                            color=color,
+                            text_align=ft.TextAlign.CENTER,
+                            max_lines=3,
+                            overflow=ft.TextOverflow.ELLIPSIS,
+                        ),
+                        alignment=ft.Alignment.CENTER,
+                    ),
+                    height=132,
+                    bgcolor=bgcolor,
+                    elevation=0,
+                    style=ft.ButtonStyle(
+                        padding=ft.Padding.symmetric(horizontal=10, vertical=10),
+                        side=ft.BorderSide(1, border_color),
+                        shape=ft.RoundedRectangleBorder(radius=18),
+                    ),
+                    on_click=None if app_state["feedback_active"] else lambda _, answer=option: submit_answer(answer, word),
+                ))
+            return ft.Column([
+                ft.Container(height=18),
+                ft.Text(app_state["prompt_word"], size=34, weight=ft.FontWeight.BOLD, color=INK, text_align=ft.TextAlign.CENTER),
+                ft.Text(app_state["tf_displayed"], size=27, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                ft.Container(expand=True),
+                ft.Container(
+                    content=ft.Column([
+                        ft.Text(phase_text()["true_false_correct_translation"], size=16, weight=ft.FontWeight.W_600, color=INK, text_align=ft.TextAlign.CENTER),
+                        ft.Container(
+                            content=ft.Row([
+                                ft.Container(content=card, expand=True)
+                                for card in option_cards
+                            ], spacing=12),
+                            height=132,
+                        ),
+                    ], spacing=14, horizontal_alignment=ft.CrossAxisAlignment.STRETCH),
+                    padding=ft.Padding.only(bottom=14),
+                ),
+            ], horizontal_alignment=ft.CrossAxisAlignment.STRETCH, expand=True)
+
         buttons = []
         for value, label in ((True, txt["true_btn"]), (False, txt["false_btn"])):
             bgcolor = "#FFFFFF"
@@ -1777,8 +1903,8 @@ def main(page: ft.Page):
         is_selected = word_id == selected_id
 
         if matched:
-            bgcolor, color, border_color = "#EAF8EF", "#157347", "#91D5A8"
-        elif is_wrong:
+            return ft.Container(height=66)
+        if is_wrong:
             bgcolor, color, border_color = "#FDECEC", "#B42318", "#F3B7B7"
         elif is_selected:
             bgcolor, color, border_color = "#EEF2FF", INDIGO, "#AAB8FF"
@@ -1789,7 +1915,7 @@ def main(page: ft.Page):
         return ft.ElevatedButton(
             content=ft.Container(
                 content=ft.Text(
-                    ("✓ " if matched else "") + str(label),
+                    str(label),
                     size=14,
                     weight=ft.FontWeight.W_600,
                     color=color,
@@ -1802,21 +1928,26 @@ def main(page: ft.Page):
             height=66,
             bgcolor=bgcolor,
             elevation=0,
-            disabled=matched,
             style=ft.ButtonStyle(
                 padding=ft.Padding.symmetric(horizontal=8, vertical=6),
                 side=ft.BorderSide(1, border_color),
                 shape=ft.RoundedRectangleBorder(radius=14),
             ),
-            on_click=None if matched else lambda _, wid=word_id, column=side: select_matching_word(column, wid),
+            on_click=lambda _, wid=word_id, column=side: select_matching_word(column, wid),
         )
 
     def show_matching_round():
-        if app_state["index"] >= len(app_state["current_batch"]):
+        learning_final = (
+            app_state.get("session_mode") == "new"
+            and app_state.get("learning_matching_started", False)
+        )
+        if not learning_final and app_state["index"] >= len(app_state["current_batch"]):
             show_results()
             return
         t = phase_text()
-        if app_state.get("session_mode") == "mega":
+        if learning_final:
+            words = app_state["learning_matching_words"]
+        elif app_state.get("session_mode") == "mega":
             words = app_state["current_batch"][app_state["index"]]["words"]
         else:
             words = app_state["current_batch"][app_state["index"]]
@@ -1887,19 +2018,43 @@ def main(page: ft.Page):
         app_state["matching_matched_ids"] = []
         app_state["matching_wrong_pair"] = None
         app_state["last_word_id"] = None
+        if app_state.get("session_mode") == "new" and app_state.get("learning_matching_started", False):
+            show_results()
+            return
         app_state["index"] += 1
         show_quiz_card()
 
     def show_quiz_card():
         session_mode = app_state.get("session_mode", app_state["mode"])
-        if app_state["index"] >= len(app_state["current_batch"]) or (
+        batch_complete = app_state["index"] >= len(app_state["current_batch"])
+        learning_extra_active = False
+        if batch_complete and session_mode == "new":
+            if not app_state.get("learning_extra_started", False):
+                app_state["learning_extra_stages"] = build_learning_extra_stages()
+                app_state["learning_extra_started"] = True
+                app_state["learning_extra_index"] = 0
+            learning_extra_active = app_state["learning_extra_index"] < len(app_state["learning_extra_stages"])
+            if not learning_extra_active and not app_state.get("learning_matching_started", False):
+                app_state["learning_matching_started"] = True
+                app_state["mode"] = "matching"
+                app_state["matching_left_id"] = None
+                app_state["matching_right_id"] = None
+                app_state["matching_matched_ids"] = []
+                app_state["matching_wrong_pair"] = None
+                show_matching_round()
+                return
+        if (batch_complete and not learning_extra_active) or (
             session_mode == "fast"
             and app_state.get("lives", 0) <= 0
             and not app_state["feedback_active"]
         ):
             show_results()
             return
-        if session_mode == "mega":
+        if learning_extra_active:
+            stage = app_state["learning_extra_stages"][app_state["learning_extra_index"]]
+            app_state["mode"] = stage["mode"]
+            word = stage["word"]
+        elif session_mode == "mega":
             stage = app_state["current_batch"][app_state["index"]]
             app_state["mode"] = stage["mode"]
             if stage["mode"] == "matching":
@@ -1990,12 +2145,38 @@ def main(page: ft.Page):
             app_state["selected_letter_indices"] = []
             show_quiz_card()
 
+    def start_true_false_followup():
+        lang_key = app_state["lang"].lower()
+        correct = str(app_state["correct_answer"])
+        rejected = str(app_state["tf_displayed"])
+        if app_state.get("direction") == "forward":
+            candidates = {str(word["gag"]) for word in all_words}
+        else:
+            candidates = {str(word.get(lang_key, word.get("ru", "---"))) for word in all_words}
+        distractors = [
+            value for value in candidates
+            if value.casefold() not in {correct.casefold(), rejected.casefold()}
+        ]
+        distractor = random.choice(distractors) if distractors else rejected
+        options = [correct, distractor]
+        random.shuffle(options)
+        app_state["tf_followup_active"] = True
+        app_state["tf_followup_options"] = options
+        app_state["selected_answer"] = None
+        show_quiz_card()
+
     def submit_answer(selected, word):
         if app_state["feedback_active"]:
             return
         mode = app_state["mode"]
         if mode == "true_false":
-            is_correct = selected == app_state["tf_is_truth"]
+            if app_state.get("tf_followup_active", False):
+                is_correct = str(selected).casefold() == str(app_state["correct_answer"]).casefold()
+            elif app_state["tf_is_truth"] is False and selected is False:
+                start_true_false_followup()
+                return
+            else:
+                is_correct = selected == app_state["tf_is_truth"]
         elif mode == "word_building":
             is_correct = str(selected).casefold() == str(app_state["correct_answer"]).casefold()
         else:
@@ -2021,6 +2202,8 @@ def main(page: ft.Page):
         else:
             if mode == "fast":
                 app_state["lives"] -= 1
+            if mode == "new" and word["id"] not in app_state["learning_wrong_ids"]:
+                app_state["learning_wrong_ids"].append(word["id"])
         if mode == "daily":
             app_state["stats"]["daily_review"]["index"] = app_state["index"] + 1
         save_stats(app_state["stats"])
@@ -2035,7 +2218,14 @@ def main(page: ft.Page):
         app_state["selected_answer"] = None
         app_state["selected_letter_indices"] = []
         app_state["last_word_id"] = None
-        app_state["index"] += 1
+        if (
+            app_state.get("session_mode") == "new"
+            and app_state.get("learning_extra_started", False)
+            and app_state.get("learning_extra_index", 0) < len(app_state.get("learning_extra_stages", []))
+        ):
+            app_state["learning_extra_index"] += 1
+        else:
+            app_state["index"] += 1
         show_quiz_card()
 
     def show_results():
@@ -2087,7 +2277,8 @@ def main(page: ft.Page):
                 ft.OutlinedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, height=50),
             ]
         elif mode == "new":
-            all_learned = answered > 0 and newly_learned == answered
+            learning_word_count = app_state.get("learning_word_count", 0)
+            all_learned = learning_word_count > 0 and newly_learned == learning_word_count
             emoji = "✨" if all_learned else "🌱"
             result_title = t["learning_result_title"]
             result_hint = t["learning_result_all"] if all_learned else t["learning_result_retry"]
