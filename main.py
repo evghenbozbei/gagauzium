@@ -163,6 +163,9 @@ PHASE1_TEXT = {
         "learning_result_title": "Серия слов пройдена",
         "learning_result_all": "Все слова этой серии добавлены в изученные.",
         "learning_result_retry": "Некоторые слова встретятся снова в следующих занятиях.",
+        "milestone_50_title": "Рубеж в 50 слов!",
+        "milestone_50_hint": "Поздравляем! Вы преодолели отметку в 50 изученных слов.",
+        "milestone_words_total": "Всего слов изучено",
         "fast_result_title": "Ваш результат", "fast_score": "СЧЁТ", "fast_best_score": "Лучший результат",
         "fast_first_score": "Первый результат сохранён", "fast_new_record": "Новый личный рекорд!",
         "fast_record_tied": "Вы повторили свой лучший результат", "fast_to_record": "До личного рекорда — {0}",
@@ -233,6 +236,9 @@ PHASE1_TEXT = {
         "learning_result_title": "Seria de cuvinte este parcursă",
         "learning_result_all": "Toate cuvintele din această serie au fost adăugate la cele învățate.",
         "learning_result_retry": "Unele cuvinte vor apărea din nou în lecțiile următoare.",
+        "milestone_50_title": "Pragul de 50 de cuvinte!",
+        "milestone_50_hint": "Felicitări! Ai depășit pragul de 50 de cuvinte învățate.",
+        "milestone_words_total": "Total cuvinte învățate",
         "fast_result_title": "Rezultatul tău", "fast_score": "SCOR", "fast_best_score": "Cel mai bun rezultat",
         "fast_first_score": "Primul rezultat a fost salvat", "fast_new_record": "Un nou record personal!",
         "fast_record_tied": "Ți-ai egalat cel mai bun rezultat", "fast_to_record": "Până la recordul personal — {0}",
@@ -339,6 +345,7 @@ def load_stats():
         stats = {}
     stats.setdefault("streak_days", 0)
     stats.setdefault("last_login", "")
+    stats.setdefault("milestone_50_completed", False)
     stats.setdefault("words", {})
     return stats
 
@@ -474,6 +481,7 @@ def main(page: ft.Page):
         "feedback_text": "",
         "last_word_id": None,
         "last_category": user_stats.get("last_active_category"),
+        "learn_scroll_offset": 0.0,
         "current_screen": "home",
         "nav_index": 0,
         "exercise_return_screen": "home",
@@ -486,6 +494,7 @@ def main(page: ft.Page):
         "session_correct": 0,
         "session_answered": 0,
         "session_new_learned": 0,
+        "session_milestone_50": False,
         "learning_batch_viewed": False,
         "learning_matching_started": False,
         "learning_matching_words": [],
@@ -509,6 +518,48 @@ def main(page: ft.Page):
     }
 
     BG = "#F8F7F2"
+    SCREEN_BACKGROUNDS = {
+        "home": "#EDEEF8",
+        "learn": "#EAF2EC",
+        "category": "#F4F0EB",
+        "review": "#F3EDE8",
+        "exercise": "#ECEEF5",
+    }
+    CATEGORY_STYLES = {
+        # Palettes adapted from the supplied design reference.
+        "family": {"gradient": ["#EFF6FF", "#FFFFFF", "#EEF2FF"], "border": "#BFDBFE", "accent": "#2563EB", "icon_bg": "#DBEAFE"},
+        "food": {"gradient": ["#FFFBEB", "#FFFFFF", "#FFF7ED"], "border": "#FDE68A", "accent": "#D97706", "icon_bg": "#FEF3C7"},
+        "numbers": {"gradient": ["#ECFDF5", "#FFFFFF", "#F0FDFA"], "border": "#A7F3D0", "accent": "#059669", "icon_bg": "#D1FAE5"},
+        "time": {"gradient": ["#FAF5FF", "#FFFFFF", "#F5F3FF"], "border": "#DDD6FE", "accent": "#7C3AED", "icon_bg": "#EDE9FE"},
+        "animals": {"gradient": ["#FDF2F8", "#FFFFFF", "#FFF1F2"], "border": "#FBCFE8", "accent": "#DB2777", "icon_bg": "#FCE7F3"},
+        "nature": {"gradient": ["#ECFEFF", "#FFFFFF", "#F0F9FF"], "border": "#A5F3FC", "accent": "#0891B2", "icon_bg": "#CFFAFE"},
+        "home": {"gradient": ["#EEF2FF", "#FFFFFF", "#EFF6FF"], "border": "#C7D2FE", "accent": "#4F46E5", "icon_bg": "#E0E7FF"},
+        "clothing": {"gradient": ["#F0FDFA", "#FFFFFF", "#ECFDF5"], "border": "#99F6E4", "accent": "#0F766E", "icon_bg": "#CCFBF1"},
+        "professions": {"gradient": ["#FFF7ED", "#FFFFFF", "#FFFBEB"], "border": "#FED7AA", "accent": "#EA580C", "icon_bg": "#FFEDD5"},
+        "city_transport": {"gradient": ["#F0F9FF", "#FFFFFF", "#EFF6FF"], "border": "#BAE6FD", "accent": "#0284C7", "icon_bg": "#E0F2FE"},
+        "colors": {"gradient": ["#FDF4FF", "#FFFFFF", "#FAF5FF"], "border": "#F5D0FE", "accent": "#A21CAF", "icon_bg": "#FAE8FF"},
+        "verbs": {"gradient": ["#FEFCE8", "#FFFFFF", "#FFFBEB"], "border": "#FEF08A", "accent": "#A16207", "icon_bg": "#FEF9C3"},
+        "anatomy": {"gradient": ["#F7FEE7", "#FFFFFF", "#ECFDF5"], "border": "#D9F99D", "accent": "#4D7C0F", "icon_bg": "#ECFCCB"},
+        # Matching calm palettes for categories not covered by the reference.
+        "pronouns": {"gradient": ["#F0F9FF", "#FFFFFF", "#ECFEFF"], "border": "#BAE6FD", "accent": "#0369A1", "icon_bg": "#E0F2FE"},
+        "questions": {"gradient": ["#F5F3FF", "#FFFFFF", "#FDF2F8"], "border": "#DDD6FE", "accent": "#6D28D9", "icon_bg": "#EDE9FE"},
+        "basics": {"gradient": ["#F8FAFC", "#FFFFFF", "#EFF6FF"], "border": "#CBD5E1", "accent": "#475569", "icon_bg": "#E2E8F0"},
+        "adjectives": {"gradient": ["#FFF1F2", "#FFFFFF", "#FFF7ED"], "border": "#FECDD3", "accent": "#BE123C", "icon_bg": "#FFE4E6"},
+        "health": {"gradient": ["#FEF2F2", "#FFFFFF", "#ECFEFF"], "border": "#FECACA", "accent": "#B91C1C", "icon_bg": "#FEE2E2"},
+        "feelings": {"gradient": ["#FFF7ED", "#FFFFFF", "#FDF2F8"], "border": "#FED7AA", "accent": "#C24175", "icon_bg": "#FCE7F3"},
+        "school_science": {"gradient": ["#EFF6FF", "#FFFFFF", "#F5F3FF"], "border": "#C7D2FE", "accent": "#4338CA", "icon_bg": "#E0E7FF"},
+        "kitchen": {"gradient": ["#FFFBEB", "#FFFFFF", "#FFF1F2"], "border": "#FDE68A", "accent": "#C2410C", "icon_bg": "#FEF3C7"},
+        "tools": {"gradient": ["#FAFAF9", "#FFFFFF", "#FFF7ED"], "border": "#D6D3D1", "accent": "#9A3412", "icon_bg": "#E7E5E4"},
+        "money_trade": {"gradient": ["#ECFDF5", "#FFFFFF", "#FEFCE8"], "border": "#A7F3D0", "accent": "#047857", "icon_bg": "#D1FAE5"},
+        "sport_art": {"gradient": ["#FFF7ED", "#FFFFFF", "#FAF5FF"], "border": "#FED7AA", "accent": "#C2410C", "icon_bg": "#FFEDD5"},
+        "conjunctions": {"gradient": ["#EEF2FF", "#FFFFFF", "#FAF5FF"], "border": "#C7D2FE", "accent": "#5B21B6", "icon_bg": "#EDE9FE"},
+    }
+    DEFAULT_CATEGORY_STYLE = {
+        "gradient": ["#F8FAFC", "#FFFFFF", "#F1F5F9"],
+        "border": "#CBD5E1",
+        "accent": "#4353C7",
+        "icon_bg": "#E2E8F0",
+    }
     CARD = "#FFFFFF"
     INK = "#172033"
     MUTED = "#667085"
@@ -526,6 +577,10 @@ def main(page: ft.Page):
             "icon": "📚", "illustration": None, "order": 999, "level": "beginner",
         })
 
+    def get_category_style(source_name):
+        category_key = get_category_meta(source_name).get("key")
+        return CATEGORY_STYLES.get(category_key, DEFAULT_CATEGORY_STYLE)
+
     def category_words(source_name):
         return [w for w in all_words if w["category"] == source_name]
 
@@ -540,10 +595,11 @@ def main(page: ft.Page):
 
     def category_visual(source_name, size=54):
         meta = get_category_meta(source_name)
+        style = get_category_style(source_name)
         return ft.Container(
             content=ft.Text(meta.get("icon", "📚"), size=max(24, int(size * 0.48))),
             width=size, height=size, alignment=ft.Alignment.CENTER,
-            bgcolor="#EEF2FF", border_radius=size / 3,
+            bgcolor=style["icon_bg"], border_radius=size / 3,
         )
 
     def rounded_card(content, padding=18, bgcolor=CARD):
@@ -651,7 +707,7 @@ def main(page: ft.Page):
         clear_navigation_view()
         page.controls.clear()
         page.scroll = ft.ScrollMode.HIDDEN
-        page.bgcolor = BG
+        page.bgcolor = SCREEN_BACKGROUNDS.get(screen, BG)
         page.padding = ft.Padding.only(left=16, right=16, top=14, bottom=18)
         page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
         set_bottom_navigation(nav_index)
@@ -916,6 +972,14 @@ def main(page: ft.Page):
     def show_main_menu(reset_scroll=False):
         show_home(reset_scroll=reset_scroll)
 
+    def remember_learn_scroll(e):
+        app_state["learn_scroll_offset"] = max(0.0, float(e.pixels))
+
+    async def restore_learn_scroll(category_grid, offset):
+        await asyncio.sleep(0)
+        if app_state.get("current_screen") == "learn" and offset > 0:
+            await category_grid.scroll_to(offset=offset, duration=0)
+
     def show_learn():
         prepare_main_screen("learn", 1, add_header=False)
         page.scroll = None
@@ -927,20 +991,26 @@ def main(page: ft.Page):
             source_name = meta["source_name"]
             if source_name not in actual:
                 continue
+            style = get_category_style(source_name)
             learned, total, _ = category_counts(source_name)
             percent = round(learned / total * 100) if total else 0
             subtitle = meta.get("gag") or ""
             cards.append(ft.Container(
                 content=ft.Column([
-                    ft.Row([category_visual(source_name, 48), ft.Container(content=ft.Text(f"{percent}%", size=10, weight=ft.FontWeight.BOLD, color=INDIGO), padding=ft.Padding.symmetric(horizontal=7, vertical=3), bgcolor="#EEF2FF", border_radius=10, visible=percent > 0)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                    ft.Row([category_visual(source_name, 48), ft.Container(content=ft.Text(f"{percent}%", size=10, weight=ft.FontWeight.BOLD, color=style["accent"]), padding=ft.Padding.symmetric(horizontal=7, vertical=3), bgcolor=style["icon_bg"], border=ft.Border.all(1, style["border"]), border_radius=10, visible=percent > 0)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                     ft.Text(localized_category_name(source_name, app_state["lang"]), size=14, weight=ft.FontWeight.BOLD, color=INK, max_lines=2, overflow=ft.TextOverflow.ELLIPSIS),
-                    ft.Text(subtitle, size=10, color=INDIGO, visible=bool(subtitle)),
+                    ft.Text(subtitle, size=10, color=style["accent"], visible=bool(subtitle)),
                     ft.Container(expand=True),
                     ft.Text(f"{learned} / {total}", size=11, color=MUTED),
-                    ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=6),
+                    ft.ProgressBar(value=learned / total if total else 0, color=style["accent"], bgcolor=style["icon_bg"], height=6),
                 ], spacing=5),
-                padding=12, bgcolor=CARD,
-                border=ft.Border.all(1, BORDER), border_radius=19,
+                padding=12,
+                gradient=ft.LinearGradient(
+                    begin=ft.Alignment.TOP_LEFT,
+                    end=ft.Alignment.BOTTOM_RIGHT,
+                    colors=style["gradient"],
+                ),
+                border=ft.Border.all(1, style["border"]), border_radius=19,
                 shadow=ft.BoxShadow(blur_radius=7, color="#0D0F172A", offset=ft.Offset(0, 2)),
                 on_click=lambda _, c=source_name: open_category_detail(c), ink=True,
             ))
@@ -952,8 +1022,12 @@ def main(page: ft.Page):
             child_aspect_ratio=0.92,
             padding=ft.Padding.only(bottom=12),
             scroll=ft.ScrollMode.HIDDEN,
+            build_controls_on_demand=False,
+            on_scroll=remember_learn_scroll,
+            scroll_interval=50,
             expand=True,
         )
+        saved_scroll_offset = app_state.get("learn_scroll_offset", 0.0)
         stage_page_controls(ft.SafeArea(
             content=ft.Container(
                 content=ft.Column([
@@ -976,6 +1050,8 @@ def main(page: ft.Page):
         ))
         present_navigation_view("/learn", show_home)
         page.update()
+        if saved_scroll_offset > 0:
+            page.run_task(restore_learn_scroll, category_grid, saved_scroll_offset)
 
     def open_category_detail(source_name):
         persist_last_category(source_name)
@@ -1182,6 +1258,7 @@ def main(page: ft.Page):
                 "lang": app_state["lang"],
                 "streak_days": 0,
                 "last_login": "",
+                "milestone_50_completed": False,
                 "words": fresh_word_stats,
             })
             app_state["last_category"] = None
@@ -1328,7 +1405,7 @@ def main(page: ft.Page):
                 ),
                 expand=True,
             )],
-            bgcolor=BG,
+            bgcolor=SCREEN_BACKGROUNDS["exercise"],
             padding=0,
             can_pop=True,
         )
@@ -1407,6 +1484,7 @@ def main(page: ft.Page):
         app_state["session_correct"] = 0
         app_state["session_answered"] = 0
         app_state["session_new_learned"] = 0
+        app_state["session_milestone_50"] = False
         app_state["learning_batch_viewed"] = False
         app_state["learning_matching_started"] = False
         app_state["learning_matching_words"] = []
@@ -2236,6 +2314,16 @@ def main(page: ft.Page):
         correct = app_state.get("session_correct", 0)
         newly_learned = app_state.get("session_new_learned", 0)
         accuracy = round(correct / answered * 100) if answered else 0
+        learned_total = sum(1 for word in all_words if word["learned"])
+        if (
+            mode == "new"
+            and learned_total >= 50
+            and not app_state["stats"].get("milestone_50_completed", False)
+        ):
+            app_state["stats"]["milestone_50_completed"] = True
+            app_state["session_milestone_50"] = True
+            save_stats(app_state["stats"])
+        milestone_50_reached = mode == "new" and app_state.get("session_milestone_50", False)
 
         if mode == "fast":
             fast_result = app_state.get("fast_result_state")
@@ -2279,16 +2367,28 @@ def main(page: ft.Page):
         elif mode == "new":
             learning_word_count = app_state.get("learning_word_count", 0)
             all_learned = learning_word_count > 0 and newly_learned == learning_word_count
-            emoji = "✨" if all_learned else "🌱"
-            result_title = t["learning_result_title"]
-            result_hint = t["learning_result_all"] if all_learned else t["learning_result_retry"]
-            result_card_controls = [
-                ft.Text(str(newly_learned), size=42, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
-                ft.Text(t["newly_learned"], size=14, weight=ft.FontWeight.BOLD, color=INK),
-                ft.Divider(color=BORDER),
-                ft.Text(f"{correct} / {answered} · {t['accuracy'].lower()}: {accuracy}%", size=14, color=MUTED),
-                ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
-            ]
+            if milestone_50_reached:
+                emoji = "🏆"
+                result_title = t["milestone_50_title"]
+                result_hint = t["milestone_50_hint"]
+                result_card_controls = [
+                    ft.Text(str(learned_total), size=42, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                    ft.Text(t["milestone_words_total"], size=14, weight=ft.FontWeight.BOLD, color=INK),
+                    ft.Divider(color=BORDER),
+                    ft.Text(f"+{newly_learned} · {t['newly_learned'].lower()}", size=14, color=MUTED),
+                    ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
+                ]
+            else:
+                emoji = "✨" if all_learned else "🌱"
+                result_title = t["learning_result_title"]
+                result_hint = t["learning_result_all"] if all_learned else t["learning_result_retry"]
+                result_card_controls = [
+                    ft.Text(str(newly_learned), size=42, weight=ft.FontWeight.BOLD, color=INDIGO, text_align=ft.TextAlign.CENTER),
+                    ft.Text(t["newly_learned"], size=14, weight=ft.FontWeight.BOLD, color=INK),
+                    ft.Divider(color=BORDER),
+                    ft.Text(f"{correct} / {answered} · {t['accuracy'].lower()}: {accuracy}%", size=14, color=MUTED),
+                    ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
+                ]
             result_actions = [
                 ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
             ]
@@ -2332,7 +2432,7 @@ def main(page: ft.Page):
                 ),
                 expand=True,
             )],
-            bgcolor=BG,
+            bgcolor=SCREEN_BACKGROUNDS["exercise"],
             padding=0,
             can_pop=True,
         )
