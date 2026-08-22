@@ -527,32 +527,32 @@ def main(page: ft.Page):
     }
     CATEGORY_STYLES = {
         # Palettes adapted from the supplied design reference.
-        "family": {"gradient": ["#EFF6FF", "#FFFFFF", "#EEF2FF"], "border": "#BFDBFE", "accent": "#2563EB", "icon_bg": "#DBEAFE"},
-        "food": {"gradient": ["#FFFBEB", "#FFFFFF", "#FFF7ED"], "border": "#FDE68A", "accent": "#D97706", "icon_bg": "#FEF3C7"},
-        "numbers": {"gradient": ["#ECFDF5", "#FFFFFF", "#F0FDFA"], "border": "#A7F3D0", "accent": "#059669", "icon_bg": "#D1FAE5"},
-        "time": {"gradient": ["#FAF5FF", "#FFFFFF", "#F5F3FF"], "border": "#DDD6FE", "accent": "#7C3AED", "icon_bg": "#EDE9FE"},
-        "animals": {"gradient": ["#FDF2F8", "#FFFFFF", "#FFF1F2"], "border": "#FBCFE8", "accent": "#DB2777", "icon_bg": "#FCE7F3"},
-        "nature": {"gradient": ["#ECFEFF", "#FFFFFF", "#F0F9FF"], "border": "#A5F3FC", "accent": "#0891B2", "icon_bg": "#CFFAFE"},
-        "home": {"gradient": ["#EEF2FF", "#FFFFFF", "#EFF6FF"], "border": "#C7D2FE", "accent": "#4F46E5", "icon_bg": "#E0E7FF"},
-        "clothing": {"gradient": ["#F0FDFA", "#FFFFFF", "#ECFDF5"], "border": "#99F6E4", "accent": "#0F766E", "icon_bg": "#CCFBF1"},
-        "professions": {"gradient": ["#FFF7ED", "#FFFFFF", "#FFFBEB"], "border": "#FED7AA", "accent": "#EA580C", "icon_bg": "#FFEDD5"},
-        "city_transport": {"gradient": ["#F0F9FF", "#FFFFFF", "#EFF6FF"], "border": "#BAE6FD", "accent": "#0284C7", "icon_bg": "#E0F2FE"},
-        "colors": {"gradient": ["#FDF4FF", "#FFFFFF", "#FAF5FF"], "border": "#F5D0FE", "accent": "#A21CAF", "icon_bg": "#FAE8FF"},
-        "verbs": {"gradient": ["#FEFCE8", "#FFFFFF", "#FFFBEB"], "border": "#FEF08A", "accent": "#A16207", "icon_bg": "#FEF9C3"},
-        "anatomy": {"gradient": ["#F7FEE7", "#FFFFFF", "#ECFDF5"], "border": "#D9F99D", "accent": "#4D7C0F", "icon_bg": "#ECFCCB"},
+        "family": {"gradient": ["#DBEAFE", "#F8FAFF", "#E0E7FF"], "border": "#93C5FD", "accent": "#2563EB", "icon_bg": "#BFDBFE"},
+        "food": {"gradient": ["#FEF3C7", "#FFFDF5", "#FFEDD5"], "border": "#FCD34D", "accent": "#D97706", "icon_bg": "#FDE68A"},
+        "numbers": {"gradient": ["#D1FAE5", "#F8FFFC", "#CCFBF1"], "border": "#6EE7B7", "accent": "#059669", "icon_bg": "#A7F3D0"},
+        "time": {"gradient": ["#F3E8FF", "#FFFAFF", "#EDE9FE"], "border": "#C4B5FD", "accent": "#7C3AED", "icon_bg": "#DDD6FE"},
+        "animals": {"gradient": ["#FCE7F3", "#FFF9FC", "#FFE4E6"], "border": "#F9A8D4", "accent": "#DB2777", "icon_bg": "#FBCFE8"},
+        "nature": {"gradient": ["#CFFAFE", "#F8FDFF", "#E0F2FE"], "border": "#67E8F9", "accent": "#0891B2", "icon_bg": "#A5F3FC"},
+        "home": {"gradient": ["#E0E7FF", "#F8FAFF", "#DBEAFE"], "border": "#A5B4FC", "accent": "#4F46E5", "icon_bg": "#C7D2FE"},
+        "clothing": {"gradient": ["#CCFBF1", "#F8FFFC", "#D1FAE5"], "border": "#5EEAD4", "accent": "#0F766E", "icon_bg": "#99F6E4"},
+        "professions": {"gradient": ["#FFEDD5", "#FFFBF5", "#FEF3C7"], "border": "#FDBA74", "accent": "#EA580C", "icon_bg": "#FED7AA"},
+        "city_transport": {"gradient": ["#E0F2FE", "#F8FDFF", "#DBEAFE"], "border": "#7DD3FC", "accent": "#0284C7", "icon_bg": "#BAE6FD"},
+        "colors": {"gradient": ["#FAE8FF", "#FFFAFF", "#F3E8FF"], "border": "#E879F9", "accent": "#A21CAF", "icon_bg": "#F5D0FE"},
+        "verbs": {"gradient": ["#FEF9C3", "#FFFDF5", "#FEF3C7"], "border": "#FDE047", "accent": "#A16207", "icon_bg": "#FEF08A"},
+        "anatomy": {"gradient": ["#ECFCCB", "#FBFFF5", "#D1FAE5"], "border": "#BEF264", "accent": "#4D7C0F", "icon_bg": "#D9F99D"},
         # Matching calm palettes for categories not covered by the reference.
-        "pronouns": {"gradient": ["#F0F9FF", "#FFFFFF", "#ECFEFF"], "border": "#BAE6FD", "accent": "#0369A1", "icon_bg": "#E0F2FE"},
-        "questions": {"gradient": ["#F5F3FF", "#FFFFFF", "#FDF2F8"], "border": "#DDD6FE", "accent": "#6D28D9", "icon_bg": "#EDE9FE"},
-        "basics": {"gradient": ["#F8FAFC", "#FFFFFF", "#EFF6FF"], "border": "#CBD5E1", "accent": "#475569", "icon_bg": "#E2E8F0"},
-        "adjectives": {"gradient": ["#FFF1F2", "#FFFFFF", "#FFF7ED"], "border": "#FECDD3", "accent": "#BE123C", "icon_bg": "#FFE4E6"},
-        "health": {"gradient": ["#FEF2F2", "#FFFFFF", "#ECFEFF"], "border": "#FECACA", "accent": "#B91C1C", "icon_bg": "#FEE2E2"},
-        "feelings": {"gradient": ["#FFF7ED", "#FFFFFF", "#FDF2F8"], "border": "#FED7AA", "accent": "#C24175", "icon_bg": "#FCE7F3"},
-        "school_science": {"gradient": ["#EFF6FF", "#FFFFFF", "#F5F3FF"], "border": "#C7D2FE", "accent": "#4338CA", "icon_bg": "#E0E7FF"},
-        "kitchen": {"gradient": ["#FFFBEB", "#FFFFFF", "#FFF1F2"], "border": "#FDE68A", "accent": "#C2410C", "icon_bg": "#FEF3C7"},
-        "tools": {"gradient": ["#FAFAF9", "#FFFFFF", "#FFF7ED"], "border": "#D6D3D1", "accent": "#9A3412", "icon_bg": "#E7E5E4"},
-        "money_trade": {"gradient": ["#ECFDF5", "#FFFFFF", "#FEFCE8"], "border": "#A7F3D0", "accent": "#047857", "icon_bg": "#D1FAE5"},
-        "sport_art": {"gradient": ["#FFF7ED", "#FFFFFF", "#FAF5FF"], "border": "#FED7AA", "accent": "#C2410C", "icon_bg": "#FFEDD5"},
-        "conjunctions": {"gradient": ["#EEF2FF", "#FFFFFF", "#FAF5FF"], "border": "#C7D2FE", "accent": "#5B21B6", "icon_bg": "#EDE9FE"},
+        "pronouns": {"gradient": ["#E0F2FE", "#F8FDFF", "#CFFAFE"], "border": "#7DD3FC", "accent": "#0369A1", "icon_bg": "#BAE6FD"},
+        "questions": {"gradient": ["#EDE9FE", "#FFFAFF", "#FCE7F3"], "border": "#C4B5FD", "accent": "#6D28D9", "icon_bg": "#DDD6FE"},
+        "basics": {"gradient": ["#E2E8F0", "#FAFCFF", "#DBEAFE"], "border": "#94A3B8", "accent": "#475569", "icon_bg": "#CBD5E1"},
+        "adjectives": {"gradient": ["#FFE4E6", "#FFFAF7", "#FFEDD5"], "border": "#FDA4AF", "accent": "#BE123C", "icon_bg": "#FECDD3"},
+        "health": {"gradient": ["#FEE2E2", "#FFFAFA", "#CFFAFE"], "border": "#FCA5A5", "accent": "#B91C1C", "icon_bg": "#FECACA"},
+        "feelings": {"gradient": ["#FFEDD5", "#FFF9FC", "#FCE7F3"], "border": "#FDBA74", "accent": "#C24175", "icon_bg": "#FBCFE8"},
+        "school_science": {"gradient": ["#DBEAFE", "#F8FAFF", "#EDE9FE"], "border": "#A5B4FC", "accent": "#4338CA", "icon_bg": "#C7D2FE"},
+        "kitchen": {"gradient": ["#FEF3C7", "#FFFAF7", "#FFE4E6"], "border": "#FCD34D", "accent": "#C2410C", "icon_bg": "#FDE68A"},
+        "tools": {"gradient": ["#E7E5E4", "#FFFCFA", "#FFEDD5"], "border": "#A8A29E", "accent": "#9A3412", "icon_bg": "#D6D3D1"},
+        "money_trade": {"gradient": ["#D1FAE5", "#FBFFF5", "#FEF9C3"], "border": "#6EE7B7", "accent": "#047857", "icon_bg": "#A7F3D0"},
+        "sport_art": {"gradient": ["#FFEDD5", "#FFFAFF", "#F3E8FF"], "border": "#FDBA74", "accent": "#C2410C", "icon_bg": "#FED7AA"},
+        "conjunctions": {"gradient": ["#E0E7FF", "#FFFAFF", "#F3E8FF"], "border": "#A5B4FC", "accent": "#5B21B6", "icon_bg": "#C7D2FE"},
     }
     DEFAULT_CATEGORY_STYLE = {
         "gradient": ["#F8FAFC", "#FFFFFF", "#F1F5F9"],
@@ -1106,10 +1106,21 @@ def main(page: ft.Page):
         mega_review_locked = len(matching_candidates()) < 10
         mega_review_status = t["mega_review_locked"] if mega_review_locked else None
 
-        def review_card(icon, title, description, badge, action, color, disabled=False, completed=False):
+        review_styles = {
+            "daily": {"gradient": ["#E0E7FF", "#F8FAFF", "#EDE9FE"], "border": "#A5B4FC", "accent": "#4F46E5", "icon_bg": "#C7D2FE"},
+            "difficult": {"gradient": ["#FFE4E6", "#FFFAF7", "#FFEDD5"], "border": "#FDA4AF", "accent": "#BE123C", "icon_bg": "#FECDD3"},
+            "regular": {"gradient": ["#D1FAE5", "#F8FFFC", "#CCFBF1"], "border": "#6EE7B7", "accent": "#047857", "icon_bg": "#A7F3D0"},
+            "fast": {"gradient": ["#F3E8FF", "#FFFAFF", "#FAE8FF"], "border": "#D8B4FE", "accent": "#7E22CE", "icon_bg": "#E9D5FF"},
+            "word_building": {"gradient": ["#FEF3C7", "#FFFDF5", "#FEF9C3"], "border": "#FCD34D", "accent": "#B45309", "icon_bg": "#FDE68A"},
+            "true_false": {"gradient": ["#E0F2FE", "#F8FDFF", "#CFFAFE"], "border": "#7DD3FC", "accent": "#0369A1", "icon_bg": "#BAE6FD"},
+            "matching": {"gradient": ["#FCE7F3", "#FFF9FC", "#F3E8FF"], "border": "#F9A8D4", "accent": "#BE185D", "icon_bg": "#FBCFE8"},
+            "mega": {"gradient": ["#FFEDD5", "#FFFBF5", "#FEF3C7"], "border": "#FDBA74", "accent": "#C2410C", "icon_bg": "#FED7AA"},
+        }
+
+        def review_card(icon, title, description, badge, action, style, disabled=False, completed=False, height=270):
             state_icon = ft.Icons.CHECK_CIRCLE_OUTLINE if completed else (ft.Icons.LOCK_OUTLINE if disabled else None)
-            state_color = "#16847A" if completed else ("#98A2B3" if disabled else color)
-            visual_bgcolor = "#DFF4E7" if completed else ("#EAECF0" if disabled else color)
+            state_color = "#16847A" if completed else ("#98A2B3" if disabled else style["accent"])
+            visual_bgcolor = "#DFF4E7" if completed else style["icon_bg"]
             visual_controls = [ft.Text(icon, size=30)]
             if state_icon is not None:
                 visual_controls.append(ft.Icon(state_icon, size=23, color=state_color))
@@ -1132,9 +1143,15 @@ def main(page: ft.Page):
                     border_radius=14,
                 ),
             ])
-            card = rounded_card(ft.Column(card_controls, spacing=10, expand=True))
+            card = rounded_card(ft.Column(card_controls, spacing=10, expand=True), bgcolor=None)
+            card.gradient = ft.LinearGradient(
+                begin=ft.Alignment.TOP_LEFT,
+                end=ft.Alignment.BOTTOM_RIGHT,
+                colors=style["gradient"],
+            )
+            card.border = ft.Border.all(1, style["border"])
             card.col = 6
-            card.height = 285
+            card.height = height
             card.on_click = None if disabled else action
             card.ink = not disabled
             card.ink_color = "#16212A5D"
@@ -1144,14 +1161,14 @@ def main(page: ft.Page):
             return card
 
         exercise_cards = [
-            review_card("✨", t["daily_review"], t["daily_desc"], t["daily_complete"] if daily_done else (t["ready_review"] if learned_count >= 20 else t["daily_locked"]), lambda _: start_session("ALL", "daily"), INDIGO, learned_count < 20 or daily_done, completed=daily_done),
-            review_card("🔁", t["regular_review"], t["regular_review_desc"], basic_review_status, lambda _: start_session("ALL", "review"), "#16847A", basic_review_locked),
-            review_card("⚠️", t["difficult_words"], t["difficult_desc"], attention_word_count_text(difficult_count, app_state["lang"]) if difficult_count else t["no_difficult"], lambda _: start_session("ALL", "difficult"), "#D34A5B", difficult_count == 0),
-            review_card("⚡", t["quick_review"], t["quick_desc"], basic_review_status, lambda _: start_session("ALL", "fast"), "#5C55C8", basic_review_locked),
-            review_card("🔤", t["word_building"], t["word_building_desc"], basic_review_status, lambda _: start_session("ALL", "word_building"), "#B45F06", basic_review_locked),
-            review_card("❓", t["true_false_short"], t["quiz_desc"], basic_review_status, lambda _: start_session("ALL", "true_false"), "#16847A", basic_review_locked),
-            review_card("🧩", t["matching_pairs"], t["matching_pairs_desc"], matching_status, lambda _: start_session("ALL", "matching"), "#7B4AB5", matching_locked),
-            review_card("🌟", t["mega_review"], t["mega_review_desc"], mega_review_status, lambda _: start_session("ALL", "mega"), "#C05A17", mega_review_locked),
+            review_card("✨", t["daily_review"], t["daily_desc"], t["daily_complete"] if daily_done else (t["ready_review"] if learned_count >= 20 else t["daily_locked"]), lambda _: start_session("ALL", "daily"), review_styles["daily"], learned_count < 20 or daily_done, completed=daily_done, height=290),
+            review_card("⚠️", t["difficult_words"], t["difficult_desc"], attention_word_count_text(difficult_count, app_state["lang"]) if difficult_count else t["no_difficult"], lambda _: start_session("ALL", "difficult"), review_styles["difficult"], difficult_count == 0, height=290),
+            review_card("🔁", t["regular_review"], t["regular_review_desc"], basic_review_status, lambda _: start_session("ALL", "review"), review_styles["regular"], basic_review_locked),
+            review_card("⚡", t["quick_review"], t["quick_desc"], basic_review_status, lambda _: start_session("ALL", "fast"), review_styles["fast"], basic_review_locked),
+            review_card("🔤", t["word_building"], t["word_building_desc"], basic_review_status, lambda _: start_session("ALL", "word_building"), review_styles["word_building"], basic_review_locked),
+            review_card("❓", t["true_false_short"], t["quiz_desc"], basic_review_status, lambda _: start_session("ALL", "true_false"), review_styles["true_false"], basic_review_locked),
+            review_card("🧩", t["matching_pairs"], t["matching_pairs_desc"], matching_status, lambda _: start_session("ALL", "matching"), review_styles["matching"], matching_locked),
+            review_card("🌟", t["mega_review"], t["mega_review_desc"], mega_review_status, lambda _: start_session("ALL", "mega"), review_styles["mega"], mega_review_locked),
         ]
         stage_page_controls(
             ft.Container(height=4), ft.Text(t["review_title"], size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(t["review_subtitle"], size=12, color=MUTED),

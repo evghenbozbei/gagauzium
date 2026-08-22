@@ -1,0 +1,921 @@
+﻿id,ru,ro,gag,current_category,proposed_topic,current_level,proposed_level,proposed_block,order_in_block,comment
+1,я,eu,bän,Местоимения,pronouns,beginner,beginner,pronouns_beginner_01,1,
+2,ты,tu,sän,Местоимения,pronouns,beginner,beginner,pronouns_beginner_01,2,
+3,он/она/оно,el/ea,o,Местоимения,pronouns,beginner,beginner,pronouns_beginner_01,3,широкое/контекстное значение; возможный дубль с ID 8; варианты/значение проверить с носителем; не исправлять автоматически
+4,мы,noi,biz,Местоимения,pronouns,beginner,beginner,pronouns_beginner_01,4,
+5,вы,voi,siz,Местоимения,pronouns,beginner,beginner,pronouns_beginner_01,5,
+6,они,ei/ele,onnar,Местоимения,pronouns,beginner,beginner,pronouns_beginner_01,6,варианты/значение проверить с носителем; не исправлять автоматически
+7,этот,acest,bu,Местоимения,pronouns,beginner,beginner,pronouns_beginner_02,1,
+8,тот,acela,o,Местоимения,pronouns,beginner,beginner,pronouns_beginner_02,2,возможный дубль с ID 3
+9,что,ce,ne,Вопросы,questions,beginner,beginner,questions_beginner_01,1,
+10,кто,cine,kim,Вопросы,questions,beginner,beginner,questions_beginner_01,2,
+11,где,unde,neredä,Вопросы,questions,beginner,beginner,questions_beginner_01,3,
+12,куда,încotro,näänı,Вопросы,questions,beginner,beginner,questions_beginner_01,4,
+13,откуда,de unde,neredän,Вопросы,questions,beginner,beginner,questions_beginner_01,5,
+14,почему,de ce,neçin,Вопросы,questions,beginner,beginner,questions_beginner_01,6,возможный дубль с ID 615
+15,когда,când,nezaman,Вопросы,questions,beginner,beginner,questions_beginner_02,1,
+16,как,cum,nasıl,Вопросы,questions,beginner,beginner,questions_beginner_02,2,
+17,сколько,cât,kaç,Вопросы,questions,beginner,beginner,questions_beginner_02,3,
+18,да,da,ölä,Базовые,politeness,beginner,beginner,politeness_beginner_01,1,
+19,нет,nu,yok,Базовые,politeness,beginner,beginner,politeness_beginner_01,2,
+20,спасибо,mulțumesc,bodaprosti,Базовые,politeness,beginner,beginner,politeness_beginner_01,3,
+21,пожалуйста,vă rog,buyur,Базовые,politeness,beginner,beginner,politeness_beginner_01,4,
+22,здравствуйте,bună ziua,säläm,Базовые,politeness,beginner,beginner,politeness_beginner_01,5,
+23,хорошо,bine,islää,Базовые,politeness,beginner,beginner,politeness_beginner_01,6,широкое/контекстное значение
+24,плохо,rău,bet,Базовые,politeness,beginner,beginner,politeness_beginner_02,1,широкое/контекстное значение; возможный дубль с ID 131
+25,много,mult,çok,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_01,1,
+26,мало,puțin,az,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_01,2,
+27,сейчас,acum,şindi,Время,clock_day,beginner,beginner,clock_day_beginner_01,1,
+28,вчера,ieri,dün,Время,days_week,beginner,beginner,week_core,3,
+29,сегодня,astăzi,büün,Время,days_week,beginner,beginner,week_core,4,
+30,завтра,mâine,yaarın / sabaa,Время,days_week,beginner,beginner,week_core,5,варианты/значение проверить с носителем; не исправлять автоматически
+31,утро,dimineață,sabaa,Время,clock_day,beginner,beginner,clock_day_beginner_01,2,
+32,день,zi,gün,Время,days_week,beginner,beginner,week_core,1,
+33,вечер,seară,avşam / akşam,Время,clock_day,beginner,beginner,clock_day_beginner_01,3,варианты/значение проверить с носителем; не исправлять автоматически
+34,ночь,noapte,gecä,Время,clock_day,beginner,beginner,clock_day_beginner_01,4,
+35,время,timp,vakıt,Время,clock_day,beginner,beginner,clock_day_beginner_01,5,широкое/контекстное значение
+36,один,unu,bir,Цифры,numbers,beginner,beginner,numbers_1_10,1,
+37,два,doi,iki,Цифры,numbers,beginner,beginner,numbers_1_10,2,
+38,три,trei,üç,Цифры,numbers,beginner,beginner,numbers_1_10,3,
+39,четыре,patru,dört,Цифры,numbers,beginner,beginner,numbers_1_10,4,
+40,пять,cinci,beş,Цифры,numbers,beginner,beginner,numbers_1_10,5,
+41,шесть,șase,altı,Цифры,numbers,beginner,beginner,numbers_1_10,6,
+42,семь,șapte,edi,Цифры,numbers,beginner,beginner,numbers_1_10,7,
+43,восемь,opt,sekiz,Цифры,numbers,beginner,beginner,numbers_1_10,8,
+44,девять,nouă,dokuz,Цифры,numbers,beginner,beginner,numbers_1_10,9,
+45,десять,zece,on,Цифры,numbers,beginner,beginner,numbers_1_10,10,
+46,двадцать,douăzeci,yirmi,Цифры,numbers,beginner,beginner,tens_hundreds,1,
+47,тридцать,treizeci,otuz,Цифры,numbers,beginner,beginner,tens_hundreds,2,
+48,сорок,patruzeci,kırk,Цифры,numbers,beginner,beginner,tens_hundreds,3,
+49,пятьдесят,cincizeci,elli,Цифры,numbers,beginner,beginner,tens_hundreds,4,
+50,шестьдесят,șaizeci,altmış,Цифры,numbers,beginner,beginner,tens_hundreds,5,
+51,семьдесят,șaptezeci,yetmiş,Цифры,numbers,beginner,beginner,tens_hundreds,6,
+52,восемьдесят,optzeci,seksän,Цифры,numbers,beginner,beginner,tens_hundreds,7,
+53,девяносто,nouăzeci,doksan,Цифры,numbers,beginner,beginner,tens_hundreds,8,
+54,сто,o sută,üz,Цифры,numbers,beginner,beginner,tens_hundreds,9,
+55,тысяча,o mie,bin,Цифры,numbers,beginner,beginner,tens_hundreds,10,
+56,мать,mamă,ana,Семья,family,beginner,beginner,family_beginner_01,1,
+57,отец,tată,boba,Семья,family,beginner,beginner,family_beginner_01,2,
+58,сын,fiu,ool,Семья,family,beginner,beginner,family_beginner_01,3,
+59,дочь/девочка,fiică/fată,kız,Семья,family,beginner,beginner,family_beginner_01,4,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+60,мальчик,băiat,çocuk,Семья,family,beginner,beginner,family_beginner_01,5,
+61,ребенок,copil,uşak,Семья,family,beginner,beginner,family_beginner_01,6,
+62,брат,frate,kardaş,Семья,family,beginner,beginner,family_beginner_02,1,
+63,старший брат,frate mai mare,aga,Семья,family,conversational,conversational,family_conversational_01,1,уровень неоднозначен; подтвердить
+64,старшая сестра,soră mai mare,kaku,Семья,family,conversational,conversational,family_conversational_01,2,уровень неоднозначен; подтвердить
+65,дедушка,bunic,dädu,Семья,family,beginner,beginner,family_beginner_02,2,
+66,бабушка,bunică,babu,Семья,family,beginner,beginner,family_beginner_02,3,
+67,мужчина,bărbat,adam,Семья,family,beginner,beginner,family_beginner_02,4,
+68,женщина,femeie,kadına,Семья,family,beginner,beginner,family_beginner_02,5,
+69,жена,soție,karı,Семья,family,beginner,beginner,family_beginner_02,6,
+70,супруги,soți,karı-koca,Семья,family,conversational,conversational,family_conversational_01,3,
+71,человек,om,insan,Семья,family,beginner,beginner,family_beginner_03,1,широкое/контекстное значение
+72,люди,oameni,aalem,Семья,family,conversational,conversational,family_conversational_01,4,
+73,вода,apă,su,Еда,food_basics,beginner,beginner,food_basics_beginner_01,1,
+74,хлеб,pâine,ekmek,Еда,food_basics,beginner,beginner,food_basics_beginner_01,2,
+75,мясо,carne,et,Еда,food_basics,beginner,beginner,food_basics_beginner_01,3,
+76,рыба,pește,balık,Еда,food_basics,beginner,beginner,food_basics_beginner_01,4,
+77,молоко,lapte,süt,Еда,food_basics,beginner,beginner,food_basics_beginner_01,5,
+78,сыр,brânză,peynir,Еда,food_basics,beginner,beginner,food_basics_beginner_01,6,
+79,творог,brânză de vaci,iişimik,Еда,food_basics,conversational,conversational,food_basics_conversational_01,1,уровень неоднозначен; подтвердить
+80,масло,ulei,yaa / oloy,Еда,food_basics,beginner,beginner,food_basics_beginner_02,1,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+81,мед,miere,bal,Еда,food_basics,beginner,beginner,food_basics_beginner_02,2,
+82,соль,sare,tuz,Еда,food_basics,beginner,beginner,food_basics_beginner_02,3,
+83,сахар,zahăr,şeker,Еда,food_basics,beginner,beginner,food_basics_beginner_02,4,
+84,перец,piper,biber,Еда,food_basics,beginner,beginner,food_basics_beginner_02,5,тема неоднозначна; ручная проверка; широкое/контекстное значение
+85,яблоко,măr,alma,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_01,1,
+86,груша,pară,armut,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_01,2,
+87,слива,prună,erik,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_01,1,уровень неоднозначен; подтвердить
+88,арбуз,pepene verde,karpuz,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_01,3,
+89,дыня,pepene galben,kaun,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_01,2,уровень неоднозначен; подтвердить
+90,орех,nucă,ceviz,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_01,3,уровень неоднозначен; подтвердить
+91,картофель,cartof,kartofi,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_01,1,
+92,лук,ceapă,soan,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_01,2,
+93,чеснок,usturoi,sarmısak,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_01,3,
+94,суп,supă/ciorbă,çorba,Еда,meals_dishes,beginner,beginner,meals_dishes_beginner_01,1,варианты/значение проверить с носителем; не исправлять автоматически
+95,каша,terci,sütleş,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_01,1,уровень неоднозначен; подтвердить
+96,яйцо,ou,yımırta,Еда,food_basics,beginner,beginner,food_basics_beginner_02,6,
+97,чай,ceai,çay,Еда,food_basics,beginner,beginner,food_basics_beginner_03,1,
+98,кофе,cafea,kafä,Еда,food_basics,beginner,beginner,food_basics_beginner_03,2,
+99,вино,vin,şarap,Еда,food_basics,conversational,conversational,food_basics_conversational_01,2,уровень неоднозначен; подтвердить
+100,быть,a fi,olmaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_01,1,широкое/контекстное значение
+101,делать,a face,yapmaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_01,2,широкое/контекстное значение
+102,говорить,a spune,demää / lafetmää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_01,1,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+103,знать,a ști,bilmää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_01,3,возможный дубль с ID 663
+104,понимать,a înțelege,annamaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_01,4,
+105,хотеть,a vrea,istemää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_01,5,
+106,мочь (уметь),a putea,becermää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_01,6,широкое/контекстное значение
+107,идти,a merge,gitmää,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_01,1,
+108,приходить,a veni,gelmää,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_01,2,
+109,брать,a lua,almaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_02,1,
+110,давать,a da,vermää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_02,2,
+111,смотреть,a privi,bakmaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_02,3,
+112,видеть,a vedea,görmää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_02,4,
+113,слышать,a auzi,işitmää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_02,5,широкое/контекстное значение; возможный дубль с ID 329
+114,кушать,a mânca,imää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_01,1,
+115,пить,a bea,içmää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_01,2,
+116,спать,a dormi,uyumaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_01,3,
+117,вставать,a se scula,kalkmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_01,3,
+118,сидеть,a ședea,oturmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_01,4,
+119,работать,a lucra,işlemää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_01,1,
+120,читать,a citi,okumaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_01,2,
+121,писать,a scrie,yazmaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_01,3,
+122,спрашивать,a întreba,sormaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_01,4,
+123,отвечать,a răspunde,cuvap etmää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_01,5,
+124,думать,a gândi,düşünmää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_01,6,
+125,любить,a iubi,sevmää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_01,4,
+126,начинать,a începe,başlamaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_01,2,
+127,заканчивать,a termina,bitirmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_01,3,
+128,искать,a căuta,aaramaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_02,1,
+129,находить,a găsi,bulmaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_02,2,
+130,хороший,bun,islää / ey,Прилагательные,qualities,beginner,beginner,qualities_beginner_01,1,варианты/значение проверить с носителем; не исправлять автоматически
+131,плохой,rău,bet / fena,Прилагательные,qualities,beginner,beginner,qualities_beginner_01,2,возможный дубль с ID 24; варианты/значение проверить с носителем; не исправлять автоматически
+132,большой,mare,büük / büyük,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_01,1,возможный дубль с ID 324; варианты/значение проверить с носителем; не исправлять автоматически
+133,маленький,mic,ufak / küçük,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_01,2,варианты/значение проверить с носителем; не исправлять автоматически
+134,длинный,lung,uzun,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_01,3,
+135,короткий,scurt,kısa,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_01,4,
+136,широкий,lat,geniş,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_01,5,
+137,узкий,îngust,dar,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_01,6,
+138,толстый,gros,kalın / semiz,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_01,1,уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+139,тонкий,subțire,incä / yufka,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_01,2,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+140,тяжелый,greu,aar,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_02,1,
+141,легкий,ușor,ilin / kolay,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_02,2,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+142,горячий,fierbinte,sıcak,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_01,1,возможный дубль с ID 647
+143,холодный,rece,suuk,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_01,2,возможный дубль с ID 648
+144,чистый,curat,pak,Прилагательные,qualities,beginner,beginner,qualities_beginner_01,3,
+145,грязный,murdar,kirli,Прилагательные,qualities,beginner,beginner,qualities_beginner_01,4,
+146,быстрый,rapid,çabuk,Прилагательные,qualities,beginner,beginner,qualities_beginner_01,5,
+147,сильный,puternic,kaavi,Прилагательные,qualities,beginner,beginner,qualities_beginner_01,6,
+148,слабый,slab,yufka,Прилагательные,qualities,conversational,conversational,qualities_conversational_01,1,уровень неоднозначен; подтвердить
+149,умный,inteligent,akıllı,Прилагательные,qualities,beginner,beginner,qualities_beginner_02,1,
+150,глупый,prost,akılsız,Прилагательные,qualities,conversational,conversational,qualities_conversational_01,2,уровень неоднозначен; подтвердить
+151,красивый,frumos,gözäl,Прилагательные,qualities,beginner,beginner,qualities_beginner_02,2,
+152,молодой,tânăr,genç,Прилагательные,qualities,beginner,beginner,qualities_beginner_02,3,
+153,старый,vechi/bătrân,eski,Прилагательные,qualities,beginner,beginner,qualities_beginner_02,4,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+154,голова,cap,kafa,Анатомия,body,beginner,beginner,body_beginner_01,1,
+155,глаз,ochi,göz,Анатомия,body,beginner,beginner,body_beginner_01,2,
+156,нос,nas,burnu,Анатомия,body,beginner,beginner,body_beginner_01,3,
+157,рот,gură,aaz,Анатомия,body,beginner,beginner,body_beginner_01,4,
+158,зуб,dinte,diş,Анатомия,body,beginner,beginner,body_beginner_01,5,
+159,рука,mână,el,Анатомия,body,beginner,beginner,body_beginner_01,6,
+160,нога,picior,ayak,Анатомия,body,beginner,beginner,body_beginner_02,1,
+161,спина,spate,arka,Анатомия,body,beginner,beginner,body_beginner_02,2,
+162,живот,burtă,karnı,Анатомия,body,beginner,beginner,body_beginner_02,3,
+163,кровь,sânge,kan,Анатомия,body,beginner,beginner,body_beginner_02,4,
+164,солнце,soare,güneş,Природа,weather,beginner,beginner,weather_beginner_01,1,
+165,луна,lună,ay,Природа,weather,beginner,beginner,weather_beginner_01,2,возможный дубль с ID 315
+166,небо,cer,gök,Природа,weather,beginner,beginner,weather_beginner_01,3,
+167,земля,pământ,er,Природа,landscape,beginner,beginner,landscape_beginner_01,1,широкое/контекстное значение; возможный дубль с ID 209
+168,огонь,foc,ateş,Природа,landscape,beginner,beginner,landscape_beginner_01,2,тема неоднозначна; ручная проверка
+169,воздух,aer,hava,Природа,weather,beginner,beginner,weather_beginner_01,4,
+170,ветер,vânt,rüzgär,Природа,weather,beginner,beginner,weather_beginner_01,5,
+171,дерево,copac,aaç,Природа,landscape,beginner,beginner,landscape_beginner_01,3,
+172,трава,iarbă,ot,Природа,landscape,beginner,beginner,landscape_beginner_01,4,
+173,цветок,floare,çiçek,Природа,landscape,beginner,beginner,landscape_beginner_01,5,
+174,медведь,urs,ayı,Животные,wild_animals,beginner,beginner,wild_animals_beginner_01,1,
+175,волк,lup,canavar,Животные,wild_animals,beginner,beginner,wild_animals_beginner_01,2,
+176,лиса,vulpe,tilki,Животные,wild_animals,conversational,beginner,wild_animals_beginner_01,3,уровень неоднозначен; подтвердить
+177,заяц,iepure,tauşan,Животные,wild_animals,beginner,beginner,wild_animals_beginner_01,4,
+178,кошка,pisică,kedi,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_01,1,
+179,собака,câine,köpek,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_01,2,
+180,корова,vacă,inek,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_01,3,
+181,лошадь,cal,at,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_01,4,
+182,свинья,porc,domuz,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_01,5,
+183,овца,oaie,koyun,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_01,6,
+184,коза,capră,keçi,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_02,1,
+185,мышь,șoarece,sıçan,Животные,wild_animals,beginner,beginner,wild_animals_beginner_01,5,
+186,лев,leu,aslan,Животные,wild_animals,beginner,beginner,wild_animals_beginner_01,6,
+187,тигр,tigru,kaplan,Животные,wild_animals,beginner,beginner,wild_animals_beginner_02,1,
+188,олень,cerb,karaca,Животные,wild_animals,conversational,conversational,wild_animals_conversational_01,1,уровень неоднозначен; подтвердить
+189,верблюд,cămilă,devä,Животные,wild_animals,conversational,conversational,wild_animals_conversational_01,2,уровень неоднозначен; подтвердить
+190,птица,pasăre,kuş,Животные,birds_small_animals,beginner,beginner,birds_small_animals_beginner_01,1,
+191,петух,cocoș,horoz,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_02,2,
+192,курица,găină,tauk,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_02,3,
+193,гусь,gâscă,kaaz,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_02,4,
+194,утка,rață,ördek,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_02,5,
+195,орел,vultur,kartal,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_01,1,уровень неоднозначен; подтвердить
+196,ворона,cioară,garga,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_01,2,уровень неоднозначен; подтвердить
+197,муравей,furnică,karımca,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_01,3,
+198,пчела,albină,arı,Животные,birds_small_animals,beginner,beginner,birds_small_animals_beginner_01,2,
+199,муха,muscă,sinnek,Животные,birds_small_animals,beginner,beginner,birds_small_animals_beginner_01,3,
+200,бабочка,fluture,kelebek,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_01,4,уровень неоднозначен; подтвердить
+201,змея,șarpe,yılan,Животные,wild_animals,beginner,beginner,wild_animals_beginner_02,2,
+202,лягушка,broască,kurbaa,Животные,wild_animals,beginner,beginner,wild_animals_beginner_02,3,
+203,дом,casă,ev,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_01,1,
+204,дверь,ușă,kapu,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_01,2,
+205,окно,fereastră,pencerä,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_01,3,
+206,комната,cameră,içer,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_01,4,
+207,стена,perete,duvar,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_01,5,
+208,крыша,acoperiș,örtü,Дом и Предметы,home_rooms,conversational,conversational,home_rooms_conversational_01,1,уровень неоднозначен; подтвердить
+209,пол,podea,er,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_01,6,возможный дубль с ID 167
+210,потолок,tavan,tavan,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_02,1,
+211,стол,masă,masa,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_01,1,
+212,стул,scaun,skemnä,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_01,2,
+213,кровать,pat,krevat / pat,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_01,3,варианты/значение проверить с носителем; не исправлять автоматически
+214,шкаф,dulap,dolap,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_01,4,
+215,печь,sobă,soba,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_02,2,
+216,зеркало,oglindă,ayna,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_01,5,
+217,нож,cuțit,bıçak,Дом и Предметы,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_01,1,
+218,ложка,lingură,kaşık,Дом и Предметы,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_01,2,
+219,вилка,furculiță,furkuliţa / vilka / çatall,Дом и Предметы,kitchen_tableware,conversational,beginner,kitchen_tableware_beginner_01,3,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+220,тарелка,farfurie,çini / taaler / tabaak,Дом и Предметы,kitchen_tableware,conversational,beginner,kitchen_tableware_beginner_01,4,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+221,стакан,pahar,stakan,Дом и Предметы,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_01,5,
+222,чашка,ceașcă,fincan,Дом и Предметы,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_01,6,
+223,кастрюля,cratiță,tencerä,Дом и Предметы,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_02,1,
+224,ковер,covor,kilim,Дом и Предметы,home_objects,conversational,conversational,home_objects_conversational_01,1,уровень неоднозначен; подтвердить
+225,подушка,pernă,yastık,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_01,6,
+226,одеяло,pătură,yorgan,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_02,1,
+227,мыло,săpun,sabun,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_02,2,
+228,ключ,cheie,anatar,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_02,3,
+229,часы,ceas,saat,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_02,4,тема неоднозначна; ручная проверка; широкое/контекстное значение; возможный дубль с ID 438
+230,утюг,fier de călcat,ütü,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_02,5,
+231,веник,mătură,süpürgä,Дом и Предметы,home_objects,conversational,conversational,home_objects_conversational_01,2,уровень неоднозначен; подтвердить
+232,ведро,căldare,kazan / kova,Дом и Предметы,home_objects,conversational,conversational,home_objects_conversational_01,3,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+233,учитель,profesor,üüredici,Профессии,professions,conversational,conversational,professions_conversational_01,1,
+234,врач,medic,doktor / hekim,Профессии,professions,conversational,conversational,professions_conversational_01,2,варианты/значение проверить с носителем; не исправлять автоматически
+235,повар,bucătar,aşçı,Профессии,professions,conversational,conversational,professions_conversational_01,3,
+236,продавец,vânzător,satıcı,Профессии,professions,conversational,conversational,professions_conversational_01,4,
+237,рабочий,muncitor,işçi,Профессии,professions,conversational,conversational,professions_conversational_01,5,
+238,водитель,șofer,şoför,Профессии,professions,conversational,conversational,professions_conversational_01,6,
+239,крестьянин,țăran,çiftçi,Профессии,professions,conversational,conversational,professions_conversational_02,1,
+240,пастух,cioban,çoban,Профессии,professions,conversational,conversational,professions_conversational_02,2,
+241,рыбак,pescar,balıkçı,Профессии,professions,conversational,conversational,professions_conversational_02,3,
+242,охотник,vânător,avcı,Профессии,professions,conversational,conversational,professions_conversational_02,4,
+243,кузнец,fierar,çilingir,Профессии,professions,conversational,conversational,professions_conversational_02,5,
+244,портной,croitor,terzi,Профессии,professions,conversational,conversational,professions_conversational_02,6,
+245,сапожник,cizmar,çizmeci,Профессии,professions,conversational,conversational,professions_conversational_03,1,
+246,пекарь,brutar,fırıncı,Профессии,professions,conversational,conversational,professions_conversational_03,2,
+247,мясник,măcelar,kasap,Профессии,professions,conversational,conversational,professions_conversational_03,3,
+248,музыкант,muzicant,çalgıcı,Профессии,professions,conversational,conversational,professions_conversational_03,4,
+249,певец,cântăreț,türkücü,Профессии,professions,conversational,conversational,professions_conversational_03,5,
+250,писатель,scriitor,yazıcı,Профессии,professions,conversational,conversational,professions_conversational_03,6,
+251,художник,pictor,resimci,Профессии,professions,conversational,conversational,professions_conversational_04,1,
+252,солдат,soldat,asker,Профессии,professions,conversational,conversational,professions_conversational_04,2,
+253,начальник,șef,bakan,Профессии,professions,conversational,conversational,professions_conversational_04,3,широкое/контекстное значение
+254,судья,judecător,daavacı,Профессии,professions,conversational,conversational,professions_conversational_04,4,
+255,ученый,savant,bilimci,Профессии,professions,conversational,conversational,professions_conversational_04,5,
+256,цвет,culoare,renk,Цвета,colors,beginner,beginner,colors_beginner_01,1,
+257,белый,alb,biyaz,Цвета,colors,beginner,beginner,colors_beginner_01,2,возможный дубль с ID 709
+258,черный,negru,kara,Цвета,colors,beginner,beginner,colors_beginner_01,3,
+259,красный,roșu,kırmızı,Цвета,colors,beginner,beginner,colors_beginner_01,4,
+260,синий,albastru,maavi,Цвета,colors,beginner,beginner,colors_beginner_01,5,
+261,зеленый,verde,eşil / yeşil,Цвета,colors,beginner,beginner,colors_beginner_01,6,варианты/значение проверить с носителем; не исправлять автоматически
+262,желтый,galben,sarı,Цвета,colors,beginner,beginner,colors_beginner_02,1,
+263,серый,gri,boz,Цвета,colors,conversational,beginner,colors_beginner_02,2,уровень неоднозначен; подтвердить
+264,голубой,azuriu,çakır,Цвета,colors,conversational,conversational,colors_conversational_01,1,
+265,розовый,roz,pembä,Цвета,colors,beginner,beginner,colors_beginner_02,3,
+266,фиолетовый,violet,mor,Цвета,colors,beginner,beginner,colors_beginner_02,4,возможный дубль с ID 617
+267,оранжевый,portocaliu,turuncu,Цвета,colors,beginner,beginner,colors_beginner_02,5,
+268,пестрый,pestriț,alaca,Цвета,colors,conversational,conversational,colors_conversational_01,2,
+269,город,oraș,kasaba,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_01,1,
+270,село,sat,küü,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_01,2,
+271,улица,stradă,sokak,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_01,3,
+272,дорога,drum,yol,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_01,4,
+273,машина,mașină,maşina / avtomobil,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_01,1,варианты/значение проверить с носителем; не исправлять автоматически
+274,автобус,autobuz,avtobus,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_01,2,
+275,поезд,tren,tren,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_01,3,
+276,самолёт,avion,uçak,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_01,4,
+277,корабль,corabie,gemi,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_01,1,
+278,лодка,barcă,kayık,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_01,2,
+279,велосипед,bicicletă,velosiped,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_01,5,
+280,мост,pod,köprü,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_01,5,
+281,вокзал,gară,gara,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_01,3,
+282,аэропорт,aeroport,aeroport,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_01,4,
+283,магазин,magazin,tükän / dükän,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_01,6,варианты/значение проверить с носителем; не исправлять автоматически
+284,школа,școală,şkola,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_02,1,
+285,больница,spital,bolniţa / hastalık evi,Здоровье и Медицина,health,conversational,beginner,health_beginner_01,1,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+286,аптека,farmacie,apteka / eczane,Здоровье и Медицина,health,conversational,beginner,health_beginner_01,2,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+287,церковь,biserică,klisä,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_01,1,тема неоднозначна; ручная проверка; широкое/контекстное значение
+288,площадь,piață,meydan,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_01,2,
+289,остановка,stație,durak,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_01,6,
+290,рынок,piață comercială,panayır / pazar,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_01,3,варианты/значение проверить с носителем; не исправлять автоматически
+291,здание,clădire,bina,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_01,4,
+292,одежда,haine,giiyim,Одежда,clothing,beginner,beginner,clothing_beginner_01,1,
+293,платье,rochie,fistan,Одежда,clothing,beginner,beginner,clothing_beginner_01,2,
+294,рубашка,cămașă,gölmek,Одежда,clothing,beginner,beginner,clothing_beginner_01,3,
+295,брюки,pantaloni,pantalon,Одежда,clothing,beginner,beginner,clothing_beginner_01,4,
+296,юбка,fustă,fısta / futa,Одежда,clothing,beginner,beginner,clothing_beginner_01,5,варианты/значение проверить с носителем; не исправлять автоматически
+297,куртка,scurtă/geacă,jaket,Одежда,clothing,beginner,beginner,clothing_beginner_01,6,варианты/значение проверить с носителем; не исправлять автоматически
+298,пальто,palton,palto,Одежда,clothing,beginner,beginner,clothing_beginner_02,1,
+299,шапка,căciulă/șapcă,şapka / kalpak,Одежда,clothing,beginner,beginner,clothing_beginner_02,2,варианты/значение проверить с носителем; не исправлять автоматически
+300,обувь,încălțăminte,ayak kabı / papuç,Одежда,clothing,beginner,beginner,clothing_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+301,сапог,cizmă,çizmä,Одежда,clothing,beginner,beginner,clothing_beginner_02,4,
+302,носки,ciorapi,çorap,Одежда,clothing,beginner,beginner,clothing_beginner_02,5,
+303,платок,batic,çember / yemeni,Одежда,clothing,conversational,conversational,clothing_conversational_01,1,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+304,карман,buzunar,cöp / cep,Одежда,clothing,beginner,beginner,clothing_beginner_02,6,варианты/значение проверить с носителем; не исправлять автоматически
+305,пуговица,nasture,düüme / sedef,Одежда,clothing,conversational,conversational,clothing_conversational_01,2,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+306,неделя,săptămână,afta,Время,days_week,beginner,beginner,week_core,2,
+307,понедельник,luni,pazertesi,Время,days_week,beginner,beginner,week_core,6,
+308,вторник,marți,salı,Время,days_week,beginner,beginner,week_days,1,
+309,среда,miercuri,çarşamba,Время,days_week,beginner,beginner,week_days,2,
+310,четверг,joi,perşembä,Время,days_week,beginner,beginner,week_days,3,
+311,пятница,vineri,cumaa,Время,days_week,beginner,beginner,week_days,4,
+312,суббота,sâmbătă,cumertesi,Время,days_week,beginner,beginner,week_days,5,
+313,воскресенье,duminică,pazar,Время,days_week,beginner,beginner,week_days,6,
+314,год,an,yıl,Время,clock_day,beginner,beginner,clock_day_beginner_01,6,
+315,месяц,lună,ay,Время,clock_day,beginner,beginner,clock_day_beginner_02,1,возможный дубль с ID 165
+316,весна,primăvară,ilkyaz,Время,clock_day,beginner,beginner,clock_day_beginner_02,2,
+317,лето,vară,yaz,Время,clock_day,beginner,beginner,clock_day_beginner_02,3,
+318,осень,toamnă,güz,Время,clock_day,beginner,beginner,clock_day_beginner_02,4,
+319,зима,iarnă,kış,Время,clock_day,beginner,beginner,clock_day_beginner_02,5,
+320,звезда,stea,yıldız,Природа,weather,beginner,beginner,weather_beginner_01,6,
+321,облако,nor,bulut,Природа,weather,beginner,beginner,weather_beginner_02,1,
+322,дождь,ploaie,yamur,Природа,weather,beginner,beginner,weather_beginner_02,2,
+323,снег,zăpadă,kar,Природа,weather,beginner,beginner,weather_beginner_02,3,
+324,море,mare,deniz,Природа,landscape,beginner,beginner,landscape_beginner_01,6,возможный дубль с ID 132
+325,река,râu,dere,Природа,landscape,beginner,beginner,landscape_beginner_02,1,
+326,лес,pădure,daa,Природа,landscape,beginner,beginner,landscape_beginner_02,2,
+327,гора,munte,bayır,Природа,landscape,conversational,conversational,landscape_conversational_01,1,уровень неоднозначен; подтвердить
+328,ремень,curea,kemer,Одежда,clothing,beginner,beginner,clothing_beginner_03,1,возможный дубль с ID 429
+329,слушать,a asculta,işitmää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_02,3,возможный дубль с ID 113
+330,просыпаться,a se trezi,uyanmaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_01,5,
+331,стоять,a sta,durmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_01,5,
+332,играть,a se juca,oynamaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_01,6,возможный дубль с ID 365
+333,бежать,a fugi,kaçmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_01,6,
+334,гулять,a se plimba,gezmää,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_02,1,
+335,покупать,a cumpăra,satın almaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_01,4,
+336,продавать,a vinde,satmaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_01,5,
+337,новый,nou,yeni,Прилагательные,qualities,beginner,beginner,qualities_beginner_02,5,
+338,высокий,înalt,üsek,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_02,3,
+339,низкий,scund,alçak,Прилагательные,size_properties,beginner,beginner,size_properties_beginner_02,4,
+340,медленный,lent,yavaş,Прилагательные,qualities,beginner,beginner,qualities_beginner_02,6,
+341,счастье,fericire,baht,Чувства,feelings,beginner,beginner,feelings_beginner_01,1,
+342,радость,bucurie,sevinç,Чувства,feelings,beginner,beginner,feelings_beginner_01,2,
+343,грусть,tristețe,kahır,Чувства,feelings,conversational,conversational,feelings_conversational_01,1,уровень неоднозначен; подтвердить
+344,страх,frică,korku,Чувства,feelings,beginner,beginner,feelings_beginner_01,3,
+345,гнев,furie,üfkä,Чувства,feelings,conversational,conversational,feelings_conversational_01,2,уровень неоднозначен; подтвердить
+346,любовь,iubire,sevda,Чувства,feelings,beginner,beginner,feelings_beginner_01,4,
+347,улыбка,zâmbet,gülüş,Чувства,feelings,beginner,beginner,feelings_beginner_01,5,
+348,совесть,conștiință,namuz,Чувства,feelings,conversational,conversational,feelings_conversational_01,3,
+349,покой,liniște,raatlık,Чувства,feelings,conversational,conversational,feelings_conversational_01,4,уровень неоднозначен; подтвердить
+350,уважение,respect,saygı,Чувства,feelings,conversational,conversational,feelings_conversational_01,5,уровень неоднозначен; подтвердить
+351,книга,carte,kiyat,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_01,1,
+352,ученик,elev,üürenici,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_01,2,возможный дубль с ID 598
+353,урок,lecție,ders,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_01,3,
+354,тетрадь,caiet,tefter,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_01,4,
+355,карандаш,creion,kalem,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_01,5,
+356,линейка,riglă,çizgiç,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_01,1,уровень неоднозначен; подтвердить
+357,знание,cunoștință,bilgi,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_01,2,
+358,язык,limbă,dil,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_01,6,тема неоднозначна; ручная проверка
+359,слово,cuvânt,laf,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_02,1,широкое/контекстное значение
+360,пример,exemplu,örnek,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_01,3,уровень неоднозначен; подтвердить
+361,помогать,a ajuta,yardım etmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_01,6,
+362,ждать,a aștepta,beklemää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_02,1,
+363,обещать,a promite,söz vermää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_02,4,
+364,петь,a cânta,çalmaa,Глаголы,daily_verbs,conversational,conversational,daily_verbs_conversational_01,1,уровень неоднозначен; подтвердить
+365,танцевать,a dansa,oynamaa,Глаголы,daily_verbs,conversational,conversational,daily_verbs_conversational_01,2,уровень неоднозначен; подтвердить; возможный дубль с ID 332
+366,смеяться,a râde,gülmää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_02,1,
+367,прыгать,a sări,atlamaa,Глаголы,movement_verbs,conversational,conversational,movement_verbs_conversational_01,1,уровень неоднозначен; подтвердить
+368,мыть,a spăla,yıkamaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_02,2,
+369,изучать,a studia,üürenmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_02,2,
+370,прощать,a ierta,afetmää,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_01,1,
+371,посылать,a trimite,yollamaa,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_01,2,
+372,надеяться,a spera,umutlanmaa,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_01,3,
+373,мешать,a încurca,engellemää,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_01,1,
+374,туман,ceață,duman,Природа,weather,conversational,conversational,weather_conversational_01,1,
+375,гром,tunet,gürültü,Природа,weather,conversational,conversational,weather_conversational_01,2,
+376,молния,fulger,yıldırım,Природа,weather,conversational,conversational,weather_conversational_01,3,
+377,остров,insulă,ada,Природа,landscape,conversational,conversational,landscape_conversational_01,2,
+378,берег,mal,kenar,Природа,landscape,conversational,conversational,landscape_conversational_01,3,
+379,друг,prieten,arkadaş,Базовые,celebrations,beginner,beginner,celebrations_beginner_01,1,
+380,сосед,vecin,komşu,Базовые,celebrations,beginner,beginner,celebrations_beginner_01,2,
+381,гость,oaspete,musaafir,Базовые,celebrations,beginner,beginner,celebrations_beginner_01,3,
+382,подарок,cadou,baaşış,Базовые,celebrations,beginner,beginner,celebrations_beginner_01,4,
+383,мир,pace,barış,Базовые,celebrations,conversational,conversational,celebrations_conversational_01,1,тема неоднозначна; ручная проверка; широкое/контекстное значение
+384,праздник,sărbătoare,yortu,Базовые,celebrations,conversational,conversational,celebrations_conversational_01,2,
+385,здоровье,sănătate,saalık,Базовые,health,beginner,beginner,health_beginner_01,3,тема неоднозначна; ручная проверка
+386,жизнь,viață,ömür,Базовые,conversation_links,beginner,conversational,conversation_links_conversational_01,1,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение
+387,имя,nume,ad,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_01,3,
+388,твой,al tău,kendin,Базовые,pronouns,conversational,beginner,pronouns_beginner_02,3,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение
+389,забор,gard,aul,Дом и Предметы,home_rooms,conversational,conversational,home_rooms_conversational_01,2,
+390,щетка,perie,çotka,Дом и Предметы,home_objects,conversational,conversational,home_objects_conversational_01,4,
+391,сундук,cufăr,sandık,Дом и Предметы,home_objects,conversational,conversational,home_objects_conversational_01,5,
+392,верный,corect,dooru,Прилагательные,qualities,beginner,conversational,qualities_conversational_01,3,уровень неоднозначен; подтвердить; широкое/контекстное значение
+393,глубокий,adânc,derin,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_01,3,уровень неоднозначен; подтвердить
+394,твердый,tare,çetin,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_01,4,уровень неоднозначен; подтвердить
+395,мягкий,moale,yımışak,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_01,5,уровень неоднозначен; подтвердить
+396,богатый,bogat,zengin,Прилагательные,qualities,conversational,conversational,qualities_conversational_01,4,
+397,бедный,sărac,fukaara,Прилагательные,qualities,conversational,conversational,qualities_conversational_01,5,
+398,трудный,dificil,zor,Прилагательные,qualities,beginner,conversational,qualities_conversational_01,6,уровень неоднозначен; подтвердить
+399,храбрый,curajos,ürekli,Прилагательные,qualities,conversational,conversational,qualities_conversational_02,1,
+400,ленивый,leneș,haylaz,Прилагательные,qualities,conversational,conversational,qualities_conversational_02,2,
+401,острый,ascuțit,keskin,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_01,6,уровень неоднозначен; подтвердить
+402,забывать,a uita,unutmaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_02,5,
+403,помнить,a-și aminti,anmaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_02,6,
+404,приносить,a aduce,getirmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_02,3,
+405,звать,a chema,çaarmaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_03,1,
+406,летать,a zbura,uçmaa,Глаголы,movement_verbs,conversational,conversational,movement_verbs_conversational_01,2,уровень неоднозначен; подтвердить
+407,плавать,a înota,üzmää,Глаголы,movement_verbs,conversational,conversational,movement_verbs_conversational_01,3,уровень неоднозначен; подтвердить
+408,сковорода,tigaie,tava,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_02,2,
+409,чайник,ceainic,çaynik,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_02,3,
+410,мука,făină,un,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_02,4,тема неоднозначна; ручная проверка
+411,завтрак,mic dejun,ierli imäk,Кухня,meals_dishes,beginner,beginner,meals_dishes_beginner_01,2,
+412,обед,prânz,ölä imää,Кухня,meals_dishes,beginner,beginner,meals_dishes_beginner_01,3,
+413,ужин,cină,akşam imää,Кухня,meals_dishes,beginner,beginner,meals_dishes_beginner_01,4,
+414,скатерть,față de masă,sofra bezi,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_01,1,
+415,салфетка,șervețel,peşkir,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_01,2,возможный дубль с ID 675
+416,холодильник,frigider,buzdolabı,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_02,5,
+417,молоток,ciocan,çekic,Инструменты,tools,conversational,conversational,tools_conversational_01,1,уровень неоднозначен; подтвердить
+418,топор,topor,balta,Инструменты,tools,conversational,conversational,tools_conversational_01,2,уровень неоднозначен; подтвердить
+419,пила,ferăstrău,bıchkı,Инструменты,tools,conversational,conversational,tools_conversational_01,3,уровень неоднозначен; подтвердить
+420,гвоздь,cui,çivi,Инструменты,tools,conversational,conversational,tools_conversational_01,4,уровень неоднозначен; подтвердить
+421,лопата,lopată,kürek,Инструменты,tools,conversational,conversational,tools_conversational_01,5,уровень неоднозначен; подтвердить
+422,грабли,greblă,tırmık,Инструменты,tools,conversational,conversational,tools_conversational_01,6,
+423,лестница,scară,merdiven,Инструменты,home_objects,beginner,beginner,home_objects_beginner_02,6,
+424,верёвка,sfoară,sicim,Инструменты,tools,conversational,conversational,tools_conversational_02,1,уровень неоднозначен; подтвердить
+425,ножницы,foarfecă,makas,Инструменты,home_objects,beginner,beginner,home_objects_beginner_03,1,
+426,клей,adeziv,tutkall,Инструменты,tools,conversational,conversational,tools_conversational_02,2,
+427,краска,vopsea,boya,Инструменты,tools,conversational,conversational,tools_conversational_02,3,уровень неоднозначен; подтвердить
+428,кисть,pensulă,fırça,Инструменты,tools,conversational,conversational,tools_conversational_02,4,уровень неоднозначен; подтвердить
+429,пояс,curea,kuşak,Одежда,clothing,beginner,beginner,clothing_beginner_03,2,возможный дубль с ID 328
+430,перчатки,mănuși,eldiven,Одежда,clothing,beginner,beginner,clothing_beginner_03,3,
+431,шарф,fular,fular,Одежда,clothing,beginner,beginner,clothing_beginner_03,4,
+432,зонт,umbrelă,şemşiye,Одежда,clothing,beginner,beginner,clothing_beginner_03,5,
+433,сумка,geantă,çanta,Одежда,clothing,beginner,beginner,clothing_beginner_03,6,
+434,очки,ochelari,gözlük,Одежда,clothing,beginner,beginner,clothing_beginner_04,1,
+435,банк,bancă,banka,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_02,2,
+436,парк,parc,park,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_02,3,
+437,колесо,roată,teerlek,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_02,1,
+438,час,oră,saat,Время,clock_day,beginner,beginner,clock_day_beginner_02,6,возможный дубль с ID 229
+439,минута,minut,dakika,Время,clock_day,beginner,beginner,clock_day_beginner_03,1,
+440,секунда,secundă,saniye,Время,clock_day,beginner,beginner,clock_day_beginner_03,2,
+441,открывать,a deschide,açmaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_02,4,
+442,закрывать,a închide,kapamaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_02,5,
+443,платить,a plăti,ödämää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_02,6,
+444,выигрывать,a câștiga,kazanmaa,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_01,2,уровень неоднозначен; подтвердить
+445,проигрывать,a pierde,kaybetmää,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_01,3,уровень неоднозначен; подтвердить; возможный дубль с ID 446
+446,терять,a pierde,çıbıtmaa,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_01,4,широкое/контекстное значение; возможный дубль с ID 445
+447,показывать,a arăta,göstermää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_03,2,
+448,прятать,a ascunde,saklamaa,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_01,5,
+449,ломать,a strica,kıramaa,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_01,6,
+450,чинить,a repara,düzmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_03,1,
+451,строить,a construi,kurmaa,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_02,1,
+452,готовить (еду),a găti,bişirmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_03,2,
+453,пробовать (вкус),a gusta,dadmaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_03,3,
+454,горький,amar,acı,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_01,3,
+455,сладкий,dulce,tatlı,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_01,4,
+456,кислый,acru,eşki,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_01,5,
+457,соленый,sărat,tuzlu,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_01,6,
+458,фрукт,fruct,meyva,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_01,4,
+459,овощ,legumă,zarzavat,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_01,4,
+460,ягода,boabă,emiş,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_01,4,
+461,абрикос,caisă,zerdeli,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_01,5,
+462,айва,gutuie,ayva,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_01,6,
+463,апельсин,portocală,portokal,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_02,1,
+464,банан,banană,banan,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_02,2,
+465,виноград,struguri,üzüm,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_02,3,
+466,лимон,lămâie,limon,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_02,4,
+467,персик,piersică,şefteli,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_02,5,
+468,вишня,vișină,iişi kirez,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_01,5,уровень неоднозначен; подтвердить
+469,черешня,cireașă,kirez,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_02,6,
+470,крыжовник,agrișă,tatar üzümü,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_01,6,
+471,миндаль,migdală,badem,Еда,fruit_nuts,beginner,beginner,fruit_nuts_beginner_03,1,
+472,баклажан,vânătă,mor patlacan,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_01,5,
+473,боб,bob,bakla,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_01,1,уровень неоднозначен; подтвердить; возможный дубль с ID 490
+474,горох,mazăre,borçak,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_01,6,
+475,фасоль,fasole,fasülä,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_02,1,
+476,капуста,varză,laana,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_02,2,
+477,морковь,morcov,morkva,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_02,3,
+478,огурец,castravete,hıyar,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_02,4,
+479,помидор,roșie,patlacan,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_02,5,
+480,тыква,dovleac,kabak,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_02,6,
+481,свекла,sfeclă,çukundur,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_03,1,
+482,кукуруза,porumb,papşoy,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_03,2,
+483,чечевица,linte,mercimek,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_03,3,
+484,редька,ridiche,trup,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_01,2,уровень неоднозначен; подтвердить
+485,пшеница,grâu,booday,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_03,4,
+486,ячмень,orz,arpa,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_01,3,
+487,рожь,secară,çavdar,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_01,4,
+488,просо,mei,darı,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_01,5,
+489,рис,orez,pirinç,Еда,vegetables_grains,beginner,beginner,vegetables_grains_beginner_03,5,
+490,зерно,bob,tenä,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_01,6,уровень неоднозначен; подтвердить; возможный дубль с ID 473
+491,семя,sămânță,toom,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_02,1,уровень неоднозначен; подтвердить
+492,косточка,sâmbure,çekerdek,Еда,fruit_nuts,conversational,conversational,fruit_nuts_conversational_02,1,уровень неоднозначен; подтвердить
+493,дрожжи,drojdie,pitacık,Еда,vegetables_grains,conversational,conversational,vegetables_grains_conversational_02,2,
+494,булочка,chiflă,pesmet,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_01,2,уровень неоднозначен; подтвердить
+495,конфета,bomboană,bomboni,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_01,3,уровень неоднозначен; подтвердить
+496,мороженое,înghețată,dondurma,Еда,meals_dishes,beginner,beginner,meals_dishes_beginner_01,5,
+497,борщ,borș,borç,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_01,4,
+498,компот,compot,hoşaf,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_01,5,
+499,сок,suc,şıra,Еда,food_basics,beginner,beginner,food_basics_beginner_03,3,
+500,еда,mâncare,imäk,Еда,food_basics,beginner,beginner,food_basics_beginner_03,4,тема неоднозначна; ручная проверка; широкое/контекстное значение
+501,голубцы,sarmale,sarma,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_01,6,
+502,жаркое,friptură,kaurma,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_02,1,
+503,свинина,carne de porc,domuz yaanısı,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_02,2,
+504,говядина,carne de vită,sıır yaanısı,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_02,3,
+505,блины,clătite,akıtma,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_02,4,
+506,мамалыга,mămăligă,mamaliga,Еда,meals_dishes,conversational,conversational,meals_dishes_conversational_02,5,
+507,сметана,smântână,kaymak,Еда,food_basics,beginner,beginner,food_basics_beginner_03,5,
+508,буйвол,bivol,manda,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_01,1,уровень неоднозначен; подтвердить
+509,вол,bou,öküz,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_01,2,уровень неоднозначен; подтвердить
+510,осел,măgar,eşek,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_01,3,уровень неоднозначен; подтвердить
+511,кабан,mistreț,yaban domuzu,Животные,wild_animals,conversational,conversational,wild_animals_conversational_01,3,
+512,белка,veveriță,sıncap,Животные,wild_animals,conversational,conversational,wild_animals_conversational_01,4,уровень неоднозначен; подтвердить
+513,еж,arici,kirpi,Животные,wild_animals,conversational,conversational,wild_animals_conversational_01,5,уровень неоднозначен; подтвердить
+514,обезьяна,maimuță,maymun,Животные,wild_animals,conversational,conversational,wild_animals_conversational_01,6,
+515,кролик,iepure de casă,tavşam,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_01,4,уровень неоднозначен; подтвердить
+516,теленок,vițel,buzaa,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_02,6,
+517,ягненок,miel,kuzu,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_03,1,
+518,жеребенок,mânz,kuli,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_01,5,уровень неоднозначен; подтвердить
+519,козленок,ied,olak,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_01,6,уровень неоднозначен; подтвердить
+520,щенок,cățel,pali,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_03,2,
+521,цыпленок,pui,piliç,Животные,domestic_animals,beginner,beginner,domestic_animals_beginner_03,3,
+522,утенок,boboc de rață,boboç,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_02,1,уровень неоднозначен; подтвердить
+523,гусенок,boboc de gâscă,bıcı,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_02,2,уровень неоднозначен; подтвердить
+524,индюк,curcan,buura,Животные,domestic_animals,conversational,conversational,domestic_animals_conversational_02,3,уровень неоднозначен; подтвердить
+525,голубь,porumbel,guguş,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_01,5,уровень неоднозначен; подтвердить
+526,воробей,vrabie,saçak kuşu,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_01,6,
+527,ласточка,rândunică,kırlangaç,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_02,1,
+528,соловей,privighetoare,bülbül,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_02,2,
+529,аист,barză,lelek,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_02,3,
+530,синица,pițigoi,keçi kuşu,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_02,4,
+531,дятел,ciocănitoare,aaç kakan,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_02,5,
+532,снегирь,mugurar,çakrak kuşu,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_02,6,
+533,чайка,pescăruș,balık kuşu,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_03,1,
+534,страус,struț,dev kuşu,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_03,2,
+535,жаворонок,ciocârlie,cıvırliga,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_03,3,
+536,коршун,gaie,çaylak,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_03,4,
+537,скворец,graur,sıırcık,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_03,5,
+538,кукушка,cuc,kuku,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_03,6,
+539,лебедь,lebădă,kuu kuşu,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_04,1,
+540,комар,țânțar,sivri sinek,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_04,2,уровень неоднозначен; подтвердить
+541,улитка,melc,sülük,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_04,3,уровень неоднозначен; подтвердить
+542,паук,păianjen,payak,Животные,birds_small_animals,conversational,conversational,birds_small_animals_conversational_04,4,уровень неоднозначен; подтвердить
+543,сад,grădină,başça,Природа,landscape,beginner,beginner,landscape_beginner_02,3,
+544,виноградник,vie,baa,Природа,landscape,conversational,conversational,landscape_conversational_01,4,уровень неоднозначен; подтвердить
+545,бахча,bostan,bostan,Природа,landscape,conversational,conversational,landscape_conversational_01,5,уровень неоднозначен; подтвердить
+546,поле,câmp,kır,Природа,landscape,beginner,beginner,landscape_beginner_02,4,
+547,луг,pajiște,çayır,Природа,landscape,conversational,conversational,landscape_conversational_01,6,уровень неоднозначен; подтвердить
+548,болото,mlaștină,batak,Природа,landscape,conversational,conversational,landscape_conversational_02,1,уровень неоднозначен; подтвердить
+549,озеро,lac,göl,Природа,landscape,beginner,beginner,landscape_beginner_02,5,
+550,ручей,pârâu,sel,Природа,landscape,conversational,conversational,landscape_conversational_02,2,уровень неоднозначен; подтвердить
+551,родник,izvor,çöşmä,Природа,landscape,beginner,beginner,landscape_beginner_02,6,
+552,камень,piatră,taş,Природа,landscape,beginner,beginner,landscape_beginner_03,1,
+553,песок,nisip,kum,Природа,landscape,beginner,beginner,landscape_beginner_03,2,
+554,лед,gheață,buz,Природа,landscape,beginner,beginner,landscape_beginner_03,3,
+555,лист,frunză,yaprak,Природа,landscape,beginner,beginner,landscape_beginner_03,4,
+556,корень,rădăcină,kök,Природа,landscape,beginner,beginner,landscape_beginner_03,5,
+557,ветка,ramură,dal,Природа,landscape,beginner,beginner,landscape_beginner_03,6,
+558,бутылка,sticlă,şişä,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_02,6,
+559,глиняный кувшин,ulcior de lut,boduç,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_01,3,уровень неоднозначен; подтвердить
+560,горшок,oală,çölmek,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_01,4,уровень неоднозначен; подтвердить
+561,котел,cazan,çüven,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_01,5,уровень неоднозначен; подтвердить
+562,мешок,sac,çuval,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_01,6,уровень неоднозначен; подтвердить
+563,бочка,butoi,fıçı,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_02,1,уровень неоднозначен; подтвердить
+564,сито,sită,elek,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_02,2,уровень неоднозначен; подтвердить
+565,корзина,coș,sepet,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_03,1,
+566,ухо,ureche,kulak,Анатомия,body,beginner,beginner,body_beginner_02,5,
+567,лицо,față,üz / surat,Анатомия,body,beginner,beginner,body_beginner_02,6,варианты/значение проверить с носителем; не исправлять автоматически
+568,шея,gât,boynu / ensä,Анатомия,body,beginner,beginner,body_beginner_03,1,возможный дубль с ID 836; варианты/значение проверить с носителем; не исправлять автоматически
+569,плечо,umăr,omuz,Анатомия,body,beginner,beginner,body_beginner_03,2,
+570,палец,deget,parmak,Анатомия,body,beginner,beginner,body_beginner_03,3,
+571,волосы,păr,saç,Анатомия,body,beginner,beginner,body_beginner_03,4,
+572,сердце,inimă,kalp / ürek,Анатомия,body,beginner,beginner,body_beginner_03,5,варианты/значение проверить с носителем; не исправлять автоматически
+573,кожа,piele,deri,Анатомия,body,beginner,beginner,body_beginner_03,6,
+574,грудь,piept,güüs,Анатомия,body,beginner,beginner,body_beginner_04,1,
+575,колено,genunchi,diz,Анатомия,body,beginner,beginner,body_beginner_04,2,
+576,ноготь,unghie,tırnak,Анатомия,body,beginner,beginner,body_beginner_04,3,
+577,губы,buze,dudak,Анатомия,body,beginner,beginner,body_beginner_04,4,
+578,щека,obraz,yanak,Анатомия,body,beginner,beginner,body_beginner_04,5,
+579,лоб,frunte,annı,Анатомия,body,beginner,beginner,body_beginner_04,6,
+580,дядя,unchi,çiçu / amıca,Семья,family,beginner,beginner,family_beginner_03,2,варианты/значение проверить с носителем; не исправлять автоматически
+581,тётя,mătușă,lelü / bulü,Семья,family,beginner,beginner,family_beginner_03,3,варианты/значение проверить с носителем; не исправлять автоматически
+582,внук,nepot,unuka / torun,Семья,family,beginner,beginner,family_beginner_03,4,возможный дубль с ID 583; варианты/значение проверить с носителем; не исправлять автоматически
+583,внучка,nepoată,unuka / torun,Семья,family,beginner,beginner,family_beginner_03,5,возможный дубль с ID 582; варианты/значение проверить с носителем; не исправлять автоматически
+584,родственник,rudă,hısım / akraba,Семья,family,beginner,beginner,family_beginner_03,6,варианты/значение проверить с носителем; не исправлять автоматически
+585,родители,părinți,ana-boba,Семья,family,beginner,beginner,family_beginner_04,1,
+586,муж,soț,koca,Семья,family,beginner,beginner,family_beginner_04,2,
+587,тесть,socru,kaynata,Семья,family,conversational,conversational,family_conversational_01,5,уровень неоднозначен; подтвердить
+588,невеста,mireasă,gelin,Семья,family,beginner,beginner,family_beginner_04,3,
+589,жених,mire,güvää,Семья,family,beginner,beginner,family_beginner_04,4,
+590,ручка,pix,yazal / kulup,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_02,2,варианты/значение проверить с носителем; не исправлять автоматически
+591,доска,tablă,tafta / tabla,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+592,оценка,notă,nota,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_02,4,возможный дубль с ID 738
+593,экзамен,examen,ekzamen,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_01,4,
+594,число,număr,sayı,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_02,5,тема неоднозначна; ручная проверка; широкое/контекстное значение; возможный дубль с ID 770
+595,буква,literă,bukva,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_02,6,
+596,страница,pagină,sayfa,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_03,1,
+597,перемена,pauză,aralık,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_01,5,уровень неоднозначен; подтвердить
+598,школьник,elev,şkolacı / okulcu,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_01,6,уровень неоднозначен; подтвердить; возможный дубль с ID 352; варианты/значение проверить с носителем; не исправлять автоматически
+599,ответ,răspuns,cuvap,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_03,2,
+600,обида,supărare,küsü / acı,Чувства,feelings,beginner,beginner,feelings_beginner_01,6,варианты/значение проверить с носителем; не исправлять автоматически
+601,надежда,speranță,umut,Чувства,feelings,beginner,beginner,feelings_beginner_02,1,
+602,стыд,rușine,utanmak / ayıp,Чувства,feelings,beginner,beginner,feelings_beginner_02,2,варианты/значение проверить с носителем; не исправлять автоматически
+603,гордость,mândrie,hodulluk,Чувства,feelings,conversational,conversational,feelings_conversational_01,6,уровень неоднозначен; подтвердить
+604,скука,plictiseală,kefsiz,Чувства,feelings,conversational,conversational,feelings_conversational_02,1,уровень неоднозначен; подтвердить
+605,удивление,mirare,şaşmak,Чувства,feelings,conversational,conversational,feelings_conversational_02,2,уровень неоднозначен; подтвердить
+606,зависть,invidie,kıskançlık,Чувства,feelings,conversational,conversational,feelings_conversational_02,3,
+607,тоска,dor,darsımak / özlemäk,Чувства,feelings,conversational,conversational,feelings_conversational_02,4,варианты/значение проверить с носителем; не исправлять автоматически
+608,весь,tot,bütün / dübüdüz,Местоимения,pronouns,beginner,beginner,pronouns_beginner_02,4,варианты/значение проверить с носителем; не исправлять автоматически
+609,каждый,fiecare,herbir / herkez,Местоимения,pronouns,beginner,beginner,pronouns_beginner_02,5,варианты/значение проверить с носителем; не исправлять автоматически
+610,никто,nimeni,kimsey / hiç,Местоимения,pronouns,beginner,beginner,pronouns_beginner_02,6,варианты/значение проверить с носителем; не исправлять автоматически
+611,сам,însuși,kendi,Местоимения,pronouns,beginner,beginner,pronouns_beginner_03,1,
+612,другой,alt,başka / öbür,Местоимения,pronouns,beginner,beginner,pronouns_beginner_03,2,варианты/значение проверить с носителем; не исправлять автоматически
+613,какой,ce fel de,angı / netürlü,Вопросы,questions,beginner,beginner,questions_beginner_02,4,варианты/значение проверить с носителем; не исправлять автоматически
+614,который,care,angı / ani,Вопросы,questions,beginner,beginner,questions_beginner_02,5,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+615,зачем,de ce,neçin,Вопросы,questions,beginner,beginner,questions_beginner_02,6,возможный дубль с ID 14
+616,сколько раз,de câte ori,kaç kerä,Вопросы,questions,beginner,beginner,questions_beginner_03,1,
+617,коричневый,maro,mor,Цвета,colors,conversational,conversational,colors_conversational_01,3,уровень неоднозначен; подтвердить; возможный дубль с ID 266
+618,светлый,deschis,aydın / açık,Цвета,colors,conversational,beginner,colors_beginner_02,6,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+619,тёмный,închis,esmer / koyu,Цвета,colors,conversational,beginner,colors_beginner_03,1,уровень неоднозначен; подтвердить; возможный дубль с ID 827; варианты/значение проверить с носителем; не исправлять автоматически
+620,золотой,auriu,altın,Цвета,colors,conversational,conversational,colors_conversational_01,4,
+621,может,poate,sanki / olmalı,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_01,4,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+622,нужно,trebuie,lääzım,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_01,5,
+623,конечно,desigur,elbet / elbetki,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_01,6,варианты/значение проверить с носителем; не исправлять автоматически
+624,наверное,probabil,allelem / beki,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_02,1,варианты/значение проверить с носителем; не исправлять автоматически
+625,извинение,scuză,af,Базовые,politeness,beginner,beginner,politeness_beginner_02,2,тема неоднозначна; ручная проверка; широкое/контекстное значение
+626,успех,succes,başarı,Базовые,celebrations,conversational,conversational,celebrations_conversational_01,3,
+627,отдых,odihnă,dinnenmäk,Базовые,celebrations,beginner,beginner,celebrations_beginner_01,5,тема неоднозначна; ручная проверка
+628,разговор,conversație,lafetmäk / laf,Базовые,celebrations,beginner,beginner,celebrations_beginner_01,6,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+629,поздно,târziu,geç,Время,time_sequence,beginner,conversational,time_sequence_conversational_01,1,уровень неоднозначен; подтвердить
+630,всегда,întotdeauna,herzaman,Время,time_sequence,beginner,beginner,time_sequence_beginner_01,1,
+631,никогда,niciodată,bir kerä bilä,Время,time_sequence,beginner,beginner,time_sequence_beginner_01,2,
+632,иногда,uneori,kimi kerä / arada-sırada,Время,time_sequence,beginner,beginner,time_sequence_beginner_01,3,варианты/значение проверить с носителем; не исправлять автоматически
+633,снова,din nou,enidän,Время,time_sequence,beginner,conversational,time_sequence_conversational_01,2,уровень неоднозначен; подтвердить
+634,давно,demult,çoktan / hanidän,Время,time_sequence,conversational,conversational,time_sequence_conversational_01,3,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+635,скоро,curând,tez,Время,time_sequence,beginner,beginner,time_sequence_beginner_01,4,
+636,потом,apoi,sora,Время,time_sequence,beginner,beginner,time_sequence_beginner_01,5,
+637,прежде,înainte,öncä,Время,time_sequence,beginner,conversational,time_sequence_conversational_01,4,уровень неоднозначен; подтвердить
+638,долго,mult timp,oya,Время,time_sequence,conversational,conversational,time_sequence_conversational_01,5,уровень неоднозначен; подтвердить
+639,иней,brumă,kraa,Природа,weather,conversational,conversational,weather_conversational_01,4,уровень неоднозначен; подтвердить
+640,мороз,ger,ayaz,Природа,weather,conversational,conversational,weather_conversational_01,5,уровень неоднозначен; подтвердить
+641,закат,apus,kauşmak,Природа,weather,conversational,conversational,weather_conversational_01,6,тема неоднозначна; ручная проверка
+642,тень,umbră,gölgä,Природа,weather,beginner,beginner,weather_beginner_02,4,тема неоднозначна; ручная проверка
+643,волна,val,dalga,Природа,landscape,conversational,conversational,landscape_conversational_02,3,уровень неоднозначен; подтвердить
+644,пыль,praf,toz,Природа,landscape,conversational,conversational,landscape_conversational_02,4,уровень неоднозначен; подтвердить
+645,буря,furtună,boran / furtuna,Природа,weather,conversational,conversational,weather_conversational_02,1,варианты/значение проверить с носителем; не исправлять автоматически
+646,засуха,secetă,kurak / kuraklık,Природа,weather,conversational,conversational,weather_conversational_02,2,варианты/значение проверить с носителем; не исправлять автоматически
+647,жара,căldură,sıcak,Природа,weather,beginner,beginner,weather_beginner_02,5,возможный дубль с ID 142
+648,холод,frig,suuk,Природа,weather,beginner,beginner,weather_beginner_02,6,возможный дубль с ID 143
+649,тёплый,cald,ılı / sıcak,Природа,weather,beginner,beginner,weather_beginner_03,1,варианты/значение проверить с носителем; не исправлять автоматически
+650,солнечный,însorit,güneşli,Природа,weather,beginner,beginner,weather_beginner_03,2,
+651,разный,diferit,farklı / türlü,Прилагательные,qualities,beginner,beginner,qualities_beginner_03,1,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+652,одинаковый,la fel,birtürlü / birä-bir,Прилагательные,qualities,conversational,conversational,qualities_conversational_02,3,уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+653,важный,important,önemni,Прилагательные,qualities,beginner,conversational,qualities_conversational_02,4,уровень неоднозначен; подтвердить
+654,простой,simplu,sadä,Прилагательные,qualities,beginner,conversational,qualities_conversational_02,5,уровень неоднозначен; подтвердить
+655,мокрый,ud,yaş,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_02,1,
+656,сухой,uscat,kuru,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_02,2,
+657,тупой,tocit,kör,Прилагательные,size_properties,conversational,conversational,size_properties_conversational_02,1,уровень неоднозначен; подтвердить
+658,свежий,proaspăt,taazä,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_02,3,
+659,прямой,drept,dooru / düz,Прилагательные,size_properties,beginner,conversational,size_properties_conversational_02,2,уровень неоднозначен; подтвердить; возможный дубль с ID 831; варианты/значение проверить с носителем; не исправлять автоматически
+660,спокойный,calm,raat / uslu,Прилагательные,qualities,beginner,beginner,qualities_beginner_03,2,варианты/значение проверить с носителем; не исправлять автоматически
+661,бояться,a se teme,korkmaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_02,3,
+662,верить,a crede,inanmaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_03,3,
+663,уметь,a ști,becermää / bilmää,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_03,4,широкое/контекстное значение; возможный дубль с ID 103; варианты/значение проверить с носителем; не исправлять автоматически
+664,желать,a dori,istemää / dilemää,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_03,4,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+665,удивляться,a se mira,şaşmaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_02,4,
+666,улыбаться,a zâmbi,gülümsemää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_02,5,
+667,объяснять,a explica,açıklamak,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_01,4,уровень неоднозначен; подтвердить
+668,повторять,a repeta,tekrarlamaa,Глаголы,communication_verbs,beginner,beginner,communication_verbs_beginner_03,5,
+669,входить,a intra,girmää,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_02,2,
+670,выходить,a ieși,çıkmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_02,3,
+671,свет,lumină,şafk / aydınnık,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+672,лампа,lampă,lampa,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_02,4,
+673,телевизор,televizor,televizor,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_03,2,
+674,коридор,coridor,hayat,Дом и Предметы,home_rooms,conversational,conversational,home_rooms_conversational_01,3,
+675,полотенце,prosop,peşkir,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_03,3,возможный дубль с ID 415
+676,сон,somn,uyku / düş,Время,time_sequence,beginner,conversational,time_sequence_conversational_01,6,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+677,одиннадцать,unsprezece,on bir,Цифры,numbers,beginner,beginner,numbers_11_19,1,
+678,двенадцать,doisprezece,on iki,Цифры,numbers,beginner,beginner,numbers_11_19,2,
+679,тринадцать,treisprezece,on üç,Цифры,numbers,beginner,beginner,numbers_11_19,3,
+680,четырнадцать,paisprezece,on dört,Цифры,numbers,beginner,beginner,numbers_11_19,4,
+681,пятнадцать,cincisprezece,on beş,Цифры,numbers,beginner,beginner,numbers_11_19,5,
+682,шестнадцать,șaisprezece,on altı,Цифры,numbers,beginner,beginner,numbers_11_19,6,
+683,семнадцать,șaptesprezece,on yedi,Цифры,numbers,beginner,beginner,numbers_11_19,7,
+684,восемнадцать,optsprezece,on sekiz,Цифры,numbers,beginner,beginner,numbers_11_19,8,
+685,девятнадцать,nouăsprezece,on dokuz,Цифры,numbers,beginner,beginner,numbers_11_19,9,
+686,инженер,inginer,inciner,Профессии,professions,conversational,conversational,professions_conversational_04,6,
+687,библиотекарь,bibliotecar,bibliotekacı,Профессии,professions,conversational,conversational,professions_conversational_05,1,
+688,журналист,jurnalist,jurnalist,Профессии,professions,conversational,conversational,professions_conversational_05,2,
+689,агроном,agronom,agronom,Профессии,professions,conversational,conversational,professions_conversational_05,3,
+690,директор,director,direktor,Профессии,professions,conversational,conversational,professions_conversational_05,4,
+691,почтальон,poștaș,poştar,Профессии,professions,conversational,conversational,professions_conversational_05,5,
+692,тёрка,răzătoare,rendä,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_02,3,уровень неоднозначен; подтвердить
+693,скалка,sucitor,oklava,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_02,4,уровень неоднозначен; подтвердить
+694,поднос,tavă,tepsi,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_02,5,уровень неоднозначен; подтвердить
+695,крышка,capac,kapak,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_02,6,уровень неоднозначен; подтвердить
+696,дуршлаг,strecurătoare,süzecäk,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_03,1,уровень неоднозначен; подтвердить
+697,кирка,târnăcop,tırnakop,Инструменты,tools,conversational,conversational,tools_conversational_02,5,
+698,мотыга,sapă,kazma,Инструменты,tools,conversational,conversational,tools_conversational_02,6,
+699,вилы,furcă,diiren,Инструменты,tools,conversational,conversational,tools_conversational_03,1,
+700,коса,coasă,kósa / tırpan,Инструменты,tools,conversational,conversational,tools_conversational_03,2,варианты/значение проверить с носителем; не исправлять автоматически
+701,наковальня,nicovală,örs,Инструменты,tools,conversational,conversational,tools_conversational_03,3,
+702,университет,universitate,universitet,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_02,1,уровень неоднозначен; подтвердить
+703,лицей,liceu,liţey,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_02,2,уровень неоднозначен; подтвердить
+704,диктант,dictare,diktant,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_02,3,
+705,дневник,jurnal,günnük,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_02,4,уровень неоднозначен; подтвердить
+706,перевод,traducere,çevirmäk,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_02,5,
+707,серебряный,argintiu,gümüş,Цвета,colors,conversational,conversational,colors_conversational_01,5,уровень неоднозначен; подтвердить
+708,разноцветный,multicolor,renkli / alaca,Цвета,colors,conversational,conversational,colors_conversational_01,6,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+709,седой,cărunt,biyaz,Цвета,colors,conversational,conversational,colors_conversational_02,1,уровень неоднозначен; подтвердить; возможный дубль с ID 257
+710,болезнь,boală,hastalık / dert,Здоровье и Медицина,health,beginner,beginner,health_beginner_01,4,варианты/значение проверить с носителем; не исправлять автоматически
+711,лекарство,medicament,ilaç,Здоровье и Медицина,health,beginner,beginner,health_beginner_01,5,
+712,простуда,răceală,suuklamak,Здоровье и Медицина,health,beginner,beginner,health_beginner_01,6,
+713,кашель,tuse,üüsürük,Здоровье и Медицина,health,beginner,beginner,health_beginner_02,1,
+714,температура,temperatură,yangın / ateş,Здоровье и Медицина,health,beginner,beginner,health_beginner_02,2,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+715,больной,bolnav,hasta,Здоровье и Медицина,health,beginner,beginner,health_beginner_02,3,
+716,боль,durere,acı / sancı,Здоровье и Медицина,health,beginner,beginner,health_beginner_02,4,варианты/значение проверить с носителем; не исправлять автоматически
+717,рана,rană,yara,Здоровье и Медицина,health,beginner,beginner,health_beginner_02,5,
+718,укол,injecție,iinä,Здоровье и Медицина,health,beginner,beginner,health_beginner_02,6,
+719,медицина,medicină,mediţina,Здоровье и Медицина,health,conversational,conversational,health_conversational_01,1,
+720,деньги,bani,para,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_01,1,
+721,цена,preț,paa / kıymet,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_01,2,варианты/значение проверить с носителем; не исправлять автоматически
+722,дешёвый,ieftin,ucuz,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_01,3,
+723,дорогой,scump,paalı,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_01,4,
+724,кошелёк,portofel,kesä,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_01,5,
+725,товар,marfă,mal,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_01,6,тема неоднозначна; ручная проверка; широкое/контекстное значение
+726,торговец,comerciant,alış-verişçi / tükenci,Деньги и Торговля,money_trade,conversational,conversational,money_trade_conversational_01,1,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+727,спорт,sport,sport,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_01,1,
+728,мяч,minge,top,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_01,2,
+729,чемпион,campion,çempion,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_01,1,
+730,команда,echipă,takım,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_01,3,
+731,игрушка,jucărie,oyuncak,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_01,4,тема неоднозначна; ручная проверка
+732,победа,victorie,enseyiş,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_01,2,
+733,футбол,fotbal,futbol,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_01,5,
+734,музыка,muzică,muzıka,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_01,6,
+735,песня,cântec,türkü,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_02,1,
+736,танец,dans,oyun,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_02,2,
+737,картина,tablou,resim,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_01,3,уровень неоднозначен; подтвердить
+738,нота,notă,nota,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_01,4,уровень неоднозначен; подтвердить; возможный дубль с ID 592
+739,фильм,film,filma,Спорт и Искусство,sport_games,beginner,beginner,sport_games_beginner_02,3,
+740,свадьба,nuntă,düün,Спорт и Искусство,celebrations,beginner,beginner,celebrations_beginner_02,1,тема неоднозначна; ручная проверка
+741,рождество,Crăciun,Kolada,Спорт и Искусство,celebrations,conversational,conversational,celebrations_conversational_01,4,уровень неоднозначен; подтвердить
+742,пасха,Paște,Paskellä,Спорт и Искусство,celebrations,conversational,conversational,celebrations_conversational_01,5,уровень неоднозначен; подтвердить
+743,день рождения,zi de naștere,duum günü,Спорт и Искусство,celebrations,beginner,beginner,celebrations_beginner_02,2,
+744,новый год,Anul Nou,Eni yıl,Спорт и Искусство,celebrations,beginner,beginner,celebrations_beginner_02,3,
+745,и,și,hem / da,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_02,2,варианты/значение проверить с носителем; не исправлять автоматически
+746,или,sau,ya / ya da,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+747,но,dar,ama,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_02,4,
+748,потому что,pentru că,çünkü,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_02,5,
+749,поэтому,de aceea,onuştan / bu beterä,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_02,6,варианты/значение проверить с носителем; не исправлять автоматически
+750,если,dacă,eer,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_03,1,
+751,что-то,ceva,bişey,Местоимения,pronouns,beginner,beginner,pronouns_beginner_03,3,широкое/контекстное значение
+752,где-то,undeva,neredäsä,Вопросы,questions,beginner,beginner,questions_beginner_03,2,
+753,когда-то,cândva,nezamansa,Вопросы,questions,conversational,beginner,questions_beginner_03,3,уровень неоднозначен; подтвердить
+754,привет,salut,seläm,Базовые,politeness,beginner,beginner,politeness_beginner_02,3,
+755,помощь,ajutor,yardım / imdat,Базовые,conversation_links,beginner,beginner,conversation_links_beginner_03,2,варианты/значение проверить с носителем; не исправлять автоматически
+756,правда,adevăr,gerçek / dooruluk,Базовые,conversation_links,beginner,conversational,conversation_links_conversational_01,2,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+757,ошибка,greșeală,yannışlık,Базовые,conversation_links,beginner,conversational,conversation_links_conversational_01,3,уровень неоднозначен; подтвердить
+758,причина,cauză,sebep,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_01,4,уровень неоднозначен; подтвердить
+759,проблема,problemă,problem,Базовые,conversation_links,beginner,conversational,conversation_links_conversational_01,5,уровень неоднозначен; подтвердить
+760,дело,lucru / treabă,iş,Базовые,conversation_links,beginner,conversational,conversation_links_conversational_01,6,уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+761,часть,parte,pay / bölük,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_02,1,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+762,случай,caz,olay / oluş,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_02,2,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+763,порядок,ordine,tertip / tertiplik,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_02,3,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+764,разница,diferență,fark,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_02,4,
+765,смысл,sens,maana,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_02,5,широкое/контекстное значение
+766,цель,scop,neet,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_02,6,
+767,совет,sfat,nasaat,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_03,1,
+768,новость,știre,haber,Базовые,conversation_links,conversational,conversational,conversation_links_conversational_03,2,уровень неоднозначен; подтвердить
+769,адрес,adresă,adres,Базовые,city_places,beginner,beginner,city_places_beginner_02,4,тема неоднозначна; ручная проверка
+770,номер,număr,numer,Базовые,city_places,beginner,beginner,city_places_beginner_02,5,тема неоднозначна; ручная проверка; широкое/контекстное значение; возможный дубль с ID 594
+771,полдень,amiază,üülen,Время,clock_day,beginner,beginner,clock_day_beginner_03,3,
+772,полночь,miezul nopții,gecä yarısı,Время,clock_day,conversational,beginner,clock_day_beginner_03,4,уровень неоднозначен; подтвердить
+773,начало,început,başlantı,Время,time_sequence,beginner,beginner,time_sequence_beginner_01,6,
+774,конец,sfârșit,son,Время,time_sequence,beginner,beginner,time_sequence_beginner_02,1,
+775,сначала,mai întâi / la început,baştan,Время,time_sequence,beginner,beginner,time_sequence_beginner_02,2,варианты/значение проверить с носителем; не исправлять автоматически
+776,сразу,imediat,osaat / birdän-birä,Время,time_sequence,beginner,beginner,time_sequence_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+777,недавно,recent,geçennerdä / temin,Время,time_sequence,conversational,conversational,time_sequence_conversational_02,1,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+778,первый,primul,birinci,Цифры,numbers,beginner,beginner,number_concepts,1,
+779,половина,jumătate,yarı / yarım / buçuk,Цифры,numbers,beginner,beginner,number_concepts,2,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+780,сестра,soră,kızkardaş / ţaţi,Семья,family,beginner,beginner,family_beginner_04,5,варианты/значение проверить с носителем; не исправлять автоматически
+781,свекровь,soacră,kayınna,Семья,family,conversational,conversational,family_conversational_01,6,уровень неоднозначен; подтвердить
+782,близнецы,gemeni,ikiz,Семья,family,conversational,conversational,family_conversational_02,1,уровень неоднозначен; подтвердить
+783,макароны,macaroane,makarina,Еда,food_basics,beginner,beginner,food_basics_beginner_03,6,
+784,майонез,maioneză,mayonez,Еда,food_basics,conversational,conversational,food_basics_conversational_01,3,уровень неоднозначен; подтвердить
+785,напиток,băutură,içki,Еда,food_basics,beginner,beginner,food_basics_beginner_04,1,тема неоднозначна; ручная проверка
+786,голод,foame,aaçlık / kıtlık,Еда,food_basics,beginner,beginner,food_basics_beginner_04,2,тема неоднозначна; ручная проверка; варианты/значение проверить с носителем; не исправлять автоматически
+787,закуска,gustare,mezä (içeceklerä),Еда,food_basics,conversational,conversational,food_basics_conversational_01,4,уровень неоднозначен; подтвердить
+788,жить,a trăi,yaşamaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_02,6,
+789,оставаться,a rămâne,kalmaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_03,1,
+790,встречать,a întâmpina,karşılamaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_02,4,
+791,рассказывать,a povesti,annatmaa,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_01,5,
+792,выбирать,a alege,seçmää / ayırmaa,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_03,2,варианты/значение проверить с носителем; не исправлять автоматически
+793,менять,a schimba,diiştirmää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_03,3,
+794,носить,a purta,taşımaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_02,6,
+795,одеваться,a se îmbrăca,giiyinmää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_03,1,
+796,болеть,a durea / a fi bolnav,acımaa / sızlamaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_03,2,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+797,чувствовать,a simți,duymaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_03,3,тема неоднозначна; ручная проверка; широкое/контекстное значение
+798,проверять,a verifica,kontrol etmää,Глаголы,practical_verbs,conversational,conversational,practical_verbs_conversational_02,2,уровень неоднозначен; подтвердить
+799,останавливать,a opri,durgutmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_02,5,
+800,переходить,a traversa,aykırlamaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_02,6,
+801,получать,a primi,kabletmää,Глаголы,core_verbs,beginner,beginner,core_verbs_beginner_03,4,широкое/контекстное значение
+802,решать,a decide / a rezolva,kararlamaa,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_01,6,уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+803,поздравлять,a felicita,kutlamaa,Глаголы,communication_verbs,conversational,conversational,communication_verbs_conversational_02,1,уровень неоднозначен; подтвердить
+804,встречаться,a se întâlni,buluşmaa,Глаголы,daily_verbs,conversational,conversational,daily_verbs_conversational_01,3,уровень неоднозначен; подтвердить
+805,отдыхать,a se odihni,dinnenmää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_03,4,
+806,дышать,a respira,solumaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_03,5,
+807,кашлять,a tuși,üüsürmää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_03,6,
+808,плакать,a plânge,aalamaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_04,1,
+809,кричать,a striga,baarmaa,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_04,2,
+810,держать,a ține,tutmaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_03,5,
+811,класть,a pune,koymaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_03,6,
+812,поднимать,a ridica,kaldırmaa,Глаголы,movement_verbs,beginner,beginner,movement_verbs_beginner_03,1,
+813,опускать,a coborî,indirmää,Глаголы,movement_verbs,conversational,conversational,movement_verbs_conversational_01,4,уровень неоднозначен; подтвердить
+814,резать,a tăia,kesmää / parçalamaa,Глаголы,practical_verbs,beginner,beginner,practical_verbs_beginner_04,1,варианты/значение проверить с носителем; не исправлять автоматически
+815,одевать,a îmbrăca,giimää,Глаголы,daily_verbs,beginner,beginner,daily_verbs_beginner_04,3,
+816,раздеваться,a se dezbrăca,soyunmaa,Глаголы,daily_verbs,conversational,conversational,daily_verbs_conversational_01,4,уровень неоднозначен; подтвердить
+817,торопиться,a se grăbi,alatlamaa,Глаголы,movement_verbs,conversational,conversational,movement_verbs_conversational_01,5,уровень неоднозначен; подтвердить
+818,свободный,liber,serbest,Прилагательные,states_directions,beginner,conversational,states_directions_conversational_01,1,уровень неоднозначен; подтвердить
+819,готовый,gata / pregătit,hazır,Прилагательные,states_directions,beginner,conversational,states_directions_conversational_01,2,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+820,нужный,necesar,tecil / lääzımnı,Прилагательные,states_directions,conversational,conversational,states_directions_conversational_01,3,уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+821,близкий,apropiat,yakın,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_02,4,
+822,далёкий,îndepărtat,uzak / yırak,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_02,5,варианты/значение проверить с носителем; не исправлять автоматически
+823,удобный,comod,yakışıklı,Прилагательные,qualities,conversational,conversational,qualities_conversational_02,6,уровень неоднозначен; подтвердить; широкое/контекстное значение
+824,интересный,interesant,meraklı / interesli,Прилагательные,qualities,conversational,conversational,qualities_conversational_03,1,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+825,полный,plin,dolu,Прилагательные,size_properties,beginner,conversational,size_properties_conversational_02,3,уровень неоднозначен; подтвердить
+826,пустой,gol,boş / kof,Прилагательные,size_properties,beginner,conversational,size_properties_conversational_02,4,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+827,закрытый,închis,kapalı,Прилагательные,states_directions,beginner,conversational,states_directions_conversational_01,4,уровень неоднозначен; подтвердить; возможный дубль с ID 619
+828,главный,principal,baş,Прилагательные,qualities,conversational,conversational,qualities_conversational_03,2,уровень неоднозначен; подтвердить; широкое/контекстное значение
+829,последний,ultimul,bitki,Прилагательные,states_directions,conversational,conversational,states_directions_conversational_01,5,уровень неоднозначен; подтвердить
+830,левый,stâng,sol,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_02,6,
+831,правый,drept,saa,Прилагательные,states_directions,beginner,beginner,states_directions_beginner_03,1,возможный дубль с ID 659
+832,местный,local,erli,Прилагательные,states_directions,conversational,conversational,states_directions_conversational_01,6,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение
+833,локоть,cot,dirsek,Анатомия,body,beginner,beginner,body_beginner_05,1,
+834,ладонь,palmă,auç,Анатомия,body,beginner,beginner,body_beginner_05,2,
+835,пятка,călcâi,ökçä,Анатомия,body,beginner,beginner,body_beginner_05,3,
+836,горло,gât,buaz,Анатомия,body,beginner,beginner,body_beginner_05,4,возможный дубль с ID 568
+837,бровь,sprânceană,kaş,Анатомия,body,conversational,conversational,body_conversational_01,1,уровень неоднозначен; подтвердить
+838,ресница,geană,kirpik,Анатомия,body,conversational,conversational,body_conversational_01,2,уровень неоднозначен; подтвердить
+839,кость,os,kemik,Анатомия,body,beginner,beginner,body_beginner_05,5,
+840,мозг,creier,imik,Анатомия,body,conversational,conversational,body_conversational_01,3,уровень неоднозначен; подтвердить
+841,печень,ficat,ceer / kara ceer,Анатомия,body,conversational,conversational,body_conversational_01,4,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+842,желудок,stomac,katı,Анатомия,body,conversational,conversational,body_conversational_01,5,уровень неоднозначен; подтвердить
+843,позвоночник,coloană vertebrală,bel kemii,Анатомия,body,conversational,conversational,body_conversational_01,6,уровень неоднозначен; подтвердить
+844,град,grindină,tolu,Природа,weather,conversational,conversational,weather_conversational_02,3,уровень неоднозначен; подтвердить
+845,радуга,curcubeu,gök kuşaa,Природа,weather,conversational,conversational,weather_conversational_02,4,уровень неоднозначен; подтвердить
+846,роса,rouă,çii,Природа,weather,conversational,conversational,weather_conversational_02,5,уровень неоднозначен; подтвердить
+847,влажный,umed,nemni,Природа,weather,conversational,conversational,weather_conversational_02,6,уровень неоднозначен; подтвердить
+848,ясный,senin / clar,belli,Природа,weather,beginner,conversational,weather_conversational_03,1,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+849,север,nord,poyraz,Природа,landscape,conversational,conversational,landscape_conversational_02,5,уровень неоднозначен; подтвердить
+850,юг,sud,üülen tarafı,Природа,landscape,conversational,conversational,landscape_conversational_02,6,уровень неоднозначен; подтвердить
+851,восток,est,duu / günduusu,Природа,landscape,conversational,conversational,landscape_conversational_03,1,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+852,запад,vest,batı / günbatısı,Природа,landscape,conversational,conversational,landscape_conversational_03,2,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+853,полка,raft,sergen / set,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_03,4,варианты/значение проверить с носителем; не исправлять автоматически
+854,телефон,telefon,telefon,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_03,5,
+855,компьютер,calculator,kompyuter,Дом и Предметы,home_objects,beginner,beginner,home_objects_beginner_03,6,
+856,балкон,balcon,balkon,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_02,5,
+857,гараж,garaj,garaj,Дом и Предметы,home_rooms,beginner,beginner,home_rooms_beginner_02,6,
+858,переводчик,traducător,çevirici / talmaç,Профессии,professions,conversational,conversational,professions_conversational_05,6,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+859,менеджер,manager,menecer,Профессии,professions,conversational,conversational,professions_conversational_06,1,уровень неоднозначен; подтвердить
+860,такси,taxi,taksi,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_02,2,
+861,билет,bilet,bilet,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_02,3,
+862,пассажир,pasager,yolcu / pasajir,Город и Транспорт,transport_travel,conversational,beginner,transport_travel_beginner_02,4,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+863,перекрёсток,intersecție,çatırık,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_01,5,уровень неоднозначен; подтвердить
+864,центр,centru,orta,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_02,6,тема неоднозначна; ручная проверка; широкое/контекстное значение
+865,гостиница,hotel,konak evi,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_03,1,
+866,почта,poștă,poşta,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_03,2,
+867,направление,direcție,uur / taraf,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_01,6,тема неоднозначна; ручная проверка; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+868,поворот,cotitură,dönemeç,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_02,1,уровень неоднозначен; подтвердить
+869,вход,intrare,giriş,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_03,3,
+870,выход,ieșire,çıkış,Город и Транспорт,city_places,beginner,beginner,city_places_beginner_03,4,
+871,тротуар,trotuar,trotuar,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_01,5,уровень неоднозначен; подтвердить
+872,бензин,benzină,benzin,Город и Транспорт,transport_travel,beginner,beginner,transport_travel_beginner_02,5,
+873,багаж,bagaj,göç,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_02,2,уровень неоднозначен; подтвердить
+874,путешествие,călătorie,gezi / yolculuk,Город и Транспорт,transport_travel,conversational,conversational,transport_travel_conversational_02,3,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+875,район,raion / zonă,dolay / bölgä / rayon,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_01,6,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+876,столица,capitală,baş kasaba,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_02,1,уровень неоднозначен; подтвердить
+877,граница,graniță,sınır,Город и Транспорт,city_places,conversational,conversational,city_places_conversational_02,2,уровень неоднозначен; подтвердить
+878,анализ,analiză,analiz,Здоровье и Медицина,health,conversational,conversational,health_conversational_01,2,уровень неоднозначен; подтвердить
+879,аллергия,alergie,alergiya,Здоровье и Медицина,health,conversational,conversational,health_conversational_01,3,уровень неоднозначен; подтвердить
+880,инфекция,infecție,infekțiya,Здоровье и Медицина,health,conversational,conversational,health_conversational_01,4,уровень неоднозначен; подтвердить
+881,тошнота,greață,bulantı,Здоровье и Медицина,health,beginner,beginner,health_beginner_03,1,
+882,здоровый,sănătos,dinç,Здоровье и Медицина,health,beginner,beginner,health_beginner_03,2,
+883,стоматолог,stomatolog,stomatolog,Здоровье и Медицина,health,conversational,beginner,health_beginner_03,3,уровень неоднозначен; подтвердить
+884,дыхание,respirație,soluk / solumak,Здоровье и Медицина,health,beginner,beginner,health_beginner_03,4,варианты/значение проверить с носителем; не исправлять автоматически
+885,перелом,fractură,kırık / kırıntı,Здоровье и Медицина,health,conversational,conversational,health_conversational_01,5,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+886,ботинки,ghete,çipiçi,Одежда,clothing,beginner,beginner,clothing_beginner_04,2,
+887,туфли,pantofi,emeni,Одежда,clothing,beginner,beginner,clothing_beginner_04,3,
+888,бельё,lenjerie,giisi / çamaşır,Одежда,clothing,beginner,beginner,clothing_beginner_04,4,варианты/значение проверить с носителем; не исправлять автоматически
+889,капюшон,glugă,gugla,Одежда,clothing,conversational,conversational,clothing_conversational_01,3,уровень неоднозначен; подтвердить
+890,воротник,guler,yaka,Одежда,clothing,conversational,conversational,clothing_conversational_01,4,уровень неоднозначен; подтвердить
+891,злой,rău / furios,üfkeli,Чувства,feelings,beginner,beginner,feelings_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+892,сердитый,supărat,dargın,Чувства,feelings,beginner,beginner,feelings_beginner_02,4,
+893,весёлый,vesel,şen,Чувства,feelings,beginner,beginner,feelings_beginner_02,5,
+894,приятный,plăcut,hoş,Чувства,feelings,beginner,beginner,feelings_beginner_02,6,
+895,настроение,dispoziție,kef,Чувства,feelings,beginner,beginner,feelings_beginner_03,1,
+896,чувство,sentiment,duygu,Чувства,feelings,beginner,beginner,feelings_beginner_03,2,
+897,тревога,neliniște / anxietate,poträ / kuşku,Чувства,feelings,conversational,conversational,feelings_conversational_02,5,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+898,доверие,încredere,inan,Чувства,feelings,conversational,conversational,feelings_conversational_02,6,уровень неоднозначен; подтвердить
+899,класс,clasă,klas,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_03,3,
+900,библиотека,bibliotecă,biblioteka,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_03,4,
+901,предмет,materie / obiect,predmet,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_02,6,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+902,задача,problemă / sarcină,daava,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_03,1,тема неоднозначна; ручная проверка; уровень неоднозначен; подтвердить; широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+903,правило,regulă,kural,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_03,5,
+904,вопрос,întrebare,soruş,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_03,6,
+905,словарь,dicționar,laflık / sözlük,Школа и Наука,school_learning,beginner,beginner,school_learning_beginner_04,1,варианты/значение проверить с носителем; не исправлять автоматически
+906,грамматика,gramatică,gramatika,Школа и Наука,school_learning,conversational,conversational,school_learning_conversational_03,2,уровень неоднозначен; подтвердить
+907,кухня,bucătărie,kufnä,Кухня,kitchen_tableware,beginner,beginner,kitchen_tableware_beginner_03,2,
+908,солонка,solniță,tuzluk,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_03,2,уровень неоднозначен; подтвердить
+909,посуда,veselă,kap,Кухня,kitchen_tableware,conversational,conversational,kitchen_tableware_conversational_03,3,уровень неоднозначен; подтвердить
+910,покупатель,cumpărător,müşteri,Деньги и Торговля,money_trade,conversational,conversational,money_trade_conversational_01,2,уровень неоднозначен; подтвердить
+911,счёт,cont / factură,hesap,Деньги и Торговля,money_trade,conversational,conversational,money_trade_conversational_01,3,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+912,килограмм,kilogram,kila,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_02,1,
+913,грамм,gram,gram,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_02,2,
+914,бесплатный,gratuit,parasız / ödeksiz / caba,Деньги и Торговля,money_trade,beginner,beginner,money_trade_beginner_02,3,варианты/значение проверить с носителем; не исправлять автоматически
+915,долг,datorie / împrumut,ödünç,Деньги и Торговля,money_trade,conversational,conversational,money_trade_conversational_01,4,уровень неоднозначен; подтвердить; варианты/значение проверить с носителем; не исправлять автоматически
+916,театр,teatru,teatru,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_01,5,уровень неоднозначен; подтвердить
+917,стадион,stadion,stadion,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_01,6,уровень неоднозначен; подтвердить
+918,скрипка,vioară,kemençä,Спорт и Искусство,sport_games,conversational,conversational,sport_games_conversational_02,1,уровень неоднозначен; подтвердить
+919,только,numai / doar,sade / salt,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_03,3,широкое/контекстное значение; варианты/значение проверить с носителем; не исправлять автоматически
+920,чтобы,ca să,aniki,Союзы и Связки,conversation_links,beginner,beginner,conversation_links_beginner_03,4,широкое/контекстное значение
