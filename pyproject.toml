@@ -19,10 +19,19 @@ module = "main.py"
 exclude = [
     ".env",
     ".env.example",
+    ".flet",
     ".git",
     ".gitignore",
+    ".tmp",
     ".venv",
     "README.md",
+    "__pycache__",
+    "build",
+    "design-reference",
+    "docs",
+    "imports",
+    "pyproject.toml",
+    "ubuntu-picture.jpg",
     "user_stats.json",
 ]
 

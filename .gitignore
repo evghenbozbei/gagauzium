@@ -1,7 +1,10 @@
 __pycache__/
 *.py[cod]
 .flet/
+.tmp/
+.venv/
 build/
 .env
+ubuntu-picture.jpg
 *.jks
 *.keystore
