@@ -174,7 +174,6 @@ PHASE1_TEXT = {
         "word_building": "Составление слов", "word_building_desc": "Соберите слово из букв. Некоторые могут быть лишними.",
         "matching_pairs": "Найди пары", "matching_pairs_desc": "Соедините слова с правильными переводами.",
         "matching_instruction": "Выберите слово слева и его перевод справа.",
-        "matching_round_complete": "Все пары найдены!",
         "matching_pairs_locked": "Откроется после изучения первых 5 слов",
         "mega_review": "Большое повторение", "mega_review_desc": "Смешанная тренировка со всеми видами упражнений.",
         "mega_review_locked": "Откроется после изучения первых 10 слов",
@@ -247,7 +246,6 @@ PHASE1_TEXT = {
         "word_building": "Construirea cuvintelor", "word_building_desc": "Construiește cuvântul din litere. Unele pot fi în plus.",
         "matching_pairs": "Găsește perechile", "matching_pairs_desc": "Potrivește cuvintele cu traducerile corecte.",
         "matching_instruction": "Alege cuvântul din stânga și traducerea lui din dreapta.",
-        "matching_round_complete": "Toate perechile au fost găsite!",
         "matching_pairs_locked": "Se va deschide după învățarea primelor 5 cuvinte",
         "mega_review": "Recapitulare completă", "mega_review_desc": "Antrenament mixt cu toate tipurile de exerciții.",
         "mega_review_locked": "Se va deschide după învățarea primelor 10 cuvinte",
@@ -506,6 +504,8 @@ def main(page: ft.Page):
         "learning_wrong_ids": [],
         "letter_bank": [],
         "selected_letter_indices": [],
+        "word_build_template": [],
+        "word_build_fixed_positions": {},
         "matching_left_id": None,
         "matching_right_id": None,
         "matching_matched_ids": [],
@@ -909,7 +909,7 @@ def main(page: ft.Page):
             daily_controls,
             spacing=10,
             horizontal_alignment=ft.CrossAxisAlignment.STRETCH,
-        ))
+        ), bgcolor="#E9EDFF")
 
         last_category = app_state["stats"].get("last_active_category")
         actual_categories = {w["category"] for w in all_words}
@@ -962,7 +962,7 @@ def main(page: ft.Page):
             ft.Column([ft.Text(streak_days_text(streak, app_state["lang"]), size=15, weight=ft.FontWeight.BOLD, color="#8B4513"), ft.Text(t["streak_hint"], size=11, color="#9A633A")], spacing=2, expand=True),
         ], spacing=12), padding=14, bgcolor="#FFF8EC")
 
-        learning_card = rounded_card(continue_content)
+        learning_card = rounded_card(continue_content, bgcolor="#EAF4ED")
         if learned_count == 0:
             stage_page_controls(ft.Container(height=4), progress_card, learning_card, daily_card, streak_card, ft.Container(height=8))
         else:
@@ -1070,22 +1070,22 @@ def main(page: ft.Page):
                 ft.Row([category_visual(source_name, 82), ft.Column([ft.Text(localized_category_name(source_name, app_state["lang"]), size=24, weight=ft.FontWeight.BOLD, color=INK), ft.Text(meta.get("gag") or "", size=14, color=INDIGO)], spacing=3, expand=True)], spacing=15),
                 ft.Row([ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, weight=ft.FontWeight.BOLD, color=INK), ft.Text(f"{round(learned / total * 100) if total else 0}%", size=12, weight=ft.FontWeight.BOLD, color=INDIGO)], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
                 ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=9),
-            ], spacing=12)),
+            ], spacing=12), bgcolor="#E9EDFF"),
             rounded_card(ft.Column([
                 ft.Text("✨ " + t["learn_new"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(remaining_word_count_text(remaining, app_state["lang"]), size=12, color=MUTED),
                 ft.ElevatedButton(t["start_learning"] if remaining else t["all_words_learned"], icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session(source_name, "new"), disabled=remaining == 0, bgcolor=INDIGO, color="white"),
-            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
+            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#EAF4ED"),
             rounded_card(ft.Column([
                 ft.Text("⚠️ " + t["difficult_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(attention_word_count_text(difficult, app_state["lang"]) if difficult else t["no_difficult"], size=12, color=MUTED),
                 ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, opacity=0.48 if difficult == 0 else 1.0, bgcolor="#D34A5B", color="white"),
-            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
+            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#F7EDEF"),
             rounded_card(ft.Column([
                 ft.Text("📊 " + t["category_statistics"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, color=MUTED),
                 ft.ElevatedButton(t["view_all_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name), bgcolor="#16847A", color="white"),
-            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
+            ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#E8F4F2"),
             ft.Container(height=8),
         )
         present_navigation_view("/category", show_learn)
@@ -1512,6 +1512,8 @@ def main(page: ft.Page):
         app_state["learning_extra_index"] = 0
         app_state["learning_wrong_ids"] = []
         app_state["selected_letter_indices"] = []
+        app_state["word_build_template"] = []
+        app_state["word_build_fixed_positions"] = {}
         app_state["matching_left_id"] = None
         app_state["matching_right_id"] = None
         app_state["matching_matched_ids"] = []
@@ -1685,10 +1687,50 @@ def main(page: ft.Page):
         show_quiz_card()
 
     def word_build_target(word):
-        return word["gag"].split(" / ", 1)[0].strip()
+        return word["gag"].strip()
 
     def answer_letters(value):
         return [char for char in value if char.isalpha()]
+
+    def word_build_characters(value):
+        return [char for char in value if char.isalpha() or char == "/"]
+
+    def word_build_hint_positions(template):
+        letter_positions = [index for index, char in enumerate(template) if char.isalpha()]
+        letter_count = len(letter_positions)
+        has_separator = "/" in template
+        hint_count = 2 if has_separator or letter_count >= 9 else (1 if letter_count >= 6 else 0)
+        if hint_count == 0:
+            return []
+        if hint_count == 1:
+            return [letter_positions[len(letter_positions) // 2]]
+
+        if has_separator:
+            segments = []
+            segment = []
+            for index, char in enumerate(template):
+                if char == "/":
+                    if segment:
+                        segments.append(segment)
+                    segment = []
+                elif char.isalpha():
+                    segment.append(index)
+            if segment:
+                segments.append(segment)
+            if len(segments) >= 2:
+                first = segments[0][len(segments[0]) // 2]
+                second = segments[-1][len(segments[-1]) // 2]
+                if abs(first - second) > 1:
+                    return sorted([first, second])
+
+        interior = letter_positions[1:-1] or letter_positions
+        first = interior[len(interior) // 3]
+        second = interior[(2 * len(interior)) // 3]
+        if abs(first - second) <= 1:
+            alternatives = [position for position in interior if abs(position - first) > 1]
+            if alternatives:
+                second = max(alternatives, key=lambda position: abs(position - first))
+        return sorted({first, second})
 
     def build_learning_extra_stages():
         words = list(app_state.get("learning_matching_words", []))
@@ -1730,9 +1772,22 @@ def main(page: ft.Page):
         mode = app_state["mode"]
         if mode == "word_building":
             target = word_build_target(word)
-            letters = answer_letters(target)
-            extra_count = 2 if len(letters) < 6 else 3
-            target_letter_keys = {char.casefold() for char in letters}
+            template = word_build_characters(target)
+            fixed_positions = {
+                index: char
+                for index, char in enumerate(template)
+                if char == "/"
+            }
+            for index in word_build_hint_positions(template):
+                fixed_positions[index] = template[index]
+            letters = [
+                char
+                for index, char in enumerate(template)
+                if char.isalpha() and index not in fixed_positions
+            ]
+            answer_letter_count = sum(char.isalpha() for char in template)
+            extra_count = 2 if answer_letter_count < 6 else 3
+            target_letter_keys = {char.casefold() for char in template if char.isalpha()}
             distractor_pool = sorted({
                 char
                 for candidate in all_words
@@ -1750,9 +1805,11 @@ def main(page: ft.Page):
             random.shuffle(letters)
             app_state["direction"] = "forward"
             app_state["prompt_word"] = word.get(lang.lower(), word.get("ru", "---"))
-            app_state["correct_answer"] = "".join(answer_letters(target))
+            app_state["correct_answer"] = "".join(template)
             app_state["letter_bank"] = letters
             app_state["selected_letter_indices"] = []
+            app_state["word_build_template"] = template
+            app_state["word_build_fixed_positions"] = fixed_positions
         else:
             direction = "forward" if mode == "new" else random.choice(["forward", "reverse"])
             app_state["direction"] = direction
@@ -1938,9 +1995,32 @@ def main(page: ft.Page):
     def word_building_body(word):
         t = phase_text()
         selected = app_state["selected_letter_indices"]
-        built = "".join(app_state["letter_bank"][i] for i in selected)
-        target_length = len(answer_letters(word_build_target(word)))
-        display = " ".join(char.upper() for char in built) if built else " ".join("_" for _ in range(target_length))
+        selected_letters = [app_state["letter_bank"][index] for index in selected]
+        template = app_state["word_build_template"]
+        fixed_positions = app_state["word_build_fixed_positions"]
+        built_chars = []
+        display_chars = []
+        selected_index = 0
+        for position in range(len(template)):
+            if position in fixed_positions:
+                char = fixed_positions[position]
+            elif selected_index < len(selected_letters):
+                char = selected_letters[selected_index]
+                selected_index += 1
+            else:
+                char = None
+            if char is not None:
+                built_chars.append(char)
+                display_chars.append(char.upper())
+            else:
+                display_chars.append("_")
+        built = "".join(built_chars)
+        display = " ".join(display_chars)
+        required_letter_count = sum(
+            char.isalpha() and position not in fixed_positions
+            for position, char in enumerate(template)
+        )
+        answer_complete = len(selected) == required_letter_count
         if app_state["feedback_active"]:
             answer_bgcolor = "#EAF8EF" if app_state["feedback_correct"] else "#FDECEC"
             answer_border_color = "#B7E4C7" if app_state["feedback_correct"] else "#F3B7B7"
@@ -1957,7 +2037,7 @@ def main(page: ft.Page):
                     alignment=ft.Alignment.CENTER,
                 ),
                 width=48, height=48,
-                disabled=index in selected or app_state["feedback_active"],
+                disabled=index in selected or answer_complete or app_state["feedback_active"],
                 on_click=lambda _, i=index: select_letter(i),
             ))
         return ft.Column([
@@ -1980,7 +2060,7 @@ def main(page: ft.Page):
                 t["check"],
                 icon=ft.Icons.CHECK,
                 on_click=lambda _: submit_answer(built, word),
-                disabled=not selected,
+                disabled=not answer_complete,
                 visible=not app_state["feedback_active"],
                 bgcolor=INDIGO,
                 color="white",
@@ -2055,11 +2135,12 @@ def main(page: ft.Page):
         else:
             right_words = words[1:] + words[:1]
         round_complete = len(app_state["matching_matched_ids"]) == len(words)
+        if round_complete:
+            continue_matching_round()
+            return
 
         status = None
-        if round_complete:
-            status = ft.Text("✓ " + t["matching_round_complete"], size=15, weight=ft.FontWeight.BOLD, color="#157347", text_align=ft.TextAlign.CENTER)
-        elif app_state.get("matching_wrong_pair"):
+        if app_state.get("matching_wrong_pair"):
             status = ft.Text("✕ " + t["incorrect_answer"], size=15, weight=ft.FontWeight.BOLD, color="#B42318", text_align=ft.TextAlign.CENTER)
 
         body_controls = [
@@ -2073,17 +2154,7 @@ def main(page: ft.Page):
             ft.Column([matching_button(word, "right") for word in right_words], spacing=10, expand=True, horizontal_alignment=ft.CrossAxisAlignment.STRETCH),
         ], spacing=10, vertical_alignment=ft.CrossAxisAlignment.START, expand=True))
 
-        bottom = None
-        if round_complete:
-            bottom = ft.ElevatedButton(
-                t["continue_answer"] if app_state["index"] < len(app_state["current_batch"]) - 1 else t["finish"],
-                icon=ft.Icons.ARROW_FORWARD if app_state["index"] < len(app_state["current_batch"]) - 1 else ft.Icons.CHECK,
-                on_click=lambda _: continue_matching_round(),
-                bgcolor=INDIGO,
-                color="white",
-                height=52,
-            )
-        set_session_view(exercise_shell(ft.Column(body_controls, spacing=14, expand=True), bottom, t["matching_pairs"]))
+        set_session_view(exercise_shell(ft.Column(body_controls, spacing=14, expand=True), None, t["matching_pairs"]))
 
     def select_matching_word(side, word_id):
         if word_id in app_state["matching_matched_ids"]:
