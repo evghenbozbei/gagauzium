@@ -14,6 +14,14 @@ STORAGE_DIR = Path(os.environ.get("FLET_APP_STORAGE_DATA", APP_DIR))
 WORDS_DATA_FILE = APP_DIR / "words_data.json"
 USER_STATS_FILE = STORAGE_DIR / "user_stats.json"
 
+# The first two learning batches in the numbers category follow the natural
+# counting order instead of the usual random selection: 1-5, then 6-10.
+# These IDs are stable vocabulary identifiers from words_data.json.
+NUMBER_FOUNDATION_BATCH_IDS = (
+    (36, 37, 38, 39, 40),
+    (41, 42, 43, 44, 45),
+)
+
 # --- ПЕРЕВОДЫ ИНТЕРФЕЙСА ---
 UI_TEXT = {
     "RU": {
@@ -382,6 +390,29 @@ def weighted_sample(words, stats, today, k):
         keys.append((random.random() ** (1.0 / weight), i))
     keys.sort(key=lambda x: -x[0])
     return [words[i] for _, i in keys[:k]]
+
+
+def select_new_learning_batch(words, category, batch_size=6):
+    """Choose a new-word batch, preserving the introductory number order."""
+    unlearned = [
+        word for word in words
+        if word["category"] == category and not word["learned"]
+    ]
+
+    category_key = CATEGORIES_BY_SOURCE.get(category, {}).get("key")
+    if category_key == "numbers":
+        unlearned_by_id = {word["id"]: word for word in unlearned}
+        for batch_ids in NUMBER_FOUNDATION_BATCH_IDS:
+            pending = [
+                unlearned_by_id[word_id]
+                for word_id in batch_ids
+                if word_id in unlearned_by_id
+            ]
+            if pending:
+                return pending
+
+    random.shuffle(unlearned)
+    return unlearned[:batch_size]
 
 
 def build_daily_set(learned_words, stats, today):
@@ -1592,10 +1623,8 @@ def main(page: ft.Page):
             app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=10)
             app_state["index"] = 0
         elif mode == "new":
-            words = [w for w in all_words if w["category"] == category and not w["learned"]]
-            random.shuffle(words)
             app_state["is_quiz"] = False
-            app_state["current_batch"] = words[:6]
+            app_state["current_batch"] = select_new_learning_batch(all_words, category)
             app_state["learning_matching_words"] = list(app_state["current_batch"])
             app_state["learning_word_count"] = len(app_state["current_batch"])
             app_state["learning_extra_count"] = min(3, (len(app_state["current_batch"]) + 1) // 2)
