@@ -374,6 +374,92 @@ def word_build_letter_count(word):
     return len(answer_letters(word_build_target(word)))
 
 
+def word_build_hint_positions(template):
+    """Return template positions whose letters are shown as hints."""
+    letter_positions = [index for index, char in enumerate(template) if char.isalpha()]
+    letter_count = len(letter_positions)
+    has_separator = any(not char.isalpha() for char in template)
+    hint_count = 2 if has_separator or letter_count >= 9 else (1 if letter_count >= 6 else 0)
+    if hint_count == 0:
+        return []
+    if hint_count == 1:
+        return [letter_positions[len(letter_positions) // 2]]
+
+    if has_separator:
+        segments = []
+        segment = []
+        for index, char in enumerate(template):
+            if not char.isalpha():
+                if segment:
+                    segments.append(segment)
+                segment = []
+            else:
+                segment.append(index)
+        if segment:
+            segments.append(segment)
+        if len(segments) >= 2:
+            first = segments[0][len(segments[0]) // 2]
+            second = segments[-1][len(segments[-1]) // 2]
+            if abs(first - second) > 1:
+                return sorted([first, second])
+
+    interior = letter_positions[1:-1] or letter_positions
+    first = interior[len(interior) // 3]
+    second = interior[(2 * len(interior)) // 3]
+    if abs(first - second) <= 1:
+        alternatives = [position for position in interior if abs(position - first) > 1]
+        if alternatives:
+            second = max(alternatives, key=lambda position: abs(position - first))
+    return sorted({first, second})
+
+
+def native_word_text(word, lang):
+    """Return the word's translation in the interface language."""
+    return str(word.get(lang.lower(), word.get("ru", "---")))
+
+
+def valid_answers(word, direction, words, lang):
+    """Return every dictionary value that correctly translates the prompt.
+
+    Homonyms (ay = луна / месяц) and shared translations (mare = большой /
+    море) make several answers valid for the same prompt. ``forward`` asks
+    for the Gagauz word, ``reverse`` for the translation.
+    """
+    def gagauz(entry):
+        return str(entry["gag"])
+
+    def native(entry):
+        return native_word_text(entry, lang)
+
+    prompt_of, answer_of = (native, gagauz) if direction == "forward" else (gagauz, native)
+    prompt_variants = answer_variants(prompt_of(word))
+    acceptable = {answer_of(word)}
+    acceptable.update(
+        answer_of(entry) for entry in words
+        if answer_variants(prompt_of(entry)) & prompt_variants
+    )
+    return acceptable
+
+
+def wrong_answers(direction, acceptable, words, lang):
+    """Return wrong options that share no variant with a valid answer."""
+    acceptable_variants = set().union(*(answer_variants(value) for value in acceptable))
+    values = {
+        str(entry["gag"]) if direction == "forward" else native_word_text(entry, lang)
+        for entry in words
+    }
+    return sorted(value for value in values if not answer_variants(value) & acceptable_variants)
+
+
+def entries_are_equivalent(first, second, lang):
+    """Whether two entries can be matched with each other's translation."""
+    return (
+        first["id"] == second["id"]
+        or bool(answer_variants(native_word_text(first, lang)) & answer_variants(native_word_text(second, lang)))
+        or bool(answer_variants(first["gag"]) & answer_variants(second["gag"]))
+    )
+
+
 def load_data():
     try:
         with WORDS_DATA_FILE.open("r", encoding="utf-8") as f:
@@ -911,12 +997,12 @@ def main(page: ft.Page):
                     ft.Text("Welcome to Gagauzium", size=28, weight="bold", color=INK, text_align=ft.TextAlign.CENTER),
                     ft.Text("Выберите язык обучения\nAlegeți limba de învățare", size=15, color=MUTED, text_align=ft.TextAlign.CENTER),
                     ft.Container(height=28),
-                    ft.ElevatedButton(
+                    ft.Button(
                         content=ft.Row([ft.Text("🇷🇺", size=24), ft.Text("Русский", size=18, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
                         width=330, height=62, bgcolor=INDIGO, color="white", on_click=lambda _: set_language("RU")
                     ),
                     ft.Container(height=12),
-                    ft.ElevatedButton(
+                    ft.Button(
                         content=ft.Row([ft.Text("🇷🇴", size=24), ft.Text("Română", size=18, weight="bold")], alignment=ft.MainAxisAlignment.CENTER),
                         width=330, height=62, bgcolor="white", color=INK, on_click=lambda _: set_language("RO")
                     ),
@@ -989,7 +1075,7 @@ def main(page: ft.Page):
         if learned_count > 0 and daily_done:
             daily_controls.append(ft.Text(t["daily_complete_hint"], size=12, color=MUTED))
         elif learned_count > 0 and not daily_disabled:
-            daily_controls.append(ft.ElevatedButton(
+            daily_controls.append(ft.Button(
                 daily_cta,
                 icon=ft.Icons.PLAY_ARROW,
                 on_click=lambda _: start_session("ALL", "daily"),
@@ -1011,7 +1097,7 @@ def main(page: ft.Page):
                 ft.Text(t["welcome_gagauz"], size=16, weight=ft.FontWeight.W_600, color=INDIGO, text_align=ft.TextAlign.CENTER),
                 ft.Container(height=2),
                 ft.Text(t["choose_start"], size=14, color=MUTED, text_align=ft.TextAlign.CENTER),
-                ft.ElevatedButton(
+                ft.Button(
                     t["choose_first_topic"],
                     icon=ft.Icons.MENU_BOOK,
                     on_click=lambda _: show_learn(),
@@ -1026,7 +1112,7 @@ def main(page: ft.Page):
                 ft.Text(t["continue_learning"], size=11, weight=ft.FontWeight.BOLD, color=MUTED),
                 ft.Row([category_visual(last_category, 62), ft.Column([ft.Text(localized_category_name(last_category, app_state["lang"]), size=18, weight=ft.FontWeight.BOLD, color=INK), ft.Text(get_category_meta(last_category).get("gag") or "", size=11, color=INDIGO), ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, color=MUTED)], spacing=2, expand=True)], spacing=14),
                 ft.ProgressBar(value=learned / total if total else 0, color=INDIGO, bgcolor="#E8EAF2", height=8),
-                ft.ElevatedButton(
+                ft.Button(
                     content=ft.Text(t["continue"], size=13, text_align=ft.TextAlign.CENTER),
                     icon=ft.Icons.ARROW_FORWARD,
                     on_click=lambda _, c=last_category: open_category_detail(c),
@@ -1045,7 +1131,7 @@ def main(page: ft.Page):
             continue_content = ft.Column([
                 ft.Text(t["continue_learning"], size=11, weight=ft.FontWeight.BOLD, color=MUTED),
                 ft.Text(t["no_category"], size=14, color=MUTED),
-                ft.ElevatedButton(t["choose_category"], icon=ft.Icons.MENU_BOOK, on_click=lambda _: show_learn(), bgcolor=INDIGO, color="white"),
+                ft.Button(t["choose_category"], icon=ft.Icons.MENU_BOOK, on_click=lambda _: show_learn(), bgcolor=INDIGO, color="white"),
             ], spacing=12)
 
         streak = displayed_streak()
@@ -1166,17 +1252,17 @@ def main(page: ft.Page):
             rounded_card(ft.Column([
                 ft.Text("✨ " + t["learn_new"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(remaining_word_count_text(remaining, app_state["lang"]), size=12, color=MUTED),
-                ft.ElevatedButton(t["start_learning"] if remaining else t["all_words_learned"], icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session(source_name, "new"), disabled=remaining == 0, bgcolor=INDIGO, color="white"),
+                ft.Button(t["start_learning"] if remaining else t["all_words_learned"], icon=ft.Icons.PLAY_ARROW, on_click=lambda _: start_session(source_name, "new"), disabled=remaining == 0, bgcolor=INDIGO, color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#EAF4ED"),
             rounded_card(ft.Column([
                 ft.Text("⚠️ " + t["difficult_words"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(attention_word_count_text(difficult, app_state["lang"]) if difficult else t["no_difficult"], size=12, color=MUTED),
-                ft.ElevatedButton(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, opacity=0.48 if difficult == 0 else 1.0, bgcolor="#D34A5B", color="white"),
+                ft.Button(t["review_action"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session(source_name, "difficult"), disabled=difficult == 0, opacity=0.48 if difficult == 0 else 1.0, bgcolor="#D34A5B", color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#F7EDEF"),
             rounded_card(ft.Column([
                 ft.Text("📊 " + t["category_statistics"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(learned_of_total_text(learned, total, app_state["lang"]), size=12, color=MUTED),
-                ft.ElevatedButton(t["view_all_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name), bgcolor="#16847A", color="white"),
+                ft.Button(t["view_all_words"], icon=ft.Icons.LIST_ALT, on_click=lambda _: show_word_list(source_name), bgcolor="#16847A", color="white"),
             ], spacing=9, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#E8F4F2"),
             ft.Container(height=8),
         )
@@ -1285,14 +1371,14 @@ def main(page: ft.Page):
             rounded_card(ft.Column([
                 ft.Text(t["language"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Row([
-                    ft.ElevatedButton("🇷🇺 " + t["russian"], on_click=lambda _: set_language("RU", "settings"), bgcolor=INDIGO if app_state["lang"] == "RU" else "#EEEFF4", color="white" if app_state["lang"] == "RU" else INK, expand=True),
-                    ft.ElevatedButton("🇷🇴 " + t["romanian"], on_click=lambda _: set_language("RO", "settings"), bgcolor=INDIGO if app_state["lang"] == "RO" else "#EEEFF4", color="white" if app_state["lang"] == "RO" else INK, expand=True),
+                    ft.Button("🇷🇺 " + t["russian"], on_click=lambda _: set_language("RU", "settings"), bgcolor=INDIGO if app_state["lang"] == "RU" else "#EEEFF4", color="white" if app_state["lang"] == "RU" else INK, expand=True),
+                    ft.Button("🇷🇴 " + t["romanian"], on_click=lambda _: set_language("RO", "settings"), bgcolor=INDIGO if app_state["lang"] == "RO" else "#EEEFF4", color="white" if app_state["lang"] == "RO" else INK, expand=True),
                 ], spacing=8),
             ], spacing=12)),
             rounded_card(ft.Column([
                 ft.Text(UI_TEXT[app_state["lang"]]["statistics"], size=17, weight=ft.FontWeight.BOLD, color=INK),
                 ft.Text(t["statistics_hint"], size=12, color=MUTED),
-                ft.ElevatedButton(t["open_statistics"], icon=ft.Icons.QUERY_STATS, on_click=lambda _: show_statistics(), bgcolor=INDIGO, color="white"),
+                ft.Button(t["open_statistics"], icon=ft.Icons.QUERY_STATS, on_click=lambda _: show_statistics(), bgcolor=INDIGO, color="white"),
             ], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.STRETCH)),
             rounded_card(ft.Column([
                 ft.Text(t["reset_progress"], size=17, weight=ft.FontWeight.BOLD, color="#B42318"),
@@ -1323,7 +1409,7 @@ def main(page: ft.Page):
             content=ft.Text(message),
             actions=[
                 ft.TextButton(txt["confirm_no"], on_click=close_dlg),
-                ft.ElevatedButton(txt["confirm_yes"], on_click=confirm, bgcolor="red", color="white"),
+                ft.Button(txt["confirm_yes"], on_click=confirm, bgcolor="red", color="white"),
             ],
             actions_alignment=ft.MainAxisAlignment.CENTER,
         )
@@ -1520,39 +1606,16 @@ def main(page: ft.Page):
         )
 
     def native_text(word):
-        return str(word.get(app_state["lang"].lower(), word.get("ru", "---")))
+        return native_word_text(word, app_state["lang"])
 
     def acceptable_answers(word, direction):
-        """Return every dictionary value that correctly translates the prompt.
-
-        Homonyms (ay = луна / месяц) and shared translations (mare = большой /
-        море) make several answers valid for the same prompt.
-        """
-        if direction == "forward":
-            prompt_of, answer_of = native_text, lambda w: str(w["gag"])
-        else:
-            prompt_of, answer_of = lambda w: str(w["gag"]), native_text
-        prompt_variants = answer_variants(prompt_of(word))
-        acceptable = {answer_of(word)}
-        acceptable.update(
-            answer_of(w) for w in all_words
-            if answer_variants(prompt_of(w)) & prompt_variants
-        )
-        return acceptable
+        return valid_answers(word, direction, all_words, app_state["lang"])
 
     def answer_distractors(direction, acceptable):
-        """Return wrong options that share no variant with a valid answer."""
-        acceptable_variants = set().union(*(answer_variants(value) for value in acceptable))
-        values = {str(w["gag"]) if direction == "forward" else native_text(w) for w in all_words}
-        return sorted(value for value in values if not answer_variants(value) & acceptable_variants)
+        return wrong_answers(direction, acceptable, all_words, app_state["lang"])
 
     def words_are_equivalent(first, second):
-        """Whether two entries can be matched with each other's translation."""
-        return (
-            first["id"] == second["id"]
-            or bool(answer_variants(native_text(first)) & answer_variants(native_text(second)))
-            or bool(answer_variants(first["gag"]) & answer_variants(second["gag"]))
-        )
+        return entries_are_equivalent(first, second, app_state["lang"])
 
     def matching_candidates():
         """Return learned words with unambiguous labels in both columns."""
@@ -1797,7 +1860,7 @@ def main(page: ft.Page):
         ], horizontal_alignment=ft.CrossAxisAlignment.CENTER, expand=True)
         bottom = None
         if app_state["learning_batch_viewed"]:
-            bottom = ft.ElevatedButton(
+            bottom = ft.Button(
                 phase_text()["repeat_learned"],
                 icon=ft.Icons.REPLAY,
                 on_click=lambda _: start_practice_phase(),
@@ -1822,43 +1885,6 @@ def main(page: ft.Page):
         app_state["last_word_id"] = None
         app_state["feedback_active"] = False
         show_quiz_card()
-
-    def word_build_hint_positions(template):
-        letter_positions = [index for index, char in enumerate(template) if char.isalpha()]
-        letter_count = len(letter_positions)
-        has_separator = any(not char.isalpha() for char in template)
-        hint_count = 2 if has_separator or letter_count >= 9 else (1 if letter_count >= 6 else 0)
-        if hint_count == 0:
-            return []
-        if hint_count == 1:
-            return [letter_positions[len(letter_positions) // 2]]
-
-        if has_separator:
-            segments = []
-            segment = []
-            for index, char in enumerate(template):
-                if not char.isalpha():
-                    if segment:
-                        segments.append(segment)
-                    segment = []
-                elif char.isalpha():
-                    segment.append(index)
-            if segment:
-                segments.append(segment)
-            if len(segments) >= 2:
-                first = segments[0][len(segments[0]) // 2]
-                second = segments[-1][len(segments[-1]) // 2]
-                if abs(first - second) > 1:
-                    return sorted([first, second])
-
-        interior = letter_positions[1:-1] or letter_positions
-        first = interior[len(interior) // 3]
-        second = interior[(2 * len(interior)) // 3]
-        if abs(first - second) <= 1:
-            alternatives = [position for position in interior if abs(position - first) > 1]
-            if alternatives:
-                second = max(alternatives, key=lambda position: abs(position - first))
-        return sorted({first, second})
 
     def build_learning_extra_stages():
         words = list(app_state.get("learning_matching_words", []))
@@ -2020,7 +2046,7 @@ def main(page: ft.Page):
                     bgcolor, color = "#198754", "white"
                 elif option == app_state["selected_answer"]:
                     bgcolor, color = "#D9363E", "white"
-            buttons.append(ft.ElevatedButton(
+            buttons.append(ft.Button(
                 content=ft.Container(
                     content=ft.Text(option, text_align=ft.TextAlign.CENTER),
                     alignment=ft.Alignment.CENTER,
@@ -2051,7 +2077,7 @@ def main(page: ft.Page):
                         bgcolor, color, border_color = "#EAF8EF", "#157347", "#91D5A8"
                     elif option == app_state["selected_answer"]:
                         bgcolor, color, border_color = "#FDECEC", "#B42318", "#F3B7B7"
-                option_cards.append(ft.ElevatedButton(
+                option_cards.append(ft.Button(
                     content=ft.Container(
                         content=ft.Text(
                             option,
@@ -2103,7 +2129,7 @@ def main(page: ft.Page):
                     bgcolor, color = "#198754", "white"
                 elif value == app_state["selected_answer"]:
                     bgcolor, color = "#D9363E", "white"
-            buttons.append(ft.ElevatedButton(
+            buttons.append(ft.Button(
                 content=ft.Container(
                     content=ft.Text(label, text_align=ft.TextAlign.CENTER),
                     alignment=ft.Alignment.CENTER,
@@ -2161,7 +2187,7 @@ def main(page: ft.Page):
             answer_color = INDIGO
         bank = []
         for index, letter in enumerate(app_state["letter_bank"]):
-            bank.append(ft.ElevatedButton(
+            bank.append(ft.Button(
                 content=ft.Container(
                     content=ft.Text(display_letter(letter), text_align=ft.TextAlign.CENTER),
                     alignment=ft.Alignment.CENTER,
@@ -2186,7 +2212,7 @@ def main(page: ft.Page):
                 ft.OutlinedButton(t["backspace"], icon=ft.Icons.BACKSPACE_OUTLINED, on_click=lambda _: remove_letter(), disabled=not selected or app_state["feedback_active"]),
                 ft.OutlinedButton(t["clear"], icon=ft.Icons.CLEAR_ALL, on_click=lambda _: clear_letters(), disabled=not selected or app_state["feedback_active"]),
             ], alignment=ft.MainAxisAlignment.CENTER),
-            ft.ElevatedButton(
+            ft.Button(
                 t["check"],
                 icon=ft.Icons.CHECK,
                 on_click=lambda _: submit_answer(built, word),
@@ -2217,7 +2243,7 @@ def main(page: ft.Page):
             bgcolor, color, border_color = "#FFFFFF", INK, BORDER
 
         label = word.get(lang_key, word.get("ru", "---")) if side == "left" else word["gag"]
-        return ft.ElevatedButton(
+        return ft.Button(
             content=ft.Container(
                 content=ft.Text(
                     str(label),
@@ -2393,7 +2419,7 @@ def main(page: ft.Page):
                 body.controls.insert(4, feedback_panel(word))
             else:
                 body.controls.append(feedback_panel(word))
-            bottom = None if mode == "fast" else ft.ElevatedButton(
+            bottom = None if mode == "fast" else ft.Button(
                 phase_text()["continue_answer"],
                 icon=ft.Icons.ARROW_FORWARD,
                 on_click=lambda _: continue_after_feedback(),
@@ -2583,7 +2609,7 @@ def main(page: ft.Page):
                 ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
             ]
             result_actions = [
-                ft.ElevatedButton(t["try_again"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session("ALL", "fast"), bgcolor=INDIGO, color="white", height=54),
+                ft.Button(t["try_again"], icon=ft.Icons.REPLAY, on_click=lambda _: start_session("ALL", "fast"), bgcolor=INDIGO, color="white", height=54),
                 ft.OutlinedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, height=50),
             ]
         elif mode == "new":
@@ -2612,7 +2638,7 @@ def main(page: ft.Page):
                     ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
                 ]
             result_actions = [
-                ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
+                ft.Button(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
             ]
         else:
             if accuracy >= 90:
@@ -2632,7 +2658,7 @@ def main(page: ft.Page):
                 ft.Text(f"🔥 {t['streak_confirmed']}: {streak_days_text(displayed_streak(), app_state['lang'])}", size=14, color="#A15C00"),
             ]
             result_actions = [
-                ft.ElevatedButton(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
+                ft.Button(t["finish"], icon=ft.Icons.CHECK, on_click=return_from_exercise, bgcolor=INDIGO, color="white", height=54),
             ]
 
         result_view = ft.View(

@@ -7,6 +7,14 @@ dependencies = [
     "flet==0.86.5",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.flet]
 product = "Gagauzium"
 org = "com.flet"
@@ -22,6 +30,7 @@ exclude = [
     ".flet",
     ".git",
     ".gitignore",
+    ".pytest_cache",
     ".tmp",
     ".venv",
     "README.md",
@@ -31,6 +40,7 @@ exclude = [
     "docs",
     "imports",
     "pyproject.toml",
+    "tests",
     "ubuntu-picture.jpg",
     "user_stats.json",
     "user_stats.json.tmp",

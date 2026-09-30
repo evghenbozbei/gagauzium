@@ -10,3 +10,5 @@ ubuntu-picture.jpg
 *.keystore
 user_stats.json.tmp
 user_stats.corrupt-*.json
+user_stats.json
+.pytest_cache/
