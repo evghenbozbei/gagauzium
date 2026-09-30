@@ -274,3 +274,50 @@ def test_reset_forgets_progress_and_upcoming_daily_words():
 def test_daily_review_length_without_a_set():
     assert main.daily_review_length(None) == 0
     assert main.daily_review_length({}) == 0
+
+
+# --- choosing wrong options
+
+POS_WORDS = (
+    [dict(word(100 + i, f"глагол{i}", f"fiil{i}", category="Глаголы"), part_of_speech=["verb"]) for i in range(6)]
+    + [dict(word(200 + i, f"цифра{i}", f"sayı{i}", category="Цифры"), part_of_speech=["numeral"]) for i in range(6)]
+    + [dict(word(300 + i, f"еда{i}", f"iimäk{i}", category="Еда"), part_of_speech=["noun"]) for i in range(6)]
+    + [dict(word(400 + i, f"дом{i}", f"ev{i}", category="Дом и Предметы"), part_of_speech=["noun"]) for i in range(6)]
+)
+
+
+@pytest.mark.parametrize("direction", ["forward", "reverse"])
+def test_two_of_three_wrong_options_resemble_the_word(direction):
+    asked = POS_WORDS[0]
+    same_kind = {main.answer_text(w, direction, "RU") for w in POS_WORDS if w["category"] == "Глаголы"}
+    for seed in range(50):
+        acceptable = main.valid_answers(asked, direction, POS_WORDS, "RU")
+        options = main.pick_wrong_answers(asked, direction, acceptable, POS_WORDS, "RU", 3, rng=random.Random(seed))
+        assert len(options) == len(set(options)) == 3
+        assert not set(options) & acceptable
+        assert len(set(options) & same_kind) >= 2
+
+
+def test_similar_options_prefer_the_same_category():
+    asked = POS_WORDS[12]  # noun from «Еда»; nouns also exist in «Дом и Предметы»
+    same_topic, same_kind = main.similar_wrong_answers(
+        asked, "forward", {main.answer_text(w, "forward", "RU") for w in POS_WORDS}, POS_WORDS, "RU")
+    assert same_topic == sorted(f"iimäk{i}" for i in range(6))
+    assert same_kind == sorted(f"ev{i}" for i in range(6))
+    options = main.pick_wrong_answers(asked, "forward", {"iimäk0"}, POS_WORDS, "RU", 3, rng=random.Random(3))
+    assert sum(option.startswith("iimäk") for option in options) >= 2
+
+
+def test_rare_parts_of_speech_fall_back_to_any_words():
+    lonely = dict(word(999, "и", "hem", category="Союзы и Связки"), part_of_speech=["conjunction"])
+    words = POS_WORDS + [lonely]
+    options = main.pick_wrong_answers(lonely, "forward", {"hem"}, words, "RU", 3, rng=random.Random(1))
+    assert len(options) == 3 and "hem" not in options
+
+
+def test_single_option_respects_exclusions():
+    asked = POS_WORDS[0]
+    for seed in range(30):
+        options = main.pick_wrong_answers(asked, "forward", {"fiil0"}, POS_WORDS, "RU", 1,
+                                          exclude=["FIIL1"], rng=random.Random(seed))
+        assert len(options) == 1 and options[0] not in {"fiil0", "fiil1"}

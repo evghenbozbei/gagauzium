@@ -390,6 +390,54 @@ def wrong_answers(direction, acceptable, words, lang):
     return sorted(value for value in values if not answer_variants(value) & acceptable_variants)
 
 
+def answer_text(entry, direction, lang):
+    """The text shown as an answer option for the given question direction."""
+    return str(entry["gag"]) if direction == "forward" else native_word_text(entry, lang)
+
+
+def similar_wrong_answers(word, direction, allowed, words, lang):
+    """Split allowed wrong answers into words resembling the asked one.
+
+    Returns (same category and part of speech, same part of speech elsewhere).
+    """
+    parts_of_speech = set(word.get("part_of_speech", []))
+    same_topic, same_kind = set(), set()
+    for entry in words:
+        value = answer_text(entry, direction, lang)
+        if value not in allowed or not parts_of_speech & set(entry.get("part_of_speech", [])):
+            continue
+        (same_topic if entry["category"] == word["category"] else same_kind).add(value)
+    return sorted(same_topic), sorted(same_kind - same_topic)
+
+
+def pick_wrong_answers(word, direction, acceptable, words, lang, count, exclude=(), rng=random):
+    """Choose wrong options: most resemble the asked word, one is random.
+
+    Similar options share the part of speech (preferably the category too), so
+    the answer cannot be guessed from the kind of word alone, while the random
+    option keeps the exercise manageable for beginners. A single option is
+    similar two times out of three.
+    """
+    excluded = {value.casefold() for value in exclude}
+    allowed = [
+        value for value in wrong_answers(direction, acceptable, words, lang)
+        if value.casefold() not in excluded
+    ]
+    if count >= 2:
+        similar_count = count - 1
+    else:
+        similar_count = 1 if rng.random() < 2 / 3 else 0
+    chosen = []
+    for pool in similar_wrong_answers(word, direction, set(allowed), words, lang):
+        need = similar_count - len(chosen)
+        if need <= 0:
+            break
+        chosen.extend(rng.sample(pool, min(need, len(pool))))
+    rest = [value for value in allowed if value not in chosen]
+    chosen.extend(rng.sample(rest, min(count - len(chosen), len(rest))))
+    return chosen
+
+
 def entries_are_equivalent(first, second, lang):
     """Whether two entries can be matched with each other's translation."""
     return (
@@ -1595,8 +1643,8 @@ def main(page: ft.Page):
     def acceptable_answers(word, direction):
         return valid_answers(word, direction, all_words, app_state["lang"])
 
-    def answer_distractors(direction, acceptable):
-        return wrong_answers(direction, acceptable, all_words, app_state["lang"])
+    def choose_wrong_answers(word, direction, acceptable, count, exclude=()):
+        return pick_wrong_answers(word, direction, acceptable, all_words, app_state["lang"], count, exclude)
 
     def words_are_equivalent(first, second):
         return entries_are_equivalent(first, second, app_state["lang"])
@@ -1959,16 +2007,16 @@ def main(page: ft.Page):
                 prompt_word = word["gag"]
                 correct = native_text(word)
             acceptable = acceptable_answers(word, direction)
-            others = answer_distractors(direction, acceptable)
             app_state["prompt_word"] = prompt_word
             app_state["correct_answer"] = correct
             app_state["acceptable_answers"] = {value.casefold() for value in acceptable}
             if mode == "true_false":
-                is_truth = random.choice([True, False]) if others else True
-                app_state["tf_displayed"] = correct if is_truth else random.choice(others)
+                lies = choose_wrong_answers(word, direction, acceptable, 1)
+                is_truth = random.choice([True, False]) if lies else True
+                app_state["tf_displayed"] = correct if is_truth else lies[0]
                 app_state["tf_is_truth"] = is_truth
             else:
-                distractors = random.sample(others, min(len(others), 3))
+                distractors = choose_wrong_answers(word, direction, acceptable, 3)
                 app_state["current_options"] = distractors + [correct]
                 random.shuffle(app_state["current_options"])
         app_state["last_word_id"] = word["id"]
@@ -2463,12 +2511,10 @@ def main(page: ft.Page):
     def start_true_false_followup(word):
         correct = str(app_state["correct_answer"])
         rejected = str(app_state["tf_displayed"])
-        acceptable = acceptable_answers(word, app_state.get("direction", "forward"))
-        distractors = [
-            value for value in answer_distractors(app_state.get("direction", "forward"), acceptable)
-            if value.casefold() != rejected.casefold()
-        ]
-        distractor = random.choice(distractors) if distractors else rejected
+        direction = app_state.get("direction", "forward")
+        acceptable = acceptable_answers(word, direction)
+        distractors = choose_wrong_answers(word, direction, acceptable, 1, exclude=[rejected])
+        distractor = distractors[0] if distractors else rejected
         options = [correct, distractor]
         random.shuffle(options)
         app_state["tf_followup_active"] = True
