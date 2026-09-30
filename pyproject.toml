@@ -19,7 +19,7 @@ testpaths = ["tests"]
 product = "Gagauzium"
 org = "com.flet"
 bundle_id = "com.flet.gagauzium"
-build_number = 5
+build_number = 6
 
 [tool.flet.app]
 path = "."
