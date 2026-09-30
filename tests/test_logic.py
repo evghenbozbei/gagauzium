@@ -252,3 +252,25 @@ def test_missing_stats_file_starts_fresh():
     stats = main.load_stats()
     assert stats == {"streak_days": 0, "last_login": "", "milestone_50_completed": False, "words": {}}
     assert json.dumps(stats)
+
+
+# --- category reset
+
+def test_reset_forgets_progress_and_upcoming_daily_words():
+    stats = {
+        "words": {str(i): {"learned": True, "correct_answers": 3, "wrong_answers": 2,
+                           "last_seen": TODAY.isoformat(), "needs_attention": True,
+                           "difficult_correct_streak": 1} for i in range(1, 7)},
+        "daily_review": {"date": TODAY.isoformat(), "word_ids": [1, 2, 3, 4, 5, 6], "index": 2},
+    }
+    main.reset_words_progress(stats, [1, 4, 5])
+    assert stats["words"]["4"] == main.new_word_stats()
+    assert stats["words"]["2"]["learned"] is True
+    # Word 1 was already answered today and stays counted; 4 and 5 are dropped.
+    assert stats["daily_review"]["word_ids"] == [1, 2, 3, 6]
+    assert main.daily_review_length(stats["daily_review"]) == 4
+
+
+def test_daily_review_length_without_a_set():
+    assert main.daily_review_length(None) == 0
+    assert main.daily_review_length({}) == 0

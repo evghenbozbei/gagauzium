@@ -29,92 +29,28 @@ WORD_BUILD_MAX_LETTERS = 12
 # --- ПЕРЕВОДЫ ИНТЕРФЕЙСА ---
 UI_TEXT = {
     "RU": {
-        "title": "Gagauzça üürenmää",
-        "learn": "Учить новые слова",
-        "review": "Повторить",
-        "view_all": "Просмотреть все слова",
-        "back": "< Назад в меню",
-        "to_menu": "< Назад в меню",
         "reset": "Обнулить категорию",
-        "global_title": "ОБЩИЙ ПРОГРЕСС",
-        "global_btn": "Повторять все слова",
         "remember": "ЗАПОМНИТЕ СЛОВО",
-        "next": "Запомнил, далее",
-        "quiz_title": "ПРОВЕРКА ЗНАНИЙ",
-        "word_count": "Слово {0} из {1}",
-        "correct": "Верно! ✅",
-        "wrong": "Ошибка! ❌",
-        "finished": "Сессия завершена!",
-        "dictionary": "Категория: ",
         "reset_all": "Обнулить весь прогресс",
-        "fast_review_btn": "Быстрое повторение",
-        "fast_review_success": "Вы всё повторили, поздравляем!",
-        "fast_review_fail": "Закончились жизни, повторите слова и попробуйте ещё",
         "statistics": "📊 Статистика",
-        "stats_title": "СТАТИСТИКА ПРОФИЛЯ",
-        "hard_words": "Слова, требующие внимания (ошибок):",
-        "stats_learned": "Изучено: {0} из {1}",
         "no_errors": "Ошибок пока нет!",
         "skip": "Не знаю",
-        "category_title": "Изучения и повторения по категориям",
-        "true_false_btn": "Правда или Ложь",
         "true_btn": "✅ Правда",
         "false_btn": "❌ Ложь",
-        "continue_question": "Продолжить изучение новых слов?",
-        "continue_yes": "Да",
-        "continue_no": "Нет",
-        "all_learned": "Все слова выучены! 🎉",
-        "daily_review_btn": "🎯 Ежедневное повторение",
-        "daily_review_locked": "Возвращайся завтра 🌙",
-        "daily_review_min": "Нужно ≥20 выученных слов",
-        "daily_review_score": "Готово! {0}/{1} верно ({2}%)",
-        "daily_review_title": "ЕЖЕДНЕВНОЕ ПОВТОРЕНИЕ",
         "confirm_yes": "Да, обнулить",
         "confirm_no": "Отмена",
         "confirm_reset_category": "Обнулить категорию «{0}»? Прогресс этой категории будет потерян.",
         "confirm_reset_all": "Обнулить весь прогресс? Будут удалены изученные слова, статистика ответов и серия занятий."
     },
     "RO": {
-        "title": "Gagauzça üürenmää",
-        "learn": "Învață cuvinte noi",
-        "review": "Repetă",
-        "view_all": "Vezi toate cuvintele",
-        "back": "< Înapoi la meniu",
-        "to_menu": "< Înapoi la meniu",
         "reset": "Resetează categorie",
-        "global_title": "PROGRES TOTAL",
-        "global_btn": "Repetați toate cuvinte",
         "remember": "ȚINE MINTE CUVÂNTUL",
-        "next": "Am reținut, mai departe",
-        "quiz_title": "VERIFICAREA CUNOȘTINȚELOR",
-        "word_count": "Cuvântul {0} din {1}",
-        "correct": "Corect! ✅",
-        "wrong": "Eroare! ❌",
-        "finished": "Sesiune finalizată!",
-        "dictionary": "Categorie: ",
         "reset_all": "Resetează tot progresul",
-        "fast_review_btn": "Repetare rapidă",
-        "fast_review_success": "Ați repetat totul, felicitări!",
-        "fast_review_fail": "S-au terminat viețile, repetați cuvintele și încercați din nou",
         "statistics": "📊 Statistici",
-        "stats_title": "STATISTICI PROFIL",
-        "hard_words": "Cuvinte care necesită atenție (greșeli):",
-        "stats_learned": "Învățate: {0} din {1}",
         "no_errors": "Nu există încă greșeli!",
         "skip": "Nu știu",
-        "category_title": "Studiu și repetare pe categorii",
-        "true_false_btn": "Adevărat sau Fals",
         "true_btn": "✅ Adevărat",
         "false_btn": "❌ Fals",
-        "continue_question": "Continuați învățarea cuvintelor noi?",
-        "continue_yes": "Da",
-        "continue_no": "Nu",
-        "all_learned": "Toate cuvintele învățate! 🎉",
-        "daily_review_btn": "🎯 Repetare zilnică",
-        "daily_review_locked": "Revino mâine 🌙",
-        "daily_review_min": "Aveți nevoie de ≥20 cuvinte învățate",
-        "daily_review_score": "Gata! {0}/{1} corect ({2}%)",
-        "daily_review_title": "REPETARE ZILNICĂ",
         "confirm_yes": "Da, resetează",
         "confirm_no": "Anulează",
         "confirm_reset_category": "Resetăm categoria «{0}»? Progresul acestei categorii va fi pierdut.",
@@ -128,7 +64,7 @@ PHASE1_TEXT = {
         "gagauz_language": "Гагаузский язык", "settings": "Настройки",
         "your_progress": "ВАШ ПРОГРЕСС", "words": "слов", "beginner": "Начальный",
         "today": "Сегодня", "daily_review": "Ежедневное повторение",
-        "ready_review": "20 слов готовы к повторению", "daily_in_progress": "Продолжить: {0} / 20",
+        "ready_review": "20 слов готовы к повторению", "daily_in_progress": "Продолжить: {0} / {1}",
         "daily_complete": "Ежедневное повторение на сегодня завершено", "daily_locked": "Откроется после изучения 20 слов",
         "daily_new_user_hint": "Каждый день здесь вас ждут 20 слов для повторения.",
         "daily_new_user_locked": "Откроется после изучения первых 20 слов.",
@@ -140,15 +76,13 @@ PHASE1_TEXT = {
         "welcome_gagauz": "Hoş geldiniz!",
         "choose_start": "Выберите, с чего начать изучение",
         "choose_first_topic": "Выбрать первую тему",
-        "home_words_learned": "слов выучено",
-        "day_streak": "дн. подряд", "streak_hint": "Завершите занятие сегодня, чтобы продолжить серию.",
+        "streak_hint": "Завершите занятие сегодня, чтобы продолжить серию.",
         "learn_title": "Что вы хотите изучить?", "learn_subtitle": "Выберите тему и учитесь в своём темпе.",
-        "conversational": "Разговорный", "advanced": "Продвинутый", "expert": "Эксперт", "locked": "Скоро",
-        "back": "Назад", "words_learned": "слов изучено", "learn_new": "Учить новые слова",
-        "words_remaining": "слов осталось", "start_learning": "Начать обучение",
-        "difficult_words": "Сложные слова", "need_attention": "слов требуют внимания", "review_action": "Повторить",
+        "conversational": "Разговорный", "advanced": "Продвинутый", "expert": "Эксперт",
+        "back": "Назад", "learn_new": "Учить новые слова",
+        "start_learning": "Начать обучение",
+        "difficult_words": "Сложные слова", "review_action": "Повторить",
         "difficult_progress": "Закрепление: {0} из 2", "difficult_resolved": "Слово больше не требует внимания.",
-        "learned_words": "Изученные слова", "view_words": "Посмотреть слова",
         "category_statistics": "Статистика категории", "view_all_words": "Посмотреть все слова",
         "category_words_title": "Слова категории",
         "review_title": "Повторение", "review_subtitle": "Закрепляйте слова короткими тренировками.",
@@ -157,16 +91,16 @@ PHASE1_TEXT = {
         "regular_review": "Обычное повторение", "regular_review_desc": "Выберите правильный перевод.",
         "quiz": "Тест", "quiz_desc": "Определите, верен ли перевод.",
         "review_mode_locked": "Откроется после изучения первой серии слов",
-        "start_session": "Начать", "true_false_short": "Да / Нет", "no_difficult": "Пока нет сложных слов",
+        "true_false_short": "Да / Нет", "no_difficult": "Пока нет сложных слов",
         "true_false_correct_translation": "А правильный перевод — это:",
         "language": "Язык обучения", "russian": "Русский", "romanian": "Румынский",
         "statistics_hint": "Общий прогресс и слова, которые требуют внимания.", "open_statistics": "Открыть статистику",
         "reset_progress": "Сброс прогресса", "reset_category_label": "Сбросить категорию",
         "select_category": "Выберите категорию", "reset_all_hint": "Будут удалены прогресс, статистика ответов и серия занятий.",
-        "open_settings": "Открыть настройки", "all_words_learned": "Все слова изучены",
+        "all_words_learned": "Все слова изучены",
         "close_session": "Закрыть занятие", "question": "Задание", "continue_answer": "Продолжить",
         "correct_answer": "Правильно!", "incorrect_answer": "Не совсем", "correct_was": "Правильный ответ",
-        "results": "Результаты", "great_job": "Отличная работа!", "accuracy": "Точность",
+        "results": "Результаты", "accuracy": "Точность",
         "newly_learned": "Новых слов изучено", "streak_confirmed": "Серия подтверждена",
         "result_excellent_title": "Отлично!", "result_excellent_hint": "Эти слова уже хорошо запомнились.",
         "result_good_title": "Хороший результат", "result_good_hint": "Ещё немного практики — и будет совсем уверенно.",
@@ -194,13 +128,17 @@ PHASE1_TEXT = {
         "previous_word": "Предыдущее слово",
         "next_word": "Следующее слово", "repeat_learned": "Закрепить изученные слова",
         "learning_new_words": "Изучение новых слов",
+        "level_one": "Уровень 1", "knowledge_check": "Проверка знаний",
+        "stats_subtitle": "Ваш прогресс и слова, в которых вы ошибались.",
+        "stats_overall": "Общий прогресс", "answer_accuracy": "Точность ответов",
+        "study_streak": "Серия занятий", "hard_words_title": "Слова, требующие внимания",
     },
     "RO": {
         "nav_home": "Acasă", "nav_learn": "Învață", "nav_review": "Repetă",
         "gagauz_language": "Limba găgăuză", "settings": "Setări",
         "your_progress": "PROGRESUL TĂU", "words": "cuvinte", "beginner": "Începător",
         "today": "Astăzi", "daily_review": "Repetare zilnică",
-        "ready_review": "20 de cuvinte sunt gata de repetat", "daily_in_progress": "Continuă: {0} / 20",
+        "ready_review": "20 de cuvinte sunt gata de repetat", "daily_in_progress": "Continuă: {0} / {1}",
         "daily_complete": "Repetarea zilnică pentru astăzi este finalizată", "daily_locked": "Disponibilă după 20 de cuvinte învățate",
         "daily_new_user_hint": "În fiecare zi, aici te așteaptă 20 de cuvinte pentru repetare.",
         "daily_new_user_locked": "Se va deschide după învățarea primelor 20 de cuvinte.",
@@ -212,15 +150,13 @@ PHASE1_TEXT = {
         "welcome_gagauz": "Hoş geldiniz!",
         "choose_start": "Alege cu ce să începi învățarea",
         "choose_first_topic": "Alege prima temă",
-        "home_words_learned": "cuvinte învățate",
-        "day_streak": "zile la rând", "streak_hint": "Finalizează o sesiune astăzi pentru a continua seria.",
+        "streak_hint": "Finalizează o sesiune astăzi pentru a continua seria.",
         "learn_title": "Ce vrei să înveți?", "learn_subtitle": "Alege o temă și învață în ritmul tău.",
-        "conversational": "Conversațional", "advanced": "Avansat", "expert": "Expert", "locked": "În curând",
-        "back": "Înapoi", "words_learned": "cuvinte învățate", "learn_new": "Învață cuvinte noi",
-        "words_remaining": "cuvinte rămase", "start_learning": "Începe învățarea",
-        "difficult_words": "Cuvinte dificile", "need_attention": "cuvinte necesită atenție", "review_action": "Repetă",
+        "conversational": "Conversațional", "advanced": "Avansat", "expert": "Expert",
+        "back": "Înapoi", "learn_new": "Învață cuvinte noi",
+        "start_learning": "Începe învățarea",
+        "difficult_words": "Cuvinte dificile", "review_action": "Repetă",
         "difficult_progress": "Consolidare: {0} din 2", "difficult_resolved": "Cuvântul nu mai necesită atenție.",
-        "learned_words": "Cuvinte învățate", "view_words": "Vezi cuvintele",
         "category_statistics": "Statisticile categoriei", "view_all_words": "Vezi toate cuvintele",
         "category_words_title": "Cuvintele categoriei",
         "review_title": "Repetare", "review_subtitle": "Consolidează vocabularul prin sesiuni scurte.",
@@ -229,16 +165,16 @@ PHASE1_TEXT = {
         "regular_review": "Repetare obișnuită", "regular_review_desc": "Alege traducerea corectă.",
         "quiz": "Test", "quiz_desc": "Stabilește dacă traducerea este corectă.",
         "review_mode_locked": "Se va deschide după învățarea primei serii de cuvinte",
-        "start_session": "Începe", "true_false_short": "Da / Nu", "no_difficult": "Nu există încă cuvinte dificile",
+        "true_false_short": "Da / Nu", "no_difficult": "Nu există încă cuvinte dificile",
         "true_false_correct_translation": "Iar traducerea corectă este:",
         "language": "Limba de învățare", "russian": "Rusă", "romanian": "Română",
         "statistics_hint": "Progresul general și cuvintele care necesită atenție.", "open_statistics": "Deschide statisticile",
         "reset_progress": "Resetarea progresului", "reset_category_label": "Resetează categoria",
         "select_category": "Alege categoria", "reset_all_hint": "Vor fi șterse progresul, statisticile răspunsurilor și seria de studiu.",
-        "open_settings": "Deschide setările", "all_words_learned": "Toate cuvintele sunt învățate",
+        "all_words_learned": "Toate cuvintele sunt învățate",
         "close_session": "Închide sesiunea", "question": "Exercițiu", "continue_answer": "Continuă",
         "correct_answer": "Corect!", "incorrect_answer": "Nu chiar", "correct_was": "Răspunsul corect",
-        "results": "Rezultate", "great_job": "Foarte bine!", "accuracy": "Acuratețe",
+        "results": "Rezultate", "accuracy": "Acuratețe",
         "newly_learned": "Cuvinte noi învățate", "streak_confirmed": "Seria este confirmată",
         "result_excellent_title": "Excelent!", "result_excellent_hint": "Aceste cuvinte sunt deja bine memorate.",
         "result_good_title": "Rezultat bun", "result_good_hint": "Încă puțină practică și vei răspunde cu mai multă încredere.",
@@ -266,9 +202,12 @@ PHASE1_TEXT = {
         "previous_word": "Cuvântul anterior",
         "next_word": "Cuvântul următor", "repeat_learned": "Consolidează cuvintele învățate",
         "learning_new_words": "Învățarea cuvintelor noi",
+        "level_one": "Nivelul 1", "knowledge_check": "Verificarea cunoștințelor",
+        "stats_subtitle": "Progresul tău și cuvintele la care ai greșit.",
+        "stats_overall": "Progres general", "answer_accuracy": "Acuratețea răspunsurilor",
+        "study_streak": "Seria de studiu", "hard_words_title": "Cuvinte care necesită atenție",
     },
 }
-
 
 def russian_plural(count, one, few, many):
     value = abs(int(count))
@@ -594,6 +533,38 @@ def register_learning_day(stats, today):
     return True
 
 
+def new_word_stats():
+    """Progress record of a word the user has never studied."""
+    return {
+        "learned": False,
+        "correct_answers": 0,
+        "wrong_answers": 0,
+        "last_seen": "1970-01-01",
+        "needs_attention": False,
+        "difficult_correct_streak": 0,
+    }
+
+
+def daily_review_length(daily):
+    return len(daily.get("word_ids", [])) if daily else 0
+
+
+def reset_words_progress(stats, word_ids):
+    """Forget all progress of the given words, including today's daily review.
+
+    Words already answered in the daily review stay counted; the ones still
+    ahead are removed so the reset words do not come back as review.
+    """
+    for word_id in word_ids:
+        stats["words"][str(word_id)] = new_word_stats()
+    daily = stats.get("daily_review")
+    if daily and daily.get("word_ids"):
+        removed = set(word_ids)
+        index = daily.get("index", 0)
+        answered, upcoming = daily["word_ids"][:index], daily["word_ids"][index:]
+        daily["word_ids"] = answered + [word_id for word_id in upcoming if word_id not in removed]
+
+
 def merge_data_and_stats(all_words, stats):
     needs_save = False
     for w in all_words:
@@ -602,14 +573,7 @@ def merge_data_and_stats(all_words, stats):
             # The dictionary contains learning content only. A new user always
             # starts with zero progress; learned state lives in user_stats.json.
             w["learned"] = False
-            stats["words"][w_id] = {
-                "learned": False,
-                "correct_answers": 0,
-                "wrong_answers": 0,
-                "last_seen": "1970-01-01",
-                "needs_attention": False,
-                "difficult_correct_streak": 0,
-            }
+            stats["words"][w_id] = new_word_stats()
             needs_save = True
         else:
             defaults = {
@@ -633,8 +597,8 @@ def merge_data_and_stats(all_words, stats):
 def main(page: ft.Page):
     page.title = "Gagauzium"
     page.theme_mode = ft.ThemeMode.LIGHT
-    page.window_width = 390
-    page.window_height = 844
+    page.window.width = 390
+    page.window.height = 844
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.assets_dir = "assets"
     page.window.resizable = True
@@ -922,54 +886,82 @@ def main(page: ft.Page):
         return current
 
     def show_statistics():
-        clear_navigation_view()
-        page.controls.clear()
-        page.scroll = ft.ScrollMode.HIDDEN
-        page.bgcolor = "#F3E5F5"
+        prepare_main_screen("statistics", app_state.get("nav_index", 0))
+        page.horizontal_alignment = ft.CrossAxisAlignment.STRETCH
         lang = app_state["lang"]
-        txt = UI_TEXT[lang]
+        t = phase_text()
 
         total_words = len(all_words)
-        learned_words = len([w for w in all_words if w["learned"]])
-        progress_val = learned_words / total_words if total_words > 0 else 0
+        learned_words = sum(1 for w in all_words if w["learned"])
+        percentage = round(learned_words / total_words * 100) if total_words else 0
+        word_stats = app_state["stats"]["words"]
+        correct_total = sum(s.get("correct_answers", 0) for s in word_stats.values())
+        answers_total = correct_total + sum(s.get("wrong_answers", 0) for s in word_stats.values())
+        accuracy = f"{round(correct_total / answers_total * 100)}%" if answers_total else "—"
+        best_fast = app_state["stats"].get("fast_best_score")
 
-        words_with_errors = []
-        for w in all_words:
-            w_id = str(w["id"])
-            word_stats = app_state["stats"]["words"].get(w_id, {})
-            errors = word_stats.get("wrong_answers", 0)
-            if w["learned"] and requires_attention(word_stats):
-                words_with_errors.append({"word": w, "errors": errors})
+        hard_words = sorted(
+            (
+                (w, word_stats.get(str(w["id"]), {}).get("wrong_answers", 0))
+                for w in all_words
+                if w["learned"] and requires_attention(word_stats.get(str(w["id"]), {}))
+            ),
+            key=lambda item: item[1],
+            reverse=True,
+        )[:10]
 
-        words_with_errors.sort(key=lambda x: x["errors"], reverse=True)
-        top_hard = words_with_errors[:10]
-
-        hard_words_column = ft.Column(spacing=10)
-        for hw in top_hard:
-            w = hw["word"]
-            native_word = w.get(lang.lower(), w.get("ru", "---"))
-            hard_words_column.controls.append(
-                ft.Container(
-                    content=ft.Row([
-                        ft.Text(f"{native_word} - {w['gag']}", size=16, weight="bold"),
-                        ft.Text(f"❌ {hw['errors']}", color="red", size=16, weight="bold")
-                    ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-                    padding=10, bgcolor="white", border_radius=8
-                )
+        def stat_tile(icon, value, label):
+            return ft.Container(
+                content=ft.Column([
+                    ft.Text(icon, size=20),
+                    ft.Text(value, size=20, weight=ft.FontWeight.BOLD, color=INK),
+                    ft.Text(label, size=11, color=MUTED, max_lines=2),
+                ], spacing=4),
+                padding=14, bgcolor=CARD, border=ft.Border.all(1, BORDER), border_radius=18,
+                col=4,
             )
 
+        hard_rows = [
+            ft.Container(
+                content=ft.Row([
+                    ft.Column([
+                        ft.Text(native_word_text(w, lang), size=15, weight=ft.FontWeight.BOLD, color=INK),
+                        ft.Text(w["gag"], size=13, color=INDIGO, italic=True),
+                    ], spacing=2, expand=True),
+                    ft.Container(
+                        content=ft.Text(f"✕ {errors}", size=12, weight=ft.FontWeight.BOLD, color="#B42318"),
+                        padding=ft.Padding.symmetric(horizontal=10, vertical=4),
+                        bgcolor="#FDECEC", border_radius=10,
+                    ),
+                ], vertical_alignment=ft.CrossAxisAlignment.CENTER),
+                padding=ft.Padding.symmetric(horizontal=14, vertical=11),
+                bgcolor="#FFFFFF", border=ft.Border.all(1, BORDER), border_radius=15,
+            )
+            for w, errors in hard_words
+        ]
+
         stage_page_controls(
-            ft.Container(height=30),
-            ft.Row([ft.TextButton(content=ft.Text(phase_text()["back"], size=17, weight="bold"), icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_settings())], alignment=ft.MainAxisAlignment.START),
-            ft.Text(txt["stats_title"], size=25, weight="bold", color="#4A148C"),
-            ft.Container(height=20),
-            ft.Text(txt["stats_learned"].format(learned_words, total_words), size=18, weight="bold"),
-            ft.ProgressBar(value=progress_val, color="#4A148C", bgcolor="#eeeeee", width=380, height=20),
-            ft.Container(height=30),
-            ft.Text(txt["hard_words"], size=18, weight="bold", color="red"),
-            ft.Container(height=10),
-            hard_words_column if top_hard else ft.Text(txt["no_errors"], color="grey"),
-            ft.Container(height=40)
+            ft.Row([ft.TextButton(t["back"], icon=ft.Icons.ARROW_BACK, on_click=lambda _: show_settings())]),
+            ft.Text(UI_TEXT[lang]["statistics"], size=25, weight=ft.FontWeight.BOLD, color=INK),
+            ft.Text(t["stats_subtitle"], size=12, color=MUTED),
+            rounded_card(ft.Column([
+                ft.Row([
+                    ft.Text(t["stats_overall"], size=13, weight=ft.FontWeight.BOLD, color=INK),
+                    ft.Text(f"{percentage}%", size=13, weight=ft.FontWeight.BOLD, color=INDIGO),
+                ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
+                ft.Text(learned_of_total_text(learned_words, total_words, lang), size=12, color=MUTED),
+                ft.ProgressBar(value=learned_words / total_words if total_words else 0, color=INDIGO, bgcolor="#E8EAF2", height=9),
+            ], spacing=10), bgcolor="#E9EDFF"),
+            ft.ResponsiveRow([
+                stat_tile("🎯", accuracy, t["answer_accuracy"]),
+                stat_tile("🔥", str(displayed_streak()), t["study_streak"]),
+                stat_tile("⚡", str(best_fast) if best_fast is not None else "—", t["fast_best_score"]),
+            ], columns=12, spacing=10, run_spacing=10),
+            rounded_card(ft.Column([
+                ft.Text("⚠️ " + t["hard_words_title"], size=17, weight=ft.FontWeight.BOLD, color=INK),
+                *(hard_rows or [ft.Text(UI_TEXT[lang]["no_errors"], size=13, color=MUTED)]),
+            ], spacing=10, horizontal_alignment=ft.CrossAxisAlignment.STRETCH), bgcolor="#F7EDEF"),
+            ft.Container(height=8),
         )
         present_navigation_view("/statistics", show_settings)
         page.update()
@@ -1021,11 +1013,9 @@ def main(page: ft.Page):
         if destination == "settings":
             show_settings()
         else:
-            show_home(reset_scroll=True)
+            show_home()
 
-    def show_home(reset_scroll=False):
-        nonlocal all_words
-        all_words = merge_data_and_stats(load_data(), app_state["stats"])
+    def show_home():
         prepare_main_screen("home", 0)
         t = phase_text()
         learned_count = sum(1 for w in all_words if w["learned"])
@@ -1034,14 +1024,15 @@ def main(page: ft.Page):
         today = datetime.date.today().isoformat()
         daily = app_state["stats"].get("daily_review") or {}
         daily_is_today = daily.get("date") == today
-        daily_index = min(20, daily.get("index", 0)) if daily_is_today else 0
-        daily_done = daily_is_today and daily_index >= 20
+        daily_length = daily_review_length(daily) if daily_is_today else 0
+        daily_index = min(daily_length, daily.get("index", 0)) if daily_is_today else 0
+        daily_done = daily_is_today and daily_index >= daily_length
         if learned_count < 20:
             daily_status, daily_cta, daily_disabled = t["daily_locked"], t["start_daily"], True
         elif daily_done:
             daily_status, daily_cta, daily_disabled = t["daily_complete"], t["start_daily"], True
         elif daily_index > 0:
-            daily_status, daily_cta, daily_disabled = t["daily_in_progress"].format(daily_index), t["continue_daily"], False
+            daily_status, daily_cta, daily_disabled = t["daily_in_progress"].format(daily_index, daily_length), t["continue_daily"], False
         else:
             daily_status, daily_cta, daily_disabled = t["ready_review"], t["start_daily"], False
 
@@ -1058,7 +1049,7 @@ def main(page: ft.Page):
                     ],
                 ),
                 ft.ProgressBar(value=learned_count / total_count if total_count else 0, color="#75D3C7", bgcolor="#394269", height=10),
-                ft.Text(f"Level 1 · {t['beginner']}", size=11, color="#A9E7DF"),
+                ft.Text(f"{t['level_one']} · {t['beginner']}", size=11, color="#A9E7DF"),
             ], spacing=10), padding=20, bgcolor=INDIGO_DARK, border_radius=24,
         )
 
@@ -1147,8 +1138,6 @@ def main(page: ft.Page):
             stage_page_controls(ft.Container(height=4), progress_card, daily_card, learning_card, streak_card, ft.Container(height=8))
         page.update()
 
-    def show_main_menu(reset_scroll=False):
-        show_home(reset_scroll=reset_scroll)
 
     def remember_learn_scroll(e):
         app_state["learn_scroll_offset"] = max(0.0, float(e.pixels))
@@ -1276,7 +1265,7 @@ def main(page: ft.Page):
         difficult_count = sum(1 for w in all_words if w["learned"] and requires_attention(app_state["stats"]["words"].get(str(w["id"]), {})))
         today = datetime.date.today().isoformat()
         daily = app_state["stats"].get("daily_review") or {}
-        daily_done = daily.get("date") == today and daily.get("index", 0) >= 20
+        daily_done = daily.get("date") == today and daily.get("index", 0) >= daily_review_length(daily)
         basic_review_locked = learned_count < 4
         basic_review_status = t["review_mode_locked"] if basic_review_locked else None
         matching_locked = len(matching_candidates()) < 5
@@ -1420,12 +1409,14 @@ def main(page: ft.Page):
         cat_display = localized_category_name(category_name, app_state["lang"])
 
         def do_reset():
+            category_word_ids = []
             for w in all_words:
                 if w["category"] == category_name:
                     w["learned"] = False
-                    app_state["stats"]["words"][str(w["id"])]["learned"] = False
+                    category_word_ids.append(w["id"])
+            reset_words_progress(app_state["stats"], category_word_ids)
             save_stats(app_state["stats"])
-            show_main_menu()
+            show_home()
 
         show_confirm_dialog(
             title=txt["reset"],
@@ -1440,14 +1431,7 @@ def main(page: ft.Page):
             fresh_word_stats = {}
             for w in all_words:
                 w["learned"] = False
-                fresh_word_stats[str(w["id"])] = {
-                    "learned": False,
-                    "correct_answers": 0,
-                    "wrong_answers": 0,
-                    "last_seen": "1970-01-01",
-                    "needs_attention": False,
-                    "difficult_correct_streak": 0,
-                }
+                fresh_word_stats[str(w["id"])] = new_word_stats()
             app_state["stats"].clear()
             app_state["stats"].update({
                 "lang": app_state["lang"],
@@ -1458,7 +1442,7 @@ def main(page: ft.Page):
             })
             app_state["last_category"] = None
             save_stats(app_state["stats"])
-            show_main_menu()
+            show_home()
 
         show_confirm_dialog(
             title=txt["reset_all"],
@@ -2408,12 +2392,13 @@ def main(page: ft.Page):
             title = phase_text()["word_building"]
         else:
             body = multiple_choice_body(word)
-            if mode == "daily":
-                title = UI_TEXT[app_state["lang"]]["daily_review_title"]
-            elif mode == "review":
-                title = phase_text()["regular_review"]
-            else:
-                title = phase_text()["quiz"]
+            title = {
+                "daily": phase_text()["daily_review"],
+                "review": phase_text()["regular_review"],
+                "difficult": phase_text()["difficult_words"],
+                "fast": phase_text()["quick_review"],
+                "new": phase_text()["knowledge_check"],
+            }.get(mode, phase_text()["quiz"])
         if app_state["feedback_active"]:
             if mode == "word_building":
                 body.controls.insert(4, feedback_panel(word))
@@ -2687,9 +2672,9 @@ def main(page: ft.Page):
         set_session_view(result_view)
 
     async def open_app_after_welcome():
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         if user_stats.get("lang"):
-            show_main_menu(reset_scroll=True)
+            show_home()
         else:
             show_language_selector()
 
