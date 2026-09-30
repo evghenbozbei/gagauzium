@@ -8,3 +8,5 @@ build/
 ubuntu-picture.jpg
 *.jks
 *.keystore
+user_stats.json.tmp
+user_stats.corrupt-*.json

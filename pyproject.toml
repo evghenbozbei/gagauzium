@@ -33,6 +33,7 @@ exclude = [
     "pyproject.toml",
     "ubuntu-picture.jpg",
     "user_stats.json",
+    "user_stats.json.tmp",
 ]
 
 [tool.flet.android.signing]

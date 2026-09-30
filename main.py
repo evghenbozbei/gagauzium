@@ -4,6 +4,7 @@ import random
 import asyncio
 import datetime
 import os
+import re
 from pathlib import Path
 
 from category_metadata import CATEGORY_METADATA, CATEGORIES_BY_SOURCE, category_name as localized_category_name
@@ -21,6 +22,9 @@ NUMBER_FOUNDATION_BATCH_IDS = (
     (36, 37, 38, 39, 40),
     (41, 42, 43, 44, 45),
 )
+
+# Review exercises only offer word building for entries of reasonable length.
+WORD_BUILD_MAX_LETTERS = 12
 
 # --- ПЕРЕВОДЫ ИНТЕРФЕЙСА ---
 UI_TEXT = {
@@ -336,6 +340,40 @@ def update_word_performance(word_stats, is_correct, mode, today):
         word_stats["difficult_correct_streak"] = 0
 
 
+def display_letter(char):
+    """Uppercase a letter without merging the Gagauz i/İ and ı/I pairs."""
+    if char == "i":
+        return "İ"
+    if char == "ı":
+        return "I"
+    return char.upper()
+
+
+def answer_variants(text):
+    """Split a dictionary value such as 'büük / büyük' into comparable variants."""
+    return {part.strip().casefold() for part in str(text).split("/") if part.strip()}
+
+
+def word_build_target(word):
+    """Return the first variant of an entry, without explanatory parentheses."""
+    first_variant = str(word["gag"]).split("/")[0]
+    target = re.sub(r"\s*\([^)]*\)", "", first_variant).strip()
+    return target or str(word["gag"]).strip()
+
+
+def answer_letters(value):
+    return [char for char in value if char.isalpha()]
+
+
+def word_build_characters(value):
+    """Letters to assemble plus separators that are shown already in place."""
+    return [char for char in value if char.isalpha() or char in " -"]
+
+
+def word_build_letter_count(word):
+    return len(answer_letters(word_build_target(word)))
+
+
 def load_data():
     try:
         with WORDS_DATA_FILE.open("r", encoding="utf-8") as f:
@@ -343,12 +381,28 @@ def load_data():
     except FileNotFoundError:
         return []
 
+def set_aside_corrupted_stats():
+    """Keep an unreadable progress file for inspection instead of crashing."""
+    stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    try:
+        os.replace(USER_STATS_FILE, USER_STATS_FILE.with_name(f"user_stats.corrupt-{stamp}.json"))
+    except OSError:
+        pass
+
 def load_stats():
+    stats = {}
     try:
         with USER_STATS_FILE.open("r", encoding="utf-8") as f:
-            stats = json.load(f)
+            loaded = json.load(f)
+        if isinstance(loaded, dict):
+            stats = loaded
+        else:
+            set_aside_corrupted_stats()
     except FileNotFoundError:
-        stats = {}
+        pass
+    except ValueError:
+        # Includes JSONDecodeError and UnicodeDecodeError.
+        set_aside_corrupted_stats()
     stats.setdefault("streak_days", 0)
     stats.setdefault("last_login", "")
     stats.setdefault("milestone_50_completed", False)
@@ -356,9 +410,15 @@ def load_stats():
     return stats
 
 def save_stats(stats):
+    # Write a complete copy first and swap it in atomically, so an interrupted
+    # write never leaves a truncated user_stats.json behind.
     USER_STATS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with USER_STATS_FILE.open("w", encoding="utf-8") as f:
+    temp_file = USER_STATS_FILE.with_name(USER_STATS_FILE.name + ".tmp")
+    with temp_file.open("w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(temp_file, USER_STATS_FILE)
 
 def word_weight(word, stats, today):
     s = stats["words"].get(str(word["id"]), {})
@@ -540,6 +600,7 @@ def main(page: ft.Page):
         "matching_left_id": None,
         "matching_right_id": None,
         "matching_matched_ids": [],
+        "matching_matched_right_ids": [],
         "matching_wrong_pair": None,
         "tf_followup_active": False,
         "tf_followup_options": [],
@@ -1458,6 +1519,41 @@ def main(page: ft.Page):
             can_pop=True,
         )
 
+    def native_text(word):
+        return str(word.get(app_state["lang"].lower(), word.get("ru", "---")))
+
+    def acceptable_answers(word, direction):
+        """Return every dictionary value that correctly translates the prompt.
+
+        Homonyms (ay = луна / месяц) and shared translations (mare = большой /
+        море) make several answers valid for the same prompt.
+        """
+        if direction == "forward":
+            prompt_of, answer_of = native_text, lambda w: str(w["gag"])
+        else:
+            prompt_of, answer_of = lambda w: str(w["gag"]), native_text
+        prompt_variants = answer_variants(prompt_of(word))
+        acceptable = {answer_of(word)}
+        acceptable.update(
+            answer_of(w) for w in all_words
+            if answer_variants(prompt_of(w)) & prompt_variants
+        )
+        return acceptable
+
+    def answer_distractors(direction, acceptable):
+        """Return wrong options that share no variant with a valid answer."""
+        acceptable_variants = set().union(*(answer_variants(value) for value in acceptable))
+        values = {str(w["gag"]) if direction == "forward" else native_text(w) for w in all_words}
+        return sorted(value for value in values if not answer_variants(value) & acceptable_variants)
+
+    def words_are_equivalent(first, second):
+        """Whether two entries can be matched with each other's translation."""
+        return (
+            first["id"] == second["id"]
+            or bool(answer_variants(native_text(first)) & answer_variants(native_text(second)))
+            or bool(answer_variants(first["gag"]) & answer_variants(second["gag"]))
+        )
+
     def matching_candidates():
         """Return learned words with unambiguous labels in both columns."""
         candidates = []
@@ -1495,12 +1591,22 @@ def main(page: ft.Page):
                 random.shuffle(refill_pool)
             simple_words.append(refill_pool.pop())
 
-        simple_modes = ["review"] * 3 + ["word_building"] * 3 + ["true_false"] * 3
-        random.shuffle(simple_modes)
-        stages = [
+        # Word building gets words of reasonable length; if there are too few,
+        # the remaining slots become regular questions.
+        simple_words = simple_words[:9]
+        build_positions = [
+            index for index, word in enumerate(simple_words)
+            if word_build_letter_count(word) <= WORD_BUILD_MAX_LETTERS
+        ][:3]
+        build_words = [simple_words[index] for index in build_positions]
+        other_words = [word for index, word in enumerate(simple_words) if index not in build_positions]
+        other_modes = ["review"] * (6 - len(build_words)) + ["true_false"] * 3
+        random.shuffle(other_modes)
+        stages = [{"mode": "word_building", "word": word} for word in build_words]
+        stages.extend(
             {"mode": mode, "word": word}
-            for mode, word in zip(simple_modes, simple_words[:9])
-        ]
+            for mode, word in zip(other_modes, other_words)
+        )
         stages.extend([
             {"mode": "matching", "words": matching_words[:5]},
             {"mode": "matching", "words": matching_words[5:10]},
@@ -1548,6 +1654,7 @@ def main(page: ft.Page):
         app_state["matching_left_id"] = None
         app_state["matching_right_id"] = None
         app_state["matching_matched_ids"] = []
+        app_state["matching_matched_right_ids"] = []
         app_state["matching_wrong_pair"] = None
         app_state["tf_followup_active"] = False
         app_state["tf_followup_options"] = []
@@ -1584,8 +1691,9 @@ def main(page: ft.Page):
             app_state["index"] = 0
         elif mode == "word_building":
             words = [w for w in all_words if w["learned"]]
+            buildable = [w for w in words if word_build_letter_count(w) <= WORD_BUILD_MAX_LETTERS]
             app_state["is_quiz"] = True
-            app_state["current_batch"] = weighted_sample(words, app_state["stats"], today, k=10)
+            app_state["current_batch"] = weighted_sample(buildable or words, app_state["stats"], today, k=10)
             app_state["index"] = 0
         elif mode == "mega":
             app_state["is_quiz"] = True
@@ -1715,19 +1823,10 @@ def main(page: ft.Page):
         app_state["feedback_active"] = False
         show_quiz_card()
 
-    def word_build_target(word):
-        return word["gag"].strip()
-
-    def answer_letters(value):
-        return [char for char in value if char.isalpha()]
-
-    def word_build_characters(value):
-        return [char for char in value if char.isalpha() or char == "/"]
-
     def word_build_hint_positions(template):
         letter_positions = [index for index, char in enumerate(template) if char.isalpha()]
         letter_count = len(letter_positions)
-        has_separator = "/" in template
+        has_separator = any(not char.isalpha() for char in template)
         hint_count = 2 if has_separator or letter_count >= 9 else (1 if letter_count >= 6 else 0)
         if hint_count == 0:
             return []
@@ -1738,7 +1837,7 @@ def main(page: ft.Page):
             segments = []
             segment = []
             for index, char in enumerate(template):
-                if char == "/":
+                if not char.isalpha():
                     if segment:
                         segments.append(segment)
                     segment = []
@@ -1805,7 +1904,7 @@ def main(page: ft.Page):
             fixed_positions = {
                 index: char
                 for index, char in enumerate(template)
-                if char == "/"
+                if not char.isalpha()
             }
             for index in word_build_hint_positions(template):
                 fixed_positions[index] = template[index]
@@ -1835,6 +1934,7 @@ def main(page: ft.Page):
             app_state["direction"] = "forward"
             app_state["prompt_word"] = word.get(lang.lower(), word.get("ru", "---"))
             app_state["correct_answer"] = "".join(template)
+            app_state["acceptable_answers"] = {app_state["correct_answer"].casefold()}
             app_state["letter_bank"] = letters
             app_state["selected_letter_indices"] = []
             app_state["word_build_template"] = template
@@ -1843,18 +1943,19 @@ def main(page: ft.Page):
             direction = "forward" if mode == "new" else random.choice(["forward", "reverse"])
             app_state["direction"] = direction
             if direction == "forward":
-                prompt_word = word.get(lang.lower(), word.get("ru", "---"))
+                prompt_word = native_text(word)
                 correct = word["gag"]
-                others = list({w["gag"] for w in all_words if w["gag"] != correct})
             else:
                 prompt_word = word["gag"]
-                correct = word.get(lang.lower(), word.get("ru", "---"))
-                others = list({w.get(lang.lower(), w.get("ru", "---")) for w in all_words if w.get(lang.lower(), w.get("ru", "---")) != correct})
+                correct = native_text(word)
+            acceptable = acceptable_answers(word, direction)
+            others = answer_distractors(direction, acceptable)
             app_state["prompt_word"] = prompt_word
             app_state["correct_answer"] = correct
+            app_state["acceptable_answers"] = {value.casefold() for value in acceptable}
             if mode == "true_false":
-                is_truth = random.choice([True, False])
-                app_state["tf_displayed"] = correct if is_truth else (random.choice(others) if others else correct)
+                is_truth = random.choice([True, False]) if others else True
+                app_state["tf_displayed"] = correct if is_truth else random.choice(others)
                 app_state["tf_is_truth"] = is_truth
             else:
                 distractors = random.sample(others, min(len(others), 3))
@@ -2040,7 +2141,7 @@ def main(page: ft.Page):
                 char = None
             if char is not None:
                 built_chars.append(char)
-                display_chars.append(char.upper())
+                display_chars.append(display_letter(char))
             else:
                 display_chars.append("_")
         built = "".join(built_chars)
@@ -2062,7 +2163,7 @@ def main(page: ft.Page):
         for index, letter in enumerate(app_state["letter_bank"]):
             bank.append(ft.ElevatedButton(
                 content=ft.Container(
-                    content=ft.Text(letter.upper(), text_align=ft.TextAlign.CENTER),
+                    content=ft.Text(display_letter(letter), text_align=ft.TextAlign.CENTER),
                     alignment=ft.Alignment.CENTER,
                 ),
                 width=48, height=48,
@@ -2100,7 +2201,7 @@ def main(page: ft.Page):
     def matching_button(word, side):
         lang_key = app_state["lang"].lower()
         word_id = word["id"]
-        matched = word_id in app_state["matching_matched_ids"]
+        matched = word_id in app_state["matching_matched_ids" if side == "left" else "matching_matched_right_ids"]
         selected_id = app_state["matching_left_id"] if side == "left" else app_state["matching_right_id"]
         wrong_pair = app_state.get("matching_wrong_pair")
         is_wrong = bool(wrong_pair and word_id == wrong_pair[0 if side == "left" else 1])
@@ -2140,6 +2241,13 @@ def main(page: ft.Page):
             on_click=lambda _, wid=word_id, column=side: select_matching_word(column, wid),
         )
 
+    def current_matching_words():
+        if app_state.get("session_mode") == "new" and app_state.get("learning_matching_started", False):
+            return app_state["learning_matching_words"]
+        if app_state.get("session_mode") == "mega":
+            return app_state["current_batch"][app_state["index"]]["words"]
+        return app_state["current_batch"][app_state["index"]]
+
     def show_matching_round():
         learning_final = (
             app_state.get("session_mode") == "new"
@@ -2149,12 +2257,7 @@ def main(page: ft.Page):
             show_results()
             return
         t = phase_text()
-        if learning_final:
-            words = app_state["learning_matching_words"]
-        elif app_state.get("session_mode") == "mega":
-            words = app_state["current_batch"][app_state["index"]]["words"]
-        else:
-            words = app_state["current_batch"][app_state["index"]]
+        words = current_matching_words()
         right_words = list(words)
         random_state = random.Random(f"{app_state['index']}:{','.join(str(w['id']) for w in words)}")
         for _ in range(8):
@@ -2186,20 +2289,24 @@ def main(page: ft.Page):
         set_session_view(exercise_shell(ft.Column(body_controls, spacing=14, expand=True), None, t["matching_pairs"]))
 
     def select_matching_word(side, word_id):
-        if word_id in app_state["matching_matched_ids"]:
+        if word_id in app_state["matching_matched_ids" if side == "left" else "matching_matched_right_ids"]:
             return
         app_state["matching_wrong_pair"] = None
         app_state[f"matching_{side}_id"] = word_id
         left_id = app_state["matching_left_id"]
         right_id = app_state["matching_right_id"]
         if left_id is not None and right_id is not None:
-            is_correct = left_id == right_id
+            # A round can hold homonyms (внук / внучка = unuka / torun), so a
+            # pair counts when the labels match, not only when the IDs do.
+            words_by_id = {word["id"]: word for word in current_matching_words()}
+            is_correct = words_are_equivalent(words_by_id[left_id], words_by_id[right_id])
             word_stats = app_state["stats"]["words"][str(left_id)]
             update_word_performance(word_stats, is_correct, "matching", datetime.date.today())
             app_state["session_answered"] += 1
             if is_correct:
                 app_state["session_correct"] += 1
                 app_state["matching_matched_ids"].append(left_id)
+                app_state["matching_matched_right_ids"].append(right_id)
             else:
                 app_state["matching_wrong_pair"] = (left_id, right_id)
             app_state["matching_left_id"] = None
@@ -2211,6 +2318,7 @@ def main(page: ft.Page):
         app_state["matching_left_id"] = None
         app_state["matching_right_id"] = None
         app_state["matching_matched_ids"] = []
+        app_state["matching_matched_right_ids"] = []
         app_state["matching_wrong_pair"] = None
         app_state["last_word_id"] = None
         if app_state.get("session_mode") == "new" and app_state.get("learning_matching_started", False):
@@ -2235,6 +2343,7 @@ def main(page: ft.Page):
                 app_state["matching_left_id"] = None
                 app_state["matching_right_id"] = None
                 app_state["matching_matched_ids"] = []
+                app_state["matching_matched_right_ids"] = []
                 app_state["matching_wrong_pair"] = None
                 show_matching_round()
                 return
@@ -2340,17 +2449,13 @@ def main(page: ft.Page):
             app_state["selected_letter_indices"] = []
             show_quiz_card()
 
-    def start_true_false_followup():
-        lang_key = app_state["lang"].lower()
+    def start_true_false_followup(word):
         correct = str(app_state["correct_answer"])
         rejected = str(app_state["tf_displayed"])
-        if app_state.get("direction") == "forward":
-            candidates = {str(word["gag"]) for word in all_words}
-        else:
-            candidates = {str(word.get(lang_key, word.get("ru", "---"))) for word in all_words}
+        acceptable = acceptable_answers(word, app_state.get("direction", "forward"))
         distractors = [
-            value for value in candidates
-            if value.casefold() not in {correct.casefold(), rejected.casefold()}
+            value for value in answer_distractors(app_state.get("direction", "forward"), acceptable)
+            if value.casefold() != rejected.casefold()
         ]
         distractor = random.choice(distractors) if distractors else rejected
         options = [correct, distractor]
@@ -2366,16 +2471,16 @@ def main(page: ft.Page):
         mode = app_state["mode"]
         if mode == "true_false":
             if app_state.get("tf_followup_active", False):
-                is_correct = str(selected).casefold() == str(app_state["correct_answer"]).casefold()
+                is_correct = str(selected).casefold() in app_state["acceptable_answers"]
             elif app_state["tf_is_truth"] is False and selected is False:
-                start_true_false_followup()
+                start_true_false_followup(word)
                 return
             else:
                 is_correct = selected == app_state["tf_is_truth"]
         elif mode == "word_building":
             is_correct = str(selected).casefold() == str(app_state["correct_answer"]).casefold()
         else:
-            is_correct = selected == app_state["correct_answer"]
+            is_correct = str(selected).casefold() in app_state["acceptable_answers"]
         if mode == "fast":
             app_state["question_id"] += 1
         stats = app_state["stats"]["words"][str(word["id"])]
